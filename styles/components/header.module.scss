@@ -1,0 +1,28 @@
+@use 'styles/common/colors';
+
+.container {
+  transition: all 1s ease;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 4%;
+  background-color: colors.$white;
+  height: 5rem;
+}
+
+.opened {
+  @media screen and (max-width: 767px) {
+    height: 70vh;
+    max-height: 70vh;
+  }
+}
+
+.hamburger {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}

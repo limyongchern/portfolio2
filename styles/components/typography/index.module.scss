@@ -1,0 +1,29 @@
+@use 'fonts';
+
+@for $i from 1 through (length(fonts.$list)) {
+  @font-face {
+    font-family: fonts.$family;
+    src: url(nth(fonts.$list, $i));
+    font-weight: ($i + 2) * 1e2;
+  }
+}
+
+@mixin text-options($font-size, $font-weight, $line-height) {
+  font-family: Pretendard;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  color: inherit;
+}
+
+.heading {
+  @include text-options(2.5rem, 700, 4rem);
+}
+
+.subheading {
+  @include text-options(2rem, 600, 3rem);
+}
+
+.body {
+  @include text-options(1.8rem, 400, 2.5rem);
+}

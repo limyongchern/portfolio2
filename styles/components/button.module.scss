@@ -1,0 +1,68 @@
+@use 'styles/common/colors';
+
+@mixin button($padding-inline, $padding-block) {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 2.5rem;
+  padding: $padding-inline $padding-block;
+  transition: all 0.3s ease;
+  & > * {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@mixin filled($color, $hover-color: $color) {
+  background-color: $color;
+  color: colors.$white;
+  border: none;
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+@mixin outline($color, $hover-color: $color) {
+  border: 1.25px solid $color;
+  color: $color;
+  background: none;
+  &:hover {
+    border-color: $hover-color;
+    color: $hover-color;
+  }
+}
+
+@each $color-name, $color in colors.$button-colors {
+  @each $hover-color-name, $hover-color in colors.$button-colors {
+    .filled-#{$color-name}-#{$hover-color-name} {
+      @include filled($color, $hover-color);
+    }
+    .outline-#{$color-name}-#{$hover-color-name} {
+      @include outline($color, $hover-color);
+    }
+  }
+}
+
+.sm {
+  @include button(0.5rem, 1rem);
+}
+
+.md {
+  @include button(0.75rem, 1.5rem);
+}
+
+.lg {
+  @include button(1rem, 2rem);
+}
+
+.disabled {
+  @include filled(colors.$pale-gray);
+  &:hover {
+    cursor: not-allowed;
+  }
+}

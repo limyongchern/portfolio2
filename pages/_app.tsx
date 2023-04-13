@@ -1,6 +1,16 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import { AppShell } from '@mantine/core';
+import { Header, Sidebar, Footer } from 'components/navigation';
+import type { AppProps } from 'next/app';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+import 'styles/common/global.scss';
+
+export default ({ Component, pageProps }: AppProps) => (
+  <AppShell
+    padding={0}
+    header={<Header />}
+    navbar={<Sidebar />}
+    footer={<Footer />}
+    navbarOffsetBreakpoint="sm">
+    <Component {...pageProps} />
+  </AppShell>
+);
