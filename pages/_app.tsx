@@ -8,7 +8,6 @@ export default ({ Component, pageProps }: AppProps) => (
   <AppShell
     padding={0}
     header={<Header />}
-    navbar={<Sidebar />}
     footer={<Footer />}
     navbarOffsetBreakpoint="sm">
     <Component {...pageProps} />
