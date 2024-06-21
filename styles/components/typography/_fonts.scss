@@ -1,9 +1,8 @@
-$family: Pretendard;
+$family-head: ArchivoBlack-Regular;
+$family-body: DMSans-VariableFont_opsz;
 
-$light: './fonts/Pretendard-Light.otf';
-$regular: './fonts/Pretendard-Regular.otf';
-$medium: './fonts/Pretendard-Medium.otf';
-$semi-bold: './fonts/Pretendard-SemiBold.otf';
-$bold: './fonts/Pretendard-Bold.otf';
+$regular: './fonts/DMSans-VariableFont_opsz,wght.ttf';
+$italic: './fonts/DMSans-Italic-VariableFont_opsz,wght.ttf';
+$head: './fonts/ArchivoBlack-Regular.ttf';
 
-$list: $light, $regular, $medium, $semi-bold, $bold;
+$list: $regular, $italic, $head;

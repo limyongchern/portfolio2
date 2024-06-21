@@ -1,19 +1,35 @@
-import { Text, TextProps } from '@mantine/core';
-import styles from 'styles/components/typography/index.module.scss';
+import styles from '../styles/components/typography/index.module.scss';
+import { HTMLAttributes } from 'react';
 
-const tags = ['Heading', 'Subheading', 'Body'] as const;
-type TTag = typeof tags[number];
+const tags = ['Heading', 'Body', 'Caption'] as const;
+type TTag = (typeof tags)[number];
 
-const getTagComponent = (tag: TTag) => (props: TextProps) =>
+const getTagComponent =
+  (tag: TTag) =>
   (
-    <Text
-      {...props}
-      className={`${styles[tag.toLowerCase()]} ${props.className}`}>
-      {props.children}
-    </Text>
-  );
+    props: HTMLAttributes<HTMLSpanElement> & {
+      variant: number;
+      fw?: number;
+      lh?: number | string;
+    }
+  ) =>
+    (
+      <p
+        {...props}
+        className={`${styles[tag.toLowerCase() + props.variant]} ${
+          props.className
+        }`}
+        style={{
+          color: props.color,
+          fontWeight: props.fw,
+          lineHeight: props.lh,
+          ...props.style,
+        }}>
+        {props.children}
+      </p>
+    );
 
-export const { Heading, Subheading, Body } = tags.reduce((acc, tag) => {
+export const { Heading, Body, Caption } = tags.reduce((acc, tag) => {
   const TagComponent = getTagComponent(tag);
   return { ...acc, [tag]: TagComponent };
 }, {} as Record<TTag, ReturnType<typeof getTagComponent>>);

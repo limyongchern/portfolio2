@@ -1,29 +1,42 @@
 @use 'fonts';
 
-@for $i from 1 through (length(fonts.$list)) {
-  @font-face {
-    font-family: fonts.$family;
-    src: url(nth(fonts.$list, $i));
-    font-weight: ($i + 2) * 1e2;
+@font-face {
+  font-family: fonts.$family-head;
+  src: url('./fonts/ArchivoBlack-Regular.ttf');
+}
+
+@font-face {
+  font-family: fonts.$family-body;
+  src: url('./fonts/DMSans-VariableFont_opsz,wght.ttf');
+}
+
+@mixin text-options(
+  $name,
+  $font-family,
+  $font-size,
+  $line-height,
+  $font-weight
+) {
+  .#{$name} {
+    margin: unset;
+    font-family: $font-family;
+    font-size: $font-size;
+    line-height: $line-height;
+    font-weight: $font-weight;
   }
 }
 
-@mixin text-options($font-size, $font-weight, $line-height) {
-  font-family: Pretendard;
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
-  color: inherit;
+.bold {
+  font-weight: 700 !important;
 }
 
-.heading {
-  @include text-options(2.5rem, 700, 4rem);
-}
-
-.subheading {
-  @include text-options(2rem, 600, 3rem);
-}
-
-.body {
-  @include text-options(1.8rem, 400, 2.5rem);
-}
+@include text-options('heading1', ArchivoBlack-Regular, 30px, 2rem, 500);
+@include text-options('heading2', ArchivoBlack-Regular, 24px, 1.6rem, 500);
+@include text-options('heading3', ArchivoBlack-Regular, 20px, 1.5rem, 500);
+@include text-options('heading4', ArchivoBlack-Regular, 16px, 1.5rem, 500);
+@include text-options('heading5', ArchivoBlack-Regular, 14px, 1rem, 500);
+@include text-options('body1', DMSans-VariableFont_opsz, 18px, 1.4rem, 500);
+@include text-options('body2', DMSans-VariableFont_opsz, 16px, 1.4rem, 500);
+@include text-options('body3', DMSans-VariableFont_opsz, 14px, 1.4rem, 500);
+@include text-options('body4', DMSans-VariableFont_opsz, 12px, 1.4rem, 500);
+@include text-options('body5', DMSans-VariableFont_opsz, 10px, auto, 500);
