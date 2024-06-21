@@ -1,4 +1,4 @@
-@use 'styles/common/colors';
+@use 'styles/common/colors'; // Assuming you have color variables defined
 
 .container {
   transition: all 1s ease;
@@ -10,8 +10,12 @@
   align-items: center;
   justify-content: space-between;
   padding-inline: 4%;
-  background-color: colors.$white;
-  height: 5rem;
+  background-color: transparent; // Ensure the background is transparent
+  height: 5rem; // Set initial height
+}
+
+.transparent {
+  background-color: transparent !important; // Ensure the background is transparent
 }
 
 .opened {

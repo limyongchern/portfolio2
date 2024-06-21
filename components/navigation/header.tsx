@@ -30,7 +30,7 @@ const Header = (props: IProps) => {
       className={[
         props.baseProps?.className ?? '',
         menuOpen ? styles.opened : '',
-        styles.container,
+        styles.transparent, // Apply transparent class
       ].join(' ')}>
       <div className={styles.header}>
         <Flex gap="md">
@@ -43,11 +43,6 @@ const Header = (props: IProps) => {
         </Flex>
         <Heading>AVATAR</Heading>
       </div>
-      <Stack>
-        {links.map((link) => (
-          <NavLink {...link} key={link.label} />
-        ))}
-      </Stack>
     </HeaderMantine>
   );
 };

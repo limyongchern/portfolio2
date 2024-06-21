@@ -1,18 +1,16 @@
+import BackgroundVideo from 'components/BackgroundVideo';
 import Button from 'components/button';
 import { Body, Heading, Subheading } from 'components/typography';
 import styles from 'styles/pages/index.module.scss';
 
 interface IProps {}
 
-const Page = (props: IProps) => {
+const Home = (props: IProps) => {
   return (
-    <div className={styles.container}>
-      <Heading>Heading</Heading>
-      <Subheading>Subheading</Subheading>
-      <Body>Body</Body>
-      <Button variant="outline">BUTTON</Button>
+    <div>
+      <BackgroundVideo />
     </div>
   );
 };
 
-export default Page;
+export default Home;
