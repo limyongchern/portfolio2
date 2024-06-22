@@ -31,6 +31,7 @@ const Header = (props: IProps) => {
     <HeaderMantine
       height={'5rem'}
       {...props.baseProps}
+      withBorder={false}
       className={[
         props.baseProps?.className ?? '',
         menuOpen ? styles.opened : '',
