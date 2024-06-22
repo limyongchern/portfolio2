@@ -42,7 +42,7 @@ const Footer = (props: IProps) => {
           </Group>
         </Group>
         <Flex justify={'center'} mt={40}>
-          <Body variant={2} color="#F2F3F7" fw={400}>
+          <Body variant={2} color="#F2F3F7">
             Privacy Policy | Terms of Use © 2024 WolfPlanet All Rights Reserved.
           </Body>
         </Flex>
