@@ -11,6 +11,7 @@ const getTagComponent =
       variant: number;
       fw?: number;
       lh?: number | string;
+      fs?: number | string;
     }
   ) =>
     (
@@ -23,6 +24,7 @@ const getTagComponent =
           color: props.color,
           fontWeight: props.fw,
           lineHeight: props.lh,
+          fontSize: props.fs,
           ...props.style,
         }}>
         {props.children}
