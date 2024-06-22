@@ -52,11 +52,31 @@ const Header = (props: IProps) => {
           </Link>
         </Flex>
         <div className={styles.nav}>
-          <Heading variant={4}>For Me</Heading>
-          <Heading variant={4}>About Us </Heading>
-          <Heading variant={4}>Whitepaper </Heading>
-          <Heading variant={4}>Community </Heading>
-          <Heading variant={4}>Download </Heading>
+          <UnstyledButton>
+            <Heading variant={4} color="white">
+              For Me
+            </Heading>
+          </UnstyledButton>
+          <UnstyledButton>
+            <Heading variant={4} color="white">
+              About Us{' '}
+            </Heading>
+          </UnstyledButton>
+          <UnstyledButton>
+            <Heading variant={4} color="white">
+              Whitepaper{' '}
+            </Heading>
+          </UnstyledButton>
+          <UnstyledButton onClick={() => router.push('/community')}>
+            <Heading variant={4} color="white">
+              Community{' '}
+            </Heading>
+          </UnstyledButton>
+          <UnstyledButton>
+            <Heading variant={4} color="white">
+              Download{' '}
+            </Heading>
+          </UnstyledButton>
 
           <Translate size={32} color="white" />
         </div>

@@ -1,0 +1,58 @@
+.container {
+  padding: 120px 350px;
+  background: var(--Main-Primary-Varient, #272935);
+}
+
+.containerSecondSection {
+  background-image: url('/earth.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+}
+
+.cardContainer {
+  display: flex;
+  padding: 42px 62px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  align-self: stretch;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
+  min-height: 495px;
+}
+
+.cardSubContainer {
+  display: flex;
+  width: 386px;
+  padding: 57px 42px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  border-radius: 16px;
+  background: var(--neutral-glass-1-add-blur, rgba(255, 255, 255, 0.12));
+  backdrop-filter: blur(15px);
+  min-height: 156px
+}
+
+.icon {
+  width: 52px;
+  height: 52px;
+}
+
+.containerThirdSection {
+  background: linear-gradient(to bottom, #2E303C, #323442, #3E404E);
+  padding: 120px 0;
+}
+
+.cardDarkContainer {
+  padding: 42px;
+  width: 336px;
+  border-radius: 16px;
+  background: var(--Main-Primary-Varient, #272935);
+  backdrop-filter: blur(40px);
+  min-height: 280px;
+}

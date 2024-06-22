@@ -37,6 +37,7 @@
 
 
 // Example usage with responsive font sizes
+
 @include text-options('heading0', fonts.$family-head, 50px, 2rem, 400);
 @include text-options('heading1', fonts.$family-head, 30px, 2rem, 400);
 @include text-options('heading2', fonts.$family-head, 24px, 1.6rem, 400);
@@ -52,4 +53,9 @@
 @include text-options('body6', fonts.$family-body, 20px, auto, 400);
 @include text-options('bodybold1', fonts.$family-body-bold, 20px, auto, 400);
 
+@include text-options('body6', fonts.$family-body, 56px, 60px, 700);
+@include text-options('heading6', fonts.$family-head, 56px,60px, 400);
+
+@include text-options('body7', fonts.$family-body, 20px, normal, 700);
+@include text-options('heading7', fonts.$family-head, 20px, normal, 400);
 
