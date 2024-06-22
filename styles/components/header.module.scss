@@ -12,6 +12,8 @@
   padding-inline: 4%;
   background-color: transparent; // Ensure the background is transparent
   height: 5rem; // Set initial height
+  border-bottom: transparent;
+  color: white;
 }
 
 .transparent {
@@ -29,4 +31,20 @@
   @media screen and (min-width: 768px) {
     display: none;
   }
+}
+
+.nav {
+  display: flex;
+  height: 108px;
+  align-items: center;
+  gap: 24px;
+  color: var(--Main-BG, #f2f3f7);
+  text-align: center;
+
+  /* English (Mobile)/Heading 4 */
+  font-family: 'Archivo Black';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }

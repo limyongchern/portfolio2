@@ -30,6 +30,7 @@
   font-weight: 700 !important;
 }
 
+@include text-options('heading0', ArchivoBlack-Regular, 50px, 2rem, 500);
 @include text-options('heading1', ArchivoBlack-Regular, 30px, 2rem, 500);
 @include text-options('heading2', ArchivoBlack-Regular, 24px, 1.6rem, 500);
 @include text-options('heading3', ArchivoBlack-Regular, 20px, 1.5rem, 500);

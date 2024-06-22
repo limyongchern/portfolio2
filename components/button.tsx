@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes } from 'react';
-import { Body, Heading, Subheading } from 'components/typography';
+import { Body, Heading } from 'components/typography';
 import styles from 'styles/components/button.module.scss';
 
 type TColor = 'black' | 'medium-gray';
@@ -21,7 +21,7 @@ const Button = (
     hoverColor = 'medium-gray',
     ...containerProps
   } = props;
-  const typography = { sm: Body, md: Subheading, lg: Heading };
+  const typography = { sm: Body, md: Body, lg: Heading };
   const Typography = typography[size];
   return (
     <button
@@ -35,7 +35,9 @@ const Button = (
         ],
         containerProps.className,
       ].join(' ')}>
-      <Typography color="inherit">{props.children}</Typography>
+      <Typography color="inherit" variant={0}>
+        {props.children}
+      </Typography>
     </button>
   );
 };

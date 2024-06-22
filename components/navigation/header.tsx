@@ -11,6 +11,10 @@ import styles from 'styles/components/header.module.scss';
 import { Heading } from '../typography';
 import { sections } from './sidebar';
 import NavLink, { ILink } from './navLink';
+import Link from 'next/link';
+import Image from 'next/image';
+import LogoSVG from 'public/wolfplanet.svg';
+import { Translate } from '@phosphor-icons/react';
 
 interface IProps {
   baseProps?: Partial<HeaderProps>;
@@ -39,9 +43,19 @@ const Header = (props: IProps) => {
             onClick={() => setMenuOpen((prev) => !prev)}>
             <TbMenu2 size={32} />
           </UnstyledButton>
-          <Heading>LOGO</Heading>
+          <Link href="/users">
+            <Image src={LogoSVG} alt="Logo" className={styles.headerlogo} />
+          </Link>
         </Flex>
-        <Heading>AVATAR</Heading>
+        <div className={styles.nav}>
+          <Heading variant={4}>For Me</Heading>
+          <Heading variant={4}>About Us </Heading>
+          <Heading variant={4}>Whitepaper </Heading>
+          <Heading variant={4}>Community </Heading>
+          <Heading variant={4}>Download </Heading>
+
+          <Translate size={32} color="white" />
+        </div>
       </div>
     </HeaderMantine>
   );
