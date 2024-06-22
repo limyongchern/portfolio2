@@ -4,12 +4,12 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+  // overflow: hidden;
   z-index: -1;
 
   video {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 100vh;
+    object-fit: fill;
   }
 }
