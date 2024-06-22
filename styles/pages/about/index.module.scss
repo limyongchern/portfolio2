@@ -7,8 +7,8 @@
   width: 100vw;
   height: 100vh; 
   padding-inline: 4%;
-padding-top: 50px;
-padding-bottom: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .planetCard {
@@ -22,5 +22,35 @@ padding-bottom: 50px;
   background-position: center; 
   background-repeat: no-repeat;
   overflow: hidden; /* This will ensure the background image respects the border radius */
+}
 
+.planetTextCont {
+  width: 558px;
+  height: 595px;
+  position: relative;
+  border-radius: 16px;
+}
+
+.planetTextCard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 508px;
+  height: 475px;
+  padding: 60px;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.12);
+  background: var(rgba(255, 255, 255, 0.12));
+  // background-image: url('/planetCardBg');
+  border-radius: 20px 0px 60px 20px;
+  backdrop-filter: blur(10px);
+  margin-right: -40px;
+  z-index: 1;
+}
+
+.textCard {
+  position: relative;
+  padding: 60px;
+  z-index: 2;
+  color: white;
 }
