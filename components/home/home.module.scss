@@ -1,0 +1,253 @@
+@use 'src/styles/colors' as colors;
+
+.pageContainer {
+  width: 100vw;
+  background-color: rgba(62, 64, 78, 1);
+  position: relative; // Ensure the stacking context
+  // height: 100vh;
+  background-image: url(@assets/images/moreStar.jpg);
+}
+
+.pageContainerHall {
+  width: 100vw;
+  background-color: rgba(62, 64, 78, 1);
+  position: relative; // Ensure the stacking context
+  height: 120vh;
+  background-image: url(@assets/images/moreStar.jpg);
+  background-size: cover;
+}
+
+.topHeaderContainer {
+  padding: 15px;
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  z-index: 5;
+  background-image: url(@assets/images/moreStar.jpg);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.levelBadgeRow {
+  display: flex;
+  margin-top: -2px;
+}
+
+.wolfName {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 17.41px;
+  color: rgba(255, 255, 255, 1);
+  padding-top: 5px;
+  font-family: 'ArchivoBlack-Regular';
+  text-transform: uppercase;
+}
+
+.wolfAvatarImage {
+  width: 48px;
+  height: 48px;
+  // box-shadow: 0px 0px 8px 0px #e6e6e64d;
+}
+
+.levelBadge {
+  width: 32px;
+  height: 32px;
+  margin-left: -4px;
+  // margin-top: 2px;
+}
+
+.moonBadge {
+  width: 26px;
+  height: 26px;
+  margin-right: 4px;
+}
+
+.levelText {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.23px;
+  padding-top: 5px;
+  padding-right: 5px;
+  color: rgba(255, 255, 255, 1);
+  font-family: 'DMSans-VariableFont_opsz';
+}
+
+.pointsText {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.44px;
+  padding-top: 1px;
+  padding-right: 5px;
+  color: #f6dba6;
+  font-family: 'DMSans-VariableFont_opsz';
+}
+
+.card {
+  // width: 155px;
+  // height: 132px;
+  background-color: rgba(100, 100, 100, 0.7);
+  border-radius: 16px;
+  padding: 20px 16px 20px 16px;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  opacity: 1;
+}
+
+.cardTitle {
+  font-size: 20px;
+  margin-top: -10px;
+}
+
+.cardDescription {
+  font-size: 10px;
+  line-height: 11px;
+  margin-top: 5px;
+}
+
+.indicatorContainer {
+  padding: 5px 0px 0px 20px;
+  display: flex;
+  gap: 5px;
+}
+.indicator {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50%;
+  transition: width 200ms ease;
+  position: relative;
+  background-color: rgba(164, 165, 173, 1);
+}
+.indicatorActive {
+  width: 8px !important;
+  height: 8px !important;
+  width: 42px !important;
+  border-radius: 24px;
+  transition: width 200ms ease;
+  position: relative;
+  background-color: rgba(26, 89, 222, 1);
+}
+
+.planetName {
+  font-size: 30px;
+  line-height: 32.64px;
+  color: rgba(255, 255, 255, 1);
+  padding: 38px 0px 0px 10px;
+  width: 300px;
+  font-weight: 400;
+  font-family: 'ArchivoBlack-Regular';
+}
+
+.cardContainer {
+  padding-top: 400px;
+}
+
+.gridContainer {
+  width: 90%;
+  margin: auto;
+  position: relative;
+  z-index: 0; // Higher value to be in front
+}
+
+.gridColumn {
+  justify-content: center;
+  display: flex;
+}
+
+.carouselContainer {
+  // padding-bottom: 30px;
+  margin-top: -20px;
+  padding-left: 10px;
+  // background-color: rgba(62, 64, 78, 1);
+  // z-index: 3000;
+}
+
+.imageCardContainer1 {
+  position: absolute;
+  top: 120px;
+  left: 270px;
+}
+
+.imageCardContainer2 {
+  position: absolute;
+  top: 220px;
+  left: 40px;
+}
+
+.imageCardContainer3 {
+  position: relative;
+  top: 310px;
+  left: 110px;
+}
+
+.imageCard {
+  background: #ffffff66;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  padding: 8px;
+}
+.imageCard:after,
+.imageCard:before {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: '';
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.imageCard:after {
+  border-color: rgba(136, 183, 213, 0);
+  border-top-color: #ffffff66;
+  border-width: 12px;
+  margin-left: -12px;
+  border-radius: 1px;
+}
+
+.imageStyle {
+  border-radius: 8px;
+}
+
+.imageCardTitle {
+  font-size: 12px;
+  font-weight: '700';
+  line-height: 15px;
+  width: inherit;
+  // width: 102px;
+  // padding: 8px;
+  text-align: center;
+  color: black;
+  // color: #292a2e;
+}
+
+.placeholderContainer {
+  position: relative;
+  z-index: 1000;
+  padding: 5px 25px;
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
+.placeholderBlocks {
+  // width: 155px;
+  // margin: '20px 15px 20px 15px';
+  margin-bottom: 30px;
+  margin-top: 0px;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+}
+
+.test3dPlanetContainer {
+  position: relative;
+  z-index: 1;
+}
