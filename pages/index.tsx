@@ -114,13 +114,13 @@ const Home = (props: IProps) => {
       <div className={styles.section4}>
         <div className={styles.section4p2}>
           <Stack>
-            <Heading variant={0} color={'#F2F3F7'}>
+            <Heading variant={0} color={'#F2F3F7'} style={{ lineHeight: 1.5 }}>
               Wolf Planet space for video
             </Heading>
             <Heading
               variant={3}
               color={'#9198B0'}
-              style={{ padding: '24px 0px' }}>
+              style={{ padding: '24px 0px', lineHeight: 1.5 }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
               doeiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Heading>
@@ -130,10 +130,13 @@ const Home = (props: IProps) => {
       </div>
       <div className={styles.section5}>
         <div className={styles.section5p2}>
-          <Heading variant={0} color={'#F2F3F7'}>
+          <Heading variant={0} color={'#F2F3F7'} style={{ lineHeight: 1.5 }}>
             CTA text to contact or smth
           </Heading>
-          <Heading variant={3} color={'#9198B0'} style={{ paddingTop: '24px' }}>
+          <Heading
+            variant={3}
+            color={'#9198B0'}
+            style={{ paddingTop: '24px', lineHeight: 1.5 }}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
             ipsum dolor sit amet, consectetur adipiscing elit.
