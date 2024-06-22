@@ -1,8 +1,11 @@
 $family-head: ArchivoBlack-Regular;
 $family-body: NotoSansSC-Regular;
+$family-body-bold: NotoSansSC-Bold;
+
 
 $regular: './fonts/NotoSansSC-Regular.ttf';
 $italic: './fonts/DMSans-Italic-VariableFont_opsz,wght.ttf';
 $head: './fonts/ArchivoBlack-Regular.ttf';
+$bold: './fonts/NotoSansSC-Bold.ttf';
 
-$list: $regular, $italic, $head;
+$list: $regular, $italic, $head, $bold;

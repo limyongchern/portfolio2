@@ -10,6 +10,11 @@
   src: url('./fonts/NotoSansSC-Regular.ttf');
 }
 
+@font-face {
+  font-family: fonts.$family-body-bold;
+  src: url('./fonts/NotoSansSC-Bold.ttf');
+}
+
 @mixin text-options(
   $name,
   $font-family,
@@ -45,4 +50,6 @@
 @include text-options('body4', fonts.$family-body, 12px, 1.4rem, 400);
 @include text-options('body5', fonts.$family-body, 10px, auto, 400);
 @include text-options('body6', fonts.$family-body, 20px, auto, 400);
+@include text-options('bodybold1', fonts.$family-body-bold, 20px, auto, 400);
+
 

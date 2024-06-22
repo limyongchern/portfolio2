@@ -1,7 +1,7 @@
 import styles from '../styles/components/typography/index.module.scss';
 import { HTMLAttributes } from 'react';
 
-const tags = ['Heading', 'Body', 'Caption'] as const;
+const tags = ['Heading', 'Body', 'Caption', 'BodyBold'] as const;
 type TTag = (typeof tags)[number];
 
 const getTagComponent =
@@ -29,7 +29,7 @@ const getTagComponent =
       </p>
     );
 
-export const { Heading, Body, Caption } = tags.reduce((acc, tag) => {
+export const { Heading, Body, Caption, BodyBold } = tags.reduce((acc, tag) => {
   const TagComponent = getTagComponent(tag);
   return { ...acc, [tag]: TagComponent };
 }, {} as Record<TTag, ReturnType<typeof getTagComponent>>);
