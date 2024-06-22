@@ -141,11 +141,7 @@ const Home = (props: IProps) => {
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
             ipsum dolor sit amet, consectetur adipiscing elit.
           </Heading>
-          <Button className={styles.button}>
-            <Body variant={3} className={styles.buttonText}>
-              Contact Us
-            </Body>
-          </Button>
+          <Button className={styles.button}>Contact Us</Button>
         </div>
       </div>
     </div>
