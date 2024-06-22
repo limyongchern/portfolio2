@@ -20,6 +20,10 @@
   background-color: transparent !important; // Ensure the background is transparent
 }
 
+.normalHeader {
+  background-color: #3E404E;
+}
+
 .opened {
   @media screen and (max-width: 767px) {
     height: 70vh;

@@ -1,0 +1,19 @@
+.topContainer {
+  background-image: url('/contactTopBg.png');
+  width: 100vw;
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  width: 100vw;
+  height: 100vh; 
+}
+
+.planetCard {
+  width: 506px;
+  height: 568px;
+  border-radius: 16px;
+  background-image: url('/planetCardBg');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+}

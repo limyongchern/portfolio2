@@ -13,14 +13,16 @@
 @mixin text-options(
   $name,
   $font-family,
-  $font-size,
+  $font-size-min,
+  $font-size-pref,
+  $font-size-max,
   $line-height,
   $font-weight
 ) {
   .#{$name} {
     margin: unset;
     font-family: $font-family;
-    font-size: $font-size;
+    font-size: clamp(#{$font-size-min}, #{$font-size-pref}, #{$font-size-max});
     line-height: $line-height;
     font-weight: $font-weight;
   }
@@ -30,14 +32,15 @@
   font-weight: 700 !important;
 }
 
-@include text-options('heading0', ArchivoBlack-Regular, 50px, 2rem, 500);
-@include text-options('heading1', ArchivoBlack-Regular, 30px, 2rem, 500);
-@include text-options('heading2', ArchivoBlack-Regular, 24px, 1.6rem, 500);
-@include text-options('heading3', ArchivoBlack-Regular, 20px, 1.5rem, 500);
-@include text-options('heading4', ArchivoBlack-Regular, 16px, 1.5rem, 500);
-@include text-options('heading5', ArchivoBlack-Regular, 14px, 1rem, 500);
-@include text-options('body1', DMSans-VariableFont_opsz, 18px, 1.4rem, 500);
-@include text-options('body2', DMSans-VariableFont_opsz, 16px, 1.4rem, 500);
-@include text-options('body3', DMSans-VariableFont_opsz, 14px, 1.4rem, 500);
-@include text-options('body4', DMSans-VariableFont_opsz, 12px, 1.4rem, 500);
-@include text-options('body5', DMSans-VariableFont_opsz, 10px, auto, 500);
+// Example usage with responsive font sizes
+@include text-options('heading0', fonts.$family-head, 30px, 5vw, 50px, 2rem, 400);
+@include text-options('heading1', fonts.$family-head, 20px, 3vw, 30px, 2rem, 400);
+@include text-options('heading2', fonts.$family-head, 18px, 2.5vw, 24px, 1.6rem, 400);
+@include text-options('heading3', fonts.$family-head, 16px, 2vw, 20px, 1.5rem, 400);
+@include text-options('heading4', fonts.$family-head, 14px, 1.5vw, 16px, 1.5rem, 400);
+@include text-options('heading5', fonts.$family-head, 12px, 1.2vw, 14px, 1rem, 400);
+@include text-options('body1', fonts.$family-body, 14px, 1.5vw, 18px, 1.4rem, 400);
+@include text-options('body2', fonts.$family-body, 12px, 1.2vw, 16px, 1.4rem, 400);
+@include text-options('body3', fonts.$family-body, 10px, 1vw, 14px, 1.4rem, 400);
+@include text-options('body4', fonts.$family-body, 8px, 0.8vw, 12px, 1.4rem, 400);
+@include text-options('body5', fonts.$family-body, 6px, 0.6vw, 10px, auto, 400);

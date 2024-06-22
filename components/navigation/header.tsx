@@ -15,6 +15,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import LogoSVG from 'public/wolfplanet.svg';
 import { Translate } from '@phosphor-icons/react';
+import { useRouter } from 'next/router';
 
 interface IProps {
   baseProps?: Partial<HeaderProps>;
@@ -27,6 +28,8 @@ const links = Object.entries(sections).reduce(
 
 const Header = (props: IProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const router = useRouter();
+
   return (
     <HeaderMantine
       height={'5rem'}
@@ -35,7 +38,7 @@ const Header = (props: IProps) => {
       className={[
         props.baseProps?.className ?? '',
         menuOpen ? styles.opened : '',
-        styles.transparent, // Apply transparent class
+        router.pathname === '/' ? styles.transparent : styles.normalHeader, // Apply transparent class
       ].join(' ')}>
       <div className={styles.header}>
         <Flex gap="md">

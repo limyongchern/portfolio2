@@ -24,10 +24,11 @@ const Footer = (props: IProps) => {
   return (
     <FooterMantine
       height={'238px'}
+      withBorder={false}
       {...props.baseProps}
       className={`${props.baseProps?.className ?? ''} ${styles.container}`}>
       <Stack w={'100%'}>
-        <Group>
+        <Group position="apart">
           <Link href="/">
             <Image src={LogoSVG} alt="Logo" className={styles.headerlogo} />
           </Link>
