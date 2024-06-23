@@ -33,14 +33,14 @@ const AboutUs = () => {
             <div className={styles.planetTextCont}>
               <div className={styles.planetTextCard} />
               <div className={styles.textCard}>
-                <Body variant={6} style={{ marginBottom: '16px' }}>
+                <Body variant={8} style={{ marginBottom: '16px' }}>
                   Welcome to WolfPlanet
                 </Body>
-                <Heading variant={6}>Where Something</Heading>
-                <Heading variant={6} style={{ marginBottom: '24px' }}>
+                <Heading variant={8}>Where Something</Heading>
+                <Heading variant={8} style={{ marginBottom: '24px' }}>
                   Meets <span style={{ color: '#4178FA' }}>Excellence!</span>{' '}
                 </Heading>
-                <Body variant={6} style={{ marginBottom: '16px' }}>
+                <Body variant={8} style={{ marginBottom: '16px' }}>
                   At WolfPlanet, we believe that banking should be more than
                   just transactions. It should be an experience that empowers
                   individuals and businesses to thrive and reach their financial
@@ -63,11 +63,11 @@ const AboutUs = () => {
       </div>
       <div className={styles.middleContainer}>
         <Stack align="center">
-          <Heading variant={6} style={{ marginBottom: '16px' }}>
+          <Heading variant={8} style={{ marginBottom: '16px' }}>
             Meet the Wolf Team
           </Heading>
           <Flex align={'center'} justify={'center'}>
-            <Body variant={6} color="#9198B0" style={{ textAlign: 'center' }}>
+            <Body variant={8} color="#9198B0" style={{ textAlign: 'center' }}>
               At Estatein, our success is driven by the dedication and expertise
               of our team. Get to know the people behind our mission to make
               your real estate dreams a reality.
@@ -101,7 +101,7 @@ const AboutUs = () => {
         <Stack align="center">
           <Group spacing={80}>
             <Stack spacing={14} w={'600px'}>
-              <Heading variant={6} color="white">
+              <Heading variant={8} color="white">
                 Our values
               </Heading>
               <BodyBold variant={1} color="#9198B0">
@@ -158,7 +158,7 @@ const AboutUs = () => {
           </Group>
           <Stack mt={'150px'} align="center">
             <Stack spacing={'10px'} align="center">
-              <Heading variant={6} color="#F2F3F7">
+              <Heading variant={8} color="#F2F3F7">
                 Press Release
               </Heading>
               <BodyBold
