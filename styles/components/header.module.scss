@@ -23,7 +23,7 @@
 }
 
 .normalHeader {
-  background-color: #3E404E;
+  background-color: #3e404e;
 }
 
 .opened {
@@ -53,4 +53,40 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.menu {
+  border-radius: 20px;
+  background: var(--neutral-glass-1-add-blur, rgba(255, 255, 255, 0.12));
+  border: transparent;
+
+  /* Glassmorphism/BG Blur 1 */
+  backdrop-filter: blur(10px);
+  display: inline-flex;
+  padding: 32px 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.nav .link {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+.nav .link.active {
+  color: #4178fa;
+}
+
+.nav .link.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 50%;
+  height: 2px;
+  background-color: #4178fa;
+  margin-left: 10px;
 }
