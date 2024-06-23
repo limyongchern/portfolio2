@@ -21,7 +21,9 @@ const NavLink = ({ label, link, icon }: ILink) => {
         ].join(' ')}
         icon={icon}
         label={
-          <Body color={pathname === link ? '#6200ff' : '#333333'}>{label}</Body>
+          <Body variant={5} color={pathname === link ? '#6200ff' : '#333333'}>
+            {label}
+          </Body>
         }
       />
     </Link>

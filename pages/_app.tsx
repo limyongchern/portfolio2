@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app';
 
 import 'styles/common/global.scss';
 
-export default ({ Component, pageProps }: AppProps) => (
+const MyApp = ({ Component, pageProps }: AppProps) => (
   <AppShell
     padding={0}
     header={<Header />}
@@ -13,3 +13,5 @@ export default ({ Component, pageProps }: AppProps) => (
     <Component {...pageProps} />
   </AppShell>
 );
+
+export default MyApp;

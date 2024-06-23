@@ -1,8 +1,8 @@
 import { Navbar, NavbarProps } from '@mantine/core';
 import { TbBarbell } from 'react-icons/tb';
 import NavLink, { ILink } from './navLink';
-import { Subheading } from '../typography';
 import styles from 'styles/components/sidebar.module.scss';
+import { Body } from 'components/typography';
 
 interface IProps {
   baseProps?: Partial<NavbarProps>;
@@ -31,7 +31,7 @@ const Sidebar = (props: IProps) => {
       className={`${props.baseProps?.className ?? ''} ${styles.container}`}>
       {Object.entries(sections).map(([section, links]) => (
         <Navbar.Section grow w="100%" key={section}>
-          <Subheading>{section}</Subheading>
+          <Body variant={5}>{section}</Body>
           {links.map((link) => (
             <NavLink {...link} key={link.label} />
           ))}

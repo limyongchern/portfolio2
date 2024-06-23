@@ -56,7 +56,7 @@ const AboutUs = () => {
             </div>
 
             <div className={styles.planetCard}>
-              <Image src={'/aboutPlanet3.png'} />
+              <Image src={'/aboutPlanet3.png'} alt="About Planet" />
             </div>
           </Group>
         </Container>
@@ -118,7 +118,7 @@ const AboutUs = () => {
               className={styles.card}>
               <Stack spacing={'20px'}>
                 <Group>
-                  <Image src={'/shield.png'} maw={'72px'} />
+                  <Image src={'/shield.png'} maw={'72px'} alt="Trust Icon" />
                   <Heading variant={2} color="white">
                     Trust
                   </Heading>
@@ -131,7 +131,7 @@ const AboutUs = () => {
               <Divider my={'30px'} color="#3E404E" />
               <Stack spacing={'20px'}>
                 <Group>
-                  <Image src={'/star.png'} maw={'72px'} />
+                  <Image src={'/star.png'} maw={'72px'} alt="Excellence Icon" />
                   <Heading variant={2} color="white">
                     Excellence
                   </Heading>
@@ -144,7 +144,11 @@ const AboutUs = () => {
               <Divider my={'30px'} color="#3E404E" />
               <Stack spacing={'20px'}>
                 <Group>
-                  <Image src={'/people.png'} maw={'72px'} />
+                  <Image
+                    src={'/people.png'}
+                    maw={'72px'}
+                    alt="Client-Centric Icon"
+                  />
                   <Heading variant={2} color="white">
                     Client-Centric
                   </Heading>
@@ -172,10 +176,14 @@ const AboutUs = () => {
             <Group py={'60px'} spacing={'36px'} noWrap>
               <Card p={'42px'} bg="#272935" radius={'16px'} w={'520px'}>
                 <Stack spacing={'40px'}>
-                  <Image src={'/pressImg1.png'} width={'100%'} />
+                  <Image
+                    src={'/pressImg1.png'}
+                    width={'100%'}
+                    alt="Press Release 1"
+                  />
                   <Stack py={'24px'} spacing={'14px'} align="center">
                     <Heading variant={3} color="#F2F3F7">
-                      WoldPlanet Launches New Rewards Program to Enhance
+                      WolfPlanet Launches New Rewards Program to Enhance
                       Customer Loyalty and Satisfaction
                     </Heading>
                     <Group spacing={'24px'}>
@@ -213,10 +221,14 @@ const AboutUs = () => {
               </Card>
               <Card p={'42px'} bg="#272935" radius={'16px'} w={'520px'}>
                 <Stack spacing={'40px'}>
-                  <Image src={'/pressImg2.png'} width={'100%'} />
+                  <Image
+                    src={'/pressImg2.png'}
+                    width={'100%'}
+                    alt="Press Release 2"
+                  />
                   <Stack py={'24px'} spacing={'14px'} align="center">
                     <Heading variant={3} color="#F2F3F7">
-                      WoldPlanet Launches New Rewards Program to Enhance
+                      WolfPlanet Launches New Rewards Program to Enhance
                       Customer Loyalty and Satisfaction
                     </Heading>
                     <Group spacing={'24px'}>

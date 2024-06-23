@@ -4,32 +4,34 @@ import { HTMLAttributes } from 'react';
 const tags = ['Heading', 'Body', 'Caption', 'BodyBold'] as const;
 type TTag = (typeof tags)[number];
 
-const getTagComponent =
-  (tag: TTag) =>
-  (
+const getTagComponent = (tag: TTag) => {
+  const TagComponent = (
     props: HTMLAttributes<HTMLSpanElement> & {
       variant: number;
       fw?: number;
       lh?: number | string;
       fs?: number | string;
     }
-  ) =>
-    (
-      <p
-        {...props}
-        className={`${styles[tag.toLowerCase() + props.variant]} ${
-          props.className
-        }`}
-        style={{
-          color: props.color,
-          fontWeight: props.fw,
-          lineHeight: props.lh,
-          fontSize: props.fs,
-          ...props.style,
-        }}>
-        {props.children}
-      </p>
-    );
+  ) => (
+    <p
+      {...props}
+      className={`${styles[tag.toLowerCase() + props.variant]} ${
+        props.className
+      }`}
+      style={{
+        color: props.color,
+        fontWeight: props.fw,
+        lineHeight: props.lh,
+        fontSize: props.fs,
+        ...props.style,
+      }}>
+      {props.children}
+    </p>
+  );
+
+  TagComponent.displayName = `${tag}Component`;
+  return TagComponent;
+};
 
 export const { Heading, Body, Caption, BodyBold } = tags.reduce((acc, tag) => {
   const TagComponent = getTagComponent(tag);

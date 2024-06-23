@@ -16,7 +16,12 @@ const TeamCard = ({ image, name, title }: ICardProps) => {
       <div
         className={styles.imgCardContainer}
         style={{ backgroundImage: `url(${image})` }}>
-        <Image src={'/twitter.png'} width={50} className={styles.twitter} />
+        <Image
+          src={'/twitter.png'}
+          width={50}
+          className={styles.twitter}
+          alt="twitter"
+        />
       </div>
       <Stack spacing={5} align="center">
         <BodyBold variant={1} fw={700} fs={24} color="#F2F3F7">

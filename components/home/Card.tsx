@@ -3,6 +3,7 @@ import { Heading } from '../../components/typography';
 import hall from '@assets/icons/home-hall-icon.svg';
 import tribes from '@assets/icons/home-tribe-icon.svg';
 import house from '@assets/icons/home-hall-icon.svg';
+import Image from 'next/image';
 
 const iconMap: Record<string, string> = {
   hall,
@@ -23,7 +24,11 @@ const Card = ({
 }) => {
   return (
     <div className={styles.card} onClick={onClick}>
-      <img src={iconMap[icon] || icon} style={{ marginTop: -10 }} />
+      <Image
+        src={iconMap[icon] || icon}
+        alt={`${icon} icon`}
+        style={{ marginTop: -10 }}
+      />
       <Heading
         variant={3}
         color="var(--Neutral-White, rgba(254, 254, 254, 1.00)"
