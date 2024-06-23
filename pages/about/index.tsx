@@ -1,4 +1,5 @@
 import { Card, Container, Flex, Group, Image, Stack } from '@mantine/core';
+import TeamCard from 'components/about/teamCard';
 import { Body, BodyBold, Heading } from 'components/typography';
 import styles from 'styles/pages/about/index.module.scss';
 
@@ -55,6 +56,28 @@ const AboutUs = () => {
               your real estate dreams a reality.
             </Body>
           </Flex>
+          <Group mt={80} position="apart" w={'100%'}>
+            <TeamCard
+              image={'/aboutImg1.png'}
+              name={'Max Mitchell'}
+              title={'Founder'}
+            />
+            <TeamCard
+              image={'/aboutImg2.png'}
+              name={'Max Mitchell'}
+              title={'Founder'}
+            />
+            <TeamCard
+              image={'/aboutImg3.png'}
+              name={'Max Mitchell'}
+              title={'Founder'}
+            />
+            <TeamCard
+              image={'/aboutImg4.png'}
+              name={'Max Mitchell'}
+              title={'Founder'}
+            />
+          </Group>
         </Stack>
       </div>
     </>
