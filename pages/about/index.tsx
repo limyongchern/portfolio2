@@ -62,7 +62,7 @@ const AboutUs = () => {
         </Container>
       </div>
       <div className={styles.middleContainer}>
-        <Stack align="center">
+        <Stack align="center" maw={'1080px'}>
           <Heading variant={8} style={{ marginBottom: '16px' }}>
             Meet the Wolf Team
           </Heading>
@@ -170,7 +170,7 @@ const AboutUs = () => {
               </BodyBold>
             </Stack>
             <Group py={'60px'} spacing={'36px'} noWrap>
-              <Card p={'42px'} bg="#272935" radius={'16px'}>
+              <Card p={'42px'} bg="#272935" radius={'16px'} w={'520px'}>
                 <Stack spacing={'40px'}>
                   <Image src={'/pressImg1.png'} width={'100%'} />
                   <Stack py={'24px'} spacing={'14px'} align="center">
@@ -211,7 +211,7 @@ const AboutUs = () => {
                   </Stack>
                 </Stack>
               </Card>
-              <Card p={'42px'} bg="#272935" radius={'16px'}>
+              <Card p={'42px'} bg="#272935" radius={'16px'} w={'520px'}>
                 <Stack spacing={'40px'}>
                   <Image src={'/pressImg2.png'} width={'100%'} />
                   <Stack py={'24px'} spacing={'14px'} align="center">
