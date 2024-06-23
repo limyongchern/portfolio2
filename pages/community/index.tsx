@@ -22,7 +22,7 @@ import Planet7Big from '../../public/Planet/BigPlanet_7.png';
 
 const Community = () => {
   const [activePlanet, setActivePlanet] = useState<number>(1);
-  const [transitioning, setTransitioning] = useState<boolean>(false);
+  const [transitioning, setTransitioning] = useState<boolean>(true);
 
   // useEffect(() => {
   //   if (transitioning) {
