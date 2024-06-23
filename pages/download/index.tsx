@@ -37,14 +37,31 @@ const Download = () => {
             </Flex>
           </div>
           <Image src={Sample} alt="sample" />
-          <Heading variant={1} color="#F2F3F7" style={{ lineHeight: 1.5 }}>
-            Wolf Planet 星球，您的全球投资新天地！
-          </Heading>
-          <Heading variant={3} color="#9198B0" style={{ lineHeight: 1.5 }}>
-            Linear Asks is a new take on intake. Submit requests directly from
-            Slack and automatically send them to the relevant team in Linear.
-            Eliminate cluttered channels and reduce context switching.
-          </Heading>
+          <div>
+            <Heading
+              fs={42}
+              variant={1}
+              color="#F2F3F7"
+              style={{ lineHeight: 1.5, padding: '0px 106px' }}>
+              Wolf Planet 星球，您的全球投资新天地！
+            </Heading>
+            <Heading
+              fs={20}
+              variant={3}
+              color="#9198B0"
+              style={{
+                lineHeight: 1.5,
+                padding: '20px 150px',
+                textAlign: 'center',
+                margin: '0px auto',
+                maxWidth: '800px',
+              }}>
+              Linear Asks is a new take on intake. Submit requests directly from
+              Slack and automatically send them to the relevant team in Linear.
+              Eliminate cluttered channels and reduce context switching.
+            </Heading>
+          </div>
+
           <Button className={styles.Button2}>Download</Button>
         </Stack>
       </div>
