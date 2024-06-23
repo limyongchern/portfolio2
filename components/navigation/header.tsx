@@ -62,7 +62,7 @@ const Header = (props: IProps) => {
               About Us{' '}
             </Heading>
           </UnstyledButton>
-          <UnstyledButton>
+          <UnstyledButton onClick={() => router.push('/whitepaper')}>
             <Heading variant={4} color="white">
               Whitepaper{' '}
             </Heading>
