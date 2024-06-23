@@ -32,7 +32,7 @@ const Header = (props: IProps) => {
 
   return (
     <HeaderMantine
-      height={'5rem'}
+      height={'auto'}
       {...props.baseProps}
       withBorder={false}
       className={[
