@@ -56,3 +56,37 @@
   backdrop-filter: blur(40px);
   min-height: 280px;
 }
+
+.containerFourthSection {
+  background-image: url('/sky.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  position: relative;
+}
+
+.planetSize {
+  width: 60px;
+  height: 60px;
+}
+
+.transition-container {
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+  /* Adjust based on your content's height */
+}
+
+.transition-content {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  opacity: 0;
+  transition: top 0.5s ease, opacity 0.5s ease;
+}
+
+.transition-content.active {
+  top: 0;
+  opacity: 1;
+}

@@ -1,11 +1,83 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '../../styles/pages/community/index.module.scss';
-import { Flex, Grid, Stack } from '@mantine/core';
+import { Flex, Grid, Stack, Transition } from '@mantine/core';
 import { Body, Heading } from 'components/typography';
 import WolfTooth from '../../public/Coin.svg';
 import WolfToken from '../../public/WolfCoin.svg';
 import Image from 'next/image';
+import Planet1 from '../../public/Planet/Planet_1.png';
+import Planet2 from '../../public/Planet/Planet_2.png';
+import Planet3 from '../../public/Planet/Planet_3.png';
+import Planet4 from '../../public/Planet/Planet_4.png';
+import Planet5 from '../../public/Planet/Planet_5.png';
+import Planet6 from '../../public/Planet/Planet_6.png';
+import Planet7 from '../../public/Planet/Planet_7.png';
+import Planet1Big from '../../public/Planet/BigPlanet_1.png';
+import Planet2Big from '../../public/Planet/BigPlanet_2.png';
+import Planet3Big from '../../public/Planet/BigPlanet_3.png';
+import Planet4Big from '../../public/Planet/BigPlanet_4.png';
+import Planet5Big from '../../public/Planet/BigPlanet_5.png';
+import Planet6Big from '../../public/Planet/BigPlanet_6.png';
+import Planet7Big from '../../public/Planet/BigPlanet_7.png';
+
 const Community = () => {
+  const [activePlanet, setActivePlanet] = useState<number>(1);
+  const [transitioning, setTransitioning] = useState<boolean>(false);
+
+  // useEffect(() => {
+  //   if (transitioning) {
+  //     const timeout = setTimeout(() => {
+  //       setTransitioning(false);
+  //     }, 500); // Match this duration with your CSS transition duration
+  //     return () => clearTimeout(timeout);
+  //   }
+  // }, [transitioning]);
+
+  const handlePlanetChange = (index: number) => {
+    setTransitioning(false); // Set transitioning to false immediately
+
+    setTimeout(() => {
+      setActivePlanet(index + 1);
+    }, 500); // Adjust the duration if necessary
+    // Set a short timeout to set transitioning to true again
+    setTimeout(() => {
+      setTransitioning(true);
+    }, 500); // Adjust the duration if necessary
+  };
+
+  console.log(transitioning);
+  const PlanetList = [
+    {
+      name: '瑞金星球',
+      planet: Planet1,
+    },
+    {
+      name: '璀璨星球',
+      planet: Planet2,
+    },
+    {
+      name: '汇神星球',
+      planet: Planet3,
+    },
+    {
+      name: '时光星球',
+      planet: Planet4,
+    },
+    {
+      name: '虚幻星球',
+      planet: Planet5,
+    },
+    {
+      name: '债魔星球',
+      planet: Planet6,
+    },
+    {
+      name: '繁荣星球',
+      planet: Planet7,
+    },
+  ];
+
+  console.log(activePlanet);
   return (
     <div>
       <div id="first-section" className={styles.container}>
@@ -226,6 +298,282 @@ const Community = () => {
             </Grid.Col>
           </Grid>
         </Flex>
+      </div>
+      <div id="fourth-section" className={styles.containerFourthSection}>
+        <Stack align="center" justify="center" spacing={0} p={'50px 420px'}>
+          <span style={{ textAlign: 'center', marginBottom: '24px' }}>
+            <Body
+              color="#F2F3F7"
+              variant={6}
+              fw={700}
+              lh={'normal'}
+              fs={'42px'}
+              style={{ display: 'inline' }}>
+              七星奇遇：探索{' '}
+            </Body>
+            <Heading
+              color="#F2F3F7"
+              variant={6}
+              fw={600}
+              lh={'normal'}
+              fs={'42px'}
+              style={{ display: 'inline' }}>
+              Wolf Planet{' '}
+            </Heading>
+            <Body
+              color="#F2F3F7"
+              variant={6}
+              fw={700}
+              lh={'normal'}
+              fs={'42px'}
+              style={{ display: 'inline' }}>
+              星球
+            </Body>
+          </span>
+          <Body
+            color="#9198B0"
+            variant={6}
+            fw={700}
+            lh={'normal'}
+            fs={'20px'}
+            style={{ textAlign: 'center' }}>
+            Wolf Planet
+            星球是一个由七个独具特色的星球组成的神秘社区，每个星球都拥有独特的属性和玩法。
+          </Body>
+        </Stack>
+
+        <div
+          style={{
+            position: 'absolute',
+            padding: '0 80px',
+            marginTop: '-50px',
+            zIndex: 4,
+          }}>
+          {PlanetList.map((item, index) => (
+            <Flex
+              key={index}
+              align={'center'}
+              mb={'18px'}
+              style={{ cursor: 'pointer' }}
+              onClick={() => handlePlanetChange(index)}>
+              <Image
+                src={item.planet}
+                alt=""
+                className={styles.planetSize}
+                style={
+                  activePlanet === index + 1 ? { opacity: 1 } : { opacity: 0.5 }
+                }
+              />
+              <Body
+                color={activePlanet === index + 1 ? '#F2F3F7' : '#BBCDF5'}
+                variant={6}
+                fw={700}
+                lh={'normal'}
+                fs={'15px'}>
+                {index + 1}. {item.name}
+              </Body>
+            </Flex>
+          ))}
+        </div>
+        <Transition
+          mounted={transitioning}
+          transition={'slide-up'}
+          duration={200}
+          timingFunction="ease">
+          {(styles) => (
+            <div style={{ position: 'relative', ...styles }}>
+              {activePlanet === 1 && (
+                <Stack align="center" justify="center" spacing={'24px'}>
+                  <Body
+                    color="#F2F3F7"
+                    variant={6}
+                    fw={600}
+                    lh={'normal'}
+                    fs={'42px'}
+                    style={{ textAlign: 'center' }}>
+                    瑞金星球：贵金属星球
+                  </Body>
+                  <Body
+                    color="#9198B0"
+                    variant={6}
+                    fw={700}
+                    lh={'normal'}
+                    fs={'20px'}
+                    style={{ textAlign: 'center' }}>
+                    表面布满金、银等珍贵金属矿石，是宇宙中最珍贵的资源之一。
+                  </Body>
+                  <Image
+                    src={Planet1Big}
+                    alt=""
+                    style={{ position: 'absolute', top: 0 }}
+                  />
+                </Stack>
+              )}
+              {activePlanet === 2 && (
+                <Stack align="center" justify="center" spacing={'24px'}>
+                  <Body
+                    color="#F2F3F7"
+                    variant={6}
+                    fw={600}
+                    lh={'normal'}
+                    fs={'42px'}
+                    style={{ textAlign: 'center' }}>
+                    璀璨星球：商品星球
+                  </Body>
+                  <Body
+                    color="#9198B0"
+                    variant={6}
+                    fw={700}
+                    lh={'normal'}
+                    fs={'20px'}
+                    style={{ textAlign: 'center' }}>
+                    拥有丰富的商品资源，居民以种植、收穫、交易为生。
+                  </Body>
+                  <Image
+                    src={Planet2Big}
+                    alt=""
+                    style={{ position: 'absolute', top: 0 }}
+                  />
+                </Stack>
+              )}
+              {activePlanet === 3 && (
+                <Stack align="center" justify="center" spacing={'24px'}>
+                  <Body
+                    color="#F2F3F7"
+                    variant={6}
+                    fw={600}
+                    lh={'normal'}
+                    fs={'42px'}
+                    style={{ textAlign: 'center' }}>
+                    汇神星球：外汇星球
+                  </Body>
+                  <Body
+                    color="#9198B0"
+                    variant={6}
+                    fw={700}
+                    lh={'normal'}
+                    fs={'20px'}
+                    style={{ textAlign: 'center' }}>
+                    居民能够自由地转換各种货币和价值，是金融交易中心。
+                  </Body>
+                  <Image
+                    src={Planet3Big}
+                    alt=""
+                    style={{ position: 'absolute', top: 0 }}
+                  />
+                </Stack>
+              )}
+              {activePlanet === 4 && (
+                <Stack align="center" justify="center" spacing={'24px'}>
+                  <Body
+                    color="#F2F3F7"
+                    variant={6}
+                    fw={600}
+                    lh={'normal'}
+                    fs={'42px'}
+                    style={{ textAlign: 'center' }}>
+                    时光星球：期货星球
+                  </Body>
+                  <Body
+                    color="#9198B0"
+                    variant={6}
+                    fw={700}
+                    lh={'normal'}
+                    fs={'20px'}
+                    style={{ textAlign: 'center' }}>
+                    居民能够預測未来发展和趋势，在时间轴上进行交易。
+                  </Body>
+                  <Image
+                    src={Planet4Big}
+                    alt=""
+                    style={{ position: 'absolute', top: 0 }}
+                  />
+                </Stack>
+              )}
+              {activePlanet === 5 && (
+                <Stack align="center" justify="center" spacing={'24px'}>
+                  <Body
+                    color="#F2F3F7"
+                    variant={6}
+                    fw={600}
+                    lh={'normal'}
+                    fs={'42px'}
+                    style={{ textAlign: 'center' }}>
+                    虚幻星球：数字星球
+                  </Body>
+                  <Body
+                    color="#9198B0"
+                    variant={6}
+                    fw={700}
+                    lh={'normal'}
+                    fs={'20px'}
+                    style={{ textAlign: 'center' }}>
+                    虚拟现实世界，居民可以创建和体验各种虚拟场景。
+                  </Body>
+                  <Image
+                    src={Planet5Big}
+                    alt=""
+                    style={{ position: 'absolute', top: 0 }}
+                  />
+                </Stack>
+              )}
+              {activePlanet === 6 && (
+                <Stack align="center" justify="center" spacing={'24px'}>
+                  <Body
+                    color="#F2F3F7"
+                    variant={6}
+                    fw={600}
+                    lh={'normal'}
+                    fs={'42px'}
+                    style={{ textAlign: 'center' }}>
+                    债魔星球：债券星球
+                  </Body>
+                  <Body
+                    color="#9198B0"
+                    variant={6}
+                    fw={700}
+                    lh={'normal'}
+                    fs={'20px'}
+                    style={{ textAlign: 'center' }}>
+                    债券是重要的资产和交易对象，居民精通债券市场。
+                  </Body>
+                  <Image
+                    src={Planet6Big}
+                    alt=""
+                    style={{ position: 'absolute', top: 0 }}
+                  />
+                </Stack>
+              )}
+              {activePlanet === 7 && (
+                <Stack align="center" justify="center" spacing={'24px'}>
+                  <Body
+                    color="#F2F3F7"
+                    variant={6}
+                    fw={600}
+                    lh={'normal'}
+                    fs={'42px'}
+                    style={{ textAlign: 'center' }}>
+                    繁荣星球：股票星球
+                  </Body>
+                  <Body
+                    color="#9198B0"
+                    variant={6}
+                    fw={700}
+                    lh={'normal'}
+                    fs={'20px'}
+                    style={{ textAlign: 'center' }}>
+                    Lorem ipsum
+                  </Body>
+                  <Image
+                    src={Planet7Big}
+                    alt=""
+                    style={{ position: 'absolute', top: 0 }}
+                  />
+                </Stack>
+              )}
+            </div>
+          )}
+        </Transition>
       </div>
     </div>
   );
