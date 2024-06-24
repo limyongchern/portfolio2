@@ -1,6 +1,19 @@
 .container {
-  padding: 120px 350px;
   background: var(--Main-Primary-Varient, #272935);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 120px;
+}
+
+.widthContainer {
+  display: flex;
+  width: 836px;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 120px 0;
+  justify-content: center;
 }
 
 .containerSecondSection {
@@ -8,34 +21,47 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 80vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+.widthContainerSecondSection {
+  display: flex;
+  width: 836px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0;
+}
+
 
 .cardContainer {
   display: flex;
-  padding: 42px 62px;
+  padding: 32.874px 48.529px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 18.785px;
   align-self: stretch;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(15px);
-  min-height: 495px;
+  border-radius: 12.524px;
+  background: var(--neutral-glass-1-add-blur, rgba(255, 255, 255, 0.12));
+  backdrop-filter: blur(11.740842819213867px);
 }
 
 .cardSubContainer {
   display: flex;
-  width: 386px;
-  padding: 57px 42px;
+  width: 250px;
+  padding: 44.615px 32.874px;
   flex-direction: column;
   justify-content: center;
-  gap: 24px;
-  border-radius: 16px;
+  align-items: flex-start;
+  gap: 18.785px;
+  border-radius: 12.524px;
   background: var(--neutral-glass-1-add-blur, rgba(255, 255, 255, 0.12));
-  backdrop-filter: blur(15px);
-  min-height: 156px
+  backdrop-filter: blur(11.740842819213867px);
 }
 
 .icon {
@@ -45,16 +71,32 @@
 
 .containerThirdSection {
   background: linear-gradient(to bottom, #2E303C, #323442, #3E404E);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 120px;
+}
+
+.widthContainerThirdSection {
+  display: flex;
+  width: 836px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 120px 0;
 }
 
 .cardDarkContainer {
-  padding: 42px;
-  width: 336px;
-  border-radius: 16px;
+  display: flex;
+  width: 200px;
+  padding: 30px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18.667px;
+  flex-shrink: 0;
+  border-radius: 12.444px;
   background: var(--Main-Primary-Varient, #272935);
-  backdrop-filter: blur(40px);
-  min-height: 280px;
+  backdrop-filter: blur(31.11111068725586px);
 }
 
 .containerFourthSection {
@@ -62,9 +104,23 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 80vh;
+  height: 100vh;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.widthContainerFourthSection {
+  position: relative;
+  display: flex;
+  width: 836px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0;
+}
+
 
 .planetSize {
   width: 60px;
@@ -72,7 +128,6 @@
 }
 
 .transition-container {
- 
   position: relative;
   overflow: hidden;
   height: 400px;
