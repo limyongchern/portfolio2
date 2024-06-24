@@ -31,16 +31,28 @@ const AboutUs = () => {
             spacing={0}
             style={{ alignItems: 'flex-start' }}>
             <div className={styles.planetTextCont}>
-              <div className={styles.planetTextCard} />
-              <div className={styles.textCard}>
-                <Body variant={8} style={{ marginBottom: '16px' }}>
+              <div className={styles.planetTextCard}>
+                {' '}
+                <div className={styles.textCard}></div>
+                <Body
+                  variant={8}
+                  style={{ marginBottom: '16px' }}
+                  color="#F2F3F7">
                   Welcome to WolfPlanet
                 </Body>
-                <Heading variant={8}>Where Something</Heading>
-                <Heading variant={8} style={{ marginBottom: '24px' }}>
+                <Heading variant={8} color="#F2F3F7">
+                  Where Something
+                </Heading>
+                <Heading
+                  variant={8}
+                  style={{ marginBottom: '24px' }}
+                  color="#F2F3F7">
                   Meets <span style={{ color: '#4178FA' }}>Excellence!</span>{' '}
                 </Heading>
-                <Body variant={8} style={{ marginBottom: '16px' }}>
+                <Body
+                  variant={8}
+                  style={{ marginBottom: '16px' }}
+                  color="#F2F3F7">
                   At WolfPlanet, we believe that banking should be more than
                   just transactions. It should be an experience that empowers
                   individuals and businesses to thrive and reach their financial
