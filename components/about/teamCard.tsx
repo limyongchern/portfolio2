@@ -24,10 +24,10 @@ const TeamCard = ({ image, name, title }: ICardProps) => {
         />
       </div>
       <Stack spacing={5} align="center">
-        <BodyBold variant={1} fw={700} fs={24} color="#F2F3F7">
+        <BodyBold variant={1} fw={700} fs={18} color="#F2F3F7">
           {name}
         </BodyBold>
-        <BodyBold variant={1} fw={700} color="#9198B0">
+        <BodyBold variant={1} fw={700} fs={16} color="#9198B0">
           {title}
         </BodyBold>
       </Stack>

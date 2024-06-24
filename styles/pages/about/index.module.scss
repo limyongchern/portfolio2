@@ -12,9 +12,9 @@
 }
 
 .planetCard {
-  width: 506px;
-  height: 568px;
-  border-radius: 16px;
+  width: 380px;
+  height: 426px;
+  border-radius: 12px;
   background-color: white;
   background: url('/aboutPlanetBg.png');
   // background-image: url('/planetCardBg');
@@ -25,8 +25,8 @@
 }
 
 .planetTextCont {
-  width: 558px;
-  height: 595px;
+  width: 456px;
+  height: 517px;
   position: relative;
   border-radius: 16px;
 }
@@ -35,9 +35,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 508px;
-  height: 475px;
-  padding: 60px;
+  width: 453px;
+  height: 457px;
+  padding: 30px;
   border-radius: 16px;
   background-color: rgba(255, 255, 255, 0.12);
   background: var(rgba(255, 255, 255, 0.12));
@@ -60,7 +60,6 @@
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
-  width: 100vw;
   height: 500px;
   padding-inline: 4%;
   padding-top: 120px;
@@ -73,9 +72,9 @@
 }
 
 .imgCardContainer {
-  width: 188px;
-  height: 253px;
-  border-radius: 16px;
+  width: 155px;
+  height: 210px;
+  border-radius: 13px;
   position: relative;
   background-size: cover; 
   background-position: center; 
@@ -111,7 +110,7 @@
 
 .badge {
   display: flex;
-  padding: 6px 14px;
+  padding: 4px 11px;
   justify-content: center;
   align-items: center;
   border-radius: 16px;

@@ -34,12 +34,12 @@ const AboutUs = () => {
               <div className={styles.planetTextCard}>
                 {' '}
                 <div className={styles.textCard}></div>
-                <Body
-                  variant={8}
+                <Heading
+                  variant={4}
                   style={{ marginBottom: '16px' }}
                   color="#F2F3F7">
                   Welcome to WolfPlanet
-                </Body>
+                </Heading>
                 <Heading variant={8} color="#F2F3F7">
                   Where Something
                 </Heading>
@@ -49,8 +49,9 @@ const AboutUs = () => {
                   color="#F2F3F7">
                   Meets <span style={{ color: '#4178FA' }}>Excellence!</span>{' '}
                 </Heading>
-                <Body
-                  variant={8}
+                <BodyBold
+                  variant={1}
+                  fs={18}
                   style={{ marginBottom: '16px' }}
                   color="#F2F3F7">
                   At WolfPlanet, we believe that banking should be more than
@@ -63,7 +64,7 @@ const AboutUs = () => {
                   best banking experience for our valued customers. Join us on
                   this exciting journey and discover a new level of banking
                   excellence.
-                </Body>
+                </BodyBold>
               </div>
             </div>
 
@@ -74,17 +75,18 @@ const AboutUs = () => {
         </Container>
       </div>
       <div className={styles.middleContainer}>
-        <Stack align="center" maw={'1080px'}>
-          <Heading variant={8} style={{ marginBottom: '16px' }}>
-            Meet the Wolf Team
-          </Heading>
-          <Flex align={'center'} justify={'center'}>
-            <Body variant={8} color="#9198B0" style={{ textAlign: 'center' }}>
+        <Stack align="center" maw={'850px'}>
+          <Stack align="center" px={'36px'}>
+            <Heading variant={8} style={{ marginBottom: '16px' }}>
+              Meet the Wolf Team
+            </Heading>
+            <Body variant={1} color="#9198B0" style={{ textAlign: 'center' }}>
               At Estatein, our success is driven by the dedication and expertise
               of our team. Get to know the people behind our mission to make
               your real estate dreams a reality.
             </Body>
-          </Flex>
+          </Stack>
+
           <Group mt={80} position="apart" w={'100%'}>
             <TeamCard
               image={'/aboutImg1.png'}
@@ -111,61 +113,61 @@ const AboutUs = () => {
       </div>
       <div className={styles.botContainer}>
         <Stack align="center">
-          <Group spacing={80}>
-            <Stack spacing={14} w={'600px'}>
+          <Group spacing={'62px'}>
+            <Stack spacing={'11px'} w={'403px'}>
               <Heading variant={8} color="white">
                 Our values
               </Heading>
-              <BodyBold variant={1} color="#9198B0">
+              <BodyBold variant={1} fs={18} color="#9198B0">
                 Our story is one of continuous growth and evolution. We started
                 as a small team with big dreams, determined to create a real
                 estate platform that transcended the ordinary.
               </BodyBold>
             </Stack>
             <Card
-              p={42}
-              w={534}
+              p={'32px'}
+              w={'370px'}
               bg={'#272935'}
               radius={16}
               className={styles.card}>
               <Stack spacing={'20px'}>
-                <Group>
-                  <Image src={'/shield.png'} maw={'72px'} alt="Trust Icon" />
-                  <Heading variant={2} color="white">
+                <Group spacing={'11px'}>
+                  <Image src={'/shield.png'} maw={'56px'} alt="Trust Icon" />
+                  <Heading variant={2} fs={18.7} color="white">
                     Trust
                   </Heading>
                 </Group>
-                <BodyBold variant={1} fs={16} color="#9198B0">
+                <BodyBold variant={1} fs={12.4} color="#9198B0">
                   Trust is the cornerstone of every successful real estate
                   transaction.
                 </BodyBold>
               </Stack>
-              <Divider my={'30px'} color="#3E404E" />
+              <Divider my={'23px'} color="#3E404E" />
               <Stack spacing={'20px'}>
-                <Group>
-                  <Image src={'/star.png'} maw={'72px'} alt="Excellence Icon" />
-                  <Heading variant={2} color="white">
+                <Group spacing={'11px'}>
+                  <Image src={'/star.png'} maw={'56px'} alt="Excellence Icon" />
+                  <Heading variant={2} fs={18.7} color="white">
                     Excellence
                   </Heading>
                 </Group>
-                <BodyBold variant={1} fs={16} color="#9198B0">
+                <BodyBold variant={1} fs={12.4} color="#9198B0">
                   We set the bar high for ourselves. From the properties we list
                   to the services we provide.
                 </BodyBold>
               </Stack>
-              <Divider my={'30px'} color="#3E404E" />
+              <Divider my={'23px'} color="#3E404E" />
               <Stack spacing={'20px'}>
-                <Group>
+                <Group spacing={'11px'}>
                   <Image
                     src={'/people.png'}
-                    maw={'72px'}
+                    maw={'56px'}
                     alt="Client-Centric Icon"
                   />
-                  <Heading variant={2} color="white">
+                  <Heading variant={2} fs={18.7} color="white">
                     Client-Centric
                   </Heading>
                 </Group>
-                <BodyBold variant={1} fs={16} color="#9198B0">
+                <BodyBold variant={1} fs={12.4} color="#9198B0">
                   Your dreams and needs are at the center of our universe. We
                   listen, understand.
                 </BodyBold>
@@ -180,40 +182,39 @@ const AboutUs = () => {
               <BodyBold
                 variant={1}
                 color="#9198B0"
-                style={{ textAlign: 'center', padding: '0px 36px' }}>
+                style={{
+                  textAlign: 'center',
+                  padding: '0px 36px',
+                  width: '779px',
+                }}>
                 Stay updated with the latest happenings and exciting
-                developments at WolfPlanet through our press releases.
+                developments at WolfPlanet through our press releases. ``{' '}
               </BodyBold>
             </Stack>
-            <Group py={'60px'} spacing={'36px'} noWrap>
-              <Card p={'42px'} bg="#272935" radius={'16px'} w={'520px'}>
+            <Group py={'47px'} spacing={'28px'} noWrap>
+              <Card p={'33px'} bg="#272935" radius={'16px'} w={'403px'}>
                 <Stack spacing={'40px'}>
                   <Image
                     src={'/pressImg1.png'}
                     width={'100%'}
                     alt="Press Release 1"
                   />
-                  <Stack py={'24px'} spacing={'14px'} align="center">
-                    <Heading variant={3} color="#F2F3F7">
+                  <Stack spacing={'11px'} align="center" px={'18px'}>
+                    <Heading
+                      variant={3}
+                      color="#F2F3F7"
+                      style={{ textAlign: 'center' }}>
                       WolfPlanet Launches New Rewards Program to Enhance
                       Customer Loyalty and Satisfaction
                     </Heading>
-                    <Group spacing={'24px'}>
+                    <Group position="apart" noWrap w={'100%'}>
                       <div className={styles.badge}>
-                        <BodyBold
-                          variant={1}
-                          fs={14}
-                          color="#FEFEFEFE"
-                          style={{ padding: '' }}>
+                        <BodyBold variant={1} fs={15} color="#FEFEFEFE">
                           Location: India
                         </BodyBold>
                       </div>
                       <div className={styles.badge}>
-                        <BodyBold
-                          variant={1}
-                          fs={14}
-                          color="#FEFEFEFE"
-                          style={{ padding: '' }}>
+                        <BodyBold variant={1} fs={15} color="#FEFEFEFE">
                           Date: 28/12/2024
                         </BodyBold>
                       </div>
@@ -231,34 +232,29 @@ const AboutUs = () => {
                   </Stack>
                 </Stack>
               </Card>
-              <Card p={'42px'} bg="#272935" radius={'16px'} w={'520px'}>
+              <Card p={'33px'} bg="#272935" radius={'16px'} w={'403px'}>
                 <Stack spacing={'40px'}>
                   <Image
                     src={'/pressImg2.png'}
                     width={'100%'}
                     alt="Press Release 2"
                   />
-                  <Stack py={'24px'} spacing={'14px'} align="center">
-                    <Heading variant={3} color="#F2F3F7">
+                  <Stack spacing={'11px'} align="center" px={'18px'}>
+                    <Heading
+                      variant={3}
+                      color="#F2F3F7"
+                      style={{ textAlign: 'center' }}>
                       WolfPlanet Launches New Rewards Program to Enhance
                       Customer Loyalty and Satisfaction
                     </Heading>
-                    <Group spacing={'24px'}>
+                    <Group position="apart" noWrap w={'100%'}>
                       <div className={styles.badge}>
-                        <BodyBold
-                          variant={1}
-                          fs={14}
-                          color="#FEFEFEFE"
-                          style={{ padding: '' }}>
+                        <BodyBold variant={1} fs={15} color="#FEFEFEFE">
                           Location: India
                         </BodyBold>
                       </div>
                       <div className={styles.badge}>
-                        <BodyBold
-                          variant={1}
-                          fs={14}
-                          color="#FEFEFEFE"
-                          style={{ padding: '' }}>
+                        <BodyBold variant={1} fs={15} color="#FEFEFEFE">
                           Date: 28/12/2024
                         </BodyBold>
                       </div>
@@ -278,9 +274,9 @@ const AboutUs = () => {
               </Card>
             </Group>
           </Stack>
-          <Divider pb={'20px'} color="rgba(145, 152, 176, 0.50)" w={'100%'} />
+          <Divider pb={'15px'} color="rgba(145, 152, 176, 0.50)" w={'100%'} />
           <Group position="apart" w={'100%'} align="start">
-            <Body variant={1} color="#9198B0">
+            <Body variant={3} color="#9198B0">
               <span style={{ color: '#F2F3F7' }}>
                 {currentPage.toString().padStart(2, '0')}
               </span>{' '}
@@ -288,17 +284,17 @@ const AboutUs = () => {
             </Body>
             <Group spacing={'10px'}>
               {currentPage === 1 ? (
-                <ArrowCircleLeft color="#9198B080" size={58} />
+                <ArrowCircleLeft color="#9198B080" size={45} />
               ) : (
                 <UnstyledButton onClick={() => setCurrentPage(currentPage - 1)}>
-                  <ArrowCircleLeft color="#272935" size={58} weight="fill" />
+                  <ArrowCircleLeft color="#272935" size={45} weight="fill" />
                 </UnstyledButton>
               )}
               {currentPage === 10 ? (
-                <ArrowCircleRight color="#9198B080" size={58} />
+                <ArrowCircleRight color="#9198B080" size={45} />
               ) : (
                 <UnstyledButton onClick={() => setCurrentPage(currentPage + 1)}>
-                  <ArrowCircleRight color="#272935" size={58} weight="fill" />
+                  <ArrowCircleRight color="#272935" size={45} weight="fill" />
                 </UnstyledButton>
               )}
             </Group>
