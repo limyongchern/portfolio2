@@ -13,10 +13,7 @@ import { PencilLine, Phone, PhoneCall, Star } from '@phosphor-icons/react';
 const Download = () => {
   return (
     <>
-      <div className={styles.downloadContainer}>
-        <div className={styles.backgroundWrapper}>
-          <Image src={Download1} alt="wallpaper1" />
-        </div>
+      <div className={styles.topContainer}>
         <Stack className={styles.downloadContent}>
           <div style={{ width: 900 }}>
             <Heading variant={8} color="#F2F3F7" style={{ lineHeight: 1.5 }}>
@@ -65,14 +62,8 @@ const Download = () => {
           <Button className={styles.Button2}>Download</Button>
         </Stack>
       </div>
-      <div className={styles.downloadContainer}>
-        <div className={styles.backgroundWrapper}>
-          <Image src={Download2} alt="Background 2" />
-        </div>
-
-        <Stack
-          align="center"
-          style={{ paddingBottom: '42px', paddingTop: '108px' }}>
+      <div className={styles.bottomContainer}>
+        <Stack align="center" style={{}}>
           <Heading
             variant={0}
             color="#F2F3F7"
@@ -80,93 +71,96 @@ const Download = () => {
             fs={40}>
             Download
           </Heading>
-          <Body variant={1} color="#9198B0" style={{ lineHeight: 1.5 }}>
+          <Body
+            variant={1}
+            color="#9198B0"
+            style={{ lineHeight: 1.5, paddingBottom: '32.59px' }}>
             下载 Wolf Planet App，您可以：
           </Body>
-        </Stack>
 
-        <div className={styles.downloadContainer2}>
-          <Flex gap={23.28}>
-            <Stack className={styles.iconSection}>
-              <Stack>
+          <div className={styles.downloadContainer2}>
+            <Flex gap={23.28}>
+              <Stack className={styles.iconSection}>
+                <Stack>
+                  <Flex className={styles.iconContainer}>
+                    <PhoneCall size={24.83} className={styles.icon} />
+                    <Heading
+                      variant={3}
+                      color="#F2F3F7"
+                      style={{ lineHeight: 1.5, paddingBottom: '20px' }}>
+                      Communicate
+                    </Heading>
+                  </Flex>
+                  <Body variant={1} color="#9198B0" style={{ lineHeight: 1.5 }}>
+                    与来自全球各地的投资者交流互动，分享观点、进行讨论、发布文章等。
+                  </Body>
+                </Stack>
                 <Flex className={styles.iconContainer}>
-                  <PhoneCall size={24.83} className={styles.icon} />
+                  <PencilLine
+                    size={24.83}
+                    className={styles.icon}
+                    style={{ marginTop: '30px' }}
+                  />
+                  <Heading
+                    variant={3}
+                    color="#F2F3F7"
+                    style={{ lineHeight: 1.5 }}>
+                    Create
+                  </Heading>
+                </Flex>
+                <Body variant={1} color="#9198B0" style={{ lineHeight: 1.5 }}>
+                  创建或加入由志同道合的用户组成的部落，根据兴趣爱好、投资理念等因素进行划分，打造专属的投资交流空间。
+                </Body>
+              </Stack>
+              <Stack className={styles.iconSection}>
+                <Stack>
+                  <Flex className={styles.iconContainer}>
+                    <PhoneCall size={24.83} className={styles.icon} />
+                    <Heading
+                      variant={3}
+                      color="#F2F3F7"
+                      style={{ lineHeight: 1.5, paddingBottom: '20px' }}>
+                      Communicate
+                    </Heading>
+                  </Flex>
+                  <Body variant={1} color="#9198B0" style={{ lineHeight: 1.5 }}>
+                    与来自全球各地的投资者交流互动，分享观点、进行讨论、发布文章等。
+                  </Body>
+                </Stack>
+                <Flex className={styles.iconContainer}>
+                  <PencilLine
+                    size={24.83}
+                    className={styles.icon}
+                    style={{ marginTop: '30px' }}
+                  />
+                  <Heading
+                    variant={3}
+                    color="#F2F3F7"
+                    style={{ lineHeight: 1.5 }}>
+                    Create
+                  </Heading>
+                </Flex>
+                <Body variant={1} color="#9198B0" style={{ lineHeight: 1.5 }}>
+                  创建或加入由志同道合的用户组成的部落，根据兴趣爱好、投资理念等因素进行划分，打造专属的投资交流空间。
+                </Body>
+              </Stack>
+              <Stack className={styles.iconSection}>
+                <Flex className={styles.iconContainer}>
+                  <Star size={24.83} className={styles.icon} />
                   <Heading
                     variant={3}
                     color="#F2F3F7"
                     style={{ lineHeight: 1.5, paddingBottom: '20px' }}>
-                    Communicate
+                    Obtain
                   </Heading>
                 </Flex>
                 <Body variant={1} color="#9198B0" style={{ lineHeight: 1.5 }}>
-                  与来自全球各地的投资者交流互动，分享观点、进行讨论、发布文章等。
+                  获取高质量的投资资讯和分析，助力您做出更明智的投资决策。
                 </Body>
               </Stack>
-              <Flex className={styles.iconContainer}>
-                <PencilLine
-                  size={24.83}
-                  className={styles.icon}
-                  style={{ marginTop: '30px' }}
-                />
-                <Heading
-                  variant={3}
-                  color="#F2F3F7"
-                  style={{ lineHeight: 1.5 }}>
-                  Create
-                </Heading>
-              </Flex>
-              <Body variant={1} color="#9198B0" style={{ lineHeight: 1.5 }}>
-                创建或加入由志同道合的用户组成的部落，根据兴趣爱好、投资理念等因素进行划分，打造专属的投资交流空间。
-              </Body>
-            </Stack>
-            <Stack className={styles.iconSection}>
-              <Stack>
-                <Flex className={styles.iconContainer}>
-                  <PhoneCall size={24.83} className={styles.icon} />
-                  <Heading
-                    variant={3}
-                    color="#F2F3F7"
-                    style={{ lineHeight: 1.5, paddingBottom: '20px' }}>
-                    Communicate
-                  </Heading>
-                </Flex>
-                <Body variant={1} color="#9198B0" style={{ lineHeight: 1.5 }}>
-                  与来自全球各地的投资者交流互动，分享观点、进行讨论、发布文章等。
-                </Body>
-              </Stack>
-              <Flex className={styles.iconContainer}>
-                <PencilLine
-                  size={24.83}
-                  className={styles.icon}
-                  style={{ marginTop: '30px' }}
-                />
-                <Heading
-                  variant={3}
-                  color="#F2F3F7"
-                  style={{ lineHeight: 1.5 }}>
-                  Create
-                </Heading>
-              </Flex>
-              <Body variant={1} color="#9198B0" style={{ lineHeight: 1.5 }}>
-                创建或加入由志同道合的用户组成的部落，根据兴趣爱好、投资理念等因素进行划分，打造专属的投资交流空间。
-              </Body>
-            </Stack>
-            <Stack className={styles.iconSection}>
-              <Flex className={styles.iconContainer}>
-                <Star size={24.83} className={styles.icon} />
-                <Heading
-                  variant={3}
-                  color="#F2F3F7"
-                  style={{ lineHeight: 1.5, paddingBottom: '20px' }}>
-                  Obtain
-                </Heading>
-              </Flex>
-              <Body variant={1} color="#9198B0" style={{ lineHeight: 1.5 }}>
-                获取高质量的投资资讯和分析，助力您做出更明智的投资决策。
-              </Body>
-            </Stack>
-          </Flex>
-        </div>
+            </Flex>
+          </div>
+        </Stack>
       </div>
     </>
   );
