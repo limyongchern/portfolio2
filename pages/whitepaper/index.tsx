@@ -1,7 +1,4 @@
-import PdfViewer from '../../components/whitepaper/PdfViewer';
-import dynamic from 'next/dynamic';
 import React, { useState } from 'react';
-import { Document, Page } from 'react-pdf';
 import styles from '../../styles/pages/whitepaper/index.module.scss';
 import { Button, Flex, Stack } from '@mantine/core';
 import { Body, Heading } from 'components/typography';
