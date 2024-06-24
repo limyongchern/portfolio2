@@ -48,7 +48,7 @@ const Header = (props: IProps) => {
             onClick={() => setMenuOpen((prev) => !prev)}>
             <TbMenu2 size={32} />
           </UnstyledButton>
-          <Link href="/users">
+          <Link href="/">
             <Image src={LogoSVG} alt="Logo" className={styles.headerlogo} />
           </Link>
         </Flex>
