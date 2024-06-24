@@ -79,7 +79,7 @@ const Community = () => {
 
   console.log(activePlanet);
   return (
-    <div>
+    <>
       <div id="first-section" className={styles.container}>
         <Stack align="center" justify="center" mb={'24px'}>
           <span style={{ textAlign: 'center' }}>
@@ -346,7 +346,7 @@ const Community = () => {
           style={{
             position: 'absolute',
             padding: '0 80px',
-            marginTop: '-50px',
+            marginTop: '-100px',
             zIndex: 4,
           }}>
           {PlanetList.map((item, index) => (
@@ -405,7 +405,11 @@ const Community = () => {
                   <Image
                     src={Planet1Big}
                     alt=""
-                    style={{ position: 'absolute', top: 0 }}
+                    style={{
+                      position: 'absolute',
+                      top: '-10px',
+                      width: '100%',
+                    }}
                   />
                 </Stack>
               )}
@@ -432,7 +436,11 @@ const Community = () => {
                   <Image
                     src={Planet2Big}
                     alt=""
-                    style={{ position: 'absolute', top: 0 }}
+                    style={{
+                      position: 'absolute',
+                      top: '-10px',
+                      width: '100%',
+                    }}
                   />
                 </Stack>
               )}
@@ -459,7 +467,11 @@ const Community = () => {
                   <Image
                     src={Planet3Big}
                     alt=""
-                    style={{ position: 'absolute', top: 0 }}
+                    style={{
+                      position: 'absolute',
+                      top: '-10px',
+                      width: '100%',
+                    }}
                   />
                 </Stack>
               )}
@@ -486,7 +498,11 @@ const Community = () => {
                   <Image
                     src={Planet4Big}
                     alt=""
-                    style={{ position: 'absolute', top: 0 }}
+                    style={{
+                      position: 'absolute',
+                      top: '-10px',
+                      width: '100%',
+                    }}
                   />
                 </Stack>
               )}
@@ -513,7 +529,11 @@ const Community = () => {
                   <Image
                     src={Planet5Big}
                     alt=""
-                    style={{ position: 'absolute', top: 0 }}
+                    style={{
+                      position: 'absolute',
+                      top: '-10px',
+                      width: '100%',
+                    }}
                   />
                 </Stack>
               )}
@@ -540,7 +560,11 @@ const Community = () => {
                   <Image
                     src={Planet6Big}
                     alt=""
-                    style={{ position: 'absolute', top: 0 }}
+                    style={{
+                      position: 'absolute',
+                      top: '-10px',
+                      width: '100%',
+                    }}
                   />
                 </Stack>
               )}
@@ -567,7 +591,11 @@ const Community = () => {
                   <Image
                     src={Planet7Big}
                     alt=""
-                    style={{ position: 'absolute', top: 0 }}
+                    style={{
+                      position: 'absolute',
+                      top: '-10px',
+                      width: '100%',
+                    }}
                   />
                 </Stack>
               )}
@@ -575,7 +603,7 @@ const Community = () => {
           )}
         </Transition>
       </div>
-    </div>
+    </>
   );
 };
 
