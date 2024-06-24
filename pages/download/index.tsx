@@ -19,15 +19,15 @@ const Download = () => {
         </div>
         <Stack className={styles.downloadContent}>
           <div style={{ width: 900 }}>
-            <Heading variant={0} color="#F2F3F7" style={{ lineHeight: 1.5 }}>
+            <Heading variant={8} color="#F2F3F7" style={{ lineHeight: 1.5 }}>
               加入 Wolf Planet 星球，开启您的全球投资之旅！
             </Heading>
-            <Heading
-              variant={3}
+            <Body
+              variant={1}
               color="#9198B0"
               style={{ lineHeight: 1.5, padding: '24px 0px' }}>
               立即下载 Wolf Planet App：
-            </Heading>
+            </Body>
 
             <Flex
               gap={24}
@@ -36,7 +36,7 @@ const Download = () => {
               <Image src={Apple} alt="apple" />
             </Flex>
           </div>
-          <Image src={Sample} alt="sample" />
+          <Image src={Sample} alt="sample" width={848} height={424.311} />
           <div>
             <Heading
               fs={42}
@@ -45,9 +45,9 @@ const Download = () => {
               style={{ lineHeight: 1.5, padding: '0px 106px' }}>
               Wolf Planet 星球，您的全球投资新天地！
             </Heading>
-            <Heading
+            <Body
               fs={20}
-              variant={3}
+              variant={1}
               color="#9198B0"
               style={{
                 lineHeight: 1.5,
@@ -59,7 +59,7 @@ const Download = () => {
               Linear Asks is a new take on intake. Submit requests directly from
               Slack and automatically send them to the relevant team in Linear.
               Eliminate cluttered channels and reduce context switching.
-            </Heading>
+            </Body>
           </div>
 
           <Button className={styles.Button2}>Download</Button>
@@ -73,24 +73,28 @@ const Download = () => {
         <Stack
           align="center"
           style={{ paddingBottom: '42px', paddingTop: '108px' }}>
-          <Heading variant={0} color="#F2F3F7" style={{ lineHeight: 1.5 }}>
+          <Heading
+            variant={0}
+            color="#F2F3F7"
+            style={{ lineHeight: 1.5 }}
+            fs={40}>
             Download
           </Heading>
-          <Heading variant={3} color="#9198B0" style={{ lineHeight: 1.5 }}>
+          <Body variant={1} color="#9198B0" style={{ lineHeight: 1.5 }}>
             下载 Wolf Planet App，您可以：
-          </Heading>
+          </Body>
         </Stack>
 
         <div className={styles.downloadContainer2}>
-          <Flex gap={30}>
+          <Flex gap={23.28}>
             <Stack className={styles.iconSection}>
               <Stack>
                 <Flex className={styles.iconContainer}>
-                  <PhoneCall size={32} className={styles.icon} />
+                  <PhoneCall size={24.83} className={styles.icon} />
                   <Heading
-                    variant={2}
+                    variant={3}
                     color="#F2F3F7"
-                    style={{ lineHeight: 1.5 }}>
+                    style={{ lineHeight: 1.5, paddingBottom: '20px' }}>
                     Communicate
                   </Heading>
                 </Flex>
@@ -100,12 +104,12 @@ const Download = () => {
               </Stack>
               <Flex className={styles.iconContainer}>
                 <PencilLine
-                  size={32}
+                  size={24.83}
                   className={styles.icon}
                   style={{ marginTop: '30px' }}
                 />
                 <Heading
-                  variant={2}
+                  variant={3}
                   color="#F2F3F7"
                   style={{ lineHeight: 1.5 }}>
                   Create
@@ -118,11 +122,11 @@ const Download = () => {
             <Stack className={styles.iconSection}>
               <Stack>
                 <Flex className={styles.iconContainer}>
-                  <PhoneCall size={32} className={styles.icon} />
+                  <PhoneCall size={24.83} className={styles.icon} />
                   <Heading
-                    variant={2}
+                    variant={3}
                     color="#F2F3F7"
-                    style={{ lineHeight: 1.5 }}>
+                    style={{ lineHeight: 1.5, paddingBottom: '20px' }}>
                     Communicate
                   </Heading>
                 </Flex>
@@ -132,12 +136,12 @@ const Download = () => {
               </Stack>
               <Flex className={styles.iconContainer}>
                 <PencilLine
-                  size={32}
+                  size={24.83}
                   className={styles.icon}
                   style={{ marginTop: '30px' }}
                 />
                 <Heading
-                  variant={2}
+                  variant={3}
                   color="#F2F3F7"
                   style={{ lineHeight: 1.5 }}>
                   Create
@@ -149,11 +153,11 @@ const Download = () => {
             </Stack>
             <Stack className={styles.iconSection}>
               <Flex className={styles.iconContainer}>
-                <Star size={32} className={styles.icon} />
+                <Star size={24.83} className={styles.icon} />
                 <Heading
-                  variant={2}
+                  variant={3}
                   color="#F2F3F7"
-                  style={{ lineHeight: 1.5 }}>
+                  style={{ lineHeight: 1.5, paddingBottom: '20px' }}>
                   Obtain
                 </Heading>
               </Flex>

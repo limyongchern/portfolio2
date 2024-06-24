@@ -40,12 +40,6 @@
   }
 }
 
-.hamburger {
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
-}
-
 .nav {
   display: flex;
   height: 108px;
@@ -96,4 +90,18 @@
   height: 2px;
   background-color: #4178fa;
   margin-left: 10px;
+}
+
+.hamburger {
+  @media screen and (min-width: 719px) {
+    display: none;
+  }
+}
+
+.headerLogo {
+  @media screen and (max-width: 719px) {
+    width: 133.125px;
+    height: 30px;
+    flex-shrink: 0;
+  }
 }

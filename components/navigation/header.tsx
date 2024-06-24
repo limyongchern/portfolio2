@@ -147,6 +147,13 @@ const Header = (props: IProps) => {
           </div>
         </div>
       </div>
+      {menuOpen && (
+        <Stack>
+          {links.map((link) => (
+            <NavLink {...link} key={link.label} />
+          ))}
+        </Stack>
+      )}
     </HeaderMantine>
   );
 };
