@@ -89,7 +89,7 @@
 
 .section4 {
   display: flex;
-  padding: 100px 420px;
+  padding: 100px 0px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -101,7 +101,7 @@
 
 .section5 {
   display: flex;
-  padding: 100px 420px;
+  padding: 100px 0px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -113,29 +113,30 @@
 
 .section5p2 {
   display: flex;
-  padding: 42px 60px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 42px;
-  align-self: stretch;
-
-  @media (min-width: 768px) {
-    padding: 42px 60px;
-  }
-}
-.section4p2 {
-  display: flex;
-  padding: 42px 60px;
+  // padding: 42px 60px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 42px;
   // align-self: stretch;
-  width: 836px;
+  max-width: 836px;
 
   @media (min-width: 768px) {
-    padding: 42px 60px;
+    // padding: 42px 60px;
+  }
+}
+.section4p2 {
+  display: flex;
+  // padding: 42px 60px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 42px;
+  // align-self: stretch;
+  max-width: 836px;
+
+  @media (min-width: 768px) {
+    // padding: 42px 60px;
   }
 }
 
@@ -145,6 +146,8 @@
   flex-direction: column;
   justify-content: center;
   margin-top: 42px;
+  padding: 12px 24px;
+
   align-items: center;
   gap: 8px;
   border-radius: 8px;
@@ -153,7 +156,6 @@
 
 .buttonText {
   display: flex;
-  padding: 12px 24px;
   justify-content: center;
   align-items: center;
   gap: 4px;
@@ -174,8 +176,8 @@
   justify-content: center;
   align-items: center;
   margin: auto;
-  width: 836px;
   max-width: 836px;
+  max-height: 510px;
 }
 
 .section3 {
@@ -188,15 +190,15 @@
 
 .section3Content {
   display: flex;
-  width: 1060px;
-  height: 445px;
+  max-width: 1060px;
+  max-height: 445px;
   padding: 142px 60px;
   align-items: center;
   margin: auto;
 }
 
 .section3Word {
-  width: 440px;
+  max-width: 440px;
 }
 .section3Planet {
   display: flex;
@@ -206,8 +208,8 @@
   align-items: center;
   // position: absolute;
   margin: auto;
-  width: 441.2px;
-  height: 443.5px;
+  max-width: 441.2px;
+  max-height: 443.5px;
 }
 
 .backgroundWrapper {
