@@ -22,12 +22,13 @@ interface IProps {
 
 const Footer = (props: IProps) => {
   return (
-    <FooterMantine
-      height={'238px'}
-      withBorder={false}
-      {...props.baseProps}
-      className={`${props.baseProps?.className ?? ''} ${styles.container}`}>
-      <Stack w={'100%'}>
+    // <FooterMantine
+    //   height={'238px'}
+    //   withBorder={false}
+    //   {...props.baseProps}
+    //   className={`${props.baseProps?.className ?? ''} ${styles.container}`}>
+    <div className={styles.container}>
+      <Stack w={'100%'} maw={'1080px'}>
         <Group position="apart">
           <Link href="/">
             <Image src={LogoSVG} alt="Logo" className={styles.headerlogo} />
@@ -47,7 +48,8 @@ const Footer = (props: IProps) => {
           </Body>
         </Flex>
       </Stack>
-    </FooterMantine>
+    </div>
+    // </FooterMantine>
   );
 };
 

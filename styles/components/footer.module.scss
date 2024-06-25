@@ -5,8 +5,11 @@
   // padding-inline: 4%;
   background: var(--Main-Primary, #3e404e);
   color: #f2f3f7;
-  padding-inline: 4%;
   width: 100%;
+  justify-content: center;
+  position: relative;
+  padding: 50px 0px;
+  margin-bottom: -5px;
 }
 
 .contentFooter {
@@ -19,3 +22,5 @@
   width: 1080px;
   align-items: center;
 }
+
+

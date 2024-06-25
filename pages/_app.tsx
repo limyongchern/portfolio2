@@ -8,9 +8,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
   <AppShell
     padding={0}
     header={<Header />}
-    footer={<Footer />}
-    navbarOffsetBreakpoint="sm">
+    navbarOffsetBreakpoint="sm"
+    styles={{ main: { width: '100%' } }}>
     <Component {...pageProps} />
+
+    <Footer />
   </AppShell>
 );
 
