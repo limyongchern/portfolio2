@@ -1,11 +1,14 @@
 import {
   Badge,
   Card,
+  Col,
   Container,
   Divider,
   Flex,
+  Grid,
   Group,
   Image,
+  SimpleGrid,
   Stack,
   UnstyledButton,
 } from '@mantine/core';
@@ -16,62 +19,143 @@ import {
 } from '@phosphor-icons/react';
 import TeamCard from 'components/about/teamCard';
 import { Body, BodyBold, Heading } from 'components/typography';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from 'styles/pages/about/index.module.scss';
 
 const AboutUs = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
+
+  //MOBILE AND DESKTOP
+  const [isMobile, setIsMobile] = useState(false);
+  const [width, setWidth] = useState<number>(
+    typeof window !== 'undefined' ? window.innerWidth : 0
+  );
+  const handleWindowSizeChange = () => {
+    setWidth(typeof window !== 'undefined' ? window.innerWidth : 0);
+  };
+
+  useEffect(() => {
+    if (width <= 835) {
+      setIsMobile(true);
+    } else setIsMobile(false);
+  }, [width]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleWindowSizeChange);
+    }
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', handleWindowSizeChange);
+      }
+    };
+  }, [width]);
+
+  console.log('width', width, isMobile);
   return (
     <>
       <div className={styles.topContainer}>
-        <Container fluid>
-          <Group
-            position="center"
-            w={'100%'}
-            spacing={0}
-            style={{ alignItems: 'flex-start' }}>
-            <div className={styles.planetTextCont}>
-              <div className={styles.planetTextCard}>
-                {' '}
-                <div className={styles.textCard}></div>
-                <Heading
-                  variant={4}
-                  style={{ marginBottom: '16px' }}
-                  color="#F2F3F7">
-                  Welcome to WolfPlanet
-                </Heading>
-                <Heading variant={8} color="#F2F3F7">
-                  Where Something
-                </Heading>
-                <Heading
-                  variant={8}
-                  style={{ marginBottom: '24px' }}
-                  color="#F2F3F7">
-                  Meets <span style={{ color: '#4178FA' }}>Excellence!</span>{' '}
-                </Heading>
-                <BodyBold
-                  variant={1}
-                  fs={18}
-                  style={{ marginBottom: '16px' }}
-                  color="#F2F3F7">
-                  At WolfPlanet, we believe that banking should be more than
-                  just transactions. It should be an experience that empowers
-                  individuals and businesses to thrive and reach their financial
-                  goals. As a trusted financial institution, we are committed to
-                  delivering exceptional banking services that go beyond
-                  expectations. With a focus on innovation, personalized
-                  solutions, and unwavering integrity, we strive to provide the
-                  best banking experience for our valued customers. Join us on
-                  this exciting journey and discover a new level of banking
-                  excellence.
-                </BodyBold>
+        <Container fluid p={0}>
+          {isMobile ? (
+            <Group
+              position="center"
+              w={'100%'}
+              spacing={0}
+              style={{ alignItems: 'flex-start' }}>
+              <div className={styles.planetCard}>
+                <Image
+                  src={'/aboutPlanet4.png'}
+                  alt="About Planet"
+                  mt={'-160px'}
+                />
               </div>
-            </div>
+              <div className={styles.planetTextCont}>
+                <div className={styles.planetTextCard}>
+                  {' '}
+                  <div className={styles.textCard}></div>
+                  <Heading
+                    variant={4}
+                    style={{ marginBottom: '16px' }}
+                    color="#F2F3F7">
+                    Welcome to WolfPlanet
+                  </Heading>
+                  <Heading variant={8} color="#F2F3F7">
+                    Where Something
+                  </Heading>
+                  <Heading
+                    variant={8}
+                    style={{ marginBottom: '24px' }}
+                    color="#F2F3F7">
+                    Meets <span style={{ color: '#4178FA' }}>Excellence!</span>{' '}
+                  </Heading>
+                  <BodyBold
+                    variant={1}
+                    fs={18}
+                    style={{ marginBottom: '16px' }}
+                    color="#F2F3F7">
+                    At WolfPlanet, we believe that banking should be more than
+                    just transactions. It should be an experience that empowers
+                    individuals and businesses to thrive and reach their
+                    financial goals. As a trusted financial institution, we are
+                    committed to delivering exceptional banking services that go
+                    beyond expectations. With a focus on innovation,
+                    personalized solutions, and unwavering integrity, we strive
+                    to provide the best banking experience for our valued
+                    customers. Join us on this exciting journey and discover a
+                    new level of banking excellence.
+                  </BodyBold>
+                </div>
+              </div>
+            </Group>
+          ) : (
+            <Group
+              position="center"
+              w={'100%'}
+              spacing={0}
+              style={{ alignItems: 'flex-start' }}>
+              <div className={styles.planetTextCont}>
+                <div className={styles.planetTextCard}>
+                  {' '}
+                  <div className={styles.textCard}></div>
+                  <Heading
+                    variant={4}
+                    style={{ marginBottom: '16px' }}
+                    color="#F2F3F7">
+                    Welcome to WolfPlanet
+                  </Heading>
+                  <Heading variant={8} color="#F2F3F7">
+                    Where Something
+                  </Heading>
+                  <Heading
+                    variant={8}
+                    style={{ marginBottom: '24px' }}
+                    color="#F2F3F7">
+                    Meets <span style={{ color: '#4178FA' }}>Excellence!</span>{' '}
+                  </Heading>
+                  <BodyBold
+                    variant={1}
+                    fs={18}
+                    style={{ marginBottom: '16px' }}
+                    color="#F2F3F7">
+                    At WolfPlanet, we believe that banking should be more than
+                    just transactions. It should be an experience that empowers
+                    individuals and businesses to thrive and reach their
+                    financial goals. As a trusted financial institution, we are
+                    committed to delivering exceptional banking services that go
+                    beyond expectations. With a focus on innovation,
+                    personalized solutions, and unwavering integrity, we strive
+                    to provide the best banking experience for our valued
+                    customers. Join us on this exciting journey and discover a
+                    new level of banking excellence.
+                  </BodyBold>
+                </div>
+              </div>
 
-            <div className={styles.planetCard}>
-              <Image src={'/aboutPlanet3.png'} alt="About Planet" />
-            </div>
-          </Group>
+              <div className={styles.planetCard}>
+                <Image src={'/aboutPlanet3.png'} alt="About Planet" />
+              </div>
+            </Group>
+          )}
         </Container>
       </div>
       <div className={styles.middleContainer}>
@@ -87,7 +171,11 @@ const AboutUs = () => {
             </Body>
           </Stack>
 
-          <Group mt={80} position="apart" w={'100%'}>
+          <SimpleGrid
+            mt={80}
+            cols={4}
+            spacing="lg"
+            breakpoints={[{ maxWidth: 835, cols: 1 }]}>
             <TeamCard
               image={'/aboutImg1.png'}
               name={'Max Mitchell'}
@@ -108,7 +196,7 @@ const AboutUs = () => {
               name={'Max Mitchell'}
               title={'Founder'}
             />
-          </Group>
+          </SimpleGrid>
         </Stack>
       </div>
       <div className={styles.botContainer}>
