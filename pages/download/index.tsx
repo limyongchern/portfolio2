@@ -15,7 +15,7 @@ const Download = () => {
     <>
       <div className={styles.topContainer}>
         <Stack className={styles.downloadContent}>
-          <div style={{ width: 900 }}>
+          <div style={{ maxWidth: 706.667 }}>
             <Heading variant={8} color="#F2F3F7" style={{ lineHeight: 1.5 }}>
               加入 Wolf Planet 星球，开启您的全球投资之旅！
             </Heading>
