@@ -28,7 +28,7 @@ const Footer = (props: IProps) => {
     //   {...props.baseProps}
     //   className={`${props.baseProps?.className ?? ''} ${styles.container}`}>
     <div className={styles.container}>
-      <Stack w={'100%'} maw={'1080px'}>
+      <Stack>
         <Group position="apart">
           <Link href="/">
             <Image src={LogoSVG} alt="Logo" className={styles.headerlogo} />
