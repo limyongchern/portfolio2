@@ -3,6 +3,14 @@ import styles from '../../styles/pages/whitepaper/index.module.scss';
 import { Button, Flex, Stack } from '@mantine/core';
 import { Body, Heading } from 'components/typography';
 import { CaretCircleLeft, CaretCircleRight } from '@phosphor-icons/react';
+import dynamic from 'next/dynamic';
+
+const PDFViewer = dynamic(
+  () => import('../../components/whitepaper/PdfViewer'),
+  {
+    ssr: false,
+  }
+);
 const Whitepaper = () => {
   //MOBILE AND DESKTOP
   const [isMobile, setIsMobile] = useState(false);
@@ -58,26 +66,10 @@ const Whitepaper = () => {
                 requests, and more.
               </Heading>
             </Stack>
-            <Flex align="center" gap={'20px'} m={'56px 0'}>
-              <CaretCircleLeft width={'56px'} height={'56px'} color="#9198B0" />
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '3rem',
-                  width: '680px',
-                  height: '832px',
-                  background: 'rgba(255, 255, 255, 0.12)',
-                }}>
-                pdf placeholder
-              </div>
-              <CaretCircleRight
-                width={'56px'}
-                height={'56px'}
-                color="#9198B0"
-              />
-            </Flex>
+            <div style={{ margin: '56px 0' }}>
+              <PDFViewer />
+            </div>
+
             <Stack justify="center" align="center" spacing={'24px'}>
               <Heading
                 color="#F2F3F7"
