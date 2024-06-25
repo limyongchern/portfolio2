@@ -29,6 +29,8 @@ const links = Object.entries(sections).reduce(
 
 const Header = (props: IProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [translateClicked, setTranslateClicked] = useState(false);
+
   const router = useRouter();
 
   return (
@@ -124,7 +126,12 @@ const Header = (props: IProps) => {
 
             <Menu>
               <Menu.Target>
-                <Translate size={32} color="white" />
+                <Translate
+                  size={32}
+                  color={translateClicked ? '#4178FA' : 'white'}
+                  onClick={() => setTranslateClicked((prev) => !prev)}
+                  style={{ cursor: 'pointer' }}
+                />
               </Menu.Target>
 
               <Menu.Dropdown className={styles.menu}>
