@@ -7,7 +7,7 @@ import {
   UnstyledButton,
 } from '@mantine/core';
 import { TbMenu2 } from 'react-icons/tb';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from 'styles/components/header.module.scss';
 import { Body, Heading } from '../typography';
 import { sections } from './sidebar';
@@ -46,11 +46,6 @@ const Header = (props: IProps) => {
       <div className={styles.headerContainer}>
         <div className={styles.header}>
           <Flex gap="md">
-            <UnstyledButton
-              className={styles.hamburger}
-              onClick={() => setMenuOpen((prev) => !prev)}>
-              <TbMenu2 size={32} />
-            </UnstyledButton>
             <Link href="/">
               <Image src={LogoSVG} alt="Logo" className={styles.headerlogo} />
             </Link>
@@ -124,12 +119,12 @@ const Header = (props: IProps) => {
               </Heading>
             </UnstyledButton>
 
-            <Menu>
+            <Menu onClose={() => setTranslateClicked(false)}>
               <Menu.Target>
                 <Translate
                   size={32}
                   color={translateClicked ? '#4178FA' : 'white'}
-                  onClick={() => setTranslateClicked((prev) => !prev)}
+                  onClick={() => setTranslateClicked(true)}
                   style={{ cursor: 'pointer' }}
                 />
               </Menu.Target>
@@ -152,6 +147,11 @@ const Header = (props: IProps) => {
               </Menu.Dropdown>
             </Menu>
           </div>
+          <UnstyledButton
+            className={styles.hamburger}
+            onClick={() => setMenuOpen((prev) => !prev)}>
+            <TbMenu2 size={24} />
+          </UnstyledButton>
         </div>
       </div>
       {menuOpen && (
