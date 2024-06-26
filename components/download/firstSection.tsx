@@ -11,7 +11,7 @@ import Sample from 'public/Cards-Landing.png';
 const firstSection = () => {
   return (
     <>
-      <div className={styles.topContainer}>
+      <div className={styles.topContainer2}>
         <Stack className={styles.downloadContentMobile}>
           <div>
             <Heading variant={8} color="#F2F3F7" style={{ lineHeight: 1.5 }}>

@@ -24,22 +24,20 @@ const secondSection = () => {
         下载 Wolf Planet App，您可以：
       </Heading>
       <div className={styles.downloadContainer2Mobile}>
-        <Flex gap={23.28}>
-          <Stack className={styles.iconSectionMobile}>
-            <Stack>
-              <Flex className={styles.iconContainer}>
-                <PhoneCall size={24.83} className={styles.icon} />
-                <Heading
-                  variant={3}
-                  color="#F2F3F7"
-                  style={{ lineHeight: 1.5, paddingBottom: '20px' }}>
-                  Communicate
-                </Heading>
-              </Flex>
-              <Body variant={1} color="#9198B0" style={{ lineHeight: 1.5 }}>
-                与来自全球各地的投资者交流互动，分享观点、进行讨论、发布文章等。
-              </Body>
-            </Stack>
+        <Stack className={styles.iconSectionMobile}>
+          <Stack>
+            <Flex className={styles.iconContainer}>
+              <PhoneCall size={24.83} className={styles.icon} />
+              <Heading
+                variant={3}
+                color="#F2F3F7"
+                style={{ lineHeight: 1.5, paddingBottom: '20px' }}>
+                Communicate
+              </Heading>
+            </Flex>
+            <Body variant={1} color="#9198B0" style={{ lineHeight: 1.5 }}>
+              与来自全球各地的投资者交流互动，分享观点、进行讨论、发布文章等。
+            </Body>
             <Flex className={styles.iconContainer}>
               <PencilLine
                 size={24.83}
@@ -68,7 +66,7 @@ const secondSection = () => {
               </Body>
             </Stack>
           </Stack>
-        </Flex>
+        </Stack>
       </div>
     </div>
   );

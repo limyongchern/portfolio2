@@ -65,7 +65,7 @@ const Download = () => {
                   <Image src={Apple} alt="apple" />
                 </Flex>
               </div>
-              <Image src={Sample} alt="sample" width={848} height={424.311} />
+              <Image src={Sample} alt="sample" className={styles.image} />
               <div>
                 <Heading
                   fs={42}

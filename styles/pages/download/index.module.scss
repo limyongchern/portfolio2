@@ -12,7 +12,7 @@
   display: flex;
   max-width: 836px;
   height: 100%;
-  padding: 0px 60px;
+  // padding: 0px 60px;
   align-items: center;
   gap: 24px;
   margin: auto;
@@ -45,7 +45,7 @@
 
 .downloadContainer2 {
   display: flex;
-  width: 100%;
+  // width: 100%;
   padding: 60px;
   flex-direction: column;
   align-items: stretch;
@@ -117,7 +117,6 @@
 }
 .bottomContainer2 {
   background-image: url('/Download2.png');
-  width: 100vw;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -136,7 +135,7 @@
   display: flex;
   width: 350px;
   height: 207px;
-  padding: 42px;
+  // padding: 42px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -144,14 +143,14 @@
 }
 
 .iconSectionMobile {
-  max-width: 300px;
+  // max-width: 300px;
   display: flex;
-  width: 350px;
+  // width: 350px;
   padding: 60px;
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  margin: auto;
+  // margin: auto;
 }
 
 .downloadContainer2Mobile {
@@ -164,7 +163,7 @@
   border-radius: 12px;
   border: 1px solid var(--Main-Primary, #3e404e);
   background: var(--Main-Primary-Varient, #272935);
-  max-width: 838px;
+  // max-width: 838px;
   /* Shadows/Card Shadow (Dark) */
   box-shadow: 0px 4px 20px 0px rgba(12, 11, 11, 0.8);
   //   max-width: 100%;
@@ -197,4 +196,26 @@
   text-align: center;
   margin: auto;
   // padding: '0px 106px'
+}
+
+.image {
+  max-width: 838px;
+  height: 424.311px;
+}
+
+.topContainer2 {
+  background-image: url('/Download 1.png');
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  // height: 500px;
+  // padding-inline: 4%;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  color: white;
+  margin-top: -1px;
+  display: flex;
+  justify-content: center;
+  // max-width: -webkit-fill-available;
 }
