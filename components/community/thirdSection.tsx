@@ -76,7 +76,7 @@ const ThirdSection = () => {
                   fw={700}
                   lh={'normal'}
                   fs={'40px'}>
-                  机构
+                  部落
                 </Body>
                 <Body
                   color="#9198B0"
