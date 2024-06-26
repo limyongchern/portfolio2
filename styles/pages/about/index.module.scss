@@ -119,17 +119,22 @@
 
 .botContainer {
   background-image: url('/contactBotBg.png');
+  // background-color: #272935;
   width: 100vw;
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
-  padding-inline: 4%;
+  // padding-inline: 4%;
   padding-top: 120px;
   padding-bottom: 20px;
   margin-top: -1px;
   display: flex;
   justify-content: center;
   max-width: -webkit-fill-available;
+  @media (max-width: 835px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 
 .card {
