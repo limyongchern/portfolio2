@@ -13,8 +13,9 @@ const secondSection = () => {
       <Heading
         variant={0}
         color="white"
-        style={{ marginBottom: '-200px' }}
-        fw={36}>
+        style={{ marginBottom: '-200px', textAlign: 'center' }}
+        fw={36}
+        lh={'60px'}>
         在这里，您可以
       </Heading>
       <div className={styles.cardsContainer}>
