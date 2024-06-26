@@ -20,7 +20,7 @@ const FourthMobileSection = () => {
       embla.on('scroll', handleScroll);
       handleScroll();
     }
-  }, [embla]);
+  }, [embla, handleScroll]);
 
   useEffect(() => {
     console.log('Current page:', currentPage);

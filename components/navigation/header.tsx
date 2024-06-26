@@ -238,6 +238,7 @@ const Header = (props: IProps) => {
           <Divider color="#3E404E" w={'100%'} />
           {languages.map((language, index) => (
             <div
+              key={index}
               className={
                 index === 0 ? styles.languageClicked : styles.languageUnclicked
               }>

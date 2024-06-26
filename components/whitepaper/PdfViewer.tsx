@@ -81,7 +81,7 @@ const PdfViewer = () => {
               />
             )}
             <Document file="/sample.pdf" onLoadSuccess={onDocumentLoadSuccess}>
-              <Page height={600} pageNumber={pageNumber} />
+              <Page height={700} pageNumber={pageNumber} />
             </Document>
             {numPages && pageNumber < numPages ? (
               <CaretCircleRight
