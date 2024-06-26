@@ -8,8 +8,24 @@
 }
 
 .containerWidth {
-display: flex;
+  display: flex;
   width: 836px;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 120px 0;
+  justify-content: center;
+}
+
+.mobileContainer {
+  background: var(--Main-Primary-Varient, #272935);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 120px;
+}
+.containerMobileWidth{
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;

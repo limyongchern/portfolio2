@@ -32,53 +32,132 @@ const PdfViewer = () => {
   function changePageNext() {
     changePage(1);
   }
+
+  const [isMobile, setIsMobile] = useState(false);
+  const [width, setWidth] = useState<number>(
+    typeof window !== 'undefined' ? window.innerWidth : 0
+  );
+  const handleWindowSizeChange = () => {
+    setWidth(typeof window !== 'undefined' ? window.innerWidth : 0);
+  };
+
+  useEffect(() => {
+    if (width <= 835) {
+      setIsMobile(true);
+    } else setIsMobile(false);
+  }, [width]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleWindowSizeChange);
+    }
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', handleWindowSizeChange);
+      }
+    };
+  }, [width]);
+  console.log(width);
+
   return (
     <div>
-      <Flex align="center" justify="center" gap={'20px'}>
-        {pageNumber > 1 ? (
-          <CaretCircleLeft
-            style={{ cursor: 'pointer' }}
-            onClick={changePageBack}
-            width={'56px'}
-            height={'56px'}
-            color="#9198B0"
-          />
-        ) : (
-          <CaretCircleLeft
-            style={{ cursor: 'not-allowed' }}
-            width={'56px'}
-            height={'56px'}
-            color="red"
-          />
-        )}
-        <Document file="/sample.pdf" onLoadSuccess={onDocumentLoadSuccess}>
-          <Page height={600} pageNumber={pageNumber} />
-        </Document>
-        {numPages && pageNumber < numPages ? (
-          <CaretCircleRight
-            style={{ cursor: 'pointer' }}
-            onClick={changePageNext}
-            width={'56px'}
-            height={'56px'}
-            color="#9198B0"
-          />
-        ) : (
-          <CaretCircleRight
-            style={{ cursor: 'not-allowed' }}
-            width={'56px'}
-            height={'56px'}
-            color="red"
-          />
-        )}
-      </Flex>
-      <Heading
-        variant={6}
-        fs={'18px'}
-        fw={400}
-        color="white"
-        style={{ textAlign: 'center' }}>
-        Page {pageNumber} of {numPages}
-      </Heading>
+      {!isMobile ? (
+        <>
+          <Flex align="center" justify="center" gap={'20px'}>
+            {pageNumber > 1 ? (
+              <CaretCircleLeft
+                style={{ cursor: 'pointer' }}
+                onClick={changePageBack}
+                width={'56px'}
+                height={'56px'}
+                color="#9198B0"
+              />
+            ) : (
+              <CaretCircleLeft
+                style={{ cursor: 'not-allowed' }}
+                width={'56px'}
+                height={'56px'}
+                color="red"
+              />
+            )}
+            <Document file="/sample.pdf" onLoadSuccess={onDocumentLoadSuccess}>
+              <Page height={600} pageNumber={pageNumber} />
+            </Document>
+            {numPages && pageNumber < numPages ? (
+              <CaretCircleRight
+                style={{ cursor: 'pointer' }}
+                onClick={changePageNext}
+                width={'56px'}
+                height={'56px'}
+                color="#9198B0"
+              />
+            ) : (
+              <CaretCircleRight
+                style={{ cursor: 'not-allowed' }}
+                width={'56px'}
+                height={'56px'}
+                color="red"
+              />
+            )}
+          </Flex>
+          <Heading
+            variant={6}
+            fs={'18px'}
+            fw={400}
+            color="white"
+            style={{ textAlign: 'center' }}>
+            Page {pageNumber} of {numPages}
+          </Heading>
+        </>
+      ) : (
+        <>
+          <Flex align="center" justify="center" gap={'5px'}>
+            {pageNumber > 1 ? (
+              <CaretCircleLeft
+                style={{ cursor: 'pointer' }}
+                onClick={changePageBack}
+                width={'32px'}
+                height={'32px'}
+                color="#9198B0"
+              />
+            ) : (
+              <CaretCircleLeft
+                style={{ cursor: 'not-allowed' }}
+                width={'32px'}
+                height={'32px'}
+                color="red"
+              />
+            )}
+            <Document file="/sample.pdf" onLoadSuccess={onDocumentLoadSuccess}>
+              <Page height={600} width={250} pageNumber={pageNumber} />
+            </Document>
+            {numPages && pageNumber < numPages ? (
+              <CaretCircleRight
+                style={{ cursor: 'pointer' }}
+                onClick={changePageNext}
+                width={'32px'}
+                height={'32px'}
+                color="#9198B0"
+              />
+            ) : (
+              <CaretCircleRight
+                style={{ cursor: 'not-allowed' }}
+                width={'32px'}
+                height={'32px'}
+                color="red"
+              />
+            )}
+          </Flex>
+          <Heading
+            variant={6}
+            fs={'10px'}
+            fw={400}
+            color="white"
+            style={{ textAlign: 'center' }}>
+            Page {pageNumber} of {numPages}
+          </Heading>
+        </>
+      )}
     </div>
   );
 };

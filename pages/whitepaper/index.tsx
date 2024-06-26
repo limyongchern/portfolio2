@@ -103,7 +103,73 @@ const Whitepaper = () => {
           </div>
         </div>
       ) : (
-        <>hi</>
+        <div className={styles.mobileContainer}>
+          <div className={styles.containerMobileWidth}>
+            <Stack
+              justify="center"
+              align="center"
+              spacing={'24px'}
+              p={'120px 32px'}>
+              <Heading
+                color="#F2F3F7"
+                variant={6}
+                fs={'36px'}
+                fw={400}
+                lh={'normal'}
+                style={{ textAlign: 'center' }}>
+                Turn Slack requests into actionable issues
+              </Heading>
+              <Body
+                color="#9198B0"
+                variant={6}
+                fs={'18px'}
+                fw={700}
+                lh={'normal'}
+                style={{ textAlign: 'center' }}>
+                Linear Asks is the easiest way to create and manage workplace
+                requests. Streamline bug reports, feature ideas, IT tickets, HR
+                requests, and more.
+              </Body>
+            </Stack>
+            <div style={{ margin: '56px 0' }}>
+              <PDFViewer />
+            </div>
+
+            <Stack
+              justify="center"
+              align="center"
+              spacing={'24px'}
+              p={'120px 32px'}>
+              <Heading
+                color="#F2F3F7"
+                variant={6}
+                fs={'36px'}
+                fw={600}
+                lh={'52px'}
+                style={{ textAlign: 'center' }}>
+                Short text about V Systems
+              </Heading>
+              <Body
+                color="#9198B0"
+                variant={6}
+                fs={'18px'}
+                fw={700}
+                lh={'normal'}
+                style={{
+                  textAlign: 'center',
+                  marginBottom: '42px',
+                }}>
+                Linear Asks is a new take on intake. Submit requests directly
+                from Slack and automatically send them to the relevant team in
+                Linear. Eliminate cluttered channels and reduce context
+                switching.
+              </Body>
+              <Button size="xl" color="#4178FA" radius={'8px'} h={'40px'}>
+                Learn more about V Systems
+              </Button>
+            </Stack>
+          </div>
+        </div>
       )}
     </>
   );
