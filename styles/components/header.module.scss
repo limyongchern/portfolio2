@@ -32,10 +32,16 @@
 
 .transparent {
   background-color: transparent !important; // Ensure the background is transparent
+  transition: background-color 0.5s ease-in-out;
 }
 
 .normalHeader {
   background-color: #3e404e;
+  transition: background-color 0.5s ease-in-out;
+
+  @media screen and (max-width: 835px) {
+    background-color: #272935;
+    }
 }
 
 .opened {
@@ -103,7 +109,7 @@
 
 .hamburger {
   color: white;
-  @media screen and (min-width: 835px) {
+  @media screen and (min-width: 836px) {
     display: none;
   }
 }
@@ -114,4 +120,43 @@
     height: 30px;
     flex-shrink: 0;
   }
+}
+
+.linkMobile {
+  @media screen and (min-width: 836px) {
+    display: none
+  }
+}
+
+.linkClicked {
+  color: var(--Main-Secondary, #4178FA);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+   
+}
+
+.linkUnclicked {
+  color: var(--Main-BG, #F2F3F7);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: none;
+}
+
+.languageClicked {
+  color: var(--Main-Secondary, #4178FA);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.languageUnclicked {
+  color: var(--Main-BG, #F2F3F7);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
