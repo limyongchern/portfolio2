@@ -69,6 +69,10 @@
   @media (max-width: 835px) {
     display: none;
   }
+
+  @media (max-width: 950px){
+    gap: 0;
+  }
 }
 
 .menu {
