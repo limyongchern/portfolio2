@@ -77,7 +77,8 @@ const PdfViewer = () => {
                 style={{ cursor: 'not-allowed' }}
                 width={'56px'}
                 height={'56px'}
-                color="red"
+                color="#272935"
+                weight="fill"
               />
             )}
             <Document file="/sample.pdf" onLoadSuccess={onDocumentLoadSuccess}>
@@ -96,7 +97,8 @@ const PdfViewer = () => {
                 style={{ cursor: 'not-allowed' }}
                 width={'56px'}
                 height={'56px'}
-                color="red"
+                color="#272935"
+                weight="fill"
               />
             )}
           </Flex>
@@ -125,7 +127,8 @@ const PdfViewer = () => {
                 style={{ cursor: 'not-allowed' }}
                 width={'32px'}
                 height={'32px'}
-                color="red"
+                color="#272935"
+                weight="fill"
               />
             )}
             <Document file="/sample.pdf" onLoadSuccess={onDocumentLoadSuccess}>
@@ -144,7 +147,8 @@ const PdfViewer = () => {
                 style={{ cursor: 'not-allowed' }}
                 width={'32px'}
                 height={'32px'}
-                color="red"
+                color="#272935"
+                weight="fill"
               />
             )}
           </Flex>
