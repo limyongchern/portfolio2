@@ -16,6 +16,8 @@ import {
   ArrowArcRight,
   ArrowCircleLeft,
   ArrowCircleRight,
+  ArrowLeft,
+  ArrowRight,
 } from '@phosphor-icons/react';
 import TeamCard from 'components/about/teamCard';
 import { Body, BodyBold, Heading } from 'components/typography';
@@ -396,7 +398,7 @@ const AboutUs = () => {
                 color="#9198B0"
                 style={{
                   textAlign: 'center',
-                  padding: '0px 36px',
+                  padding: isMobile ? '0' : '0px 36px',
                   width: isMobile ? '350px' : '779px',
                 }}>
                 Stay updated with the latest happenings and exciting
@@ -550,6 +552,10 @@ const AboutUs = () => {
             <Group spacing={'10px'}>
               {currentPage === 1 ? (
                 <ArrowCircleLeft color="#9198B080" size={45} />
+              ) : isMobile ? (
+                <UnstyledButton onClick={() => setCurrentPage(currentPage - 1)}>
+                  <ArrowLeft color="#9198B080" size={30} />
+                </UnstyledButton>
               ) : (
                 <UnstyledButton onClick={() => setCurrentPage(currentPage - 1)}>
                   <ArrowCircleLeft color="#272935" size={45} weight="fill" />
@@ -557,6 +563,10 @@ const AboutUs = () => {
               )}
               {currentPage === 10 ? (
                 <ArrowCircleRight color="#9198B080" size={45} />
+              ) : isMobile ? (
+                <UnstyledButton onClick={() => setCurrentPage(currentPage + 1)}>
+                  <ArrowRight color="#9198B080" size={30} />
+                </UnstyledButton>
               ) : (
                 <UnstyledButton onClick={() => setCurrentPage(currentPage + 1)}>
                   <ArrowCircleRight color="#272935" size={45} weight="fill" />
