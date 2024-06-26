@@ -12,6 +12,7 @@ import FirstSection from 'components/community/firstSection';
 import FourthSection from 'components/community/fourthSection';
 import FirstMobileSection from 'components/community/firstMobileSection';
 import SecondMobileSection from 'components/community/secondMobileSection';
+import ThirdMobileSection from 'components/community/thirdMobileSection';
 
 const Community = () => {
   //MOBILE AND DESKTOP
@@ -55,6 +56,7 @@ const Community = () => {
         <>
           <FirstMobileSection />
           <SecondMobileSection />
+          <ThirdMobileSection />
         </>
       )}
     </>

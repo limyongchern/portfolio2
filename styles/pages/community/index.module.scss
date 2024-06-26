@@ -203,11 +203,10 @@
 
 .widthContainerThirdMobileSection {
   display: flex;
- 
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 120px 0;
+  padding: 120px 32px;
 }
 
 .cardDarkMobileContainer {
@@ -220,6 +219,7 @@
   border-radius: 12.444px;
   background: var(--Main-Primary-Varient, #272935);
   backdrop-filter: blur(31.11111068725586px);
+  margin-bottom: 36px;
 }
 
 .planetCard {
