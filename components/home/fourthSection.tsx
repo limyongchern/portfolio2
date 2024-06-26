@@ -13,12 +13,12 @@ const fourthSection = () => {
             variant={0}
             color={'#F2F3F7'}
             style={{ lineHeight: 1.5 }}
-            fs={40}
-            fw={700}>
+            fs={36}>
             Wolf Planet space for video
           </Heading>
           <Body
             variant={1}
+            fw={700}
             color={'#9198B0'}
             style={{ padding: '24px 0px', lineHeight: 1.5 }}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed

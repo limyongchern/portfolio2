@@ -14,12 +14,17 @@ const firstSection = () => {
       <div className={styles.topContainer2}>
         <Stack className={styles.downloadContentMobile}>
           <div>
-            <Heading variant={8} color="#F2F3F7" style={{ lineHeight: 1.5 }}>
+            <Heading
+              variant={1}
+              fw={700}
+              color="#F2F3F7"
+              style={{ lineHeight: 1.5 }}>
               加入 Wolf Planet 星球，开启您的全球投资之旅！
             </Heading>
             <Body
               variant={1}
               color="#9198B0"
+              fw={700}
               style={{ lineHeight: 1.5, padding: '24px 0px' }}>
               立即下载 Wolf Planet App：
             </Body>
@@ -32,15 +37,15 @@ const firstSection = () => {
           <Image src={Sample} alt="sample" className={styles.sampleImage} />
           <div>
             <Heading
-              fs={42}
+              fs={36}
               variant={1}
               color="#F2F3F7"
               className={styles.headingMobile}>
               Wolf Planet 星球，您的全球投资新天地！
             </Heading>
             <Body
-              fs={20}
               variant={1}
+              fw={700}
               color="#9198B0"
               className={styles.subheadingMobile}>
               Linear Asks is a new take on intake. Submit requests directly from

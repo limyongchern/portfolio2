@@ -10,12 +10,12 @@ const fifthSection = () => {
           variant={0}
           color={'#F2F3F7'}
           style={{ lineHeight: 1.5 }}
-          fs={40}
-          fw={700}>
+          fs={36}>
           CTA text to contact or smth
         </Heading>
         <Body
           variant={1}
+          fw={700}
           color={'#9198B0'}
           style={{ paddingTop: '24px', lineHeight: 1.5 }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

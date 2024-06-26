@@ -14,7 +14,7 @@ const secondSection = () => {
         variant={0}
         color="white"
         style={{ marginBottom: '-200px' }}
-        fw={40}>
+        fw={36}>
         在这里，您可以
       </Heading>
       <div className={styles.cardsContainer}>
@@ -26,11 +26,12 @@ const secondSection = () => {
             height={164}
             color={'#9198B0'}
           />
-          <Heading variant={1} color="#F2F3F7" fw={700}>
+          <Heading variant={2} color="#F2F3F7" fw={700}>
             互动
           </Heading>
           <Body
             variant={1}
+            fw={700}
             className={styles.cardWord}
             style={{ lineHeight: 1.5 }}>
             加入由不同投资主题形成的星球，与全球各地的投资者交流互动，分享观点、进行讨论、发布文章等。
@@ -45,7 +46,7 @@ const secondSection = () => {
             height={133}
           />
           <Heading
-            variant={1}
+            variant={2}
             color="#F2F3F7"
             fw={700}
             style={{ paddingTop: '16px' }}>
@@ -53,6 +54,7 @@ const secondSection = () => {
           </Heading>
           <Body
             variant={1}
+            fw={700}
             className={styles.cardWord}
             style={{ lineHeight: 1.5 }}>
             创建或加入由志同道合的用户组成的部落，根据兴趣爱好、投资理念等因素进行划分，打造专属的投资交流空间。
@@ -60,11 +62,12 @@ const secondSection = () => {
         </Card>
         <Card className={styles.card}>
           <Image color="#9198B0" src={NFT} alt="NFT" width={310} height={164} />
-          <Heading variant={1} color="#F2F3F7" fw={700}>
+          <Heading variant={2} color="#F2F3F7" fw={700}>
             NFT
           </Heading>
           <Body
             variant={1}
+            fw={700}
             className={styles.cardWord}
             style={{ lineHeight: 1.5 }}>
             通过获取和持有
@@ -79,11 +82,12 @@ const secondSection = () => {
             width={164}
             height={164}
           />
-          <Heading variant={1} color="#F2F3F7" fw={700}>
+          <Heading variant={2} color="#F2F3F7" fw={700}>
             社群
           </Heading>
           <Body
             variant={1}
+            fw={700}
             className={styles.cardWord}
             style={{ lineHeight: 1.5 }}>
             参与

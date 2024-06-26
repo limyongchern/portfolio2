@@ -19,11 +19,11 @@ const thirdSection = () => {
           variant={0}
           color="#F2F3F7"
           style={{ lineHeight: 1.5 }}
-          fs={40}
+          fs={36}
           fw={700}>
           Wolf Planet 星球汇聚了来自全球各地的专业投资
         </Heading>
-        <Body variant={1} color="#9198B0" style={{ lineHeight: 1.5 }} fw={700}>
+        <Body variant={7} color="#9198B0" style={{ lineHeight: 1.5 }}>
           Wolf Planet
           星球汇聚了来自全球各地的专业投资者和分析师，为您提供高质量的投资资讯和分析，助力您做出更明智的投资决策。
         </Body>
