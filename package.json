@@ -13,7 +13,7 @@
     "@mantine/core": "^6.0.7",
     "@phosphor-icons/react": "^2.1.6",
     "@react-pdf/renderer": "^3.4.4",
-    "embla-carousel-react": "^8.1.5",
+    "embla-carousel-react": "^7.1.0",
     "framer-motion": "^11.2.11",
     "next": "13.3.0",
     "pdfjs-dist": "^4.3.136",
