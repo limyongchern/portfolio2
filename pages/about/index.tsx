@@ -25,7 +25,7 @@ import styles from 'styles/pages/about/index.module.scss';
 const AboutUs = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
 
-  //MOBILE AND DESKTOP
+  // MOBILE AND DESKTOP
   const [isMobile, setIsMobile] = useState(false);
   const [width, setWidth] = useState<number>(
     typeof window !== 'undefined' ? window.innerWidth : 0
@@ -51,7 +51,6 @@ const AboutUs = () => {
     };
   }, [width]);
 
-  console.log('width', width, isMobile);
   return (
     <>
       <div className={styles.topContainer}>
@@ -66,24 +65,25 @@ const AboutUs = () => {
                 <Image
                   src={'/aboutPlanet4.png'}
                   alt="About Planet"
-                  mt={'-160px'}
+                  // mt={'-160px'}
                 />
               </div>
               <div className={styles.planetTextCont}>
                 <div className={styles.planetTextCard}>
-                  {' '}
                   <div className={styles.textCard}></div>
                   <Heading
                     variant={4}
+                    fs={isMobile && 18}
                     style={{ marginBottom: '16px' }}
                     color="#F2F3F7">
                     Welcome to WolfPlanet
                   </Heading>
-                  <Heading variant={8} color="#F2F3F7">
+                  <Heading variant={8} fs={isMobile && 36} color="#F2F3F7">
                     Where Something
                   </Heading>
                   <Heading
                     variant={8}
+                    fs={isMobile && 36}
                     style={{ marginBottom: '24px' }}
                     color="#F2F3F7">
                     Meets <span style={{ color: '#4178FA' }}>Excellence!</span>{' '}
@@ -115,7 +115,6 @@ const AboutUs = () => {
               style={{ alignItems: 'flex-start' }}>
               <div className={styles.planetTextCont}>
                 <div className={styles.planetTextCard}>
-                  {' '}
                   <div className={styles.textCard}></div>
                   <Heading
                     variant={4}
@@ -160,15 +159,22 @@ const AboutUs = () => {
       </div>
       <div className={styles.middleContainer}>
         <Stack align="center" maw={'850px'}>
-          <Stack align="center" px={'36px'}>
-            <Heading variant={8} style={{ marginBottom: '16px' }}>
+          <Stack align="center" px={'36px'} w={isMobile ? '278px' : 'auto'}>
+            <Heading
+              variant={8}
+              fs={isMobile ? 36 : 40}
+              style={{ marginBottom: '16px', textAlign: 'center' }}>
               Meet the Wolf Team
             </Heading>
-            <Body variant={1} color="#9198B0" style={{ textAlign: 'center' }}>
+            <BodyBold
+              variant={1}
+              fs={isMobile ? 20 : 18}
+              color="#9198B0"
+              style={{ textAlign: 'center' }}>
               At Estatein, our success is driven by the dedication and expertise
               of our team. Get to know the people behind our mission to make
               your real estate dreams a reality.
-            </Body>
+            </BodyBold>
           </Stack>
 
           <SimpleGrid
@@ -201,6 +207,7 @@ const AboutUs = () => {
       </div>
       <div className={styles.botContainer}>
         <Stack align="center">
+          {/* {isMobile ? } */}
           <Group spacing={'62px'}>
             <Stack spacing={'11px'} w={'403px'}>
               <Heading variant={8} color="white">
@@ -249,143 +256,17 @@ const AboutUs = () => {
                   <Image
                     src={'/people.png'}
                     maw={'56px'}
-                    alt="Client-Centric Icon"
+                    alt="Transparency Icon"
                   />
                   <Heading variant={2} fs={18.7} color="white">
-                    Client-Centric
+                    Transparency
                   </Heading>
                 </Group>
                 <BodyBold variant={1} fs={12.4} color="#9198B0">
-                  Your dreams and needs are at the center of our universe. We
-                  listen, understand.
+                  Transparency is at the heart of everything we do.
                 </BodyBold>
               </Stack>
             </Card>
-          </Group>
-          <Stack mt={'150px'} align="center">
-            <Stack spacing={'10px'} align="center">
-              <Heading variant={8} color="#F2F3F7">
-                Press Release
-              </Heading>
-              <BodyBold
-                variant={1}
-                color="#9198B0"
-                style={{
-                  textAlign: 'center',
-                  padding: '0px 36px',
-                  width: '779px',
-                }}>
-                Stay updated with the latest happenings and exciting
-                developments at WolfPlanet through our press releases. ``{' '}
-              </BodyBold>
-            </Stack>
-            <Group py={'47px'} spacing={'28px'} noWrap>
-              <Card p={'33px'} bg="#272935" radius={'16px'} w={'403px'}>
-                <Stack spacing={'40px'}>
-                  <Image
-                    src={'/pressImg1.png'}
-                    width={'100%'}
-                    alt="Press Release 1"
-                  />
-                  <Stack spacing={'11px'} align="center" px={'18px'}>
-                    <Heading
-                      variant={3}
-                      color="#F2F3F7"
-                      style={{ textAlign: 'center' }}>
-                      WolfPlanet Launches New Rewards Program to Enhance
-                      Customer Loyalty and Satisfaction
-                    </Heading>
-                    <Group position="apart" noWrap w={'100%'}>
-                      <div className={styles.badge}>
-                        <BodyBold variant={1} fs={15} color="#FEFEFEFE">
-                          Location: India
-                        </BodyBold>
-                      </div>
-                      <div className={styles.badge}>
-                        <BodyBold variant={1} fs={15} color="#FEFEFEFE">
-                          Date: 28/12/2024
-                        </BodyBold>
-                      </div>
-                    </Group>
-                    <BodyBold variant={1} fs={16} color="#9198B0">
-                      WolfPlanet is pleased to announce the introduction of our
-                      new Rewards Program, aimed at rewarding our loyal
-                      customers and enhancing their banking experience. The
-                      program offers exclusive benefits, discounts, and
-                      personalized offers tailored to individual customer
-                      preferences. With this initiative, WolfPlanet reaffirms
-                      its commitment to delivering exceptional value and
-                      building lasting relationships with our valued customers.
-                    </BodyBold>
-                  </Stack>
-                </Stack>
-              </Card>
-              <Card p={'33px'} bg="#272935" radius={'16px'} w={'403px'}>
-                <Stack spacing={'40px'}>
-                  <Image
-                    src={'/pressImg2.png'}
-                    width={'100%'}
-                    alt="Press Release 2"
-                  />
-                  <Stack spacing={'11px'} align="center" px={'18px'}>
-                    <Heading
-                      variant={3}
-                      color="#F2F3F7"
-                      style={{ textAlign: 'center' }}>
-                      WolfPlanet Launches New Rewards Program to Enhance
-                      Customer Loyalty and Satisfaction
-                    </Heading>
-                    <Group position="apart" noWrap w={'100%'}>
-                      <div className={styles.badge}>
-                        <BodyBold variant={1} fs={15} color="#FEFEFEFE">
-                          Location: India
-                        </BodyBold>
-                      </div>
-                      <div className={styles.badge}>
-                        <BodyBold variant={1} fs={15} color="#FEFEFEFE">
-                          Date: 28/12/2024
-                        </BodyBold>
-                      </div>
-                    </Group>
-                    <BodyBold variant={1} fs={16} color="#9198B0">
-                      WolfPlanet is pleased to announce the introduction of our
-                      new Rewards Program, aimed at rewarding our loyal
-                      customers and enhancing their banking experience. The
-                      program offers exclusive benefits, discounts, and
-                      personalized offers tailored to individual customer
-                      preferences. With this initiative, WolfPlanet reaffirms
-                      its commitment to delivering exceptional value and
-                      building lasting relationships with our valued customers.
-                    </BodyBold>
-                  </Stack>
-                </Stack>
-              </Card>
-            </Group>
-          </Stack>
-          <Divider pb={'15px'} color="rgba(145, 152, 176, 0.50)" w={'100%'} />
-          <Group position="apart" w={'100%'} align="start">
-            <Body variant={3} color="#9198B0">
-              <span style={{ color: '#F2F3F7' }}>
-                {currentPage.toString().padStart(2, '0')}
-              </span>{' '}
-              of 10
-            </Body>
-            <Group spacing={'10px'}>
-              {currentPage === 1 ? (
-                <ArrowCircleLeft color="#9198B080" size={45} />
-              ) : (
-                <UnstyledButton onClick={() => setCurrentPage(currentPage - 1)}>
-                  <ArrowCircleLeft color="#272935" size={45} weight="fill" />
-                </UnstyledButton>
-              )}
-              {currentPage === 10 ? (
-                <ArrowCircleRight color="#9198B080" size={45} />
-              ) : (
-                <UnstyledButton onClick={() => setCurrentPage(currentPage + 1)}>
-                  <ArrowCircleRight color="#272935" size={45} weight="fill" />
-                </UnstyledButton>
-              )}
-            </Group>
           </Group>
         </Stack>
       </div>
