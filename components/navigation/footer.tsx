@@ -83,17 +83,22 @@ const Footer = (props: IProps) => {
         <div className={styles.footerMobile}>
           <Stack align="center">
             <Link href="/">
-              <Image src={LogoSVG} alt="Logo" className={styles.headerlogo} />
+              <Image
+                src={LogoSVG}
+                alt="Logo"
+                className={styles.headerlogo}
+                style={{ marginBottom: '24px' }}
+              />
             </Link>
 
-            <Group spacing={24} style={{ paddingTop: '36px' }}>
+            <Group spacing={30}>
               <Image src={FBIcon} height={24} width={24} alt="Facebook" />
               <Image src={XIcon} height={24} width={24} alt="X" />
               <Image src={InsIcon} height={24} width={24} alt="Instagram" />
               <Image src={LinkedInIcon} height={24} width={24} alt="LinkedIn" />
               <Image src={GoogleIcon} height={24} width={24} alt="Google" />
             </Group>
-            <Flex justify={'center'} mt={40} style={{ paddingTop: '56px' }}>
+            <Flex justify={'center'} style={{ paddingTop: '56px' }}>
               <Body
                 variant={2}
                 color="#F2F3F7"

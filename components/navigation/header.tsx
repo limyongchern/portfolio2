@@ -83,7 +83,7 @@ const Header = (props: IProps) => {
   }, [router.pathname]);
   return (
     <HeaderMantine
-      height={'11rem'}
+      height={'9rem'}
       {...props.baseProps}
       withBorder={false}
       className={[
@@ -202,7 +202,7 @@ const Header = (props: IProps) => {
             opened={menuOpen}
             onClick={() => setMenuOpen((prev) => !prev)}
             className={styles.hamburger}
-            size={32}
+            size={40}
           />
           {/* <UnstyledButton
             className={styles.hamburger}
