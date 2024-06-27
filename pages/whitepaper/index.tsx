@@ -96,8 +96,14 @@ const Whitepaper = () => {
                 Linear. Eliminate cluttered channels and reduce context
                 switching.
               </Body>
-              <Button size="xl" color="#4178FA" radius={'8px'} h={'40px'}>
-                Learn more about V Systems
+              <Button
+                variant="filled"
+                style={{ background: '#4178FA' }}
+                size="xl"
+                color="#4178FA"
+                radius={'8px'}
+                h={'40px'}>
+                Contact Us
               </Button>
             </Stack>
           </div>
@@ -109,7 +115,7 @@ const Whitepaper = () => {
               justify="center"
               align="center"
               spacing={'24px'}
-              p={'120px 32px'}>
+              p={'100px 32px 0 32px'}>
               <Heading
                 color="#F2F3F7"
                 variant={6}
@@ -139,7 +145,7 @@ const Whitepaper = () => {
               justify="center"
               align="center"
               spacing={'24px'}
-              p={'120px 32px'}>
+              p={'0 32px 100px 32px'}>
               <Heading
                 color="#F2F3F7"
                 variant={6}
@@ -164,8 +170,14 @@ const Whitepaper = () => {
                 Linear. Eliminate cluttered channels and reduce context
                 switching.
               </Body>
-              <Button size="xl" color="#4178FA" radius={'8px'} h={'40px'}>
-                Learn more about V Systems
+              <Button
+                variant="filled"
+                size="xl"
+                style={{ background: '#4178FA' }}
+                color="#4178FA"
+                radius={'8px'}
+                h={'40px'}>
+                Contact Us
               </Button>
             </Stack>
           </div>

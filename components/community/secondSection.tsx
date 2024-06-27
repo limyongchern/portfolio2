@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../styles/pages/community/index.module.scss';
-import WolfTooth from '../../public/Coin.svg';
+import WolfTooth from '../../public/WolfToken.svg';
 import WolfToken from '../../public/WolfCoin.svg';
 import Image from 'next/image';
 import { Flex, Stack } from '@mantine/core';
