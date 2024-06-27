@@ -18,7 +18,7 @@
   // padding-top: 32px;
   // padding-bottom: 32px;
   background-color: transparent; // Ensure the background is transparent
-  height: 114px; // Set initial height
+  height: 100px; // Set initial height
   border-bottom: transparent;
   color: white;
   max-width: 1080px;
@@ -27,6 +27,7 @@
   @media (max-width: 835px) {
     background: var(--Main-Primary, #3e404e);
     box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
+    padding: 0px 20px;
   }
 }
 
@@ -41,16 +42,16 @@
 
   @media screen and (max-width: 835px) {
     background-color: #272935;
-    }
+  }
 }
 
 .opened {
   @media screen and (max-width: 400px) {
     min-height: 100vh;
   }
-    @media screen and (min-width: 401px) and (max-width: 835px) {
-      min-height: 80vh;
-    }
+  @media screen and (min-width: 401px) and (max-width: 835px) {
+    min-height: 80vh;
+  }
 }
 
 .nav {
@@ -72,7 +73,7 @@
     display: none;
   }
 
-  @media (max-width: 950px){
+  @media (max-width: 950px) {
     gap: 0;
   }
 }
@@ -130,29 +131,28 @@
 
 .linkMobile {
   @media screen and (min-width: 836px) {
-    display: none
+    display: none;
   }
 }
 
 .linkClicked {
-  color: var(--Main-Secondary, #4178FA);
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-   
+  color: var(--Main-Secondary, #4178fa);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .linkUnclicked {
-  color: var(--Main-BG, #F2F3F7);
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-decoration-line: none;
+  color: var(--Main-BG, #f2f3f7);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: none;
 }
 
 .languageClicked {
-  color: var(--Main-Secondary, #4178FA);
+  color: var(--Main-Secondary, #4178fa);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -160,7 +160,7 @@
 }
 
 .languageUnclicked {
-  color: var(--Main-BG, #F2F3F7);
+  color: var(--Main-BG, #f2f3f7);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;

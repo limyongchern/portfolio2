@@ -16,6 +16,7 @@ const secondSection = () => {
       <Body
         variant={8}
         color="#9198B0"
+        fs={18}
         style={{
           lineHeight: 1.5,
           paddingBottom: '32.59px',

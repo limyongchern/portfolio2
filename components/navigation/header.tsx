@@ -202,7 +202,7 @@ const Header = (props: IProps) => {
             opened={menuOpen}
             onClick={() => setMenuOpen((prev) => !prev)}
             className={styles.hamburger}
-            size={30}
+            size={32}
           />
           {/* <UnstyledButton
             className={styles.hamburger}

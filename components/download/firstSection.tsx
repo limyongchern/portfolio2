@@ -13,27 +13,25 @@ const firstSection = () => {
     <>
       <div className={styles.topContainer2}>
         <Stack className={styles.downloadContentMobile}>
-          <div>
-            <Heading
-              variant={1}
-              fw={700}
-              color="#F2F3F7"
-              style={{ lineHeight: 1.5 }}>
-              加入 Wolf Planet 星球，开启您的全球投资之旅！
-            </Heading>
-            <Body
-              variant={1}
-              color="#9198B0"
-              fw={700}
-              style={{ lineHeight: 1.5, padding: '24px 0px' }}>
-              立即下载 Wolf Planet App：
-            </Body>
+          <Heading
+            variant={1}
+            fw={700}
+            color="#F2F3F7"
+            style={{ lineHeight: 1.5 }}>
+            加入 Wolf Planet 星球，开启您的全球投资之旅！
+          </Heading>
+          <Body
+            variant={1}
+            color="#9198B0"
+            fw={700}
+            style={{ lineHeight: 1.5, padding: '24px 0px' }}>
+            立即下载 Wolf Planet App：
+          </Body>
 
-            <Stack style={{ alignItems: 'center', justifyContent: 'center' }}>
-              <Image src={Playstore} alt="play store" />
-              <Image src={Apple} alt="apple" />
-            </Stack>
-          </div>
+          <Stack style={{ alignItems: 'center', justifyContent: 'center' }}>
+            <Image src={Playstore} alt="play store" />
+            <Image src={Apple} alt="apple" />
+          </Stack>
           <Image src={Sample} alt="sample" className={styles.sampleImage} />
           <div>
             <Heading

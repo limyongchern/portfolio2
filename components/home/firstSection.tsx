@@ -9,11 +9,12 @@ const firstSection = () => {
         <BackgroundVideo />
       </div>
       {/* <div className={styles.section1}> */}
-      <div className={styles.titleColumn}>
+      <div className={styles.titleColumnMobile}>
         <Heading
           variant={0}
           color="#F2F3F7"
           fs={36}
+          fw={700}
           style={{ paddingTop: '16px', lineHeight: 1.5 }}>
           Wolf Planet 星球：跨域投资交流平台
         </Heading>

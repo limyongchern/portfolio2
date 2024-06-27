@@ -13,12 +13,12 @@ const secondSection = () => {
       <Heading
         variant={0}
         color="white"
-        style={{ marginBottom: '-200px', textAlign: 'center' }}
-        fw={36}
-        lh={'60px'}>
+        style={{ marginBottom: '-200px' }}
+        fs={36}
+        fw={700}>
         在这里，您可以
       </Heading>
-      <div className={styles.cardsContainer}>
+      <div className={styles.section2}>
         <Card className={styles.card}>
           <Image
             src={card1Icon}

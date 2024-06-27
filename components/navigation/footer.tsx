@@ -86,15 +86,18 @@ const Footer = (props: IProps) => {
               <Image src={LogoSVG} alt="Logo" className={styles.headerlogo} />
             </Link>
 
-            <Group spacing={24}>
+            <Group spacing={24} style={{ paddingTop: '36px' }}>
               <Image src={FBIcon} height={24} width={24} alt="Facebook" />
               <Image src={XIcon} height={24} width={24} alt="X" />
               <Image src={InsIcon} height={24} width={24} alt="Instagram" />
               <Image src={LinkedInIcon} height={24} width={24} alt="LinkedIn" />
               <Image src={GoogleIcon} height={24} width={24} alt="Google" />
             </Group>
-            <Flex justify={'center'} mt={40}>
-              <Body variant={2} color="#F2F3F7" style={{ textAlign: 'center' }}>
+            <Flex justify={'center'} mt={40} style={{ paddingTop: '56px' }}>
+              <Body
+                variant={2}
+                color="#F2F3F7"
+                style={{ textAlign: 'center', lineHeight: 1.5 }}>
                 Privacy Policy | Terms of Use © 2024 WolfPlanet All Rights
                 Reserved.
               </Body>

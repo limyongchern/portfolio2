@@ -8,19 +8,20 @@
 
 .titleColumn {
   display: flex;
-  // width: 100%;
-  // max-width: 842px;
+  width: 100%;
+  max-width: 842px;
   padding: 42px;
   flex-direction: column;
-  align-items: stretch;
+  // align-items: stretch;
   gap: 24px;
   border-radius: 16px;
   background: var(--neutral-glass-1-add-blur, rgba(255, 255, 255, 0.12));
-
+  align-items: center;
   /* Glassmorphism/BG Blur 1 */
   backdrop-filter: blur(10px);
   max-width: 842px;
   margin: auto;
+  // margin: 20px 0px;
   margin-bottom: 131px;
   text-align: center;
 
@@ -28,6 +29,24 @@
     max-width: 350px;
     text-align: left;
   }
+}
+
+.titleColumnMobile {
+  display: flex;
+  padding: 42px;
+  flex-direction: column;
+  // align-items: stretch;
+  gap: 24px;
+  border-radius: 16px;
+  background: var(--neutral-glass-1-add-blur, rgba(255, 255, 255, 0.12));
+  align-items: center;
+  /* Glassmorphism/BG Blur 1 */
+  backdrop-filter: blur(10px);
+  // max-width: 842px;
+  // margin: auto;
+  margin: 00px 30px;
+  margin-bottom: 131px;
+  text-align: center;
 }
 
 .subheading {
@@ -59,17 +78,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 48px;
+  gap: 40px;
+  padding: 0 10px; /* Add padding to left and right */
 }
 .cardsContainer {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   margin-bottom: 20px;
-
-  @media (min-width: 835px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 .icon1 {
@@ -81,7 +97,7 @@
   border-radius: 16px;
   background: var(--neutral-glass-1-add-blur, rgba(255, 255, 255, 0.12));
   display: flex;
-  width: 100%;
+  width: calc(100% - 20px); /* Ensure it fits within the padding */
   height: 100%;
   flex-direction: column;
   justify-content: center;
@@ -169,6 +185,8 @@
   gap: 8px;
   border-radius: 8px;
   background: var(--Main-Secondary, #4178fa);
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .buttonText {
@@ -182,7 +200,7 @@
 
 .video {
   position: relative;
-  height: 50vh;
+  height: 35vh;
   width: 100%;
   // overflow: hidden;
 }
@@ -193,8 +211,10 @@
   justify-content: center;
   align-items: center;
   margin: auto;
-  width: 836px;
-  height: 510px;
+  max-width: 836px;
+  max-height: 510px;
+  border-radius: 16px;
+
   @media (max-width: 835px) {
     max-width: 350px;
     max-height: 210px;
@@ -262,10 +282,9 @@
   gap: 24px;
   background-image: url('/Bg1.png');
   background-size: cover;
-  background-position: center;
+  background-position: relative;
   background-repeat: no-repeat;
-  z-index: 2;
-  overflow: hidden;
+  background-color: #000;
 }
 
 .section3PlanetMobile {
