@@ -45,10 +45,12 @@
 }
 
 .opened {
-  @media screen and (max-width: 835px) {
-    height: 70vh;
-    max-height: 70vh;
+  @media screen and (max-width: 400px) {
+    min-height: 100vh;
   }
+    @media screen and (min-width: 401px) and (max-width: 835px) {
+      min-height: 80vh;
+    }
 }
 
 .nav {

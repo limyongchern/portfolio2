@@ -59,10 +59,9 @@ const AboutUs = () => {
         <Container fluid p={0}>
           {isMobile ? (
             <Group
-              position="center"
               w={'100%'}
               spacing={0}
-              style={{ alignItems: 'flex-start' }}>
+              style={{ alignItems: 'flex-start', justifyContent: 'center' }}>
               <div className={styles.planetCard}>
                 <Image
                   src={'/aboutPlanet4.png'}
@@ -185,22 +184,22 @@ const AboutUs = () => {
             spacing="lg"
             breakpoints={[{ maxWidth: 835, cols: 1 }]}>
             <TeamCard
-              image={'/aboutImg1.png'}
+              image={'/Image1.png'}
               name={'Max Mitchell'}
               title={'Founder'}
             />
             <TeamCard
-              image={'/aboutImg2.png'}
+              image={'/Image2.png'}
               name={'Max Mitchell'}
               title={'Founder'}
             />
             <TeamCard
-              image={'/aboutImg3.png'}
+              image={'/Image3.png'}
               name={'Max Mitchell'}
               title={'Founder'}
             />
             <TeamCard
-              image={'/aboutImg4.png'}
+              image={'/Image4.png'}
               name={'Max Mitchell'}
               title={'Founder'}
             />
@@ -210,8 +209,9 @@ const AboutUs = () => {
       <div className={styles.botContainer}>
         <Stack align="center">
           {isMobile ? (
-            <Stack spacing={isMobile ? '80px' : '62px'}>
+            <Stack justify="center" spacing={isMobile ? '80px' : '62px'}>
               <Stack
+                justify="center"
                 spacing={'11px'}
                 w={isMobile ? '350px' : '403px'}
                 style={{ textAlign: 'center' }}>
@@ -407,7 +407,13 @@ const AboutUs = () => {
             </Stack>
             <Group py={'47px'} spacing={'28px'} noWrap>
               {isMobile ? (
-                <Card p={'24px'} bg="#272935" radius={'16px'} w={'350px'}>
+                <Card
+                  p={'24px'}
+                  bg="#272935"
+                  radius={'16px'}
+                  withBorder
+                  className={styles.bordercard}
+                  w={'350px'}>
                   <Stack spacing={'40px'}>
                     <Image
                       src={'/pressImg1.png'}

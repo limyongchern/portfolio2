@@ -216,7 +216,7 @@ const Header = (props: IProps) => {
           mt={'42px'}
           align="center"
           justify="center"
-          spacing={'42px'}
+          spacing={width > 400 ? '42px' : '30px'}
           className={styles.linkMobile}>
           {links.map((link) => (
             <Link

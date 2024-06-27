@@ -208,11 +208,9 @@ const Home = (props: IProps) => {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   doeiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </Body>
-                <Image
-                  src={section4vid}
-                  alt="Video"
+                <iframe
                   className={styles.sec4Vid}
-                />
+                  src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
               </Stack>
             </div>
           </div>

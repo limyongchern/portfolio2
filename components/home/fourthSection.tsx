@@ -24,7 +24,9 @@ const fourthSection = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
             doeiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Body>
-          <Image src={section4vid} alt="Video" className={styles.sec4Vid} />
+          <iframe
+            className={styles.sec4Vid}
+            src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
         </Stack>
       </div>
     </div>
