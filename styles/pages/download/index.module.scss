@@ -207,6 +207,19 @@
 .image {
   max-width: 838px;
   height: 424.311px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  // max-width: 836px;
+  // max-height: 510px;
+  border-radius: 16px;
+
+  @media (max-width: 835px) {
+    max-width: 350px;
+    max-height: 210px;
+  }
 }
 
 .topContainer2 {
