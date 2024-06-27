@@ -8,7 +8,7 @@
 
 .titleColumn {
   display: flex;
-  width: 100%;
+
   max-width: 842px;
   padding: 42px;
   flex-direction: column;
@@ -19,7 +19,6 @@
   align-items: center;
   /* Glassmorphism/BG Blur 1 */
   backdrop-filter: blur(10px);
-  max-width: 842px;
   margin: auto;
   // margin: 20px 0px;
   margin-bottom: 131px;
@@ -46,7 +45,7 @@
   // margin: auto;
   margin: 00px 30px;
   margin-bottom: 131px;
-  text-align: center;
+  text-align: flex-start;
 }
 
 .subheading {
@@ -94,6 +93,7 @@
 }
 
 .card {
+  margin-top: 50px;
   border-radius: 16px;
   background: var(--neutral-glass-1-add-blur, rgba(255, 255, 255, 0.12));
   display: flex;
@@ -186,7 +186,7 @@
   border-radius: 8px;
   background: var(--Main-Secondary, #4178fa);
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .buttonText {

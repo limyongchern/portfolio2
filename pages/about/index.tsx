@@ -169,7 +169,7 @@ const AboutUs = () => {
             </Heading>
             <BodyBold
               variant={1}
-              fs={isMobile ? 20 : 18}
+              fs={isMobile ? 18 : 20}
               color="#9198B0"
               style={{ textAlign: 'center' }}>
               At Estatein, our success is driven by the dedication and expertise
@@ -396,10 +396,11 @@ const AboutUs = () => {
               <BodyBold
                 variant={1}
                 color="#9198B0"
+                fs={18}
                 style={{
                   textAlign: 'center',
                   padding: isMobile ? '0' : '0px 36px',
-                  width: isMobile ? '350px' : '779px',
+                  // width: isMobile ? '350px' : '779px',
                 }}>
                 Stay updated with the latest happenings and exciting
                 developments at WolfPlanet through our press releases.

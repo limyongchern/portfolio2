@@ -154,7 +154,7 @@ const FourthMobileSection = () => {
         variant={6}
         fw={600}
         lh={'normal'}
-        fs={'20px'}
+        fs={'18px'}
         style={{
           textAlign: 'center',
           marginBottom: '24px',

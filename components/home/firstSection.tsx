@@ -10,14 +10,26 @@ const firstSection = () => {
       </div>
       {/* <div className={styles.section1}> */}
       <div className={styles.titleColumnMobile}>
-        <Heading
-          variant={0}
-          color="#F2F3F7"
-          fs={36}
-          fw={700}
-          style={{ paddingTop: '16px', lineHeight: 1.5 }}>
-          Wolf Planet 星球：跨域投资交流平台
-        </Heading>
+        <span>
+          <Heading
+            color="#F2F3F7"
+            variant={6}
+            fs={'36px'}
+            lh={'normal'}
+            fw={400}
+            style={{ display: 'inline' }}>
+            Wolf Planet{' '}
+          </Heading>
+          <Body
+            color="#F2F3F7"
+            variant={6}
+            fs={'30px'}
+            lh={'normal'}
+            fw={700}
+            style={{ display: 'inline' }}>
+            星球：跨域投资交流平台
+          </Body>
+        </span>
         <Body variant={1} fw={700} className={styles.subheading}>
           Wolf Planet
           星球是基于区块链技术的去中心化投资交流平台，旨在为用户提供跨域、专业、高效的投资交流体验。

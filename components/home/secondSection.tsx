@@ -33,6 +33,7 @@ const secondSection = () => {
           <Body
             variant={1}
             fw={700}
+            fs={18}
             className={styles.cardWord}
             style={{ lineHeight: 1.5 }}>
             加入由不同投资主题形成的星球，与全球各地的投资者交流互动，分享观点、进行讨论、发布文章等。

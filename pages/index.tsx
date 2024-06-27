@@ -53,20 +53,23 @@ const Home = (props: IProps) => {
           <div className={styles.video}>
             <BackgroundVideo />
           </div>
-          <div className={styles.titleColumn}>
-            <Heading
-              variant={0}
-              color="#F2F3F7"
-              fw={700}
-              fs={40}
-              style={{ paddingTop: '16px', lineHeight: 1.5 }}>
-              Wolf Planet 星球：跨域投资交流平台
-            </Heading>
-            <Body variant={1} className={styles.subheading}>
-              Wolf Planet
-              星球是基于区块链技术的去中心化投资交流平台，旨在为用户提供跨域、专业、高效的投资交流体验。
-            </Body>
+          <div style={{ padding: '32px' }}>
+            <div className={styles.titleColumn}>
+              <Heading
+                variant={0}
+                color="#F2F3F7"
+                fw={700}
+                fs={40}
+                style={{ paddingTop: '16px', lineHeight: 1.5 }}>
+                Wolf Planet 星球：跨域投资交流平台
+              </Heading>
+              <Body variant={1} className={styles.subheading}>
+                Wolf Planet
+                星球是基于区块链技术的去中心化投资交流平台，旨在为用户提供跨域、专业、高效的投资交流体验。
+              </Body>
+            </div>
           </div>
+
           <div className={styles.planetsSection}>
             <Heading
               variant={0}
@@ -208,9 +211,11 @@ const Home = (props: IProps) => {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   doeiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </Body>
-                <iframe
+                <Image
+                  src={section4vid}
+                  alt="Video"
                   className={styles.sec4Vid}
-                  src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+                />
               </Stack>
             </div>
           </div>
