@@ -115,7 +115,7 @@ const Whitepaper = () => {
               justify="center"
               align="center"
               spacing={'24px'}
-              p={'100px 32px 0 32px'}>
+              p={'0px 32px 0 32px'}>
               <Heading
                 color="#F2F3F7"
                 variant={6}
@@ -145,7 +145,7 @@ const Whitepaper = () => {
               justify="center"
               align="center"
               spacing={'24px'}
-              p={'0 32px 100px 32px'}>
+              p={'0 32px 10px 32px'}>
               <Heading
                 color="#F2F3F7"
                 variant={6}
@@ -176,8 +176,10 @@ const Whitepaper = () => {
                 style={{ background: '#4178FA' }}
                 color="#4178FA"
                 radius={'8px'}
+                fw={700}
+                p={'12px 24px'}
                 h={'40px'}>
-                Contact Us
+                Learn more about vsystems
               </Button>
             </Stack>
           </div>

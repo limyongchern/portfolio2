@@ -17,9 +17,16 @@ const firstSection = () => {
             variant={1}
             fw={700}
             color="#F2F3F7"
-            fs={36}
+            fs={30}
             style={{ lineHeight: 1.5 }}>
-            加入 Wolf Planet 星球，开启您的全球投资之旅！
+            加入
+            <span
+              style={{
+                fontSize: 36,
+              }}>
+              Wolf Planet
+            </span>{' '}
+            星球，开启您的全球投资之旅！
           </Heading>
           <Body
             variant={1}
@@ -36,11 +43,12 @@ const firstSection = () => {
           <Image src={Sample} alt="sample" className={styles.sampleImage} />
           <div className={styles.wordContainer}>
             <Heading
-              fs={36}
+              fs={30}
               variant={1}
               color="#F2F3F7"
               className={styles.headingMobile}>
-              Wolf Planet 星球，您的全球投资新天地！
+              <span style={{ fontSize: 36 }}>Wolf Planet</span>{' '}
+              星球，您的全球投资新天地！
             </Heading>
 
             <Body
