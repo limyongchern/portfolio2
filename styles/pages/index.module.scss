@@ -110,8 +110,8 @@
   padding: 62px;
   @media (max-width: 835px) {
     max-width: 350px;
-    max-height: 350px;
-    padding: 62px;
+    max-height: 370px;
+    padding: 62px 42px;
   }
 }
 
@@ -134,7 +134,7 @@
 
 .section5 {
   display: flex;
-  padding: 100px 0px;
+  padding: 100px 0px 50px 0px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -186,7 +186,7 @@
   border-radius: 8px;
   background: var(--Main-Secondary, #4178fa);
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .buttonText {
