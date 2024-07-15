@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes } from 'react';
 import { Body, Heading } from 'components/typography';
-import styles from 'styles/components/button.module.scss';
+import styles from './button.module.scss';
 
 type TColor = 'black' | 'medium-gray';
 
