@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './community.module.scss';
+import styles from '../../styles/pages/community/index.module.scss';
 import { Stack } from '@mantine/core';
 import { Body, Heading } from 'components/typography';
 const FirstSection = () => {

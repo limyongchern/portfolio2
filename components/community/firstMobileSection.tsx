@@ -1,6 +1,6 @@
 import { Body, Heading } from 'components/typography';
 import React from 'react';
-import styles from './community.module.scss';
+import styles from '../../styles/pages/community/index.module.scss';
 
 const FirstMobileSection = () => {
   return (

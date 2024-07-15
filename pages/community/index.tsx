@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from './index.module.scss';
+import styles from '../../styles/pages/community/index.module.scss';
 import { Flex, Grid, Stack, Transition } from '@mantine/core';
 import { Body, Heading } from 'components/typography';
 import WolfTooth from '../../public/Coin.svg';
