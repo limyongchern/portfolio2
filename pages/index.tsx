@@ -3,7 +3,7 @@ import { GlobeHemisphereWest, Union } from '@phosphor-icons/react';
 import BackgroundVideo from 'components/BackgroundVideo';
 import Button from 'components/button';
 import { Body, Heading } from 'components/typography';
-import styles from 'styles/pages/index.module.scss';
+import styles from './index.module.scss';
 import Image from 'next/image';
 import backgroundImage from 'public/Bg1.png';
 import section4vid from 'public/section4Vid.png';

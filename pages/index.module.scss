@@ -11,6 +11,7 @@
 
   max-width: 842px;
   padding: 42px;
+
   flex-direction: column;
   // align-items: stretch;
   gap: 24px;
@@ -23,6 +24,7 @@
   // margin: 20px 0px;
   margin-bottom: 131px;
   text-align: center;
+  margin-top: -80px;
 
   @media (max-width: 835px) {
     max-width: 350px;
@@ -51,6 +53,8 @@
 .subheading {
   color: var(--Main-Primary-Varient2, #9198b0);
   line-height: 1.5;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .planetsSection {

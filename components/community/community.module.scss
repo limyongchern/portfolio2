@@ -1,0 +1,201 @@
+.container {
+  background: var(--Main-Primary-Varient, #272935);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 120px;
+}
+
+.widthContainer {
+  display: flex;
+  width: 836px;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 120px 0;
+  justify-content: center;
+}
+
+.containerSecondSection {
+  background-image: url('/earth.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.widthContainerSecondSection {
+  display: flex;
+  width: 836px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0;
+}
+
+.cardContainer {
+  display: flex;
+  padding: 32.874px 48.529px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18.785px;
+  align-self: stretch;
+  border-radius: 12.524px;
+  background: var(--neutral-glass-1-add-blur, rgba(255, 255, 255, 0.12));
+  backdrop-filter: blur(11.740842819213867px);
+}
+
+.cardSubContainer {
+  display: flex;
+  width: 250px;
+  padding: 44.615px 32.874px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 18.785px;
+  border-radius: 12.524px;
+  background: var(--neutral-glass-1-add-blur, rgba(255, 255, 255, 0.12));
+  backdrop-filter: blur(11.740842819213867px);
+}
+
+.icon {
+  width: 52px;
+  height: 52px;
+}
+
+.containerThirdSection {
+  background: linear-gradient(to bottom, #2e303c, #323442, #3e404e);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 120px;
+}
+
+.widthContainerThirdSection {
+  display: flex;
+  width: 836px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0;
+}
+
+.cardDarkContainer {
+  display: flex;
+  width: 200px;
+  padding: 30px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18.667px;
+  flex-shrink: 0;
+  border-radius: 12.444px;
+  background: var(--Main-Primary-Varient, #272935);
+  backdrop-filter: blur(31.11111068725586px);
+}
+
+.containerFourthSection {
+  background-image: url('/sky.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.widthContainerFourthSection {
+  position: relative;
+  display: flex;
+  width: 836px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0;
+}
+
+.planetSize {
+  width: 60px;
+  height: 60px;
+}
+
+.transition-container {
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+  /* Adjust based on your content's height */
+}
+
+.transition-content {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  opacity: 0;
+  transition: top 0.5s ease, opacity 0.5s ease;
+}
+
+.transition-content.active {
+  top: 0;
+  opacity: 1;
+}
+
+//MOBILE
+
+.mobileContainer {
+  background: var(--Main-Primary-Varient, #272935);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.widthMobileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 120px 32px;
+}
+
+.containerSecondMobileSection {
+  background-image: url('/earth.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.widthContainerSecondMobileSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 32px;
+  gap: 36px;
+}
+
+.cardSubMobileContainer {
+  display: flex;
+  max-width: 350px;
+  padding: 67px 42px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 18.785px;
+  border-radius: 12.524px;
+  background: var(--neutral-glass-1-add-blur, rgba(255, 255, 255, 0.12));
+  backdrop-filter: blur(11.740842819213867px);
+}
+.icon {
+  width: 52px;
+  height: 52px;
+}
