@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../styles/pages/community/index.module.scss';
+import styles from './community.module.scss';
 import WolfTooth from '../../public/WolfToken.svg';
 import WolfToken from '../../public/WolfCoin.svg';
 import Image from 'next/image';

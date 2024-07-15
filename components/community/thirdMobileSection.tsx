@@ -1,7 +1,7 @@
 import { Flex, Grid, Stack } from '@mantine/core';
 import { Body, Heading } from 'components/typography';
 import React from 'react';
-import styles from '../../styles/pages/community/index.module.scss';
+import styles from './community.module.scss';
 
 const ThirdMobileSection = () => {
   return (

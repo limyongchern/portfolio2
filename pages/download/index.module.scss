@@ -119,98 +119,12 @@
   justify-content: center;
   max-width: -webkit-fill-available;
 }
-.bottomContainer2 {
-  background-image: url('/attachment.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100vw;
-  // height: 500px;
-  padding-inline: 4%;
-  padding-top: 56px;
-  padding-bottom: 120px;
-  color: white;
-  margin-top: -1px;
-  justify-content: center;
-  max-width: -webkit-fill-available;
-}
-
-.sampleImage {
-  display: flex;
-  width: 350px;
-  height: 207px;
-  // padding: 42px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  border-radius: 16px;
-}
-
-.iconSectionMobile {
-  // max-width: 300px;
-  display: flex;
-  // width: 350px;
-  padding: 60px 20px;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  // margin: auto;
-}
-
-.downloadContainer2Mobile {
-  display: flex;
-  // width: 100%;
-  // padding: 60px;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 24px;
-  border-radius: 12px;
-  border: 1px solid var(--Main-Primary, #3e404e);
-  background: var(--Main-Primary-Varient, #272935);
-  // max-width: 838px;
-  /* Shadows/Card Shadow (Dark) */
-  box-shadow: 0px 4px 20px 0px rgba(12, 11, 11, 0.8);
-  //   max-width: 100%;
-  margin: 0px 20px;
-  // margin-bottom: 131px;
-  text-align: center;
-}
-
-.downloadContentMobile {
-  display: flex;
-  // max-width: 836px;
-  height: 100%;
-  // padding: 0px 60px;
-  align-items: center;
-  gap: 24px;
-  // margin: auto;
-  margin: 0px 10px;
-  text-align: center;
-}
-
-.subheadingMobile {
-  line-height: 1.5;
-  padding: '20px 20px';
-  text-align: 'center';
-  margin: 'auto';
-  // max-width: '800px';
-}
 
 .headingMobile {
   line-height: 52px;
   text-align: center;
   // padding: 0px 20px;
   margin: auto;
-}
-
-.wordContainer {
-  display: flex;
-  // width: 350px;
-  padding: 0px 20px;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
 }
 
 .image {
@@ -229,22 +143,4 @@
     max-width: 350px;
     max-height: 210px;
   }
-}
-
-.topContainer2 {
-  background-image: url('/Download 1.png');
-  width: 100vw;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  // height: 500px;
-  // padding-inline: 4%;
-  padding-top: 120px;
-  padding-bottom: 60px;
-  color: white;
-  margin-top: -1px;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  // max-width: -webkit-fill-available;
 }

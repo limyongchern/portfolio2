@@ -22,7 +22,7 @@ import {
 import TeamCard from 'components/about/teamCard';
 import { Body, BodyBold, Heading } from 'components/typography';
 import { useEffect, useState } from 'react';
-import styles from 'styles/pages/about/index.module.scss';
+import styles from './index.module.scss';
 
 const AboutUs = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);

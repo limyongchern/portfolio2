@@ -2,7 +2,7 @@ import { Image, Stack } from '@mantine/core';
 import { BodyBold } from 'components/typography';
 import { url } from 'inspector';
 import React, { useEffect, useState } from 'react';
-import styles from 'styles/pages/about/index.module.scss';
+import styles from './about.module.scss';
 
 interface ICardProps {
   image: string;

@@ -1,5 +1,5 @@
 import { Flex, Stack } from '@mantine/core';
-import styles from 'styles/pages/download/index.module.scss';
+import styles from './index.module.scss';
 import Download1 from 'public/Download 1.png';
 import Playstore from 'public/playstore.png';
 import Apple from 'public/apple.png';

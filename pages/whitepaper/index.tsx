@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from '../../styles/pages/whitepaper/index.module.scss';
+import styles from './index.module.scss';
 import { Button, Flex, Stack } from '@mantine/core';
 import { Body, Heading } from 'components/typography';
 import { CaretCircleLeft, CaretCircleRight } from '@phosphor-icons/react';

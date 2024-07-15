@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import styles from '../../styles/pages/community/index.module.scss';
+import styles from './community.module.scss';
 
 import Image from 'next/image';
 import { easeInOut, motion } from 'framer-motion';

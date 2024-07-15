@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import styles from '../../styles/pages/community/index.module.scss';
+import styles from './community.module.scss';
 import { Flex, Stack, Transition } from '@mantine/core';
 import { Body, Heading } from 'components/typography';
 import { Carousel, Embla } from '@mantine/carousel';

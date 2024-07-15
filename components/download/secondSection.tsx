@@ -1,5 +1,5 @@
 import { Flex, Stack } from '@mantine/core';
-import styles from 'styles/pages/download/index.module.scss';
+import styles from './download.module.scss';
 import { PencilLine, Phone, PhoneCall, Star } from '@phosphor-icons/react';
 import { Body, Heading } from 'components/typography';
 

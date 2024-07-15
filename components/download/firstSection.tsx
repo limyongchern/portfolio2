@@ -1,5 +1,5 @@
 import BackgroundVideo from 'components/BackgroundVideo';
-import styles from '../../styles/pages/download/index.module.scss';
+import styles from './download.module.scss';
 import { Body, Heading } from 'components/typography';
 import Image from 'next/image';
 import { Flex, Stack } from '@mantine/core';
