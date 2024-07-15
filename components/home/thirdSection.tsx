@@ -1,7 +1,7 @@
 import { Flex, Grid, Stack } from '@mantine/core';
 import { Body, Heading } from 'components/typography';
 import React from 'react';
-import styles from '../../styles/pages/index.module.scss';
+import styles from './home.module.scss';
 import Image from 'next/image';
 import backgroundImage from 'public/Bg1.png';
 import planetHome from 'public/Planet4Home.png';

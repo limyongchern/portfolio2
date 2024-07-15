@@ -1,7 +1,7 @@
 import Button from 'components/button';
 import Image from 'next/image';
 import { Body, Heading } from 'components/typography';
-import styles from '../../styles/pages/index.module.scss';
+import styles from './home.module.scss';
 const fifthSection = () => {
   return (
     <div className={styles.section5}>

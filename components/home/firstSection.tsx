@@ -1,5 +1,5 @@
 import BackgroundVideo from 'components/BackgroundVideo';
-import styles from '../../styles/pages/index.module.scss';
+import styles from './home.module.scss';
 import { Body, Heading } from 'components/typography';
 
 const firstSection = () => {

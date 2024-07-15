@@ -1,5 +1,5 @@
 import { Body, Heading } from 'components/typography';
-import styles from '../../styles/pages/index.module.scss';
+import styles from './home.module.scss';
 import Image from 'next/image';
 import { Stack } from '@mantine/core';
 import section4vid from 'public/videoImageMobile.png';
