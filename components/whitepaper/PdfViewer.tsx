@@ -92,8 +92,10 @@ const PdfViewer = () => {
                 className={`${styles.overlay} ${
                   onHover ? styles.overlayVisible : ''
                 }`}></div>
-              <Document file="/sample.pdf" onLoadSuccess={() => {}}>
-                <Page height={700} pageNumber={1} />
+              <Document
+                file="/sample.pdf"
+                onLoadSuccess={onDocumentLoadSuccess}>
+                <Page height={700} pageNumber={pageNumber} />
               </Document>
               {onHover && (
                 <a
