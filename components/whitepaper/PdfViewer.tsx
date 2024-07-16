@@ -6,6 +6,8 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
+import styles from './whitepaper.module.scss';
+import { ArrowSquareOut } from '@phosphor-icons/react';
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   'pdfjs-dist/build/pdf.worker.min.mjs',
@@ -15,6 +17,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 const PdfViewer = () => {
   const [numPages, setNumPages] = useState<number | null>(null);
   const [pageNumber, setPageNumber] = useState<number>(1);
+  const [onHover, setOnHover] = useState<boolean>(false);
 
   function onDocumentLoadSuccess({ numPages }: PDFDocumentProxy) {
     setNumPages(numPages);
@@ -81,9 +84,35 @@ const PdfViewer = () => {
                 weight="fill"
               />
             )}
-            <Document file="/sample.pdf" onLoadSuccess={onDocumentLoadSuccess}>
-              <Page height={700} pageNumber={pageNumber} />
-            </Document>
+            <div
+              className={styles.documentContainer}
+              onMouseEnter={() => setOnHover(true)}
+              onMouseLeave={() => setOnHover(false)}>
+              <div
+                className={`${styles.overlay} ${
+                  onHover ? styles.overlayVisible : ''
+                }`}></div>
+              <Document file="/sample.pdf" onLoadSuccess={() => {}}>
+                <Page height={700} pageNumber={1} />
+              </Document>
+              {onHover && (
+                <a
+                  href="/sample.pdf"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className={styles.openPdfButtonContainer}>
+                  <div className={styles.openPdfButton}>
+                    <Body variant={1} color="white" fw={700}>
+                      打开白皮书
+                    </Body>
+                    <ArrowSquareOut
+                      size={24}
+                      style={{ marginTop: 1, marginLeft: 10 }}
+                    />
+                  </div>
+                </a>
+              )}
+            </div>
             {numPages && pageNumber < numPages ? (
               <CaretCircleRight
                 style={{ cursor: 'pointer' }}
@@ -131,9 +160,37 @@ const PdfViewer = () => {
                 weight="fill"
               />
             )}
-            <Document file="/sample.pdf" onLoadSuccess={onDocumentLoadSuccess}>
-              <Page height={600} width={250} pageNumber={pageNumber} />
-            </Document>
+            <div
+              className={styles.documentContainer}
+              onMouseEnter={() => setOnHover(true)}
+              onMouseLeave={() => setOnHover(false)}>
+              <div
+                className={`${styles.overlay} ${
+                  onHover ? styles.overlayVisible : ''
+                }`}></div>
+              <Document
+                file="/sample.pdf"
+                onLoadSuccess={onDocumentLoadSuccess}>
+                <Page height={600} width={250} pageNumber={pageNumber} />
+              </Document>
+              {onHover && (
+                <a
+                  href="/sample.pdf"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className={styles.openPdfButtonContainer}>
+                  <div className={styles.openPdfButton}>
+                    <Body variant={1} color="white" fw={700}>
+                      打开白皮书
+                    </Body>
+                    <ArrowSquareOut
+                      size={24}
+                      style={{ marginTop: 1, marginLeft: 10 }}
+                    />
+                  </div>
+                </a>
+              )}
+            </div>
             {numPages && pageNumber < numPages ? (
               <CaretCircleRight
                 style={{ cursor: 'pointer' }}
