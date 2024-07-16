@@ -35,7 +35,6 @@
   font-weight: 700 !important;
 }
 
-
 // Example usage with responsive font sizes
 
 @include text-options('heading0', fonts.$family-head, 50px, 2rem, 400);
@@ -44,19 +43,20 @@
 @include text-options('heading3', fonts.$family-head, 20px, auto, 400);
 @include text-options('heading4', fonts.$family-head, 16px, 1.5rem, 400);
 @include text-options('heading5', fonts.$family-head, 14px, 1rem, 400);
+@include text-options('heading6', fonts.$family-head, 56px, 60px, 400);
+@include text-options('heading7', fonts.$family-head, 20px, normal, 400);
+@include text-options('heading8', fonts.$family-head, 40px, 4rem, 400);
+
 @include text-options('body1', fonts.$family-body, 18px, auto, 400);
 @include text-options('body2', fonts.$family-body, 16px, 1.4rem, 400);
 @include text-options('body3', fonts.$family-body, 14px, 1.4rem, 400);
 @include text-options('body4', fonts.$family-body, 12px, 1.4rem, 400);
 @include text-options('body5', fonts.$family-body, 10px, auto, 400);
-@include text-options('bodybold1', fonts.$family-body-bold, 20px, auto, 400);
-
 @include text-options('body6', fonts.$family-body, 56px, 60px, 700);
-@include text-options('heading6', fonts.$family-head, 56px,60px, 400);
-
 @include text-options('body7', fonts.$family-body, 20px, normal, 700);
-@include text-options('heading7', fonts.$family-head, 20px, normal, 400);
-
 @include text-options('body8', fonts.$family-body, 20px, auto, 400);
-@include text-options('heading8', fonts.$family-head, 40px, 4rem, 400);
-
+@include text-options('body9', fonts.$family-body, 40px, auto, 700);
+@include text-options('body10', fonts.$family-body, 30px, auto, 700);
+@include text-options('body11', fonts.$family-body, 36px, auto, 700);
+@include text-options('body12', fonts.$family-body, 24px, auto, 700);
+@include text-options('bodybold1', fonts.$family-body-bold, 20px, auto, 400);

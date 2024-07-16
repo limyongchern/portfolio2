@@ -39,7 +39,6 @@ const Header = (props: IProps) => {
   const [translateClicked, setTranslateClicked] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [active, setActive] = useState(links[0].link);
-  console.log(active, 'hahha');
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);

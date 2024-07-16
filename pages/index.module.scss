@@ -42,7 +42,7 @@
   align-items: center;
   gap: 300px;
   width: 100%;
-  background: var(--Main-Primary-Varient, #272935);
+  background: var(--Main-Primary-Varient, #3e404e);
   margin: auto;
   object-fit: fill;
 
@@ -284,4 +284,46 @@
   z-index: 1;
   align-items: center;
   overflow: hidden;
+}
+
+.collapsibleCardsContainer {
+  display: flex;
+  gap: 0px;
+}
+
+.collapsibleCard {
+  margin: 15px;
+  border-radius: 8px;
+  // box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  padding: 0px 0px;
+  overflow: hidden;
+  height: 500px;
+}
+
+.content {
+  transition: width 1s ease;
+  overflow: hidden;
+}
+
+.collapsibleImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardTitle {
+  padding-left: 15px;
+  margin-top: -75px;
+}
+
+.cardTitleOpen {
+  padding-left: 15px;
+  margin-top: -165px;
+}
+
+.cardDescription {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 5px;
 }

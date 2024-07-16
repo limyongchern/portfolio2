@@ -193,7 +193,7 @@
   align-items: center;
   gap: 300px;
   width: 100%;
-  background: var(--Main-Primary-Varient, #272935);
+  background: var(--Main-Primary-Varient, #3e404e);
   margin: auto;
   object-fit: fill;
 
@@ -264,4 +264,41 @@
   justify-content: flex-end;
   align-items: center;
   // flex-shrink: 0;
+}
+
+.collapsibleCardsContainer {
+  gap: 0px;
+  width: 100%;
+}
+
+.collapsibleCard {
+  margin: 15px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 0px 0px;
+  overflow: hidden;
+  height: 100px;
+}
+
+.collapsibleImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--main-primary-varient-55, rgba(39, 41, 53, 0.5));
+}
+
+.cardNumber {
+  padding-left: 15px;
+  margin-top: -80px;
+}
+
+.cardTitleOpen {
+  padding-left: 15px;
+  margin-top: -145px;
+}
+
+.cardDescription2 {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 5px;
 }
