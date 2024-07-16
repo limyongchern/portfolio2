@@ -38,10 +38,19 @@ const dummyCollapsibleCardData = [
 const CollapsibleCard = ({ data, index }: any) => {
   const [cardOpen, setCardOpen] = useState(0);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCardOpen((cardOpen + 1) % 4);
+    }, 3500);
+
+    return () => clearTimeout(timer);
+  }, [cardOpen]);
+
   const Cards = ({ data, index }: any) => {
     return (
       <div
         className={styles.collapsibleCard}
+        onMouseEnter={() => setCardOpen(index)}
         onClick={() => {
           setCardOpen(index);
         }}
@@ -77,13 +86,24 @@ const CollapsibleCard = ({ data, index }: any) => {
     );
   };
   return (
-    <MagicMotion transition={{ type: 'spring', stiffness: 100 }}>
-      <div className={styles.collapsibleCardsContainer}>
-        {dummyCollapsibleCardData.map((data, index) => (
-          <Cards data={data} index={index} />
-        ))}
-      </div>
-    </MagicMotion>
+    <div
+      className={styles.collapsibleCardSection}
+      style={{ backgroundColor: '#272935' }}>
+      <Heading
+        variant={0}
+        color="white"
+        style={{ marginBottom: '-250px' }}
+        fw={40}>
+        区块链驱动，打造自主安全的无界投资交流社区
+      </Heading>
+      <MagicMotion transition={{ type: 'spring', stiffness: 100 }}>
+        <div className={styles.collapsibleCardsContainer}>
+          {dummyCollapsibleCardData.map((data, index) => (
+            <Cards data={data} index={index} />
+          ))}
+        </div>
+      </MagicMotion>
+    </div>
   );
 };
 

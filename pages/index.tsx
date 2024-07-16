@@ -21,6 +21,7 @@ import FifthSection from 'components/home/fifthSection';
 import FourthSection from 'components/home/fourthSection';
 
 import CollapsibleCard from 'components/home/collapsibleCard';
+import BlockchainSection from 'components/home/blockchainSection';
 
 interface IProps {}
 
@@ -51,42 +52,6 @@ const Home = (props: IProps) => {
     };
   }, [width]);
 
-  // const CollapsibleCard = ({ data, index }: any) => {
-  //   return (
-  //     <div
-  //       className={styles.collapsibleCard}
-  //       onClick={() => {
-  //         setCardOpen(index);
-  //       }}
-  //       key={index}
-  //       style={{
-  //         width: cardOpen === index ? '440px' : '177px',
-  //       }}>
-  //       <Image
-  //         src={data.image}
-  //         // width={}
-  //         className={styles.collapsibleImage}
-  //         alt="wolfavatar"
-  //       />
-
-  //       {cardOpen === index ? (
-  //         <>
-  //           <Body variant={9} color="white" className={styles.cardTitleOpen}>
-  //             {data.title}
-  //           </Body>
-  //           <Body variant={10} color="white" className={styles.cardDescription}>
-  //             {data.description}
-  //           </Body>
-  //         </>
-  //       ) : (
-  //         <Body variant={9} color="white" className={styles.cardTitle}>
-  //           {data.title}
-  //         </Body>
-  //       )}
-  //     </div>
-  //   );
-  // };
-
   return (
     <>
       {!isMobile && (
@@ -111,25 +76,7 @@ const Home = (props: IProps) => {
             </div>
           </div>
 
-          <div
-            className={styles.planetsSection}
-            style={{ backgroundColor: '#272935' }}>
-            <Heading
-              variant={0}
-              color="white"
-              style={{ marginBottom: '-200px' }}
-              fw={40}>
-              故事的起点
-            </Heading>
-            <CollapsibleCard />
-            {/* <MagicMotion transition={{ type: 'spring', stiffness: 100 }}>
-              <div className={styles.collapsibleCardsContainer}>
-                {dummyCollapsibleCardData.map((data, index) => (
-                  <CollapsibleCard data={data} index={index} />
-                ))}
-              </div>
-            </MagicMotion> */}
-          </div>
+          <CollapsibleCard />
 
           <div className={styles.planetsSection}>
             <Heading
@@ -220,6 +167,7 @@ const Home = (props: IProps) => {
               </Card>
             </div>
           </div>
+
           <div className={styles.section3}>
             <div className={styles.backgroundWrapper}>
               <Image
@@ -254,6 +202,9 @@ const Home = (props: IProps) => {
               />
             </Flex>
           </div>
+
+          <BlockchainSection />
+
           <div className={styles.section4}>
             <div className={styles.section4p2}>
               <Stack>

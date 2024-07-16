@@ -43,10 +43,19 @@ const dummyCollapsibleCardData = [
 const expandanbleCardsSection = () => {
   const [cardOpen, setCardOpen] = useState(0);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCardOpen((cardOpen + 1) % 4);
+    }, 3500);
+
+    return () => clearTimeout(timer);
+  }, [cardOpen]);
+
   const CollapsibleCardMobile = ({ data, index }: any) => {
     return (
       <div
         className={styles.collapsibleCardMobile}
+        onMouseEnter={() => setCardOpen(index)}
         onClick={() => {
           setCardOpen(index);
         }}
