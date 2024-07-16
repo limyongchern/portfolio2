@@ -19,39 +19,10 @@ import SecondSection from 'components/home/secondSection';
 import ExpandableCardsSection from 'components/home/expandableCardsSection';
 import FifthSection from 'components/home/fifthSection';
 import FourthSection from 'components/home/fourthSection';
-import TempImage1 from 'public/TempImages/TempImage1.jpg';
-import TempImage2 from 'public/TempImages/TempImage2.jpg';
-import TempImage3 from 'public/TempImages/TempImage3.jpg';
-import TempImage4 from 'public/TempImages/TempImage4.jpg';
+
+import CollapsibleCard from 'components/home/collapsibleCard';
 
 interface IProps {}
-
-const dummyCollapsibleCardData = [
-  {
-    id: 1,
-    title: '1',
-    description: '某一天，萌狼们开始探索太空投资的机会',
-    image: TempImage1,
-  },
-  {
-    id: 2,
-    title: '2',
-    description: '某二天，萌狼们开始探索太空投资的机会',
-    image: TempImage2,
-  },
-  {
-    id: 3,
-    title: '3',
-    description: '某三天，萌狼们开始探索太空投资的机会',
-    image: TempImage3,
-  },
-  {
-    id: 4,
-    title: '4',
-    description: '某四天，萌狼们开始探索太空投资的机会',
-    image: TempImage4,
-  },
-];
 
 const Home = (props: IProps) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -61,7 +32,7 @@ const Home = (props: IProps) => {
   const handleWindowSizeChange = () => {
     setWidth(typeof window !== 'undefined' ? window.innerWidth : 0);
   };
-  const [cardOpen, setCardOpen] = useState(0);
+  // const [cardOpen, setCardOpen] = useState(0);
 
   useEffect(() => {
     if (width <= 835) {
@@ -80,41 +51,41 @@ const Home = (props: IProps) => {
     };
   }, [width]);
 
-  const CollapsibleCard = ({ data, index }: any) => {
-    return (
-      <div
-        className={styles.collapsibleCard}
-        onClick={() => {
-          setCardOpen(index);
-        }}
-        key={index}
-        style={{
-          width: cardOpen === index ? '440px' : '177px',
-        }}>
-        <Image
-          src={data.image}
-          // width={}
-          className={styles.collapsibleImage}
-          alt="wolfavatar"
-        />
+  // const CollapsibleCard = ({ data, index }: any) => {
+  //   return (
+  //     <div
+  //       className={styles.collapsibleCard}
+  //       onClick={() => {
+  //         setCardOpen(index);
+  //       }}
+  //       key={index}
+  //       style={{
+  //         width: cardOpen === index ? '440px' : '177px',
+  //       }}>
+  //       <Image
+  //         src={data.image}
+  //         // width={}
+  //         className={styles.collapsibleImage}
+  //         alt="wolfavatar"
+  //       />
 
-        {cardOpen === index ? (
-          <>
-            <Body variant={9} color="white" className={styles.cardTitleOpen}>
-              {data.title}
-            </Body>
-            <Body variant={10} color="white" className={styles.cardDescription}>
-              {data.description}
-            </Body>
-          </>
-        ) : (
-          <Body variant={9} color="white" className={styles.cardTitle}>
-            {data.title}
-          </Body>
-        )}
-      </div>
-    );
-  };
+  //       {cardOpen === index ? (
+  //         <>
+  //           <Body variant={9} color="white" className={styles.cardTitleOpen}>
+  //             {data.title}
+  //           </Body>
+  //           <Body variant={10} color="white" className={styles.cardDescription}>
+  //             {data.description}
+  //           </Body>
+  //         </>
+  //       ) : (
+  //         <Body variant={9} color="white" className={styles.cardTitle}>
+  //           {data.title}
+  //         </Body>
+  //       )}
+  //     </div>
+  //   );
+  // };
 
   return (
     <>
@@ -150,11 +121,14 @@ const Home = (props: IProps) => {
               fw={40}>
               故事的起点
             </Heading>
-            <div className={styles.collapsibleCardsContainer}>
-              {dummyCollapsibleCardData.map((data, index) => (
-                <CollapsibleCard data={data} index={index} />
-              ))}
-            </div>
+            <CollapsibleCard />
+            {/* <MagicMotion transition={{ type: 'spring', stiffness: 100 }}>
+              <div className={styles.collapsibleCardsContainer}>
+                {dummyCollapsibleCardData.map((data, index) => (
+                  <CollapsibleCard data={data} index={index} />
+                ))}
+              </div>
+            </MagicMotion> */}
           </div>
 
           <div className={styles.planetsSection}>
@@ -333,7 +307,7 @@ const Home = (props: IProps) => {
       {isMobile && (
         <>
           <FirstSection />
-          <ExpandableCardsSection data={dummyCollapsibleCardData} />
+          <ExpandableCardsSection />
           <SecondSection />
           <ThirdSection />
           <FourthSection />

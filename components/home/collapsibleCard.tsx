@@ -1,12 +1,7 @@
-import NFT from 'public/NFT.png';
-import card4Icon from 'public/card4Icon.png';
-import card2Icon from 'public/card2Icon.png';
-import card1Icon from 'public/GlobeHemisphereWest.png';
-import Image from 'next/image';
-import { Body, Heading } from 'components/typography';
 import styles from './home.module.scss';
-import { Card, Flex, Stack } from '@mantine/core';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { Body, Heading } from 'components/typography';
 import { MagicMotion } from 'react-magic-motion';
 import TempImage1 from 'public/TempImages/TempImage1.jpg';
 import TempImage2 from 'public/TempImages/TempImage2.jpg';
@@ -40,68 +35,56 @@ const dummyCollapsibleCardData = [
   },
 ];
 
-const expandanbleCardsSection = () => {
+const CollapsibleCard = ({ data, index }: any) => {
   const [cardOpen, setCardOpen] = useState(0);
 
-  const CollapsibleCardMobile = ({ data, index }: any) => {
+  const Cards = ({ data, index }: any) => {
     return (
       <div
-        className={styles.collapsibleCardMobile}
+        className={styles.collapsibleCard}
         onClick={() => {
           setCardOpen(index);
         }}
         key={index}
         style={{
-          height: cardOpen === index ? '400px' : '100px',
+          width: cardOpen === index ? '440px' : '177px',
         }}>
         <Image
           src={data.image}
-          className={styles.collapsibleImageMobile}
+          // width={}
+          className={styles.collapsibleImage}
           alt="wolfavatar"
         />
 
         {cardOpen === index ? (
           <>
-            <Body
-              variant={11}
-              color="white"
-              className={styles.cardTitleOpenMobile}>
+            <Body variant={9} color="white" className={styles.cardTitleOpen}>
               {data.title}
             </Body>
             <Body
-              variant={12}
+              variant={10}
               color="white"
-              className={styles.cardDescription2Mobile}>
+              className={styles.cardDescription2}>
               {data.description}
             </Body>
           </>
         ) : (
-          <Body variant={11} color="white" className={styles.cardNumberMobile}>
+          <Body variant={9} color="white" className={styles.cardTitle2}>
             {data.title}
           </Body>
         )}
       </div>
     );
   };
-
   return (
-    <div className={styles.planetsSection}>
-      <Heading
-        variant={0}
-        color="white"
-        style={{ marginBottom: '-200px' }}
-        fs={36}
-        fw={700}>
-        故事的起点
-      </Heading>
-      <MagicMotion transition={{ type: 'spring', stiffness: 100 }}>
-        <div className={styles.collapsibleCardsContainerMobile}>
-          {dummyCollapsibleCardData.map((item: any, index: number) => (
-            <CollapsibleCardMobile data={item} index={index} />
-          ))}
-        </div>
-      </MagicMotion>
-    </div>
+    <MagicMotion transition={{ type: 'spring', stiffness: 100 }}>
+      <div className={styles.collapsibleCardsContainer}>
+        {dummyCollapsibleCardData.map((data, index) => (
+          <Cards data={data} index={index} />
+        ))}
+      </div>
+    </MagicMotion>
   );
 };
-export default expandanbleCardsSection;
+
+export default CollapsibleCard;
