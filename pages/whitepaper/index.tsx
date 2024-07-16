@@ -37,7 +37,6 @@ const Whitepaper = () => {
       }
     };
   }, [width]);
-  console.log(width);
 
   return (
     <>

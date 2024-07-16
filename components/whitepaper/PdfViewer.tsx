@@ -60,7 +60,6 @@ const PdfViewer = () => {
       }
     };
   }, [width]);
-  console.log(width);
 
   return (
     <div>
