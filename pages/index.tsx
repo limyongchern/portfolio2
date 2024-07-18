@@ -19,10 +19,10 @@ import TempImage3 from 'public/TempImages/TempImage3.jpg';
 import TempImage4 from 'public/TempImages/TempImage4.jpg';
 
 //images for ThirdSection
-import CardIcon1 from 'public/home/CardIcon1.png';
-import CardIcon2 from 'public/home/CardIcon2.svg';
-import CardIcon3 from 'public/home/CardIcon3.svg';
-import CardIcon4 from 'public/home/CardIcon4.svg';
+import CardIcon1 from 'public/Home/CardIcon1.png';
+import CardIcon2 from 'public/Home/CardIcon2.svg';
+import CardIcon3 from 'public/Home/CardIcon3.svg';
+import CardIcon4 from 'public/Home/CardIcon4.svg';
 
 // import card1Icon from 'public/GlobeHemisphereWest.png';
 // import card2Icon from 'public/card2Icon.png';
