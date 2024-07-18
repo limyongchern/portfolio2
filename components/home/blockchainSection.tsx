@@ -64,7 +64,7 @@ const BlockchainSection = () => {
   useEffect(() => {
     if (isMounted) setSelectedImage(dummyTabs[hoveredIndex].image);
     // setSelectedImage(dummyTabs[hoveredIndex].image);
-  }, [hoveredIndex]);
+  }, [hoveredIndex, isMounted]);
 
   const tabsComponents = dummyTabs.map((item, i) => {
     return (

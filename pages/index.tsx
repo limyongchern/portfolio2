@@ -1,29 +1,133 @@
-import { Card, Flex, Stack } from '@mantine/core';
-import { GlobeHemisphereWest, Union } from '@phosphor-icons/react';
-import BackgroundVideo from 'components/BackgroundVideo';
-import Button from 'components/button';
-import { Body, Heading } from 'components/typography';
-import styles from './index.module.scss';
-import Image from 'next/image';
-import backgroundImage from 'public/Bg1.png';
-import section4vid from 'public/section4Vid.png';
-import planetHome from 'public/Planet4Home.png';
-import NFT from 'public/NFT.png';
-import card4Icon from 'public/card4Icon.png';
-import card2Icon from 'public/card2Icon.png';
-import card1Icon from 'public/GlobeHemisphereWest.png';
 import { useEffect, useState } from 'react';
-import ThirdSection from 'components/home/thirdSection';
 import FirstSection from 'components/home/firstSection';
+import FirstMobileSection from 'components/home/firstMobileSection';
 import SecondSection from 'components/home/secondSection';
-import ExpandableCardsSection from 'components/home/expandableCardsSection';
-import FifthSection from 'components/home/fifthSection';
-import FourthSection from 'components/home/fourthSection';
+import SecondMobileSection from 'components/home/secondMobileSection';
+import ThirdSection from 'components/home/thirdSection';
+import ThirdMobileSection from 'components/home/thirdMobileSection';
+import FourthMobileSection from 'components/home/fourthMobileSection';
+import FifthMobileSection from 'components/home/fifthMobileSection';
 
-import CollapsibleCard from 'components/home/collapsibleCard';
 import BlockchainSection from 'components/home/blockchainSection';
+import PlanetSection from 'components/home/planetSection';
+import PlanetMobileSection from 'components/home/planetMobileSection';
+
+//images for SecondSection
+import TempImage1 from 'public/TempImages/TempImage1.jpg';
+import TempImage2 from 'public/TempImages/TempImage2.jpg';
+import TempImage3 from 'public/TempImages/TempImage3.jpg';
+import TempImage4 from 'public/TempImages/TempImage4.jpg';
+
+//images for ThirdSection
+import CardIcon1 from 'public/home/CardIcon1.png';
+import CardIcon2 from 'public/home/CardIcon2.svg';
+import CardIcon3 from 'public/home/CardIcon3.svg';
+import CardIcon4 from 'public/home/CardIcon4.svg';
+
+// import card1Icon from 'public/GlobeHemisphereWest.png';
+// import card2Icon from 'public/card2Icon.png';
+// import card4Icon from 'public/card4Icon.png';
+// import NFT from 'public/NFT.png';
 
 interface IProps {}
+
+const FirstSectionData = {
+  headline: '全球领先的Web3投资交流社区',
+  subheader:
+    'WolfPlanet 是基于区块链技术，让投资知识交流无界限，让创作更有价值',
+};
+
+const SecondSectionData = [
+  {
+    id: 1,
+    title: '1',
+    description: '某一天，萌狼们开始探索太空投资的机会',
+    image: TempImage1,
+  },
+  {
+    id: 2,
+    title: '2',
+    description:
+      '萌狼们化身太空流浪者在太空中探索并共同创立了Wolf Planet投资交流社区',
+    image: TempImage2,
+  },
+  {
+    id: 3,
+    title: '3',
+    description: '太空流浪者们在外太空中探索发现了不同的星球',
+    image: TempImage3,
+  },
+  {
+    id: 4,
+    title: '4',
+    description: '每个星球都是一个理想的投资交流场所，故事由此开始…',
+    image: TempImage4,
+  },
+];
+
+const ThirdSectionData = {
+  headline: '汇聚全球投资者的全方位、全领域的投资交流社区',
+  cards: [
+    {
+      id: 1,
+      title: '知识交流',
+      bulletPoints: [
+        '来自世界各地的投资爱好者',
+        '投资观点、技巧交流',
+        '实时互动讨论',
+      ],
+      logo: CardIcon1,
+    },
+    {
+      id: 2,
+      title: '部落同行',
+      bulletPoints: [
+        '建立跨地域、跨领域的投资者社交圈',
+        '及时交流投资见解',
+        '寻找志同道合的投资伙伴',
+      ],
+      logo: CardIcon2,
+    },
+    {
+      id: 3,
+      title: '全球视野',
+      bulletPoints: [
+        '洞察全球市场动态',
+        '了解各类产品的投资机会',
+        '获取实时投资情报',
+      ],
+      logo: CardIcon3,
+    },
+    {
+      id: 4,
+      title: '投资教育',
+      bulletPoints: [
+        '专业投资课程',
+        '名师指导，系统培养投资技能',
+        '持续更新，紧跟市场变化',
+      ],
+      logo: CardIcon4,
+    },
+  ],
+  bottomCards: [
+    {
+      id: 1,
+      title: '新手投资者',
+      bulletPoints: ['快速提升投资技能', '结识投资大牛', '洞察全球市场动向'],
+      image: TempImage1,
+    },
+    {
+      id: 2,
+      title: '专业投资者',
+      bulletPoints: [
+        '知识分享带来经济效益',
+        '拥有更广阔的追随者',
+        '跨地域分享投资知识',
+      ],
+      image: TempImage1,
+    },
+  ],
+};
 
 const Home = (props: IProps) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -56,119 +160,15 @@ const Home = (props: IProps) => {
     <>
       {!isMobile && (
         <div>
-          <div className={styles.video}>
-            <BackgroundVideo />
-          </div>
-          <div style={{ padding: '32px' }}>
-            <div className={styles.titleColumn}>
-              <Heading
-                variant={0}
-                color="#F2F3F7"
-                fw={700}
-                fs={40}
-                style={{ paddingTop: '16px', lineHeight: 1.5 }}>
-                Wolf Planet 星球：跨域投资交流平台
-              </Heading>
-              <Body variant={1} className={styles.subheading}>
-                Wolf Planet
-                星球是基于区块链技术的去中心化投资交流平台，旨在为用户提供跨域、专业、高效的投资交流体验。
-              </Body>
-            </div>
-          </div>
+          <FirstSection data={FirstSectionData} />
 
-          <CollapsibleCard />
+          <SecondSection data={SecondSectionData} />
 
-          <div className={styles.planetsSection}>
-            <Heading
-              variant={0}
-              color="white"
-              style={{ marginBottom: '-200px' }}
-              fw={40}>
-              在这里，您可以
-            </Heading>
-            <div className={styles.cardsContainer}>
-              <Card className={styles.card}>
-                <Image
-                  src={card1Icon}
-                  alt="card 1 icon"
-                  width={164}
-                  height={164}
-                  color={'#9198B0'}
-                />
-                <Heading variant={1} color="#F2F3F7" fw={700}>
-                  互动
-                </Heading>
-                <Body
-                  variant={1}
-                  className={styles.cardWord}
-                  style={{ lineHeight: 1.5 }}>
-                  加入由不同投资主题形成的星球，与全球各地的投资者交流互动，分享观点、进行讨论、发布文章等。
-                </Body>
-              </Card>
-              <Card className={styles.card}>
-                <Image
-                  src={card2Icon}
-                  alt="card 2 icon"
-                  color={'#9198B0'}
-                  width={133}
-                  height={133}
-                />
-                <Heading
-                  variant={1}
-                  color="#F2F3F7"
-                  fw={700}
-                  style={{ paddingTop: '16px' }}>
-                  组织
-                </Heading>
-                <Body
-                  variant={1}
-                  className={styles.cardWord}
-                  style={{ lineHeight: 1.5 }}>
-                  创建或加入由志同道合的用户组成的部落，根据兴趣爱好、投资理念等因素进行划分，打造专属的投资交流空间。
-                </Body>
-              </Card>
-              <Card className={styles.card}>
-                <Image
-                  color="#9198B0"
-                  src={NFT}
-                  alt="NFT"
-                  width={310}
-                  height={164}
-                />
-                <Heading variant={1} color="#F2F3F7" fw={700}>
-                  NFT
-                </Heading>
-                <Body
-                  variant={1}
-                  className={styles.cardWord}
-                  style={{ lineHeight: 1.5 }}>
-                  通过获取和持有
-                  NFT，解锁更多功能和权益，例如参与星球或部落的治理、获得专属投资资讯等。
-                </Body>
-              </Card>
-              <Card className={styles.card}>
-                <Image
-                  src={card4Icon}
-                  alt="card 4"
-                  color={'#9198B0'}
-                  width={164}
-                  height={164}
-                />
-                <Heading variant={1} color="#F2F3F7" fw={700}>
-                  社群
-                </Heading>
-                <Body
-                  variant={1}
-                  className={styles.cardWord}
-                  style={{ lineHeight: 1.5 }}>
-                  参与
-                  DAO社区自治组织的运营，共同管理星球或部落的运营，保障社区的公平公正。
-                </Body>
-              </Card>
-            </div>
-          </div>
+          {/* <SecondSectionOld /> */}
 
-          <div className={styles.section3}>
+          <ThirdSection data={ThirdSectionData} />
+
+          {/* <div className={styles.section3}>
             <div className={styles.backgroundWrapper}>
               <Image
                 src={backgroundImage}
@@ -201,11 +201,12 @@ const Home = (props: IProps) => {
                 className={styles.section3Planet}
               />
             </Flex>
-          </div>
+          </div> */}
 
           <BlockchainSection />
+          <PlanetSection />
 
-          <div className={styles.section4}>
+          {/* <div className={styles.section4}>
             <div className={styles.section4p2}>
               <Stack>
                 <Heading
@@ -230,8 +231,8 @@ const Home = (props: IProps) => {
                 />
               </Stack>
             </div>
-          </div>
-          <div className={styles.section5}>
+          </div> */}
+          {/* <div className={styles.section5}>
             <div className={styles.section5p2}>
               <Heading
                 variant={0}
@@ -251,18 +252,18 @@ const Home = (props: IProps) => {
               </Body>
               <Button className={styles.button}>Contact Us</Button>
             </div>
-          </div>
+          </div> */}
         </div>
       )}
 
       {isMobile && (
         <>
-          <FirstSection />
-          <ExpandableCardsSection />
-          <SecondSection />
-          <ThirdSection />
-          <FourthSection />
-          <FifthSection />
+          <FirstMobileSection data={FirstSectionData} />
+          <SecondMobileSection data={SecondSectionData} />
+          {/* <SecondMobileSectionOld /> */}
+          <ThirdMobileSection data={ThirdSectionData} />
+          {/* <FourthMobileSection /> */}
+          <FifthMobileSection />
         </>
       )}
     </>

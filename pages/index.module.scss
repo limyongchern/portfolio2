@@ -203,38 +203,6 @@
   }
 }
 
-.section3 {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  align-items: center;
-  margin: auto;
-}
-
-.section3Content {
-  display: flex;
-  max-width: 1060px;
-  max-height: 445px;
-  padding: 142px 60px;
-  align-items: center;
-  margin: auto;
-}
-
-.section3Word {
-  max-width: 440px;
-}
-.section3Planet {
-  display: flex;
-  // padding: 72.486px 61px 52.514px 58px;
-  flex-direction: column;
-  // justify-content: flex-end;
-  align-items: center;
-  // position: absolute;
-  margin: auto;
-  max-width: 441.2px;
-  max-height: 443.5px;
-}
-
 .backgroundWrapper {
   position: absolute;
   top: 0;

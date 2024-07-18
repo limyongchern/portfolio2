@@ -234,26 +234,6 @@
   background-repeat: no-repeat;
 }
 
-.planetCardDiselect {
-  margin-top: 28px;
-  display: flex;
-  width: 367.742px;
-  height: 400px;
-  border-radius: 29.419px;
-  padding: 35.548px 4.904px 0px 0px;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-
-  background-image: url('/Frame.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.widthPlanetCard {
-  width: 306.452px;
-  height: 500px;
-}
 .carouselStyles {
   flex-grow: 1;
   min-height: 10vh;
@@ -267,79 +247,6 @@
   display: flex;
   width: 415.548px;
   height: 415.548px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.planetImageDiselect {
-  display: flex;
-  width: 365.29px;
-  height: 365.29px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-/* Planet Mobile */
-.containerFourthMobileSection {
-  background-color: #272935;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: 100px 0 150px 0;
-}
-
-.planetMobileCard {
-  display: flex;
-  width: 300px;
-  height: 400px;
-  padding-top: 29px;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 24px;
-  overflow: hidden;
-  background-image: url('/Frame.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.planetCardMobileDiselect {
-  display: flex;
-  width: 300px;
-  height: 380px;
-  padding-top: 29px;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 24px;
-  overflow: hidden;
-  background-image: url('/Frame.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.widthPlanetMobileCard {
-  width: 250px;
-}
-
-.planetMobileImage {
-  display: flex;
-  width: 339px;
-  height: 340px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.planetMobileImageDiselect {
-  display: flex;
-  width: 298px;
-  height: 298px;
   flex-direction: column;
   justify-content: center;
   align-items: center;

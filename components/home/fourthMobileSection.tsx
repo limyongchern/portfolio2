@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Stack } from '@mantine/core';
 import section4vid from 'public/videoImageMobile.png';
 
-const fourthSection = () => {
+const fourthMobileSection = () => {
   return (
     <div className={styles.section4}>
       <div className={styles.section4p2}>
@@ -31,4 +31,4 @@ const fourthSection = () => {
   );
 };
 
-export default fourthSection;
+export default fourthMobileSection;

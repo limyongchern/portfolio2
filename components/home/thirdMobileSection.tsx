@@ -7,27 +7,32 @@ import { Body, Heading } from 'components/typography';
 import styles from './thirdSection.module.scss';
 import { Card, Flex, Stack } from '@mantine/core';
 
-const ThirdSection = ({ data }: any) => {
+const ThirdMobileSection = ({ data }: any) => {
   return (
-    <div className={styles.outerContainer}>
-      <Body variant={9} color="white" style={{ marginBottom: '-200px' }}>
+    <div className={styles.outerContainerMobile}>
+      <Body
+        variant={9}
+        color="white"
+        style={{ marginBottom: '0px', textAlign: 'center' }}>
         {data.headline}
       </Body>
-      <div className={styles.cardsContainer}>
+      <div className={styles.cardsContainerMobile}>
         {data.cards.map((card: any, index: number) => (
           <Card className={styles.card} key={index}>
             <Image
               src={card.logo}
               alt="card icon"
-              width={84}
-              height={84}
+              width={56}
+              height={56}
               color={'#9198B0'}
             />
             <div>
               <Heading variant={1} color="#F2F3F7" fw={700}>
                 {card.title}
               </Heading>
-              <div style={{ marginTop: 20 }}>
+              <ul
+                className="custom-list"
+                style={{ marginTop: 20, marginLeft: -10 }}>
                 {card.bulletPoints.map((point: any, index: number) => (
                   <Body
                     variant={1}
@@ -35,13 +40,13 @@ const ThirdSection = ({ data }: any) => {
                     key={index}
                     style={{
                       marginTop: '8px',
-                      lineHeight: '2rem',
-                      width: 320,
+                      lineHeight: '2.2rem',
+                      width: 220,
                     }}>
                     <li>{point}</li>
                   </Body>
                 ))}
-              </div>
+              </ul>
             </div>
           </Card>
         ))}
@@ -73,4 +78,4 @@ const ThirdSection = ({ data }: any) => {
     </div>
   );
 };
-export default ThirdSection;
+export default ThirdMobileSection;

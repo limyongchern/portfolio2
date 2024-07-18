@@ -8,39 +8,8 @@ import styles from './home.module.scss';
 import { Card, Flex, Stack } from '@mantine/core';
 import { useEffect, useState } from 'react';
 import { MagicMotion } from 'react-magic-motion';
-import TempImage1 from 'public/TempImages/TempImage1.jpg';
-import TempImage2 from 'public/TempImages/TempImage2.jpg';
-import TempImage3 from 'public/TempImages/TempImage3.jpg';
-import TempImage4 from 'public/TempImages/TempImage4.jpg';
 
-const dummyCollapsibleCardData = [
-  {
-    id: 1,
-    title: '1',
-    description: '某一天，萌狼们开始探索太空投资的机会',
-    image: TempImage1,
-  },
-  {
-    id: 2,
-    title: '2',
-    description: '某二天，萌狼们开始探索太空投资的机会',
-    image: TempImage2,
-  },
-  {
-    id: 3,
-    title: '3',
-    description: '某三天，萌狼们开始探索太空投资的机会',
-    image: TempImage3,
-  },
-  {
-    id: 4,
-    title: '4',
-    description: '某四天，萌狼们开始探索太空投资的机会',
-    image: TempImage4,
-  },
-];
-
-const expandanbleCardsSection = () => {
+const SecondMobileSectionVertical = ({ data }: any) => {
   const [cardOpen, setCardOpen] = useState(0);
 
   useEffect(() => {
@@ -94,7 +63,9 @@ const expandanbleCardsSection = () => {
   };
 
   return (
-    <div className={styles.planetsSection}>
+    <div
+      className={styles.planetsSection}
+      style={{ backgroundColor: '#272935' }}>
       <Heading
         variant={0}
         color="white"
@@ -103,14 +74,14 @@ const expandanbleCardsSection = () => {
         fw={700}>
         故事的起点
       </Heading>
-      <MagicMotion transition={{ type: 'spring', stiffness: 100 }}>
+      <MagicMotion transition={{ type: 'ease' }}>
         <div className={styles.collapsibleCardsContainerMobile}>
-          {dummyCollapsibleCardData.map((item: any, index: number) => (
-            <CollapsibleCardMobile data={item} index={index} />
+          {data.map((item: any, index: number) => (
+            <CollapsibleCardMobile data={item} index={index} key={index} />
           ))}
         </div>
       </MagicMotion>
     </div>
   );
 };
-export default expandanbleCardsSection;
+export default SecondMobileSectionVertical;

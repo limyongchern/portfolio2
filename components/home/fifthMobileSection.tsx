@@ -2,7 +2,8 @@ import Button from 'components/button';
 import Image from 'next/image';
 import { Body, Heading } from 'components/typography';
 import styles from './home.module.scss';
-const fifthSection = () => {
+
+const fifthMobileSection = () => {
   return (
     <div className={styles.section5}>
       <div className={styles.section5p2}>
@@ -28,4 +29,4 @@ const fifthSection = () => {
   );
 };
 
-export default fifthSection;
+export default fifthMobileSection;

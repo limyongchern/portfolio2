@@ -1,103 +1,118 @@
-import NFT from 'public/NFT.png';
-import card4Icon from 'public/card4Icon.png';
-import card2Icon from 'public/card2Icon.png';
-import card1Icon from 'public/GlobeHemisphereWest.png';
-import Image from 'next/image';
-import { Body, Heading } from 'components/typography';
 import styles from './home.module.scss';
-import { Card, Flex, Stack } from '@mantine/core';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { Body, Heading } from 'components/typography';
+import { MagicMotion } from 'react-magic-motion';
+import { PauseCircle, PlayCircle } from '@phosphor-icons/react';
 
-const secondSection = () => {
+const SecondSection = ({ data }: any) => {
+  const timerLength = 3000;
+  const [cardOpen, setCardOpen] = useState(0);
+  const [isTimerPaused, setIsTimerPaused] = useState(false);
+
+  useEffect(() => {
+    if (isTimerPaused) return;
+    const timer = setTimeout(() => {
+      setCardOpen((cardOpen + 1) % 4);
+    }, timerLength);
+
+    return () => clearTimeout(timer);
+  }, [cardOpen, isTimerPaused]);
+
+  const Cards = ({ data, index }: any) => {
+    return (
+      <div
+        className={styles.collapsibleCard}
+        onMouseEnter={() => setCardOpen(index)}
+        onClick={() => {
+          setCardOpen(index);
+        }}
+        key={index}
+        style={{
+          width: cardOpen === index ? '440px' : '177px',
+        }}>
+        <Image
+          src={data.image}
+          className={styles.collapsibleImage}
+          alt="wolfavatar"
+        />
+
+        {cardOpen === index ? (
+          <>
+            <Body variant={9} color="white" className={styles.cardTitleOpen}>
+              {data.title}
+            </Body>
+            <Body
+              variant={10}
+              color="white"
+              className={styles.cardDescription2}>
+              {data.description}
+            </Body>
+          </>
+        ) : (
+          <Body variant={9} color="white" className={styles.cardTitle2}>
+            {data.title}
+          </Body>
+        )}
+      </div>
+    );
+  };
   return (
-    <div className={styles.planetsSection}>
+    <div
+      className={styles.collapsibleCardSection}
+      style={{ backgroundColor: '#272935' }}>
       <Heading
         variant={0}
         color="white"
-        style={{ marginBottom: '-200px' }}
-        fs={36}
-        fw={700}>
-        在这里，您可以
+        style={{ marginBottom: '-250px' }}
+        fw={40}>
+        故事的起点
       </Heading>
-      <div className={styles.section2}>
-        <Card className={styles.card}>
-          <Image
-            src={card1Icon}
-            alt="card 1 icon"
-            width={164}
-            height={164}
-            color={'#9198B0'}
-          />
-          <Heading variant={2} color="#F2F3F7" fw={700}>
-            互动
-          </Heading>
-          <Body
-            variant={1}
-            fw={700}
-            fs={18}
-            className={styles.cardWord}
-            style={{ lineHeight: 1.5 }}>
-            加入由不同投资主题形成的星球，与全球各地的投资者交流互动，分享观点、进行讨论、发布文章等。
-          </Body>
-        </Card>
-        <Card className={styles.card}>
-          <Image
-            src={card2Icon}
-            alt="card 2 icon"
-            color={'#9198B0'}
-            width={133}
-            height={133}
-          />
-          <Heading
-            variant={2}
-            color="#F2F3F7"
-            fw={700}
-            style={{ paddingTop: '16px' }}>
-            组织
-          </Heading>
-          <Body
-            variant={1}
-            fw={700}
-            className={styles.cardWord}
-            style={{ lineHeight: 1.5 }}>
-            创建或加入由志同道合的用户组成的部落，根据兴趣爱好、投资理念等因素进行划分，打造专属的投资交流空间。
-          </Body>
-        </Card>
-        <Card className={styles.card}>
-          <Image color="#9198B0" src={NFT} alt="NFT" width={310} height={164} />
-          <Heading variant={2} color="#F2F3F7" fw={700}>
-            NFT
-          </Heading>
-          <Body
-            variant={1}
-            fw={700}
-            className={styles.cardWord}
-            style={{ lineHeight: 1.5 }}>
-            通过获取和持有
-            NFT，解锁更多功能和权益，例如参与星球或部落的治理、获得专属投资资讯等。
-          </Body>
-        </Card>
-        <Card className={styles.card}>
-          <Image
-            src={card4Icon}
-            alt="card 4"
-            color={'#9198B0'}
-            width={164}
-            height={164}
-          />
-          <Heading variant={2} color="#F2F3F7" fw={700}>
-            社群
-          </Heading>
-          <Body
-            variant={1}
-            fw={700}
-            className={styles.cardWord}
-            style={{ lineHeight: 1.5 }}>
-            参与
-            DAO社区自治组织的运营，共同管理星球或部落的运营，保障社区的公平公正。
-          </Body>
-        </Card>
+      <MagicMotion transition={{ type: 'ease' }}>
+        <div className={styles.collapsibleCardsContainer}>
+          {data.map((item: any, index: number) => (
+            <Cards data={item} index={index} key={index} />
+          ))}
+        </div>
+      </MagicMotion>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          marginTop: -250,
+          width: 1054,
+        }}>
+        <div></div>
+        <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
+          {data.map((item: any, index: number) => (
+            <div
+              key={index}
+              style={{
+                height: 12,
+                width: 12,
+                borderRadius: 100,
+                backgroundColor: index === cardOpen ? '#9198B0' : '#3E404E',
+              }}></div>
+          ))}
+        </div>
+        <div style={{ cursor: 'pointer' }}>
+          {isTimerPaused ? (
+            <PlayCircle
+              size={40}
+              style={{ color: '#9198B0' }}
+              onClick={() => setIsTimerPaused(false)}
+            />
+          ) : (
+            <PauseCircle
+              size={40}
+              style={{ color: '#9198B0' }}
+              onClick={() => setIsTimerPaused(true)}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
 };
-export default secondSection;
+
+export default SecondSection;

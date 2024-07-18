@@ -2,40 +2,27 @@ import BackgroundVideo from 'components/BackgroundVideo';
 import styles from './home.module.scss';
 import { Body, Heading } from 'components/typography';
 
-const firstSection = () => {
+const firstSection = ({ data }: any) => {
   return (
     <>
       <div className={styles.video}>
         <BackgroundVideo />
       </div>
-      {/* <div className={styles.section1}> */}
-      <div className={styles.titleColumnMobile}>
-        <span>
-          <Heading
-            color="#F2F3F7"
-            variant={6}
-            fs={'36px'}
-            lh={'normal'}
-            fw={400}
-            style={{ display: 'inline' }}>
-            Wolf Planet{' '}
-          </Heading>
+      <div style={{ padding: '32px' }}>
+        <div className={styles.titleColumn}>
           <Body
+            variant={9}
             color="#F2F3F7"
-            variant={6}
-            fs={'30px'}
-            lh={'normal'}
             fw={700}
-            style={{ display: 'inline' }}>
-            星球：跨域投资交流平台
+            fs={40}
+            style={{ paddingTop: '0px', lineHeight: 1.5 }}>
+            {data.headline}
           </Body>
-        </span>
-        <Body variant={1} fw={700} className={styles.subheading}>
-          Wolf Planet
-          星球是基于区块链技术的去中心化投资交流平台，旨在为用户提供跨域、专业、高效的投资交流体验。
-        </Body>
+          <Body variant={8} className={styles.subheading}>
+            {data.subheader}
+          </Body>
+        </div>
       </div>
-      {/* </div> */}
     </>
   );
 };
