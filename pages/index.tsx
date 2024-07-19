@@ -203,8 +203,8 @@ const Home = (props: IProps) => {
             </Flex>
           </div> */}
 
-          <BlockchainSection />
-          <PlanetSection />
+          {/* <BlockchainSection /> */}
+          {/* <PlanetSection /> */}
 
           {/* <div className={styles.section4}>
             <div className={styles.section4p2}>
@@ -263,7 +263,7 @@ const Home = (props: IProps) => {
           {/* <SecondMobileSectionOld /> */}
           <ThirdMobileSection data={ThirdSectionData} />
           {/* <FourthMobileSection /> */}
-          <FifthMobileSection />
+          {/* <FifthMobileSection /> */}
         </>
       )}
     </>

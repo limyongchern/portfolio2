@@ -13,7 +13,11 @@ const ThirdMobileSection = ({ data }: any) => {
       <Body
         variant={9}
         color="white"
-        style={{ marginBottom: '0px', textAlign: 'center' }}>
+        style={{
+          marginBottom: '0px',
+          textAlign: 'center',
+          padding: '0px 20px',
+        }}>
         {data.headline}
       </Body>
       <div className={styles.cardsContainerMobile}>
