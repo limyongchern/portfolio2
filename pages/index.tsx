@@ -26,11 +26,6 @@ import CardIcon2 from 'public/Home/CardIcon2.svg';
 import CardIcon3 from 'public/Home/CardIcon3.svg';
 import CardIcon4 from 'public/Home/CardIcon4.svg';
 
-// import card1Icon from 'public/GlobeHemisphereWest.png';
-// import card2Icon from 'public/card2Icon.png';
-// import card4Icon from 'public/card4Icon.png';
-// import NFT from 'public/NFT.png';
-
 interface IProps {}
 
 const FirstSectionData = {

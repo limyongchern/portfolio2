@@ -31,21 +31,21 @@ const ThirdMobileSection = ({ data }: any) => {
               color={'#9198B0'}
             />
             <div>
-              <Heading variant={1} color="#F2F3F7" fw={700}>
+              <Body variant={7} color="#F2F3F7" fw={700}>
                 {card.title}
-              </Heading>
+              </Body>
               <ul
                 className="custom-list"
-                style={{ marginTop: 20, marginLeft: -10 }}>
+                style={{ marginTop: 0, marginLeft: -15 }}>
                 {card.bulletPoints.map((point: any, index: number) => (
                   <Body
-                    variant={1}
+                    variant={2}
                     color="#9198B0"
                     key={index}
                     style={{
-                      marginTop: '8px',
-                      lineHeight: '2.2rem',
-                      width: 220,
+                      marginTop: '5px',
+                      lineHeight: '2rem',
+                      width: 200,
                     }}>
                     <li>{point}</li>
                   </Body>

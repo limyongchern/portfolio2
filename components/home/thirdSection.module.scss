@@ -59,18 +59,19 @@
   height: 100%;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
   flex-shrink: 0;
   max-width: 522px;
   max-height: 209px;
   margin-bottom: -50px;
   padding: 62px;
   @media (max-width: 835px) {
-    max-width: 340px;
+    max-width: 350px;
     width: 100%;
-    margin-bottom: -20px;
+    margin-bottom: -30px;
     max-height: 370px;
-    gap: 0px;
+    gap: 16px;
+    padding: 24px 20px;
   }
 }
 
@@ -130,6 +131,8 @@ ul.customList li {
   text-indent: -1em; /* Ensures text starts after the bullet */
   color: #9198b0;
   position: relative;
+  width: 1px;
+  height: 1px;
 }
 
 ul.customList li::before {
