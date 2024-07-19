@@ -250,7 +250,7 @@ const Home = (props: IProps) => {
           </div> */}
 
           <FourthSection data={FourthSectionData} />
-          {/* <PlanetSection /> */}
+          <PlanetSection />
 
           {/* <div className={styles.section4}>
             <div className={styles.section4p2}>

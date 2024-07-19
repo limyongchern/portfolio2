@@ -67,13 +67,12 @@ const FourthSection = ({ data }: any) => {
       className={styles.fourthSection}
       style={{ backgroundColor: '#272935' }}>
       <Body
-        variant={11}
+        variant={9}
         color="white"
         style={{
           marginBottom: '-240px',
           textAlign: 'center',
-        }}
-        fw={40}>
+        }}>
         {data.headline}
       </Body>
       <div style={{ display: 'flex', gap: 20 }}>

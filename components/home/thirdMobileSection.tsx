@@ -3,15 +3,15 @@ import card4Icon from 'public/card4Icon.png';
 import card2Icon from 'public/card2Icon.png';
 import card1Icon from 'public/GlobeHemisphereWest.png';
 import Image from 'next/image';
-import { Body, Heading } from 'components/typography';
+import { Body, BodyBold, Heading } from 'components/typography';
 import styles from './thirdSection.module.scss';
 import { Card, Flex, Stack } from '@mantine/core';
 
 const ThirdMobileSection = ({ data }: any) => {
   return (
     <div className={styles.outerContainerMobile}>
-      <Body
-        variant={9}
+      <BodyBold
+        variant={3}
         color="white"
         style={{
           marginBottom: '0px',
@@ -19,7 +19,7 @@ const ThirdMobileSection = ({ data }: any) => {
           padding: '0px 20px',
         }}>
         {data.headline}
-      </Body>
+      </BodyBold>
       <div className={styles.cardsContainerMobile}>
         {data.cards.map((card: any, index: number) => (
           <Card className={styles.card} key={index}>
@@ -59,13 +59,13 @@ const ThirdMobileSection = ({ data }: any) => {
         {data.bottomCards.map((card: any, index: number) => (
           <div className={styles.illustrationSection} key={index}>
             <div className={styles.illustration}></div>
-            <Body variant={10} color="#F2F3F7" style={{ marginTop: 40 }}>
+            <BodyBold variant={2} color="#F2F3F7" style={{ marginTop: 40 }}>
               {card.title}
-            </Body>
+            </BodyBold>
             <div style={{ marginTop: 0, marginBottom: 30 }}>
               {card.bulletPoints.map((point: any, index: number) => (
                 <Body
-                  variant={1}
+                  variant={2}
                   color="#9198B0"
                   key={index}
                   style={{

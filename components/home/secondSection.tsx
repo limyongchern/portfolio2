@@ -61,11 +61,7 @@ const SecondSection = ({ data }: any) => {
     <div
       className={styles.collapsibleCardSection}
       style={{ backgroundColor: '#272935' }}>
-      <Body
-        variant={9}
-        color="white"
-        style={{ marginBottom: '-265px' }}
-        fw={40}>
+      <Body variant={9} color="white" style={{ marginBottom: '-265px' }}>
         {data.headline}
       </Body>
       <MagicMotion transition={{ type: 'ease' }}>

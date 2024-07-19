@@ -2,7 +2,7 @@
 import styles from './home.module.scss';
 import Image from 'next/image';
 import React, { useCallback, useEffect, useState } from 'react';
-import { Body, Heading } from 'components/typography';
+import { Body, BodyBold, Heading } from 'components/typography';
 import { MagicMotion } from 'react-magic-motion';
 import { PauseCircle, PlayCircle } from '@phosphor-icons/react';
 import { easeInOut, motion } from 'framer-motion';
@@ -91,13 +91,13 @@ const SecondMobileSection = ({ data }: any) => {
     <div
       className={styles.collapsibleCardSection}
       style={{ backgroundColor: '#272935', overflow: 'hidden' }}>
-      <Body
-        variant={9}
+      <BodyBold
+        variant={3}
         color="white"
-        style={{ marginBottom: '-250px' }}
+        style={{ marginBottom: '-250px', marginTop: -25 }}
         fw={40}>
         {data.headline}
-      </Body>
+      </BodyBold>
       <motion.div
         className={styles.carouselContainer}
         initial={{ x: -100, opacity: 1 }}

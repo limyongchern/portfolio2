@@ -1,7 +1,7 @@
 import styles from './home.module.scss';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { Body, Heading } from 'components/typography';
+import { Body, BodyBold, Heading } from 'components/typography';
 import { MagicMotion } from 'react-magic-motion';
 import { MagicTabSelect } from 'react-magic-motion';
 
@@ -46,12 +46,12 @@ const FourthMobileSection = ({ data }: any) => {
             />
           </MagicTabSelect>
         )}
-        <Body variant={10} color="white" className={styles.cardTitle3}>
+        <BodyBold variant={2} color="white" className={styles.cardTitle3}>
           {item.title}
-        </Body>
+        </BodyBold>
         {item.content.map((content: string, i: number) => (
           <Body
-            variant={1}
+            variant={2}
             color="#9198B0"
             key={i}
             style={{ marginTop: '8px', lineHeight: '2rem' }}>
@@ -66,12 +66,12 @@ const FourthMobileSection = ({ data }: any) => {
     <div
       className={styles.fourthSection}
       style={{ backgroundColor: '#272935' }}>
-      <Body
-        variant={11}
+      <BodyBold
+        variant={3}
         color="white"
         style={{ marginBottom: '-240px', padding: '0px 20px' }}>
         {data.headline}
-      </Body>
+      </BodyBold>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
         <div className={styles.selectedImageContainer} style={{}}>
           <Image
