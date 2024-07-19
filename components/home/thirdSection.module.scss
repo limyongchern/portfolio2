@@ -3,7 +3,7 @@
   padding: 100px 0px 120px 0px;
   flex-direction: column;
   align-items: center;
-  gap: 300px;
+  // gap: 300px;
   width: 100%;
   background: var(--Main-Primary-Varient, #3e404e);
   margin: auto;
@@ -18,7 +18,7 @@
 }
 .outerContainerMobile {
   display: flex;
-  padding: 70px 0px 120px 0px;
+  padding: 70px 0px 60px 0px;
   flex-direction: column;
   align-items: center;
   width: 100%;
@@ -40,7 +40,7 @@
 .cardsContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 36px;
   margin-bottom: 20px;
 }
 
@@ -55,25 +55,21 @@
   border-radius: 16px;
   background: var(--neutral-glass-1-add-blur, #272935);
   display: flex;
-  width: calc(100% - 20px); /* Ensure it fits within the padding */
+  width: 522px;
   height: 100%;
-  // flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 16px;
   flex-shrink: 0;
   max-width: 522px;
   max-height: 209px;
-  // margin: auto;
+  margin-bottom: -50px;
   padding: 62px;
   @media (max-width: 835px) {
     max-width: 340px;
     width: 100%;
-    // width: calc(100% - 20px);
     margin-bottom: -20px;
-    // min-width: 350px;
     max-height: 370px;
-    // padding: 42px 82px;
     gap: 0px;
   }
 }
@@ -84,14 +80,15 @@
 }
 
 .illustrationContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: -150px;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+  margin-bottom: 20px;
+  margin-top: 200px;
   @media (max-width: 835px) {
+    display: flex;
     flex-direction: column;
-    margin-top: 120px;
+    margin-top: 160px;
   }
 }
 
@@ -100,11 +97,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  justify-content: space-between;
 }
 
 .illustration {
-  width: 500px;
+  width: 520px;
+  // width: 100%;
+  // width: calc(100% - 20px); /* Ensure it fits within the padding */
   height: 361px;
+  max-width: 522px;
   border-radius: 20px;
   background: var(--main-primary-varient-250, rgba(145, 152, 176, 0.5));
   @media (max-width: 835px) {

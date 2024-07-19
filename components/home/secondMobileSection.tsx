@@ -45,7 +45,7 @@ const SecondMobileSection = ({ data }: any) => {
     return index === currentPage;
   };
 
-  const slides = data.map((item: any, index: number) => (
+  const slides = data.cards.map((item: any, index: number) => (
     <Carousel.Slide key={index}>
       {isActiveSlide(index) ? (
         <div className={styles.collapsibleCardMobile} key={index}>
@@ -55,7 +55,7 @@ const SecondMobileSection = ({ data }: any) => {
             alt="wolfavatar"
           />
           {/* <div style={{ marginTop: -145 }}> */}
-          <div style={{ marginTop: -155, padding: 15 }}>
+          <div style={{ marginTop: index === 1 ? -160 : -130, padding: 15 }}>
             {' '}
             <Body
               variant={10}
@@ -91,13 +91,13 @@ const SecondMobileSection = ({ data }: any) => {
     <div
       className={styles.collapsibleCardSection}
       style={{ backgroundColor: '#272935', overflow: 'hidden' }}>
-      <Heading
-        variant={0}
+      <Body
+        variant={9}
         color="white"
-        style={{ marginBottom: '-230px' }}
+        style={{ marginBottom: '-250px' }}
         fw={40}>
-        故事的起点
-      </Heading>
+        {data.headline}
+      </Body>
       <motion.div
         className={styles.carouselContainer}
         initial={{ x: -100, opacity: 1 }}
@@ -130,7 +130,7 @@ const SecondMobileSection = ({ data }: any) => {
         }}>
         <div></div>
         <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
-          {data.map((item: any, index: number) => (
+          {data.cards.map((item: any, index: number) => (
             <div
               key={index}
               style={{

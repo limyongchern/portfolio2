@@ -5,10 +5,12 @@ import SecondSection from 'components/home/secondSection';
 import SecondMobileSection from 'components/home/secondMobileSection';
 import ThirdSection from 'components/home/thirdSection';
 import ThirdMobileSection from 'components/home/thirdMobileSection';
+
+import FourthSection from 'components/home/fourthSection';
+
 import FourthMobileSection from 'components/home/fourthMobileSection';
 import FifthMobileSection from 'components/home/fifthMobileSection';
 
-import BlockchainSection from 'components/home/blockchainSection';
 import PlanetSection from 'components/home/planetSection';
 import PlanetMobileSection from 'components/home/planetMobileSection';
 
@@ -37,33 +39,36 @@ const FirstSectionData = {
     'WolfPlanet 是基于区块链技术，让投资知识交流无界限，让创作更有价值',
 };
 
-const SecondSectionData = [
-  {
-    id: 1,
-    title: '1',
-    description: '某一天，萌狼们开始探索太空投资的机会',
-    image: TempImage1,
-  },
-  {
-    id: 2,
-    title: '2',
-    description:
-      '萌狼们化身太空流浪者在太空中探索并共同创立了Wolf Planet投资交流社区',
-    image: TempImage2,
-  },
-  {
-    id: 3,
-    title: '3',
-    description: '太空流浪者们在外太空中探索发现了不同的星球',
-    image: TempImage3,
-  },
-  {
-    id: 4,
-    title: '4',
-    description: '每个星球都是一个理想的投资交流场所，故事由此开始…',
-    image: TempImage4,
-  },
-];
+const SecondSectionData = {
+  headline: '故事的起点',
+  cards: [
+    {
+      id: 1,
+      title: '1',
+      description: '某一天，萌狼们开始探索太空投资的机会',
+      image: TempImage1,
+    },
+    {
+      id: 2,
+      title: '2',
+      description:
+        '萌狼们化身太空流浪者在太空中探索并共同创立了Wolf Planet投资交流社区',
+      image: TempImage2,
+    },
+    {
+      id: 3,
+      title: '3',
+      description: '太空流浪者们在外太空中探索发现了不同的星球',
+      image: TempImage3,
+    },
+    {
+      id: 4,
+      title: '4',
+      description: '每个星球都是一个理想的投资交流场所，故事由此开始…',
+      image: TempImage4,
+    },
+  ],
+};
 
 const ThirdSectionData = {
   headline: '汇聚全球投资者的全方位、全领域的投资交流社区',
@@ -125,6 +130,52 @@ const ThirdSectionData = {
         '跨地域分享投资知识',
       ],
       image: TempImage1,
+    },
+  ],
+};
+
+const FourthSectionData = {
+  headline: '区块链驱动，打造自主安全的无界投资交流社区',
+  cardsContent: [
+    {
+      id: 1,
+      title: '去中心化',
+      content: [
+        '系统安全性高',
+        '信息公开透明、不可篡改',
+        '技术更安全、更平等、更透明',
+      ],
+      image: TempImage1,
+    },
+    {
+      id: 2,
+      title: '无地域界限',
+      content: [
+        '跨越地理边界的交流互动',
+        '全球投资者共建共享',
+        '机会平等,资源共享',
+      ],
+      image: TempImage2,
+    },
+    {
+      id: 3,
+      title: 'DAO 社区治理',
+      content: [
+        '基于智能合约的去中心化自治',
+        '社区用户参与管理',
+        '透明公开的治理机制',
+      ],
+      image: TempImage3,
+    },
+    {
+      id: 4,
+      title: '收益模式',
+      content: [
+        '将社区贡献转化为代币',
+        '参与互动获得奖励',
+        '内容可铸造成NFT，获取收益',
+      ],
+      image: TempImage4,
     },
   ],
 };
@@ -203,7 +254,7 @@ const Home = (props: IProps) => {
             </Flex>
           </div> */}
 
-          {/* <BlockchainSection /> */}
+          <FourthSection data={FourthSectionData} />
           {/* <PlanetSection /> */}
 
           {/* <div className={styles.section4}>
@@ -262,7 +313,7 @@ const Home = (props: IProps) => {
           <SecondMobileSection data={SecondSectionData} />
           {/* <SecondMobileSectionOld /> */}
           <ThirdMobileSection data={ThirdSectionData} />
-          {/* <FourthMobileSection /> */}
+          <FourthMobileSection data={FourthSectionData} />
           {/* <FifthMobileSection /> */}
         </>
       )}

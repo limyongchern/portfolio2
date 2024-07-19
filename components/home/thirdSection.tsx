@@ -10,7 +10,7 @@ import { Card, Flex, Stack } from '@mantine/core';
 const ThirdSection = ({ data }: any) => {
   return (
     <div className={styles.outerContainer}>
-      <Body variant={9} color="white" style={{ marginBottom: '-200px' }}>
+      <Body variant={9} color="white">
         {data.headline}
       </Body>
       <div className={styles.cardsContainer}>

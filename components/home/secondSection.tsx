@@ -38,7 +38,7 @@ const SecondSection = ({ data }: any) => {
         />
 
         {cardOpen === index ? (
-          <>
+          <div style={{ marginTop: index === 1 ? -210 : -130 }}>
             <Body variant={9} color="white" className={styles.cardTitleOpen}>
               {data.title}
             </Body>
@@ -48,7 +48,7 @@ const SecondSection = ({ data }: any) => {
               className={styles.cardDescription2}>
               {data.description}
             </Body>
-          </>
+          </div>
         ) : (
           <Body variant={9} color="white" className={styles.cardTitle2}>
             {data.title}
@@ -61,16 +61,16 @@ const SecondSection = ({ data }: any) => {
     <div
       className={styles.collapsibleCardSection}
       style={{ backgroundColor: '#272935' }}>
-      <Heading
-        variant={0}
+      <Body
+        variant={9}
         color="white"
-        style={{ marginBottom: '-250px' }}
+        style={{ marginBottom: '-265px' }}
         fw={40}>
-        故事的起点
-      </Heading>
+        {data.headline}
+      </Body>
       <MagicMotion transition={{ type: 'ease' }}>
         <div className={styles.collapsibleCardsContainer}>
-          {data.map((item: any, index: number) => (
+          {data.cards.map((item: any, index: number) => (
             <Cards data={item} index={index} key={index} />
           ))}
         </div>
@@ -79,12 +79,12 @@ const SecondSection = ({ data }: any) => {
         style={{
           display: 'flex',
           justifyContent: 'space-between',
-          marginTop: -250,
+          marginTop: -270,
           width: 1054,
         }}>
         <div></div>
         <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
-          {data.map((item: any, index: number) => (
+          {data.cards.map((item: any, index: number) => (
             <div
               key={index}
               style={{

@@ -59,10 +59,10 @@ const ThirdMobileSection = ({ data }: any) => {
         {data.bottomCards.map((card: any, index: number) => (
           <div className={styles.illustrationSection} key={index}>
             <div className={styles.illustration}></div>
-            <Body variant={10} color="#F2F3F7" style={{ marginTop: 20 }}>
+            <Body variant={10} color="#F2F3F7" style={{ marginTop: 40 }}>
               {card.title}
             </Body>
-            <div style={{ marginTop: 0 }}>
+            <div style={{ marginTop: 0, marginBottom: 30 }}>
               {card.bulletPoints.map((point: any, index: number) => (
                 <Body
                   variant={1}

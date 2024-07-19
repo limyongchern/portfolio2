@@ -3,57 +3,12 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { Body, Heading } from 'components/typography';
 import { MagicMotion } from 'react-magic-motion';
-import TempImage1 from 'public/TempImages/TempImage1.jpg';
-import TempImage2 from 'public/TempImages/TempImage2.jpg';
-import TempImage3 from 'public/TempImages/TempImage3.jpg';
-import TempImage4 from 'public/TempImages/TempImage4.jpg';
 import { MagicTabSelect } from 'react-magic-motion';
 
-const dummyTabs = [
-  {
-    id: 1,
-    title: '去中心化',
-    content: [
-      '系统安全性高',
-      '信息公开透明、不可篡改',
-      '技术更安全、更平等、更透明',
-    ],
-    image: TempImage1,
-  },
-  {
-    id: 2,
-    title: '无地域界限',
-    content: [
-      '跨越地理边界的交流互动',
-      '全球投资者共建共享',
-      '机会平等,资源共享',
-    ],
-    image: TempImage2,
-  },
-  {
-    id: 3,
-    title: 'DAO 社区治理',
-    content: [
-      '基于智能合约的去中心化自治',
-      '社区用户参与管理',
-      '透明公开的治理机制',
-    ],
-    image: TempImage3,
-  },
-  {
-    id: 4,
-    title: '收益模式',
-    content: [
-      '将社区贡献转化为代币',
-      '参与互动获得奖励',
-      '内容可铸造成NFT，获取收益',
-    ],
-    image: TempImage4,
-  },
-];
-
-const BlockchainSection = () => {
-  const [selectedImage, setSelectedImage] = useState(dummyTabs[0].image);
+const FourthSection = ({ data }: any) => {
+  const [selectedImage, setSelectedImage] = useState(
+    data.cardsContent[0].image
+  );
   const [hoveredIndex, setHoveredIndex] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -62,11 +17,11 @@ const BlockchainSection = () => {
   }, []);
 
   useEffect(() => {
-    if (isMounted) setSelectedImage(dummyTabs[hoveredIndex].image);
+    if (isMounted) setSelectedImage(data.cardsContent[hoveredIndex].image);
     // setSelectedImage(dummyTabs[hoveredIndex].image);
   }, [hoveredIndex, isMounted]);
 
-  const tabsComponents = dummyTabs.map((item, i) => {
+  const tabsComponents = data.cardsContent.map((item: any, i: number) => {
     return (
       <button
         key={item.id}
@@ -94,7 +49,7 @@ const BlockchainSection = () => {
         <Body variant={10} color="white" className={styles.cardTitle3}>
           {item.title}
         </Body>
-        {item.content.map((content, i) => (
+        {item.content.map((content: string, i: number) => (
           <Body
             variant={1}
             color="#9198B0"
@@ -109,15 +64,18 @@ const BlockchainSection = () => {
 
   return (
     <div
-      className={styles.blockchainSection}
+      className={styles.fourthSection}
       style={{ backgroundColor: '#272935' }}>
-      <Heading
-        variant={0}
+      <Body
+        variant={11}
         color="white"
-        style={{ marginBottom: '-240px' }}
+        style={{
+          marginBottom: '-240px',
+          textAlign: 'center',
+        }}
         fw={40}>
-        故事的起点
-      </Heading>
+        {data.headline}
+      </Body>
       <div style={{ display: 'flex', gap: 20 }}>
         <div className={styles.selectedImageContainer} style={{}}>
           <Image
@@ -142,4 +100,4 @@ const BlockchainSection = () => {
   );
 };
 
-export default BlockchainSection;
+export default FourthSection;

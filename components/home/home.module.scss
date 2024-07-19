@@ -431,11 +431,12 @@
   }
 }
 
-.blockchainSection {
+.fourthSection {
   display: flex;
-  padding: 100px 0px 120px 0px;
+  padding: 80px 0px 120px 0px;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   gap: 300px;
   width: 100%;
   background: var(--Main-Primary-Varient, #3e404e);
@@ -447,6 +448,9 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+  }
+  @media (max-width: 380px) {
+    padding-right: 2px;
   }
 }
 
@@ -460,6 +464,9 @@
   border-radius: 16px;
   width: 400px;
   cursor: pointer;
+  @media (max-width: 835px) {
+    width: 350px;
+  }
 }
 
 .selectedImageContainer {
@@ -474,6 +481,9 @@
   width: 500px;
   // height: 100%;
   background-color: var(--neutral-glass-1-add-blur, rgba(255, 255, 255, 0.12));
+  @media (max-width: 835px) {
+    width: 350px;
+  }
 }
 
 .selectedImage {
