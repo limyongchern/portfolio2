@@ -1,0 +1,149 @@
+.fifthSection {
+  display: flex;
+  padding: 100px 0px 120px 0px;
+  flex-direction: column;
+  align-items: center;
+  gap: 300px;
+  width: 100%;
+  background: var(--Main-Primary-Varient, #3e404e);
+  margin: auto;
+  object-fit: fill;
+
+  @media (max-width: 835px) {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+.carouselContainer {
+  margin-top: 100px;
+}
+
+.carouselStyles {
+  flex-grow: 1;
+  min-height: 10vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardsContainer {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 160px;
+  cursor: pointer;
+}
+
+.activeCard {
+  width: 300px;
+  // height: 606px;
+}
+
+.activeImage {
+  width: 300px;
+  height: 606px;
+}
+
+.activeTitle {
+  text-align: center;
+}
+
+.activeDescription {
+  text-align: center;
+}
+
+.nonActiveDescription {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.nonActiveCard {
+  width: 200px;
+  // height: 606px;
+}
+
+.nonActiveImage {
+  width: 200px;
+  height: 404px;
+}
+
+.bulletPoints {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: -250px;
+}
+
+/* Fifth Section Mobile */
+.containerFifthMobileSection {
+  background-color: #272935;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 0 80px 0;
+}
+
+.carouselStyles {
+  flex-grow: 1;
+  min-height: 10vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carouselContainer {
+  margin-top: 20px;
+}
+
+.activeCardContainer {
+  display: flex;
+  //   width: 85%;
+  width: 310px;
+  //   height: 502px;
+  padding-top: 10px;
+  //   padding-left: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nonActiveCardContainer {
+  display: flex;
+  //   width: 85%;
+  width: 300px;
+  padding-top: 50px;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 24px;
+  overflow: hidden;
+  opacity: 0.5;
+  //   margin-right: -200px;
+}
+
+.activeImageMobile {
+  width: 272px;
+  height: 500px;
+  margin-top: 50px;
+}
+
+.nonActiveImageMobile {
+  width: 320px;
+  height: 400px;
+}
+
+.activeTitleMobile {
+  text-align: center;
+}
+
+.activeDescriptionMobile {
+  text-align: center;
+}
+
+.nonActiveDescriptionMobile {
+  text-align: center;
+  margin-top: 10px;
+}

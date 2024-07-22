@@ -45,7 +45,8 @@ const PlanetSection = ({ data }: any) => {
               align={'center'}
               mb={'12px'}
               style={{ cursor: 'pointer' }}
-              onClick={() => handlePlanetChange(index)}>
+              onClick={() => handlePlanetChange(index)}
+              onMouseEnter={() => handlePlanetChange(index)}>
               <Image
                 src={item.planet}
                 alt=""

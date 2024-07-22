@@ -7,8 +7,9 @@ import ThirdSection from 'components/home/thirdSection';
 import ThirdMobileSection from 'components/home/thirdMobileSection';
 
 import FourthSection from 'components/home/fourthSection';
-
 import FourthMobileSection from 'components/home/fourthMobileSection';
+
+import FifthSection from 'components/home/fifthSection';
 import FifthMobileSection from 'components/home/fifthMobileSection';
 
 import PlanetSection from 'components/home/planetSection';
@@ -25,6 +26,9 @@ import CardIcon1 from 'public/Home/CardIcon1.png';
 import CardIcon2 from 'public/Home/CardIcon2.svg';
 import CardIcon3 from 'public/Home/CardIcon3.svg';
 import CardIcon4 from 'public/Home/CardIcon4.svg';
+
+//images for FifthSection
+import iPhoneImage from 'public/Home/iPhoneImage.png';
 
 import { PlanetList } from 'utils/planet';
 
@@ -183,6 +187,42 @@ const PlanetSectionData = {
     'Wolf Planet 星球是一个由七个独具特色的星球组成的神秘社区，每个星球都拥有独特的属性和玩法。',
 };
 
+const FifthSectionData = {
+  headline: '應用界面展示',
+  cards: [
+    {
+      id: 1,
+      title: 'DAO社区',
+      description: '让每个人拥有社区治理权力',
+      image: iPhoneImage,
+    },
+    {
+      id: 2,
+      title: 'NFT',
+      description: '收藏数字资产藏品',
+      image: iPhoneImage,
+    },
+    {
+      id: 3,
+      title: '投资课程',
+      description: '来自全球的投资课程分享任你选择 ',
+      image: iPhoneImage,
+    },
+    {
+      id: 4,
+      title: '盲盒',
+      description: '收获意想不到的惊喜与乐趣',
+      image: iPhoneImage,
+    },
+    {
+      id: 5,
+      title: '狼牙',
+      description: '更多权益和活动等着你',
+      image: iPhoneImage,
+    },
+  ],
+};
+
 const Home = (props: IProps) => {
   const [isMobile, setIsMobile] = useState(false);
   const [width, setWidth] = useState<number>(
@@ -259,6 +299,7 @@ const Home = (props: IProps) => {
 
           <FourthSection data={FourthSectionData} />
           <PlanetSection data={PlanetSectionData} />
+          <FifthSection data={FifthSectionData} />
 
           {/* <div className={styles.section4}>
             <div className={styles.section4p2}>
@@ -318,7 +359,7 @@ const Home = (props: IProps) => {
           <ThirdMobileSection data={ThirdSectionData} />
           <FourthMobileSection data={FourthSectionData} />
           <PlanetMobileSection data={PlanetSectionData} />
-          {/* <FifthMobileSection /> */}
+          <FifthMobileSection data={FifthSectionData} />
         </>
       )}
     </>

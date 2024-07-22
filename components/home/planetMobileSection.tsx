@@ -137,7 +137,7 @@ const FourthMobileSection = ({ data }: any) => {
           transition: { duration: 0.5, ease: easeInOut },
         }}>
         <Carousel
-          loop
+          // loop
           slideSize="20%"
           slideGap={20}
           initialSlide={0}
