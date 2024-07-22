@@ -5,9 +5,9 @@ import Image from 'next/image';
 import { easeInOut, motion } from 'framer-motion';
 import { Carousel, Embla } from '@mantine/carousel';
 import { PlanetList } from 'utils/planet';
-import { Body, Heading } from 'components/typography';
+import { Body, BodyBold, Heading } from 'components/typography';
 
-const FourthMobileSection = () => {
+const FourthMobileSection = ({ data }: any) => {
   const [embla, setEmbla] = useState<Embla | null>(null);
   const [currentPage, setCurrentPage] = useState(0);
   const handleScroll = useCallback(() => {
@@ -33,46 +33,37 @@ const FourthMobileSection = () => {
   const slides = PlanetList.map((item, index) => (
     <Carousel.Slide key={index}>
       {isActiveSlide(index) ? (
-        <div className={styles.planetMobileCard}>
-          <div className={styles.widthPlanetMobileCard}>
-            <Body
-              style={{ textAlign: 'center' }}
-              variant={6}
-              color={'#F2F3F7'}
-              fs={'36px'}
-              fw={600}
-              lh={'73.548px'}>
-              {item.name}:
-            </Body>
-            <Body
-              style={{ textAlign: 'center' }}
-              variant={6}
-              color={'#F2F3F7'}
-              fs={'36px'}
-              fw={600}
-              lh={'73.548px'}>
-              {item.nameDescription}
-            </Body>
-            <div style={{ height: '70px' }}>
-              <Body
-                style={{ textAlign: 'center', marginTop: '29.42px' }}
-                variant={6}
-                color={'#9198B0'}
-                fs={'18px'}
-                fw={700}
-                lh={'normal'}>
-                {item.desctiption}
-              </Body>
+        <div style={{ paddingTop: '10px' }}>
+          <div className={styles.planetMobileCard}>
+            <div className={styles.widthPlanetMobileCard}>
+              <BodyBold
+                style={{
+                  justifyContent: 'center',
+                  textAlign: 'center',
+                  padding: '0px 50px',
+                }}
+                variant={4}
+                color={'#F2F3F7'}>
+                {item.title}
+              </BodyBold>
+              <div style={{ height: '70px' }}>
+                <Body
+                  style={{ textAlign: 'center', marginTop: '29.42px' }}
+                  variant={1}
+                  color={'#9198B0'}>
+                  {item.description}
+                </Body>
+              </div>
             </div>
+            <Image
+              src={item.planetFull}
+              alt=""
+              className={styles.planetMobileImage}
+            />
           </div>
-          <Image
-            src={item.planetFull}
-            alt=""
-            className={styles.planetMobileImage}
-          />
         </div>
       ) : (
-        <div className={styles.planetCardMobileDiselect}>
+        <div className={styles.planetCardMobileDeselect}>
           <div className={styles.widthPlanetMobileCard}>
             <Body
               style={{ textAlign: 'center' }}
@@ -90,7 +81,7 @@ const FourthMobileSection = () => {
               fs={'36px'}
               fw={600}
               lh={'73.548px'}>
-              {item.nameDescription}
+              {item.name}
             </Body>
             <div style={{ height: '70px' }}>
               <Body
@@ -100,7 +91,7 @@ const FourthMobileSection = () => {
                 fs={'18px'}
                 fw={700}
                 lh={'normal'}>
-                {item.desctiption}
+                {item.description}
               </Body>
             </div>
           </div>
@@ -114,55 +105,24 @@ const FourthMobileSection = () => {
     </Carousel.Slide>
   ));
   return (
-    <div id="fourth-section" className={styles.containerFourthMobileSection}>
-      <span
-        style={{
-          textAlign: 'center',
-          marginBottom: '24px',
-          padding: '0 32px',
-        }}>
-        <Body
-          color="#F2F3F7"
-          variant={6}
-          fw={700}
-          lh={'normal'}
-          fs={'40px'}
-          style={{ display: 'inline' }}>
-          七星奇遇：探索{' '}
-        </Body>
-        <Heading
-          color="#F2F3F7"
-          variant={6}
-          fw={400}
-          lh={'normal'}
-          fs={'40px'}
-          style={{ display: 'inline' }}>
-          Wolf Planet{' '}
-        </Heading>
-        <Body
-          color="#F2F3F7"
-          variant={6}
-          fw={700}
-          lh={'normal'}
-          fs={'40px'}
-          style={{ display: 'inline' }}>
-          星球
-        </Body>
-      </span>
+    <div id="fourth-section" className={styles.containerPlanetMobileSection}>
+      <BodyBold
+        variant={3}
+        color="white"
+        style={{ padding: '0px 70px', textAlign: 'center' }}>
+        {data.headline}
+      </BodyBold>
       <Body
+        variant={1}
         color="#9198B0"
-        variant={6}
-        fw={600}
-        lh={'normal'}
-        fs={'18px'}
         style={{
+          padding: '20px 50px',
           textAlign: 'center',
-          marginBottom: '24px',
-          padding: '0 32px',
+          lineHeight: '2.5rem',
         }}>
-        Wolf Planet
-        星球是一个由七个独具特色的星球组成的神秘社区，每个星球都拥有独特的属性和玩法。
+        {data.subheader}
       </Body>
+
       <motion.div
         className={styles.carouselContainer}
         initial={{ x: -100, opacity: 1 }}
@@ -187,6 +147,25 @@ const FourthMobileSection = () => {
           {slides}
         </Carousel>
       </motion.div>
+      <div
+        style={{
+          display: 'flex',
+          gap: 10,
+          paddingTop: 45,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        {PlanetList.map((item: any, index: number) => (
+          <div
+            key={index}
+            style={{
+              height: 12,
+              width: 12,
+              borderRadius: 100,
+              backgroundColor: index === currentPage ? '#9198B0' : '#3E404E',
+            }}></div>
+        ))}
+      </div>
     </div>
   );
 };

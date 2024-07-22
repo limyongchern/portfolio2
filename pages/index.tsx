@@ -26,6 +26,8 @@ import CardIcon2 from 'public/Home/CardIcon2.svg';
 import CardIcon3 from 'public/Home/CardIcon3.svg';
 import CardIcon4 from 'public/Home/CardIcon4.svg';
 
+import { PlanetList } from 'utils/planet';
+
 interface IProps {}
 
 const FirstSectionData = {
@@ -175,6 +177,12 @@ const FourthSectionData = {
   ],
 };
 
+const PlanetSectionData = {
+  headline: '七星奇遇：探索Wolf Planet 星球',
+  subheader:
+    'Wolf Planet 星球是一个由七个独具特色的星球组成的神秘社区，每个星球都拥有独特的属性和玩法。',
+};
+
 const Home = (props: IProps) => {
   const [isMobile, setIsMobile] = useState(false);
   const [width, setWidth] = useState<number>(
@@ -250,7 +258,7 @@ const Home = (props: IProps) => {
           </div> */}
 
           <FourthSection data={FourthSectionData} />
-          <PlanetSection />
+          <PlanetSection data={PlanetSectionData} />
 
           {/* <div className={styles.section4}>
             <div className={styles.section4p2}>
@@ -309,6 +317,7 @@ const Home = (props: IProps) => {
           {/* <SecondMobileSectionOld /> */}
           <ThirdMobileSection data={ThirdSectionData} />
           <FourthMobileSection data={FourthSectionData} />
+          <PlanetMobileSection data={PlanetSectionData} />
           {/* <FifthMobileSection /> */}
         </>
       )}

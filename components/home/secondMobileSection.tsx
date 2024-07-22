@@ -3,7 +3,6 @@ import styles from './home.module.scss';
 import Image from 'next/image';
 import React, { useCallback, useEffect, useState } from 'react';
 import { Body, BodyBold, Heading } from 'components/typography';
-import { MagicMotion } from 'react-magic-motion';
 import { PauseCircle, PlayCircle } from '@phosphor-icons/react';
 import { easeInOut, motion } from 'framer-motion';
 import { Carousel, Embla } from '@mantine/carousel';

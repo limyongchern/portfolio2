@@ -2,7 +2,6 @@ import styles from './home.module.scss';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { Body, Heading } from 'components/typography';
-import { MagicMotion } from 'react-magic-motion';
 import { MagicTabSelect } from 'react-magic-motion';
 
 const FourthSection = ({ data }: any) => {
