@@ -51,7 +51,7 @@ const FourthMobileSection = () => {
               fs={'36px'}
               fw={600}
               lh={'73.548px'}>
-              {item.nameDescription}
+              {item.title}
             </Body>
             <div style={{ height: '70px' }}>
               <Body
@@ -61,7 +61,7 @@ const FourthMobileSection = () => {
                 fs={'18px'}
                 fw={700}
                 lh={'normal'}>
-                {item.desctiption}
+                {item.description}
               </Body>
             </div>
           </div>
@@ -90,7 +90,7 @@ const FourthMobileSection = () => {
               fs={'36px'}
               fw={600}
               lh={'73.548px'}>
-              {item.nameDescription}
+              {item.title}
             </Body>
             <div style={{ height: '70px' }}>
               <Body
@@ -100,7 +100,7 @@ const FourthMobileSection = () => {
                 fs={'18px'}
                 fw={700}
                 lh={'normal'}>
-                {item.desctiption}
+                {item.description}
               </Body>
             </div>
           </div>
