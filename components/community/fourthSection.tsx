@@ -101,7 +101,7 @@ const FourthSection = () => {
               fs={'44.129px'}
               fw={600}
               lh={'73.548px'}>
-              {item.nameDescription}
+              {item.title}
             </Body>
             <div style={{ height: '70px' }}>
               <Body
@@ -111,7 +111,7 @@ const FourthSection = () => {
                 fs={'22.065px'}
                 fw={700}
                 lh={'normal'}>
-                {item.desctiption}
+                {item.description}
               </Body>
             </div>
           </div>
@@ -136,7 +136,7 @@ const FourthSection = () => {
               fs={'44.129px'}
               fw={600}
               lh={'73.548px'}>
-              {item.nameDescription}
+              {item.title}
             </Body>
             <div style={{ height: '70px' }}>
               <Body
@@ -146,7 +146,7 @@ const FourthSection = () => {
                 fs={'22.065px'}
                 fw={700}
                 lh={'normal'}>
-                {item.desctiption}
+                {item.description}
               </Body>
             </div>
           </div>
