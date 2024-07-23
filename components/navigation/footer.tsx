@@ -6,7 +6,7 @@ import {
   Stack,
 } from '@mantine/core';
 import styles from 'styles/components/footer.module.scss';
-import { Body, Heading } from '../typography';
+import { Body, BodyBold, Heading } from '../typography';
 import Link from 'next/link';
 import Image from 'next/image';
 import LogoSVG from 'public/wolfplanet.svg';
@@ -75,10 +75,26 @@ const Footer = (props: IProps) => {
                 </Group>
               </Group>
               <Flex justify={'center'} mt={40}>
-                <Body variant={2} color="#F2F3F7">
-                  Privacy Policy | Terms of Use © 2024 WolfPlanet All Rights
-                  Reserved.
-                </Body>
+                <span style={{ display: 'flex' }}>
+                  <Body
+                    variant={2}
+                    color="#F2F3F7"
+                    style={{ cursor: 'pointer' }}>
+                    隐私条款 &nbsp;
+                  </Body>
+                  <Body variant={2} color="#9198B0">
+                    | &nbsp;
+                  </Body>
+                  <Body
+                    variant={2}
+                    color="#F2F3F7"
+                    style={{ cursor: 'pointer' }}>
+                    使用条款 &nbsp;
+                  </Body>
+                  <Body variant={2} color="#9198B0">
+                    © 2024 WolfPlanet 版权所有
+                  </Body>
+                </span>
               </Flex>
             </Stack>
           </div>
@@ -105,13 +121,26 @@ const Footer = (props: IProps) => {
               <Image src={GoogleIcon} height={24} width={24} alt="Google" />
             </Group>
             <Flex justify={'center'} style={{ paddingTop: '56px' }}>
-              <Body
-                variant={2}
-                color="#F2F3F7"
-                style={{ textAlign: 'center', lineHeight: 1.5 }}>
-                Privacy Policy | Terms of Use © 2024 WolfPlanet All Rights
-                Reserved.
-              </Body>
+              <span style={{ display: 'flex' }}>
+                <BodyBold
+                  variant={5}
+                  color="#F2F3F7"
+                  style={{ cursor: 'pointer' }}>
+                  隐私条款 &nbsp;
+                </BodyBold>
+                <Body variant={2} color="#9198B0" style={{ marginTop: 2 }}>
+                  | &nbsp;
+                </Body>
+                <BodyBold
+                  variant={5}
+                  color="#F2F3F7"
+                  style={{ cursor: 'pointer' }}>
+                  使用条款 &nbsp;
+                </BodyBold>
+                <Body variant={2} color="#9198B0" style={{ marginTop: 4 }}>
+                  © 2024 WolfPlanet 版权所有
+                </Body>
+              </span>
             </Flex>
           </Stack>
         </div>
