@@ -18,7 +18,7 @@ const FourthSection = ({ data }: any) => {
   useEffect(() => {
     if (isMounted) setSelectedImage(data.cardsContent[hoveredIndex].image);
     // setSelectedImage(dummyTabs[hoveredIndex].image);
-  }, [hoveredIndex, isMounted]);
+  }, [hoveredIndex, isMounted, data.cardsContent]);
 
   const tabsComponents = data.cardsContent.map((item: any, i: number) => {
     return (
