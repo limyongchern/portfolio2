@@ -26,6 +26,14 @@ import CardIcon1 from 'public/Home/CardIcon1.png';
 import CardIcon2 from 'public/Home/CardIcon2.svg';
 import CardIcon3 from 'public/Home/CardIcon3.svg';
 import CardIcon4 from 'public/Home/CardIcon4.svg';
+import IllustrationImage1 from 'public/Home/IllustrationImage1.png';
+import IllustrationImage2 from 'public/Home/IllustrationImage2.png';
+
+//images for FourthSection
+import IllustrationDecentralisation from 'public/Home/IllustrationDecentralisation.png';
+import IllustrationNoGeographical from 'public/Home/IllustrationNoGeographical.png';
+import IllustrationDAOCommunity from 'public/Home/IllustrationDAOCommunity.png';
+import IllustrationRevenue from 'public/Home/IllustrationRevenue.png';
 
 //images for FifthSection
 import iPhoneImage from 'public/Home/iPhoneImage.png';
@@ -120,7 +128,7 @@ const ThirdSectionData = {
       id: 1,
       title: '新手投资者',
       bulletPoints: ['快速提升投资技能', '结识投资大牛', '洞察全球市场动向'],
-      image: TempImage1,
+      image: IllustrationImage1,
     },
     {
       id: 2,
@@ -130,7 +138,7 @@ const ThirdSectionData = {
         '拥有更广阔的追随者',
         '跨地域分享投资知识',
       ],
-      image: TempImage1,
+      image: IllustrationImage2,
     },
   ],
 };
@@ -146,7 +154,7 @@ const FourthSectionData = {
         '信息公开透明、不可篡改',
         '技术更安全、更平等、更透明',
       ],
-      image: TempImage1,
+      image: IllustrationDecentralisation,
     },
     {
       id: 2,
@@ -156,7 +164,7 @@ const FourthSectionData = {
         '全球投资者共建共享',
         '机会平等,资源共享',
       ],
-      image: TempImage2,
+      image: IllustrationNoGeographical,
     },
     {
       id: 3,
@@ -166,7 +174,7 @@ const FourthSectionData = {
         '社区用户参与管理',
         '透明公开的治理机制',
       ],
-      image: TempImage3,
+      image: IllustrationDAOCommunity,
     },
     {
       id: 4,
@@ -176,7 +184,7 @@ const FourthSectionData = {
         '参与互动获得奖励',
         '内容可铸造成NFT，获取收益',
       ],
-      image: TempImage4,
+      image: IllustrationRevenue,
     },
   ],
 };

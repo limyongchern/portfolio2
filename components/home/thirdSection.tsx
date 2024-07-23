@@ -49,7 +49,11 @@ const ThirdSection = ({ data }: any) => {
       <div className={styles.illustrationContainer}>
         {data.bottomCards.map((card: any, index: number) => (
           <div className={styles.illustrationSection} key={index}>
-            <div className={styles.illustration}></div>
+            <Image
+              src={card.image}
+              alt="card icon"
+              className={styles.illustration}
+            />
             <Body variant={10} color="#F2F3F7" style={{ marginTop: 20 }}>
               {card.title}
             </Body>

@@ -31,9 +31,9 @@ const ThirdMobileSection = ({ data }: any) => {
               color={'#9198B0'}
             />
             <div>
-              <Body variant={7} color="#F2F3F7" fw={700}>
+              <BodyBold variant={2} color="#F2F3F7">
                 {card.title}
-              </Body>
+              </BodyBold>
               <ul
                 className="custom-list"
                 style={{ marginTop: 0, marginLeft: -15 }}>
@@ -58,7 +58,15 @@ const ThirdMobileSection = ({ data }: any) => {
       <div className={styles.illustrationContainer}>
         {data.bottomCards.map((card: any, index: number) => (
           <div className={styles.illustrationSection} key={index}>
-            <div className={styles.illustration}></div>
+            {/* <div className={styles.illustration}></div> */}
+            <Image
+              src={card.image}
+              alt="card icon"
+              // width={84}
+              // height={84}
+              // color={'#9198B0'}
+              className={styles.illustration}
+            />
             <BodyBold variant={2} color="#F2F3F7" style={{ marginTop: 40 }}>
               {card.title}
             </BodyBold>
