@@ -1,0 +1,76 @@
+.containerDownloadSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 100px 0px 100px;
+  margin-bottom: -55px;
+  overflow: hidden;
+  background: var(--Main-Primary-Varient, #272935);
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 835px) {
+    margin-bottom: -5px;
+  }
+  //   @media (max-width: 380px) {
+  //     padding-right: 2px;
+  //   }
+}
+
+.containerDownloadMobileSection {
+  background-color: #272935;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 0px 0px 0px;
+  margin-bottom: -5px;
+}
+
+.innerContainer {
+  max-width: 1064px;
+  text-align: center;
+  gap: 10px;
+  @media (max-width: 835px) {
+    max-width: 350px;
+    width: 330px;
+    padding: 0px 20px;
+  }
+}
+
+.bottomContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -30px;
+}
+
+.bottomContainerMobile {
+  display: flex;
+  //   justify-content: center;
+  align-items: center;
+  gap: 20px;
+  //   justify-content: space-between;
+  margin-top: -10px;
+  margin-bottom: -20px;
+}
+
+.wolfAvatarImage {
+  width: 235px;
+  height: 235px;
+}
+
+.wolfAvatarImageMobile {
+  width: 205px;
+  height: 235px;
+}
+
+.buttonsContainer {
+  display: flex;
+}
+
+.downloadButtonContainer {
+  width: 159px;
+  height: 52px;
+}
+
+.downloadImage {
+  cursor: pointer;
+}

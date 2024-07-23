@@ -49,33 +49,39 @@ const Footer = (props: IProps) => {
   return (
     <>
       {!isMobile && (
-        <div className={styles.container}>
-          <Stack>
-            <Group position="apart">
-              <Link href="/">
-                <Image src={LogoSVG} alt="Logo" className={styles.headerlogo} />
-              </Link>
+        <div className={styles.outerContainer}>
+          <div className={styles.innerContainer}>
+            <Stack>
+              <Group position="apart">
+                <Link href="/">
+                  <Image
+                    src={LogoSVG}
+                    alt="Logo"
+                    className={styles.headerlogo}
+                  />
+                </Link>
 
-              <Group spacing={24}>
-                <Image src={FBIcon} height={24} width={24} alt="Facebook" />
-                <Image src={XIcon} height={24} width={24} alt="X" />
-                <Image src={InsIcon} height={24} width={24} alt="Instagram" />
-                <Image
-                  src={LinkedInIcon}
-                  height={24}
-                  width={24}
-                  alt="LinkedIn"
-                />
-                <Image src={GoogleIcon} height={24} width={24} alt="Google" />
+                <Group spacing={24}>
+                  <Image src={FBIcon} height={24} width={24} alt="Facebook" />
+                  <Image src={XIcon} height={24} width={24} alt="X" />
+                  <Image src={InsIcon} height={24} width={24} alt="Instagram" />
+                  <Image
+                    src={LinkedInIcon}
+                    height={24}
+                    width={24}
+                    alt="LinkedIn"
+                  />
+                  <Image src={GoogleIcon} height={24} width={24} alt="Google" />
+                </Group>
               </Group>
-            </Group>
-            <Flex justify={'center'} mt={40}>
-              <Body variant={2} color="#F2F3F7">
-                Privacy Policy | Terms of Use © 2024 WolfPlanet All Rights
-                Reserved.
-              </Body>
-            </Flex>
-          </Stack>
+              <Flex justify={'center'} mt={40}>
+                <Body variant={2} color="#F2F3F7">
+                  Privacy Policy | Terms of Use © 2024 WolfPlanet All Rights
+                  Reserved.
+                </Body>
+              </Flex>
+            </Stack>
+          </div>
         </div>
       )}
 

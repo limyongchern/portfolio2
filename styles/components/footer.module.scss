@@ -1,4 +1,4 @@
-.container {
+.outerContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -6,10 +6,16 @@
   background: var(--Main-Primary, #3e404e);
   color: #f2f3f7;
   width: 100%;
+  // width: 1064px;
+
   justify-content: center;
   position: relative;
   padding: 50px 0px;
   margin-bottom: -5px;
+}
+
+.innerContainer {
+  width: 1064px;
 }
 
 .footerContent {

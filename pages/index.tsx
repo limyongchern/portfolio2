@@ -15,6 +15,9 @@ import FifthMobileSection from 'components/home/fifthMobileSection';
 import PlanetSection from 'components/home/planetSection';
 import PlanetMobileSection from 'components/home/planetMobileSection';
 
+import DownloadSection from 'components/common/DownloadSection';
+import DownloadMobileSection from 'components/common/DownloadMobileSection';
+
 //images for SecondSection
 import TempImage1 from 'public/TempImages/TempImage1.jpg';
 import TempImage2 from 'public/TempImages/TempImage2.jpg';
@@ -231,6 +234,12 @@ const FifthSectionData = {
   ],
 };
 
+const DownloadSectionData = {
+  headline: '加入狼星球 - 您的专属Web3投资交流社区!',
+  subheader:
+    '在这里，您可以发现全新的数字资产创收方式，尽情发挥您的创作才能，并与志同道合的投资者朋友们进行深度交流。只需简单的注册，您就可以完全拥有自己的数字内容资产，获得丰厚的创作回报。让我们一起开启Web3投资新时代，构建专业、活跃的交流社区，共同成就美好的投资未来。',
+};
+
 const Home = (props: IProps) => {
   const [isMobile, setIsMobile] = useState(false);
   const [width, setWidth] = useState<number>(
@@ -308,6 +317,7 @@ const Home = (props: IProps) => {
           <FourthSection data={FourthSectionData} />
           <PlanetSection data={PlanetSectionData} />
           <FifthSection data={FifthSectionData} />
+          <DownloadSection data={DownloadSectionData} />
 
           {/* <div className={styles.section4}>
             <div className={styles.section4p2}>
@@ -368,6 +378,7 @@ const Home = (props: IProps) => {
           <FourthMobileSection data={FourthSectionData} />
           <PlanetMobileSection data={PlanetSectionData} />
           <FifthMobileSection data={FifthSectionData} />
+          <DownloadMobileSection data={DownloadSectionData} />
         </>
       )}
     </>
