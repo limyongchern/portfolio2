@@ -102,8 +102,9 @@ const Header = (props: IProps) => {
             </Link>
           </Flex>
           <div className={styles.nav}>
-            {links.map((link) => (
+            {links.map((link, index) => (
               <UnstyledButton
+                key={index}
                 onClick={() => router.push(link.link)}
                 className={`${styles.link} ${
                   router.pathname === link.link ? styles.active : ''
