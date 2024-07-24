@@ -12,7 +12,7 @@ import {
 import { TbMenu2 } from 'react-icons/tb';
 import { useEffect, useState } from 'react';
 import styles from 'styles/components/header.module.scss';
-import { Body, Heading } from '../typography';
+import { Body, BodyBold, Heading } from '../typography';
 import { sections } from './sidebar';
 import NavLink, { ILink } from './navLink';
 import Link from 'next/link';
@@ -20,6 +20,8 @@ import Image from 'next/image';
 import LogoSVG from 'public/wolfplanet.svg';
 import { Translate } from '@phosphor-icons/react';
 import { useRouter } from 'next/router';
+import GlobeIcon from 'public/GlobeIcon.svg';
+
 interface IProps {
   baseProps?: Partial<HeaderProps>;
 }
@@ -28,7 +30,7 @@ const links = [
   { name: '主页', link: '/' },
   { name: '关于我们', link: '/about' },
   { name: '白皮书', link: '/whitepaper' },
-  { name: '社区', link: '/community' },
+  { name: '社群', link: '/community' },
   { name: '下载', link: '/download' },
 ];
 
@@ -100,79 +102,30 @@ const Header = (props: IProps) => {
             </Link>
           </Flex>
           <div className={styles.nav}>
-            <UnstyledButton
-              onClick={() => router.push('/')}
-              className={`${styles.link} ${
-                router.pathname === '/' ? styles.active : ''
-              }`}>
-              <Heading
-                variant={4}
-                className={`${router.pathname === '/' ? styles.active : ''}`}>
-                Home{' '}
-              </Heading>
-            </UnstyledButton>
-            <UnstyledButton
-              onClick={() => router.push('/about')}
-              className={`${styles.link} ${
-                router.pathname === '/about' ? styles.active : ''
-              }`}>
-              <Heading
-                variant={4}
-                // color="white"
-                className={`${
-                  router.pathname === '/about' ? styles.active : ''
+            {links.map((link) => (
+              <UnstyledButton
+                onClick={() => router.push(link.link)}
+                className={`${styles.link} ${
+                  router.pathname === link.link ? styles.active : ''
                 }`}>
-                About Us{' '}
-              </Heading>
-            </UnstyledButton>
-            <UnstyledButton
-              onClick={() => router.push('/whitepaper')}
-              className={`${styles.link} ${
-                router.pathname === '/whitepaper' ? styles.active : ''
-              }`}>
-              <Heading
-                variant={4}
-                // color="white"
-                className={`${
-                  router.pathname === '/whitepaper' ? styles.active : ''
-                }`}>
-                Whitepaper{' '}
-              </Heading>
-            </UnstyledButton>
-            <UnstyledButton
-              onClick={() => router.push('/community')}
-              className={`${styles.link} ${
-                router.pathname === '/community' ? styles.active : ''
-              }`}>
-              <Heading
-                variant={4}
-                // color="white"
-                className={`${
-                  router.pathname === '/community' ? styles.active : ''
-                }`}>
-                Community{' '}
-              </Heading>
-            </UnstyledButton>
-            <UnstyledButton
-              onClick={() => router.push('/download')}
-              className={`${styles.link} ${
-                router.pathname === '/download' ? styles.active : ''
-              }`}>
-              <Heading
-                variant={4}
-                // color="white"
-                className={`${
-                  router.pathname === '/download' ? styles.active : ''
-                }`}>
-                Download{' '}
-              </Heading>
-            </UnstyledButton>
+                <BodyBold
+                  variant={5}
+                  className={`${
+                    router.pathname === link.link ? styles.active : ''
+                  }`}>
+                  {link.name}
+                </BodyBold>
+              </UnstyledButton>
+            ))}
 
             <Menu onClose={() => setTranslateClicked(false)}>
               <Menu.Target>
-                <Translate
-                  size={32}
+                <Image
+                  src={GlobeIcon}
+                  alt="globe"
                   color={translateClicked ? '#4178FA' : 'white'}
+                  height={32}
+                  width={32}
                   onClick={() => setTranslateClicked(true)}
                   style={{ cursor: 'pointer' }}
                 />
@@ -181,16 +134,16 @@ const Header = (props: IProps) => {
               <Menu.Dropdown className={styles.menu}>
                 <Menu.Item>
                   {
-                    <Body variant={2} color="#4178FA">
+                    <BodyBold variant={5} color="#4178FA">
                       English
-                    </Body>
+                    </BodyBold>
                   }
                 </Menu.Item>
                 <Menu.Item>
                   {
-                    <Body variant={2} color="#F2F3F7">
+                    <BodyBold variant={5} color="#F2F3F7">
                       简体中文
-                    </Body>
+                    </BodyBold>
                   }
                 </Menu.Item>
               </Menu.Dropdown>
@@ -226,12 +179,17 @@ const Header = (props: IProps) => {
               }
               onClick={(event) => {
                 event.preventDefault();
-                console.log('active', active, 'link', link.link);
                 setActive(link.link);
                 router.push(link.link);
                 setMenuOpen(false);
               }}>
-              {link.name}
+              <BodyBold
+                variant={2}
+                className={`${
+                  router.pathname === link.link ? styles.active : ''
+                }`}>
+                {link.name}
+              </BodyBold>
             </Link>
           ))}
           <Divider color="#3E404E" w={'100%'} />
@@ -241,7 +199,7 @@ const Header = (props: IProps) => {
               className={
                 index === 0 ? styles.languageClicked : styles.languageUnclicked
               }>
-              {language.name}
+              <BodyBold variant={2}>{language.name}</BodyBold>
             </div>
           ))}
         </Stack>

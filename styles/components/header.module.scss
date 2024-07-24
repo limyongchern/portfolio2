@@ -86,10 +86,10 @@
   /* Glassmorphism/BG Blur 1 */
   backdrop-filter: blur(10px);
   display: flex;
-  padding: 32px 24px;
+  padding: 20px 20px;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  gap: 20px;
 }
 
 .nav .link {
@@ -137,17 +137,18 @@
 
 .linkClicked {
   color: var(--Main-Secondary, #4178fa);
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
+  text-underline-offset: 3px;
+  // font-size: 20px;
+  // font-style: normal;
+  // font-weight: 400;
 }
 
 .linkUnclicked {
   color: var(--Main-BG, #f2f3f7);
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  // font-size: 20px;
+  // font-style: normal;
+  // font-weight: 400;
+  // line-height: normal;
   text-decoration-line: none;
 }
 

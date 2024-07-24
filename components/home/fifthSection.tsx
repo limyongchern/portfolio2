@@ -52,6 +52,7 @@ const FifthSection = ({ data }: any) => {
                   marginTop: isActive(index) ? -160 : -130,
                   opacity: isActive(index) ? 1 : 0.5,
                   padding: '15px 0px',
+                  height: 80,
                 }}>
                 {' '}
                 <BodyBold

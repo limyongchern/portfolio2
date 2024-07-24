@@ -25,16 +25,11 @@ const DownloadSection = ({ data }: any) => {
             {data.subheader}
           </Body>
           <div className={styles.bottomContainer}>
-            <motion.button
-              whileHover={{ scale: 2 }}
-              whileTap={{ scale: 0.9 }}
-              style={{ backgroundColor: 'transparent', border: 'none' }}>
-              <Image
-                src={WolfAvatarBlue}
-                alt=""
-                className={styles.wolfAvatarImage}
-              />
-            </motion.button>
+            <Image
+              src={WolfAvatarBlue}
+              alt=""
+              className={styles.wolfAvatarImage}
+            />
             <div className={styles.buttonsContainer}>
               <Flex
                 gap={24}
@@ -61,16 +56,12 @@ const DownloadSection = ({ data }: any) => {
                 </motion.button>
               </Flex>
             </div>
-            <motion.button
-              whileHover={{ scale: 2 }}
-              whileTap={{ scale: 0.9 }}
-              style={{ backgroundColor: 'transparent', border: 'none' }}>
-              <Image
-                src={WolfAvatarBlue}
-                alt=""
-                className={styles.wolfAvatarImage}
-              />
-            </motion.button>
+
+            <Image
+              src={WolfAvatarBlue}
+              alt=""
+              className={styles.wolfAvatarImage}
+            />
           </div>
         </div>
       </div>

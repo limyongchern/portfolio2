@@ -50,7 +50,6 @@ const Community = () => {
           <FirstSection />
           <SecondSection />
           <ThirdSection />
-          <FourthSection />
         </>
       )}
       {isMobile && (
@@ -58,7 +57,6 @@ const Community = () => {
           <FirstMobileSection />
           <SecondMobileSection />
           <ThirdMobileSection />
-          <FourthMobileSection />
         </>
       )}
     </>
