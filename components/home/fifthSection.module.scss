@@ -85,7 +85,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 0px 0 80px 0;
+  padding: 100px 0 80px 0;
 }
 
 .carouselStyles {
@@ -126,14 +126,27 @@
 }
 
 .activeImageMobile {
-  width: 272px;
-  height: 500px;
+  // width: 272px;
+  // height: 500px;
+  width: 100%;
+  height: 80%;
   margin-top: 50px;
+  @media (max-width: 380px) {
+    width: 100%;
+    height: 80%;
+  }
 }
 
 .nonActiveImageMobile {
-  width: 320px;
-  height: 400px;
+  // width: 320px;
+  // height: 400px;
+  width: 100%;
+  height: 60%;
+  margin-top: 40px;
+  @media (max-width: 380px) {
+    width: 100%;
+    height: 60%;
+  }
 }
 
 .activeTitleMobile {
@@ -147,4 +160,85 @@
 .nonActiveDescriptionMobile {
   text-align: center;
   margin-top: 10px;
+}
+
+.planetMobileCard {
+  display: flex;
+  width: 300px;
+  // width: 90%;
+  // height: 502px;
+  height: 100%;
+
+  padding-top: 29px;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 24px;
+  overflow: hidden;
+  // background-image: url('/Frame.png');
+  // background-size: cover;
+  // background-position: center;
+  // background-repeat: no-repeat;
+  border-radius: 29.419px;
+  z-index: 1000;
+  border-radius: 29.419px;
+  // background: linear-gradient(
+  //     0deg,
+  //     rgba(39, 41, 53, 0.8) 0%,
+  //     rgba(39, 41, 53, 0.8) 100%
+  //   ),
+  //   url('/Frame.png') lightgray 50% / cover no-repeat, #fff;
+
+  // /* Shadows/Form Shadow (Light) */
+  // box-shadow: 0px 0px 10px 0px rgba(160, 167, 212, 0.2);
+  @media (max-width: 380px) {
+    // height: 432px;
+    height: 100%;
+  }
+}
+
+.planetCardMobileDeselect {
+  display: flex;
+  width: 300px;
+  height: 100%;
+  // height: 380px;
+  padding-top: 29px;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 24px;
+  overflow: hidden;
+  height: 100%;
+  opacity: 0.5;
+
+  // background-image: url('/Frame.png');
+  // background-size: cover;
+  // background-position: center;
+  // background-repeat: no-repeat;
+}
+
+.widthPlanetMobileCard {
+  width: 250px;
+}
+
+.planetMobileImage {
+  display: flex;
+  width: 130%;
+  height: 340px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  margin-top: 100px;
+  @media (max-width: 380px) {
+    margin-top: 20px;
+  }
+}
+
+.planetMobileImageDiselect {
+  display: flex;
+  width: 298px;
+  height: 298px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
 }
