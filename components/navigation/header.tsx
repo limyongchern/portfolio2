@@ -34,7 +34,7 @@ const links = [
   { name: '下载', link: '/download' },
 ];
 
-const languages = [{ name: 'English' }, { name: '中文' }];
+const languages = [{ name: 'English' }, { name: '简体中文' }];
 
 const Header = (props: IProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -98,7 +98,7 @@ const Header = (props: IProps) => {
         <div className={styles.header}>
           <Flex gap="md">
             <Link href="/">
-              <Image src={LogoSVG} alt="Logo" className={styles.headerlogo} />
+              <Image src={LogoSVG} alt="Logo" className={styles.headerLogo} />
             </Link>
           </Flex>
           <div className={styles.nav}>
@@ -135,14 +135,14 @@ const Header = (props: IProps) => {
               <Menu.Dropdown className={styles.menu}>
                 <Menu.Item>
                   {
-                    <BodyBold variant={5} color="#4178FA">
+                    <BodyBold variant={5} color="#F2F3F7">
                       English
                     </BodyBold>
                   }
                 </Menu.Item>
                 <Menu.Item>
                   {
-                    <BodyBold variant={5} color="#F2F3F7">
+                    <BodyBold variant={5} color="#4178FA">
                       简体中文
                     </BodyBold>
                   }
@@ -198,7 +198,7 @@ const Header = (props: IProps) => {
             <div
               key={index}
               className={
-                index === 0 ? styles.languageClicked : styles.languageUnclicked
+                index === 1 ? styles.languageClicked : styles.languageUnclicked
               }>
               <BodyBold variant={2}>{language.name}</BodyBold>
             </div>

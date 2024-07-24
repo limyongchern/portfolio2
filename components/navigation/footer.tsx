@@ -76,22 +76,22 @@ const Footer = (props: IProps) => {
               </Group>
               <Flex justify={'center'} mt={40}>
                 <span style={{ display: 'flex' }}>
-                  <Body
-                    variant={2}
+                  <BodyBold
+                    variant={5}
                     color="#F2F3F7"
                     style={{ cursor: 'pointer' }}>
                     隐私条款 &nbsp;
-                  </Body>
-                  <Body variant={2} color="#9198B0">
+                  </BodyBold>
+                  <Body variant={2} color="#9198B0" style={{ marginTop: 4 }}>
                     | &nbsp;
                   </Body>
-                  <Body
-                    variant={2}
+                  <BodyBold
+                    variant={5}
                     color="#F2F3F7"
                     style={{ cursor: 'pointer' }}>
                     使用条款 &nbsp;
-                  </Body>
-                  <Body variant={2} color="#9198B0">
+                  </BodyBold>
+                  <Body variant={2} color="#9198B0" style={{ marginTop: 4 }}>
                     © 2024 WolfPlanet 版权所有
                   </Body>
                 </span>
@@ -137,11 +137,11 @@ const Footer = (props: IProps) => {
                   style={{ cursor: 'pointer' }}>
                   使用条款 &nbsp;
                 </BodyBold>
-                <Body variant={2} color="#9198B0" style={{ marginTop: 4 }}>
-                  © 2024 WolfPlanet 版权所有
-                </Body>
               </span>
             </Flex>
+            <Body variant={2} color="#9198B0" style={{ marginTop: -5 }}>
+              © 2024 WolfPlanet 版权所有
+            </Body>
           </Stack>
         </div>
       )}

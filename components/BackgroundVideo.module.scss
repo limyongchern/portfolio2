@@ -2,12 +2,13 @@
   position: fixed;
   top: 0;
   left: 0px;
-  width: 106%;
+
   height: 100%;
   // overflow: hidden;
   background-position: 60% 75%;
   z-index: -1;
   @media (max-width: 835px) {
+    width: 106%;
   }
 
   video {
