@@ -70,13 +70,13 @@ const FifthMobileSection = ({ data }: any) => {
                 textAlign: 'center',
                 padding: '0px 50px',
               }}
-              variant={4}
+              variant={8}
               color={'#F2F3F7'}>
               {item.title}
             </BodyBold>
-            <div style={{ height: '70px' }}>
+            <div style={{ height: '10px' }}>
               <Body
-                style={{ textAlign: 'center', marginTop: '29.42px' }}
+                style={{ textAlign: 'center', marginTop: '15px' }}
                 variant={4}
                 color={'#9198B0'}>
                 {item.description}

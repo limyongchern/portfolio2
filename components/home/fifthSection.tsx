@@ -51,7 +51,7 @@ const FifthSection = ({ data }: any) => {
                 style={{
                   marginTop: isActive(index) ? -160 : -130,
                   opacity: isActive(index) ? 1 : 0.5,
-                  padding: '15px 0px',
+                  padding: isActive(index) ? '15px 0px' : '15px 15px',
                   height: 80,
                 }}>
                 {' '}

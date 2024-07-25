@@ -23,19 +23,6 @@ import TeamCard from 'components/about/teamCard';
 import { Body, BodyBold, Heading } from 'components/typography';
 import { useEffect, useState } from 'react';
 import styles from './index.module.scss';
-import WholePlanet3 from 'public/wholePlanet3.png';
-
-const AboutUsData = {
-  about: '关于 WolfPlanet',
-  wolfPlanet: 'WolfPlanet',
-  from: '来自',
-  description:
-    '一天，一群富有创新和拼搏精神的萌狼们用精准的嗅觉发现了深藏于太空的投资机会，Wolf Planet投资社区应运而生。萌狼们汇聚于此，在贵金属、外汇、数字藏品等星球上探索前行，把握市场动向，共谋投资策略。从星际间的流浪者到星球上的指挥官，萌狼们不断成长，实现投资回报，书写太空投资社区新篇章。',
-  ourMission: '我们的使命',
-  ourMissionDescription:
-    '运用区块链技术，为不同背景不同身份投资爱好者们创建一个跨地域、跨领域的交流、学习合作社区，以促进相互交流及知识共享。我们将提供平等的沟通环境，实时的资讯更新，以及高质量的经验分享，打造一个安全、可靠、高效的投资交流平台',
-  ourPerspective: '我们的价值观',
-};
 
 const AboutUs = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -70,61 +57,7 @@ const AboutUs = () => {
     <>
       <div className={styles.topContainer}>
         <Container fluid p={0}>
-          {!isMobile ? (
-            <Group
-              position="center"
-              w={'100%'}
-              spacing={0}
-              style={{ alignItems: 'flex-start' }}>
-              <div className={styles.planetTextCont}>
-                <div className={styles.planetTextCard}>
-                  <div className={styles.textCard}></div>
-                  <BodyBold
-                    variant={5}
-                    style={{ marginBottom: '16px' }}
-                    color="#F2F3F7">
-                    {AboutUsData.about}
-                  </BodyBold>
-                  <BodyBold variant={7} color="#F2F3F7">
-                    <span style={{ color: '#4178FA' }}>
-                      {AboutUsData.wolfPlanet}
-                    </span>{' '}
-                    {AboutUsData.from}
-                  </BodyBold>
-                  <Body
-                    variant={1}
-                    style={{ marginTop: '20px' }}
-                    color="#F2F3F7">
-                    {AboutUsData.description}
-                  </Body>
-                </div>
-              </div>
-
-              <div className={styles.planetCard}>
-                <Image src={'/Planet/wholePlanet3.png'} alt="About Planet" />
-              </div>
-
-              <div className={styles.bottomTextOuterContainer}>
-                <div className={styles.bottomTextContainer}>
-                  <BodyBold
-                    variant={7}
-                    style={{ marginBottom: '16px' }}
-                    color="#F2F3F7">
-                    {AboutUsData.ourMission}
-                  </BodyBold>
-                </div>
-
-                <div className={styles.bottomTextContainer}>
-                  <Body
-                    variant={1}
-                    style={{ marginBottom: '16px' }}
-                    color="#9198B0">
-                    {AboutUsData.ourMissionDescription}
-                  </Body>
-                </div>
-              </div>
-            </Group>
-          ) : (
+          {isMobile ? (
             <Group
               w={'100%'}
               spacing={0}
@@ -144,7 +77,7 @@ const AboutUs = () => {
                     fs={isMobile && 18}
                     style={{ marginBottom: '16px' }}
                     color="#F2F3F7">
-                    Welcome to WolfPlanet
+                    Welcome to OLD WolfPlanet
                   </Heading>
                   <Heading variant={8} fs={isMobile && 36} color="#F2F3F7">
                     Where Something
@@ -175,19 +108,65 @@ const AboutUs = () => {
                 </div>
               </div>
             </Group>
+          ) : (
+            <Group
+              position="center"
+              w={'100%'}
+              spacing={0}
+              style={{ alignItems: 'flex-start' }}>
+              <div className={styles.planetTextCont}>
+                <div className={styles.planetTextCard}>
+                  <div className={styles.textCard}></div>
+                  <Heading
+                    variant={4}
+                    style={{ marginBottom: '16px' }}
+                    color="#F2F3F7">
+                    Welcome to OLD WolfPlanet
+                  </Heading>
+                  <Heading variant={8} color="#F2F3F7">
+                    Where Something
+                  </Heading>
+                  <Heading
+                    variant={8}
+                    style={{ marginBottom: '24px' }}
+                    color="#F2F3F7">
+                    Meets <span style={{ color: '#4178FA' }}>Excellence!</span>{' '}
+                  </Heading>
+                  <BodyBold
+                    variant={1}
+                    fs={18}
+                    style={{ marginBottom: '16px' }}
+                    color="#F2F3F7">
+                    At WolfPlanet, we believe that banking should be more than
+                    just transactions. It should be an experience that empowers
+                    individuals and businesses to thrive and reach their
+                    financial goals. As a trusted financial institution, we are
+                    committed to delivering exceptional banking services that go
+                    beyond expectations. With a focus on innovation,
+                    personalized solutions, and unwavering integrity, we strive
+                    to provide the best banking experience for our valued
+                    customers. Join us on this exciting journey and discover a
+                    new level of banking excellence.
+                  </BodyBold>
+                </div>
+              </div>
+
+              <div className={styles.planetCard}>
+                <Image src={'/aboutPlanet3.png'} alt="About Planet" />
+              </div>
+            </Group>
           )}
         </Container>
       </div>
-
       <div className={styles.middleContainer}>
         <Stack align="center" maw={'850px'}>
           <Stack align="center" px={'36px'} w={isMobile ? '278px' : 'auto'}>
-            <BodyBold
-              variant={7}
+            <Heading
+              variant={8}
               fs={isMobile ? 36 : 40}
               style={{ marginBottom: '16px', textAlign: 'center' }}>
-              {AboutUsData.ourPerspective}
-            </BodyBold>
+              Meet the Wolf Team
+            </Heading>
             <BodyBold
               variant={1}
               fs={isMobile ? 18 : 20}

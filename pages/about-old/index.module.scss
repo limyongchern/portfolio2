@@ -10,12 +10,6 @@
   margin-top: -1px;
   max-width: -webkit-fill-available;
 
-  background: url('/aboutHero.png');
-  // background-image: url('/planetCardBg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
   @media (max-width: 835px) {
     padding-top: 0px;
     padding-bottom: 10px;
@@ -24,20 +18,16 @@
 }
 
 .planetCard {
-  width: 588px;
-  height: 588px;
-  // width: 380px;
-  // height: 426px;
+  width: 380px;
+  height: 426px;
   border-radius: 12px;
-  margin-top: -130px;
-  margin-left: -110px;
-  // background-color: white;
-  // background: url('/aboutPlanetBg.png');
+  background-color: white;
+  background: url('/aboutPlanetBg.png');
   // background-image: url('/planetCardBg');
-  // background-size: cover;
-  // background-position: center;
-  // background-repeat: no-repeat;
-  // overflow: hidden; /* This will ensure the background image respects the border radius */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden; /* This will ensure the background image respects the border radius */
 
   @media (max-width: 835px) {
     width: 100vw;
@@ -62,14 +52,13 @@
   top: 0;
   left: 0;
   width: 453px;
-  height: 277px;
+  height: 457px;
   padding: 30px;
   border-radius: 16px;
   background-color: rgba(255, 255, 255, 0.12);
   background: var(rgba(255, 255, 255, 0.12));
   // background-image: url('/planetCardBg');
   border-radius: 20px 0px 60px 20px;
-
   backdrop-filter: blur(10px);
   z-index: 1;
 
@@ -94,17 +83,6 @@
   color: white;
 }
 
-.bottomTextOuterContainer {
-  width: 623px;
-}
-
-.bottomTextContainer {
-  width: 623px;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
 .middleContainer {
   background-image: url('/contactMidBg.png');
   width: 100vw;
@@ -122,47 +100,6 @@
   @media (max-width: 835px) {
     height: auto;
   }
-}
-
-.imgCardContainer {
-  width: 155px;
-  height: 210px;
-  border-radius: 13px;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow: hidden; /* This will ensure the background image respects the border radius */
-  @media (max-width: 835px) {
-    height: 233px;
-    width: 300px;
-  }
-}
-
-.twitter {
-  position: absolute;
-  bottom: 15px;
-  left: 60px;
-  @media (max-width: 835px) {
-    left: 132px;
-  }
-}
-
-.imgCardContainer {
-  width: 155px;
-  height: 210px;
-  border-radius: 13px;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow: hidden; /* This will ensure the background image respects the border radius */
-}
-
-.twitter {
-  position: absolute;
-  bottom: 15px;
-  left: 75px;
 }
 
 .botContainer {
