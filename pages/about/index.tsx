@@ -160,43 +160,44 @@ const AboutUs = () => {
       <div className={styles.topContainer}>
         <Container fluid p={0}>
           {!isMobile ? (
-            <Group
-              position="center"
-              w={'100%'}
-              spacing={0}
-              style={{ alignItems: 'center', justifyContent: 'center' }}>
-              <div className={styles.planetTextCont}>
-                <div className={styles.planetTextCard}>
-                  <BodyBold
-                    variant={5}
-                    style={{ marginBottom: '16px' }}
-                    color="#F2F3F7">
-                    {AboutUsData.about}
-                  </BodyBold>
-                  <BodyBold variant={7} color="#F2F3F7">
-                    <span style={{ color: '#4178FA' }}>
-                      {AboutUsData.wolfPlanet}
-                    </span>{' '}
-                    {AboutUsData.from}
-                  </BodyBold>
-                  <Body
-                    variant={1}
-                    style={{ marginTop: '20px' }}
-                    color="#F2F3F7">
-                    {AboutUsData.description}
-                  </Body>
+            <>
+              <Group
+                position="center"
+                w={'100%'}
+                spacing={0}
+                style={{ alignItems: 'center', justifyContent: 'center' }}>
+                <div className={styles.planetTextCont}>
+                  <div className={styles.planetTextCard}>
+                    <BodyBold
+                      variant={5}
+                      style={{ marginBottom: '16px' }}
+                      color="#F2F3F7">
+                      {AboutUsData.about}
+                    </BodyBold>
+                    <BodyBold variant={7} color="#F2F3F7">
+                      <span style={{ color: '#4178FA' }}>
+                        {AboutUsData.wolfPlanet}
+                      </span>{' '}
+                      {AboutUsData.from}
+                    </BodyBold>
+                    <Body
+                      variant={1}
+                      style={{ marginTop: '20px' }}
+                      color="#F2F3F7">
+                      {AboutUsData.description}
+                    </Body>
+                  </div>
                 </div>
-              </div>
 
-              <div className={styles.planetImage}>
-                <Image
-                  src={'/Planet/wholePlanet3.png'}
-                  alt="About Planet"
-                  width={588}
-                  height={588}
-                />
-              </div>
-
+                <div className={styles.planetImage}>
+                  <Image
+                    src={'/Planet/wholePlanet3.png'}
+                    alt="About Planet"
+                    width={588}
+                    height={588}
+                  />
+                </div>
+              </Group>
               <div className={styles.bottomTextOuterContainer}>
                 <div className={styles.bottomTextContainer}>
                   <BodyBold
@@ -216,7 +217,7 @@ const AboutUs = () => {
                   </Body>
                 </div>
               </div>
-            </Group>
+            </>
           ) : (
             <Group w={'100%'} spacing={0} style={{ justifyContent: 'center' }}>
               <div className={styles.planetImageMobileContainer}>
