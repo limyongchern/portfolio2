@@ -19,30 +19,35 @@
   @media (max-width: 835px) {
     padding-top: 0px;
     padding-bottom: 10px;
-    height: 1300px;
+    // height: 1300px;
   }
 }
 
-.planetCard {
+.planetImage {
   width: 588px;
   height: 588px;
-  // width: 380px;
-  // height: 426px;
   border-radius: 12px;
   margin-top: -130px;
   margin-left: -110px;
-  // background-color: white;
-  // background: url('/aboutPlanetBg.png');
-  // background-image: url('/planetCardBg');
-  // background-size: cover;
-  // background-position: center;
-  // background-repeat: no-repeat;
-  // overflow: hidden; /* This will ensure the background image respects the border radius */
+}
 
-  @media (max-width: 835px) {
-    width: 100vw;
-    height: 464px;
-  }
+.planetImageMobileContainer {
+  // position: absolute;
+  // width: 362px;
+  // height: 398px;
+  // margin-top: 50px;
+  // margin-left: 150px;
+  // left: 50px;
+  overflow: hidden;
+}
+
+.planetImageMobile {
+  // position: absolute;
+  // width: 362px;
+  // height: 398px;
+  margin-top: 50px;
+  margin-left: 80px;
+  // left: 50px;
 }
 
 .planetTextCont {
@@ -52,7 +57,7 @@
   border-radius: 16px;
 
   @media (max-width: 835px) {
-    margin-top: -160px;
+    margin-top: -200px;
     width: 350px;
   }
 }
@@ -74,17 +79,14 @@
   z-index: 1;
 
   @media (min-width: 350px) and (max-width: 835px) {
-    // left: -30px;
-    width: 250px;
-    height: 846px;
-    padding: 60px 30px 0px 60px;
+    width: 290px;
+    height: 413px;
+    padding: 30px;
   }
   @media (max-width: 349px) {
-    // left: -30px;
-
     width: 230px;
-    height: 846px;
-    padding: 50px;
+    height: 413px;
+    padding: 30px;
   }
 }
 
@@ -103,6 +105,9 @@
   display: flex;
   justify-content: center;
   text-align: center;
+  @media (max-width: 835px) {
+    padding: 0px 23px;
+  }
 }
 
 .middleContainer {
@@ -118,9 +123,12 @@
   margin-top: -1px;
   display: flex;
   justify-content: center;
+  // background-color: #3e404e;
   max-width: -webkit-fill-available;
   @media (max-width: 835px) {
     height: auto;
+    padding-top: 80px;
+    padding-bottom: 100px;
   }
 }
 
@@ -173,8 +181,8 @@
   background-position: center;
   background-repeat: no-repeat;
   // padding-inline: 4%;
-  padding-top: 120px;
-  padding-bottom: 20px;
+  padding-top: 0px;
+  padding-bottom: 120px;
   margin-top: -1px;
   display: flex;
   justify-content: center;
@@ -182,18 +190,26 @@
   @media (max-width: 835px) {
     padding-left: 30px;
     padding-right: 30px;
+    padding-bottom: 80px;
     background-image: url('/contactBotBg1.png');
   }
 }
 
 .card {
+  padding: 32px;
+  width: 844px;
+  border: 1px solid #3e404e;
+  box-shadow: 0px 4px 20px 0px rgba(12, 11, 11, 0.8);
+}
+
+.cardMobile {
   border: 1px solid #3e404e;
   box-shadow: 0px 4px 20px 0px rgba(12, 11, 11, 0.8);
 }
 
 .badge {
   display: flex;
-  padding: 4px 11px;
+  padding: 6px 14px;
   justify-content: center;
   align-items: center;
   border-radius: 16px;
@@ -205,4 +221,52 @@
   &[data-with-border] {
     border: 1px solid #3e404e;
   }
+}
+
+.iconContainer {
+  display: flex;
+  padding: 15.593px;
+  align-items: flex-start;
+  gap: 7.796px;
+  border-radius: 40.541px;
+  border: 0.78px solid var(--Main-Secondary, #4178fa);
+  background: var(--Main-Primary-Varient, #272935);
+}
+
+.icons {
+  height: 25px;
+  width: 25px;
+  color: #50c7ba;
+}
+
+.mobileImage {
+  height: 293px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.arrowContainer {
+  cursor: pointer;
+  display: flex;
+  padding: 10.99px;
+  align-items: flex-start;
+  gap: 7.85px;
+  border-radius: 54.163px;
+  border: 2px solid var(--main-primary-varient-250, rgba(145, 152, 176, 0.5));
+}
+.arrowContainer:hover {
+  // border: 0.785px solid var(--Main-Primary-Varient, #272935);
+  border: 2px solid var(--main-primary-varient-250, #272935);
+  background: var(--Main-Primary-Varient, #272935);
+}
+
+.arrowContainerInactive {
+  cursor: pointer;
+  display: flex;
+  padding: 10.99px;
+  align-items: flex-start;
+  gap: 7.85px;
+  border-radius: 54.163px;
+  border: 0.785px solid var(--Main-Primary-Varient, #272935);
+  background: var(--Main-Primary-Varient, #272935);
 }
