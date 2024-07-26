@@ -245,6 +245,15 @@
   object-fit: cover;
 }
 
+.arrowContainerDisabled {
+  display: flex;
+  padding: 10.99px;
+  align-items: flex-start;
+  gap: 7.85px;
+  border-radius: 54.163px;
+  border: 2px solid var(--main-primary-varient-250, rgba(145, 152, 176, 0.5));
+}
+
 .arrowContainer {
   cursor: pointer;
   display: flex;
@@ -252,7 +261,7 @@
   align-items: flex-start;
   gap: 7.85px;
   border-radius: 54.163px;
-  border: 2px solid var(--main-primary-varient-250, rgba(145, 152, 176, 0.5));
+  border: 2px solid var(--main-primary-varient-250, rgba(145, 152, 176));
 }
 .arrowContainer:hover {
   // border: 0.785px solid var(--Main-Primary-Varient, #272935);

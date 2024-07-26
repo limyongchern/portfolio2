@@ -504,34 +504,19 @@ const AboutUs = () => {
               of 10
             </Body>
             <Group spacing={'10px'}>
-              <div className={styles.arrowContainer}>
-                <ArrowLeft color="#9198B080" size={30} />
-              </div>
-              <div className={styles.arrowContainerInactive}>
-                <ArrowRight color="#9198B080" size={30} />
-              </div>
-              {/* {currentPage === 1 ? (
-                <ArrowCircleLeft color="#9198B080" size={45} />
-              ) : isMobile ? (
-                <UnstyledButton onClick={() => setCurrentPage(currentPage - 1)}>
+              {currentPage === 1 ? (
+                <div className={styles.arrowContainerDisabled}>
                   <ArrowLeft color="#9198B080" size={30} />
-                </UnstyledButton>
+                </div>
               ) : (
-                <UnstyledButton onClick={() => setCurrentPage(currentPage - 1)}>
-                  <ArrowCircleLeft color="#272935" size={45} weight="fill" />
-                </UnstyledButton>
+                <div className={styles.arrowContainer}>
+                  <ArrowLeft color="#9198B080" size={30} />
+                </div>
               )}
-              {currentPage === 10 ? (
-                <ArrowCircleRight color="#9198B080" size={45} />
-              ) : isMobile ? (
-                <UnstyledButton onClick={() => setCurrentPage(currentPage + 1)}>
-                  <ArrowRight color="#9198B080" size={30} />
-                </UnstyledButton>
-              ) : (
-                <UnstyledButton onClick={() => setCurrentPage(currentPage + 1)}>
-                  <ArrowCircleRight color="#272935" size={45} weight="fill" />
-                </UnstyledButton>
-              )} */}
+
+              <div className={styles.arrowContainer}>
+                <ArrowRight color="#9198B0" size={30} />
+              </div>
             </Group>
           </Group>
         </Stack>
