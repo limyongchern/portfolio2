@@ -28,7 +28,7 @@ import { Body, BodyBold, Heading } from 'components/typography';
 import { useEffect, useState } from 'react';
 import styles from './index.module.scss';
 import AboutUsTempImage from 'public/TempImages/AboutUsTempImage.png';
-import WholePlanet3 from 'public/Planet/wholePlanet3.png';
+import WholePlanet3 from 'public/Planet/wholeplanet3.png';
 
 const AboutUsData = {
   about: '关于 WolfPlanet',
