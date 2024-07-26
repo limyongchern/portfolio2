@@ -365,7 +365,12 @@ const AboutUs = () => {
               {!isMobile ? (
                 <>
                   {ThirdSectionData.sections.map((section, index) => (
-                    <Card p={'33px'} bg="#272935" radius={'16px'} w={'403px'}>
+                    <Card
+                      p={'33px'}
+                      bg="#272935"
+                      radius={'16px'}
+                      w={'403px'}
+                      key={index}>
                       <Stack spacing={'40px'}>
                         <Image
                           src={section.image}
