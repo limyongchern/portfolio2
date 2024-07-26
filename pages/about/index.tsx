@@ -28,6 +28,7 @@ import { Body, BodyBold, Heading } from 'components/typography';
 import { useEffect, useState } from 'react';
 import styles from './index.module.scss';
 import AboutUsTempImage from 'public/TempImages/AboutUsTempImage.png';
+import WholePlanet3 from 'public/Planet/wholePlanet3.png';
 
 const AboutUsData = {
   about: '关于 WolfPlanet',
@@ -191,7 +192,7 @@ const AboutUs = () => {
 
                 <div className={styles.planetImage}>
                   <Image
-                    src={'/Planet/wholePlanet3.png'}
+                    src={WholePlanet3}
                     alt="About Planet"
                     width={588}
                     height={588}
@@ -222,7 +223,7 @@ const AboutUs = () => {
             <Group w={'100%'} spacing={0} style={{ justifyContent: 'center' }}>
               <div className={styles.planetImageMobileContainer}>
                 <Image
-                  src={'/Planet/wholePlanet3.png'}
+                  src={WholePlanet3}
                   alt="About Planet"
                   width={388}
                   height={388}
