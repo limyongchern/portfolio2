@@ -368,138 +368,146 @@ const AboutUs = () => {
               {!isMobile ? (
                 <>
                   {ThirdSectionData.sections.map((section, index) => (
-                    <Card
-                      p={'33px'}
-                      bg="#272935"
-                      radius={'16px'}
-                      w={'403px'}
-                      key={index}>
-                      <Stack spacing={'40px'}>
-                        <Image
-                          src={section.image}
-                          width={352}
-                          height={230}
-                          // width={'100%'}
-                          alt="Press Release 1"
-                        />
-                        <Stack spacing={'0px'} align="center" px={'18px'}>
-                          <BodyBold
-                            variant={6}
-                            color="#F2F3F7"
-                            style={{ textAlign: 'center' }}>
-                            {section.title}
-                          </BodyBold>
-                          <Group
-                            position="apart"
-                            noWrap
-                            w={'100%'}
-                            style={{ marginTop: 20 }}>
-                            <div className={styles.badge}>
-                              <BodyBold variant={9} color="#FEFEFEFE">
-                                地点: {section.location}
-                              </BodyBold>
-                            </div>
-                            <div className={styles.badge}>
-                              <BodyBold variant={9} color="#FEFEFEFE">
-                                日期: {section.date}
-                              </BodyBold>
-                            </div>
-                          </Group>
-                          <Body
-                            variant={1}
-                            color="#9198B0"
-                            style={{ paddingTop: 30, height: 234 }}>
-                            {section.description}
-                          </Body>
+                    <Link
+                      href={`/activity/${index}`}
+                      style={{ textDecoration: 'none' }}>
+                      <Card
+                        p={'33px'}
+                        bg="#272935"
+                        radius={'16px'}
+                        w={'403px'}
+                        key={index}>
+                        <Stack spacing={'40px'}>
+                          <Image
+                            src={section.image}
+                            width={352}
+                            height={230}
+                            // width={'100%'}
+                            alt="Press Release 1"
+                          />
+                          <Stack spacing={'0px'} align="center" px={'18px'}>
+                            <BodyBold
+                              variant={6}
+                              color="#F2F3F7"
+                              style={{ textAlign: 'center' }}>
+                              {section.title}
+                            </BodyBold>
+                            <Group
+                              position="apart"
+                              noWrap
+                              w={'100%'}
+                              style={{ marginTop: 20 }}>
+                              <div className={styles.badge}>
+                                <BodyBold variant={9} color="#FEFEFEFE">
+                                  地点: {section.location}
+                                </BodyBold>
+                              </div>
+                              <div className={styles.badge}>
+                                <BodyBold variant={9} color="#FEFEFEFE">
+                                  日期: {section.date}
+                                </BodyBold>
+                              </div>
+                            </Group>
+                            <Body
+                              variant={1}
+                              color="#9198B0"
+                              style={{ paddingTop: 30, height: 234 }}>
+                              {section.description}
+                            </Body>
+                          </Stack>
                         </Stack>
-                      </Stack>
-                    </Card>
+                      </Card>
+                    </Link>
                   ))}
                 </>
               ) : (
-                <Card
-                  p={'24px'}
-                  bg="#272935"
-                  radius={'16px'}
-                  withBorder
-                  className={styles.bordercard}
-                  w={'350px'}>
-                  <div
-                    style={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      textAlign: 'center',
-                    }}>
-                    <Image
-                      src={ThirdSectionData.sections[0].image}
-                      alt="Press Release 1"
-                      width={307}
-                      height={280}
-                      // className={styles.mobileImage}
-                      // style={{ width: '100%', height: 293, objectFit: 'cover' }}
-                    />
-
-                    <BodyBold
-                      variant={9}
-                      color="#F2F3F7"
-                      style={{
-                        textAlign: 'center',
-                        padding: '0px 24px',
-                        marginTop: 30,
-                      }}>
-                      {ThirdSectionData.sections[0].title}
-                    </BodyBold>
+                <Link
+                  href={`/activity/${0}`}
+                  style={{ textDecoration: 'none' }}>
+                  <Card
+                    p={'24px'}
+                    bg="#272935"
+                    radius={'16px'}
+                    withBorder
+                    className={styles.bordercard}
+                    w={'350px'}>
                     <div
                       style={{
-                        width: 247,
                         display: 'flex',
                         justifyContent: 'center',
                         flexDirection: 'column',
                         alignItems: 'center',
                         textAlign: 'center',
                       }}>
-                      <Group
-                        position="apart"
-                        noWrap
-                        w={'100%'}
-                        style={{ marginTop: 20 }}>
-                        <div className={styles.badge}>
-                          <BodyBold variant={8} color="#FEFEFEFE">
-                            地点: {ThirdSectionData.sections[0].location}
-                          </BodyBold>
-                        </div>
-                        <div className={styles.badge}>
-                          <BodyBold variant={8} color="#FEFEFEFE">
-                            日期: {ThirdSectionData.sections[0].date}
-                          </BodyBold>
-                        </div>
-                      </Group>
-                    </div>
+                      <Image
+                        src={ThirdSectionData.sections[0].image}
+                        alt="Press Release 1"
+                        width={307}
+                        height={280}
+                        // className={styles.mobileImage}
+                        // style={{ width: '100%', height: 293, objectFit: 'cover' }}
+                      />
 
-                    <div
-                      style={{
-                        width: 254,
-                        display: 'flex',
-                        justifyContent: 'center',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        textAlign: 'center',
-                      }}>
-                      <Body
-                        variant={4}
-                        color="#9198B0"
+                      <BodyBold
+                        variant={9}
+                        color="#F2F3F7"
                         style={{
-                          paddingTop: 30,
-                          height: 119,
-                          lineHeight: 1.4,
+                          textAlign: 'center',
+                          padding: '0px 24px',
+                          marginTop: 30,
                         }}>
-                        {ThirdSectionData.sections[0].description}
-                      </Body>
+                        {ThirdSectionData.sections[0].title}
+                      </BodyBold>
+                      <div
+                        style={{
+                          width: 247,
+                          display: 'flex',
+                          justifyContent: 'center',
+                          flexDirection: 'column',
+                          alignItems: 'center',
+                          textAlign: 'center',
+                        }}>
+                        <Group
+                          position="apart"
+                          noWrap
+                          w={'100%'}
+                          style={{ marginTop: 20 }}>
+                          <div className={styles.badge}>
+                            <BodyBold variant={8} color="#FEFEFEFE">
+                              地点: {ThirdSectionData.sections[0].location}
+                            </BodyBold>
+                          </div>
+                          <div className={styles.badge}>
+                            <BodyBold variant={8} color="#FEFEFEFE">
+                              日期: {ThirdSectionData.sections[0].date}
+                            </BodyBold>
+                          </div>
+                        </Group>
+                      </div>
+
+                      <div
+                        style={{
+                          width: 254,
+                          display: 'flex',
+                          justifyContent: 'center',
+                          flexDirection: 'column',
+                          alignItems: 'center',
+                          textAlign: 'center',
+                        }}>
+                        <Body
+                          variant={4}
+                          color="#9198B0"
+                          style={{
+                            paddingTop: 30,
+                            height: 119,
+                            lineHeight: 1.4,
+                          }}>
+                          {ThirdSectionData.sections[0].description}
+                        </Body>
+                      </div>
                     </div>
-                  </div>
-                </Card>
+                  </Card>
+                </Link>
               )}
             </Group>
           </Stack>
