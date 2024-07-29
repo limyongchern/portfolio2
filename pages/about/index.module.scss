@@ -197,6 +197,28 @@
     background-image: url('/contactBotBg1.png');
   }
 }
+.botContainer2 {
+  background-color: #272935;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  // padding-inline: 4%;
+  padding-top: 0px;
+  padding-bottom: 120px;
+  margin-top: -1px;
+  display: flex;
+  justify-content: center;
+  max-width: -webkit-fill-available;
+  @media (max-width: 835px) {
+    // margin-top: -350px;
+    margin-top: -50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 80px;
+    background-color: #272935;
+  }
+}
 
 .card {
   padding: 32px;

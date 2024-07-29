@@ -530,8 +530,8 @@ const AboutUs = () => {
       </div>
 
       {/* Fourth section (Announcements) */}
-      <div className={styles.botContainer}>
-        <div style={{ width: '100%', maxWidth: 788 }}>
+      <div className={styles.botContainer2}>
+        <div style={{ width: '100%', maxWidth: 830 }}>
           <Stack mt={isMobile ? '80px' : '150px'} align="center">
             <div
               style={{
