@@ -1,11 +1,7 @@
-import NFT from 'public/NFT.png';
-import card4Icon from 'public/card4Icon.png';
-import card2Icon from 'public/card2Icon.png';
-import card1Icon from 'public/GlobeHemisphereWest.png';
 import Image from 'next/image';
-import { Body, BodyBold, Heading } from 'components/typography';
+import { Body, BodyBold } from 'components/typography';
 import styles from './thirdSection.module.scss';
-import { Card, Flex, Stack } from '@mantine/core';
+import { Card } from '@mantine/core';
 
 const ThirdMobileSection = ({ data }: any) => {
   return (
@@ -58,13 +54,9 @@ const ThirdMobileSection = ({ data }: any) => {
       <div className={styles.illustrationContainer}>
         {data.bottomCards.map((card: any, index: number) => (
           <div className={styles.illustrationSection} key={index}>
-            {/* <div className={styles.illustration}></div> */}
             <Image
               src={card.image}
               alt="card icon"
-              // width={84}
-              // height={84}
-              // color={'#9198B0'}
               className={styles.illustration}
             />
             <BodyBold variant={2} color="#F2F3F7" style={{ marginTop: 40 }}>

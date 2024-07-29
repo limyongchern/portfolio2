@@ -2,7 +2,7 @@
 import styles from './home.module.scss';
 import Image from 'next/image';
 import React, { useCallback, useEffect, useState } from 'react';
-import { Body, BodyBold, Heading } from 'components/typography';
+import { Body, BodyBold } from 'components/typography';
 import { PauseCircle, PlayCircle } from '@phosphor-icons/react';
 import { easeInOut, motion } from 'framer-motion';
 import { Carousel, Embla } from '@mantine/carousel';
@@ -53,7 +53,6 @@ const SecondMobileSection = ({ data }: any) => {
             className={styles.collapsibleImageMobile}
             alt="wolfavatar"
           />
-          {/* <div style={{ marginTop: -145 }}> */}
           <div style={{ marginTop: index === 1 ? -160 : -130, padding: 15 }}>
             {' '}
             <Body

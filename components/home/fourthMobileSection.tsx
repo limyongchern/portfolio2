@@ -1,7 +1,7 @@
 import styles from './home.module.scss';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { Body, BodyBold, Heading } from 'components/typography';
+import { Body, BodyBold } from 'components/typography';
 import { MagicTabSelect } from 'react-magic-motion';
 
 const FourthMobileSection = ({ data }: any) => {
@@ -17,7 +17,6 @@ const FourthMobileSection = ({ data }: any) => {
 
   useEffect(() => {
     if (isMounted) setSelectedImage(data.cardsContent[hoveredIndex].image);
-    // setSelectedImage(dummyTabs[hoveredIndex].image);
   }, [hoveredIndex, isMounted, data.cardsContent]);
 
   const tabsComponents = data.cardsContent.map((item: any, i: number) => {

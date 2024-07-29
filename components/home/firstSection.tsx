@@ -1,6 +1,6 @@
 import BackgroundVideo from 'components/BackgroundVideo';
 import styles from './home.module.scss';
-import { Body, Heading } from 'components/typography';
+import { Body } from 'components/typography';
 
 const firstSection = ({ data }: any) => {
   return (

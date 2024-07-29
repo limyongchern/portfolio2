@@ -1,31 +1,11 @@
 import styles from './fifthSection.module.scss';
 import Image from 'next/image';
-import { useEffect, useState, useCallback } from 'react';
-import { Body, BodyBold, Heading } from 'components/typography';
+import { useState } from 'react';
+import { Body, BodyBold } from 'components/typography';
 import { MagicMotion } from 'react-magic-motion';
-import { PauseCircle, PlayCircle } from '@phosphor-icons/react';
-import { easeInOut, motion } from 'framer-motion';
-import { Carousel, Embla } from '@mantine/carousel';
 
 const FifthSection = ({ data }: any) => {
   const [currentCard, setCurrentCard] = useState(0);
-  const [embla, setEmbla] = useState<Embla | null>(null);
-  const [currentPage, setCurrentPage] = useState(0);
-  const handleScroll = useCallback(() => {
-    if (!embla) return;
-    setCurrentPage(embla.selectedScrollSnap());
-  }, [embla]);
-
-  useEffect(() => {
-    if (embla) {
-      embla.on('scroll', handleScroll);
-      handleScroll();
-    }
-  }, [embla, handleScroll]);
-
-  useEffect(() => {
-    console.log('Current page:', currentPage);
-  }, [currentPage]);
 
   const isActive = (index: number) => {
     return index === currentCard;
@@ -80,7 +60,6 @@ const FifthSection = ({ data }: any) => {
                 style={{ opacity: isActive(index) ? 1 : 0.5 }}
                 alt="phone-image"
               />
-              {/* <div style={{ marginTop: -145 }}> */}
             </div>
           ))}
         </div>

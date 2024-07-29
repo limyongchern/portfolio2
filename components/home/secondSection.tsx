@@ -1,7 +1,7 @@
 import styles from './home.module.scss';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { Body, Heading } from 'components/typography';
+import { Body } from 'components/typography';
 import { MagicMotion } from 'react-magic-motion';
 import { PauseCircle, PlayCircle } from '@phosphor-icons/react';
 

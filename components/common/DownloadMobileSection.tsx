@@ -1,13 +1,9 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 import styles from './DownloadSection.module.scss';
-import { Flex, Stack, Transition } from '@mantine/core';
-import { Body, BodyBold, Heading } from 'components/typography';
+import { Flex } from '@mantine/core';
+import { Body, BodyBold } from 'components/typography';
 
-import { PlanetList } from 'utils/planet';
 import Image from 'next/image';
-import { easeInOut, motion, AnimatePresence } from 'framer-motion';
-import { MagicMotion } from 'react-magic-motion';
-import WolfAvatarBlue from 'public/WolfAvatar/WolfAvatarBlue.png';
 import WolfAvatarBlueMobile from 'public/WolfAvatar/WolfAvatarBlueMobile.png';
 import PlaystoreEn from 'public/GooglePlayEn.svg';
 import AppleEn from 'public/AppleStoreEn.svg';

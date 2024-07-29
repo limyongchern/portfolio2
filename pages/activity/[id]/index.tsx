@@ -1,12 +1,8 @@
-import { Flex, Stack } from '@mantine/core';
+import { Stack } from '@mantine/core';
 import styles from './index.module.scss';
-import Playstore from 'public/playstore.png';
-import Apple from 'public/apple.png';
 import Image from 'next/image';
-import { Body, BodyBold, Heading } from 'components/typography';
+import { Body, BodyBold } from 'components/typography';
 import Sample from 'public/Cards-Landing.png';
-import Button from 'components/button';
-import Download2 from 'public/Download2.png';
 import {
   FacebookLogo,
   InstagramLogo,
@@ -14,8 +10,6 @@ import {
   Link,
 } from '@phosphor-icons/react';
 import { useEffect, useState } from 'react';
-import FirstSection from 'components/download/firstSection';
-import SecondSection from 'components/download/secondSection';
 import { useRouter } from 'next/router';
 
 import DownloadSection from 'components/common/DownloadSection';

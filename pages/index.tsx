@@ -41,8 +41,6 @@ import IllustrationRevenue from 'public/Home/IllustrationRevenue.png';
 //images for FifthSection
 import iPhoneImage from 'public/Home/iPhoneImage.png';
 
-import { PlanetList } from 'utils/planet';
-
 interface IProps {}
 
 const FirstSectionData = {
@@ -266,100 +264,12 @@ const Home = (props: IProps) => {
       {!isMobile && (
         <div>
           <FirstSection data={FirstSectionData} />
-
           <SecondSection data={SecondSectionData} />
-
-          {/* <SecondSectionOld /> */}
-
           <ThirdSection data={ThirdSectionData} />
-
-          {/* <div className={styles.section3}>
-            <div className={styles.backgroundWrapper}>
-              <Image
-                src={backgroundImage}
-                alt="Background Image"
-                className={styles.backgroundImage}
-              />
-            </div>
-            <Flex className={styles.section3Content}>
-              <Stack className={styles.section3Word}>
-                <Heading
-                  variant={0}
-                  color="#F2F3F7"
-                  style={{ lineHeight: 1.5 }}
-                  fs={40}
-                  fw={700}>
-                  Wolf Planet 星球汇聚了来自全球各地的专业投资
-                </Heading>
-                <Body
-                  variant={1}
-                  color="#9198B0"
-                  style={{ lineHeight: 1.5 }}
-                  fw={700}>
-                  Wolf Planet
-                  星球汇聚了来自全球各地的专业投资者和分析师，为您提供高质量的投资资讯和分析，助力您做出更明智的投资决策。
-                </Body>
-              </Stack>
-              <Image
-                src={planetHome}
-                alt="Planet"
-                className={styles.section3Planet}
-              />
-            </Flex>
-          </div> */}
-
           <FourthSection data={FourthSectionData} />
           <PlanetSection data={PlanetSectionData} />
           <FifthSection data={FifthSectionData} />
           <DownloadSection />
-
-          {/* <div className={styles.section4}>
-            <div className={styles.section4p2}>
-              <Stack>
-                <Heading
-                  variant={0}
-                  color={'#F2F3F7'}
-                  style={{ lineHeight: 1.5 }}
-                  fs={40}
-                  fw={700}>
-                  Wolf Planet space for video
-                </Heading>
-                <Body
-                  variant={1}
-                  color={'#9198B0'}
-                  style={{ padding: '24px 0px', lineHeight: 1.5 }}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  doeiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </Body>
-                <Image
-                  src={section4vid}
-                  alt="Video"
-                  className={styles.sec4Vid}
-                />
-              </Stack>
-            </div>
-          </div> */}
-          {/* <div className={styles.section5}>
-            <div className={styles.section5p2}>
-              <Heading
-                variant={0}
-                color={'#F2F3F7'}
-                style={{ lineHeight: 1.5 }}
-                fs={40}
-                fw={700}>
-                CTA text to contact or smth
-              </Heading>
-              <Body
-                variant={1}
-                color={'#9198B0'}
-                style={{ paddingTop: '24px', lineHeight: 1.5 }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </Body>
-              <Button className={styles.button}>Contact Us</Button>
-            </div>
-          </div> */}
         </div>
       )}
 
@@ -367,7 +277,6 @@ const Home = (props: IProps) => {
         <>
           <FirstMobileSection data={FirstSectionData} />
           <SecondMobileSection data={SecondSectionData} />
-          {/* <SecondMobileSectionOld /> */}
           <ThirdMobileSection data={ThirdSectionData} />
           <FourthMobileSection data={FourthSectionData} />
           <PlanetMobileSection data={PlanetSectionData} />

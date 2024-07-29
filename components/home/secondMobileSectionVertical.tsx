@@ -1,11 +1,6 @@
-import NFT from 'public/NFT.png';
-import card4Icon from 'public/card4Icon.png';
-import card2Icon from 'public/card2Icon.png';
-import card1Icon from 'public/GlobeHemisphereWest.png';
 import Image from 'next/image';
 import { Body, Heading } from 'components/typography';
 import styles from './home.module.scss';
-import { Card, Flex, Stack } from '@mantine/core';
 import { useEffect, useState } from 'react';
 import { MagicMotion } from 'react-magic-motion';
 

@@ -1,22 +1,7 @@
-import {
-  Badge,
-  Card,
-  Col,
-  Container,
-  Divider,
-  Flex,
-  Grid,
-  Group,
-  SimpleGrid,
-  Stack,
-  UnstyledButton,
-} from '@mantine/core';
+import { Card, Container, Divider, Group, Stack } from '@mantine/core';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
-  ArrowArcRight,
-  ArrowCircleLeft,
-  ArrowCircleRight,
   ArrowLeft,
   ArrowRight,
   Handshake,
@@ -24,8 +9,7 @@ import {
   Star,
   CaretDoubleRight,
 } from '@phosphor-icons/react';
-import TeamCard from 'components/about/teamCard';
-import { Body, BodyBold, Heading } from 'components/typography';
+import { Body, BodyBold } from 'components/typography';
 import { useEffect, useState } from 'react';
 import styles from './index.module.scss';
 import AboutUsTempImage from 'public/TempImages/AboutUsTempImage.png';
@@ -276,7 +260,7 @@ const AboutUs = () => {
 
       {/* Second section */}
       <div className={styles.middleContainer}>
-        <Stack align="center" maw={'850px'}>
+        <Stack align="center" maw={'850px'} mt={isMobile ? '0px' : '48px'}>
           <Stack align="center" px={'36px'} w={isMobile ? '278px' : 'auto'}>
             <BodyBold
               variant={7}

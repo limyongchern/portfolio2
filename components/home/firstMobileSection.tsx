@@ -1,6 +1,6 @@
 import BackgroundVideo from 'components/BackgroundVideo';
 import styles from './home.module.scss';
-import { Body, Heading } from 'components/typography';
+import { Body } from 'components/typography';
 
 const firstMobileSection = ({ data }: any) => {
   return (
@@ -8,7 +8,6 @@ const firstMobileSection = ({ data }: any) => {
       <div className={styles.video}>
         <BackgroundVideo />
       </div>
-      {/* <div className={styles.section1}> */}
       <div className={styles.titleColumnMobile}>
         <Body
           variant={9}
@@ -22,7 +21,6 @@ const firstMobileSection = ({ data }: any) => {
           {data.subheader}
         </Body>
       </div>
-      {/* </div> */}
     </>
   );
 };

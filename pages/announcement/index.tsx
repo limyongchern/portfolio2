@@ -63,8 +63,6 @@ const FourthSectionData = {
 };
 
 const Announcement = () => {
-  const [currentPage, setCurrentPage] = useState<number>(1);
-
   // MOBILE AND DESKTOP
   const [isMobile, setIsMobile] = useState(false);
   const [width, setWidth] = useState<number>(

@@ -1,33 +1,20 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './planetSection.module.scss';
-import { Flex, Stack, Transition } from '@mantine/core';
-import { Body, BodyBold, Heading } from 'components/typography';
+import { Flex, Stack } from '@mantine/core';
+import { Body } from 'components/typography';
 
 import { PlanetList } from 'utils/planet';
 import Image from 'next/image';
-import { easeInOut, motion, AnimatePresence } from 'framer-motion';
 import { MagicMotion } from 'react-magic-motion';
 
 const PlanetSection = ({ data }: any) => {
   const [activePlanet, setActivePlanet] = useState<number>(1);
   const [currentPlanet, setCurrentPlanet] = useState<any>(PlanetList[0]);
 
-  // const [transitioning, setTransitioning] = useState<boolean>(true);
-
   const handlePlanetChange = (index: number) => {
     setActivePlanet(index + 1);
     setCurrentPlanet(PlanetList[index]);
-    // setTransitioning(false);
-
-    // setTimeout(() => {
-    //   setActivePlanet(index + 1);
-    // }, 500);
-
-    // setTimeout(() => {
-    //   setTransitioning(true);
-    // }, 500);
   };
-  // console.log(transitioning);
 
   return (
     <>

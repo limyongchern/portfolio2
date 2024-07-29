@@ -14,8 +14,6 @@ import {
   Link,
 } from '@phosphor-icons/react';
 import { useEffect, useState } from 'react';
-import FirstSection from 'components/download/firstSection';
-import SecondSection from 'components/download/secondSection';
 import { useRouter } from 'next/router';
 
 import DownloadSection from 'components/common/DownloadSection';

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { easeInOut, motion } from 'framer-motion';
 import { Carousel, Embla } from '@mantine/carousel';
 import { PlanetList } from 'utils/planet';
-import { Body, BodyBold, Heading } from 'components/typography';
+import { Body, BodyBold } from 'components/typography';
 
 const FourthMobileSection = ({ data }: any) => {
   const [embla, setEmbla] = useState<Embla | null>(null);

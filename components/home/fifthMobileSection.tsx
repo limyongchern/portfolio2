@@ -4,8 +4,7 @@ import styles from './fifthSection.module.scss';
 import Image from 'next/image';
 import { easeInOut, motion } from 'framer-motion';
 import { Carousel, Embla } from '@mantine/carousel';
-import { Body, BodyBold, Heading } from 'components/typography';
-import { PlanetList } from 'utils/planet';
+import { Body, BodyBold } from 'components/typography';
 
 const FifthMobileSection = ({ data }: any) => {
   const [embla, setEmbla] = useState<Embla | null>(null);

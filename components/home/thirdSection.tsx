@@ -1,11 +1,7 @@
-import NFT from 'public/NFT.png';
-import card4Icon from 'public/card4Icon.png';
-import card2Icon from 'public/card2Icon.png';
-import card1Icon from 'public/GlobeHemisphereWest.png';
 import Image from 'next/image';
 import { Body, Heading } from 'components/typography';
 import styles from './thirdSection.module.scss';
-import { Card, Flex, Stack } from '@mantine/core';
+import { Card } from '@mantine/core';
 
 const ThirdSection = ({ data }: any) => {
   return (

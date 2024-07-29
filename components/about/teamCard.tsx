@@ -1,6 +1,5 @@
 import { Image, Stack } from '@mantine/core';
 import { BodyBold } from 'components/typography';
-import { url } from 'inspector';
 import React, { useEffect, useState } from 'react';
 import styles from './about.module.scss';
 
@@ -36,6 +35,7 @@ const TeamCard = ({ image, name, title }: ICardProps) => {
       }
     };
   }, [width]);
+
   return (
     <Stack spacing={28} align="center" mb={isMobile ? '60px' : 0}>
       <div
