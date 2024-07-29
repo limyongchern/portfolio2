@@ -1,0 +1,56 @@
+@use 'styles/common/colors';
+
+.container {
+  //   background-image: url('/Download 1.png');
+  background-image: url('/contactBotBg.png');
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  // height: 500px;
+  padding-inline: 4%;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  color: white;
+  margin-top: -1px;
+  //   text-align: center;
+  display: flex;
+  justify-content: center;
+  max-width: -webkit-fill-available;
+}
+
+.content {
+  display: flex;
+  max-width: 836px;
+  height: 100%;
+  // padding: 0px 60px;
+  //   align-items: center;
+  gap: 24px;
+  margin: auto;
+  //   text-align: center;
+}
+
+.image {
+  max-width: 836px;
+  height: 492px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  // max-width: 836px;
+  // max-height: 510px;
+  border-radius: 16px;
+  margin-top: 20px;
+
+  @media (max-width: 835px) {
+    max-width: 350px;
+    max-height: 210px;
+  }
+}
+
+.icons {
+  height: 32px;
+  width: 32px;
+}

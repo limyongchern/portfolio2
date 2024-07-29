@@ -11,6 +11,7 @@ import {
   Stack,
   UnstyledButton,
 } from '@mantine/core';
+import Link from 'next/link';
 import Image from 'next/image';
 import {
   ArrowArcRight,
@@ -555,9 +556,12 @@ const AboutUs = () => {
                   cursor: 'pointer',
                   marginTop: isMobile ? 20 : 0,
                 }}>
-                <BodyBold variant={9} color="#9198B0">
-                  {FourthSectionData.more}
-                </BodyBold>
+                <Link href={'/announcement'} style={{ textDecoration: 'none' }}>
+                  <BodyBold variant={9} color="#9198B0" onClick={() => {}}>
+                    {FourthSectionData.more}
+                  </BodyBold>
+                </Link>
+
                 <CaretDoubleRight color="#9198B0" size={28} />
               </div>
             </div>
