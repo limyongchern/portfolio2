@@ -132,14 +132,14 @@ const PdfViewer = () => {
               />
             )}
           </Flex>
-          <Heading
+          {/* <Heading
             variant={6}
             fs={'18px'}
             fw={400}
             color="white"
             style={{ textAlign: 'center' }}>
             Page {pageNumber} of {numPages}
-          </Heading>
+          </Heading> */}
         </>
       ) : (
         <>
@@ -210,14 +210,14 @@ const PdfViewer = () => {
               />
             )}
           </Flex>
-          <Heading
+          {/* <Heading
             variant={6}
             fs={'10px'}
             fw={400}
             color="white"
             style={{ textAlign: 'center' }}>
             Page {pageNumber} of {numPages}
-          </Heading>
+          </Heading> */}
         </>
       )}
     </div>
