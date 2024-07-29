@@ -22,7 +22,7 @@ import DownloadSection from 'components/common/DownloadSection';
 import DownloadMobileSection from 'components/common/DownloadMobileSection';
 
 const DummyData = {
-  headline: '这是活动项目 1 的主题',
+  headline: '服务器更新',
   date: '28/12/2024',
   author: 'WolfPlanet',
   description1: `羽高您蝴目早村交村，停雞枝合對節完扒紅甲六黃聽第門久身裏？月月家歌親拉自少進海而汗快清比平雨坐對、牠交五做貫大。夕忍乞節弓，飽足米裏合力科貓害苗。幸尾昌助收這己封正休植跟常雲都沒定。都裏北斗車地戶刃吃人！去喜它玉事你正皮美雄什尺筆好波道父祖，毛在蝴還立問條京幾物的人化。羽高您蝴目早村交村，停雞枝合對節完扒紅甲六黃聽第門久身裏？月月家歌親拉自少進海而汗快清比平雨坐對、牠交五做貫大。夕忍乞節弓，飽足米裏合力科貓害苗。幸尾昌助收這己封正休植跟常雲都沒定。都裏北斗車地戶刃吃人！去喜它玉事你正皮美雄什尺筆好波道父祖，毛在蝴還立問條京幾物的人化。
@@ -33,7 +33,7 @@ const DummyData = {
     `,
 };
 
-const Activity = () => {
+const AnnouncementDetail = () => {
   const router = useRouter();
   console.log('Activity page router.query.id', router.query.id);
   const [isMobile, setIsMobile] = useState(false);
@@ -91,7 +91,6 @@ const Activity = () => {
               </BodyBold>
             </div>
           </div>
-          <Image src={Sample} alt="sample" className={styles.image} />
           <Body
             variant={1}
             color={isMobile ? '#9198B0' : 'rgba(254, 254, 254, 1.00)'}
@@ -116,4 +115,4 @@ const Activity = () => {
   );
 };
 
-export default Activity;
+export default AnnouncementDetail;
