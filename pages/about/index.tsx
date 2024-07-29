@@ -370,13 +370,9 @@ const AboutUs = () => {
                   {ThirdSectionData.sections.map((section, index) => (
                     <Link
                       href={`/activity/${index}`}
-                      style={{ textDecoration: 'none' }}>
-                      <Card
-                        p={'33px'}
-                        bg="#272935"
-                        radius={'16px'}
-                        w={'403px'}
-                        key={index}>
+                      style={{ textDecoration: 'none' }}
+                      key={index}>
+                      <Card p={'33px'} bg="#272935" radius={'16px'} w={'403px'}>
                         <Stack spacing={'40px'}>
                           <Image
                             src={section.image}
