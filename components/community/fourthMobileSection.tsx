@@ -3,10 +3,15 @@ import React from 'react';
 import styles from './community.module.scss';
 import Image from 'next/image';
 
-const FirstMobileSection = ({ data }: any) => {
+const FourthMobileSection = ({ data }: any) => {
   return (
-    <div id="first-section" className={styles.container}>
-      <div className={styles.widthContainer}>
+    <div id="fourth-section" className={styles.fourthContainer}>
+      <div className={styles.fourthInnerContainer}>
+        <Image
+          src={data.image}
+          className={styles.mobilePersonalizedImage}
+          alt="wolfavatar"
+        />
         <span className={styles.textContainer}>
           <BodyBold color="#F2F3F7" variant={1}>
             {data.title}
@@ -15,17 +20,12 @@ const FirstMobileSection = ({ data }: any) => {
             {data.headline}
           </BodyBold>
           <Body color="#9198B0" variant={1} style={{ marginTop: 15 }}>
-            {data.description}
+            {data.subheader}
           </Body>
         </span>
-        <Image
-          src={data.image}
-          className={styles.communityIllustration1}
-          alt="wolfavatar"
-        />
       </div>
     </div>
   );
 };
 
-export default FirstMobileSection;
+export default FourthMobileSection;

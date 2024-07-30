@@ -1,105 +1,89 @@
+import { Flex, Grid, Stack } from '@mantine/core';
+import { Body, BodyBold, Heading } from 'components/typography';
 import React from 'react';
 import styles from './community.module.scss';
-import WolfTooth from '../../public/WolfToken.svg';
-import WolfToken from '../../public/WolfCoin.svg';
 import Image from 'next/image';
-import { Flex, Stack } from '@mantine/core';
-import { Body, Heading } from 'components/typography';
 
-const SecondSection = () => {
+const SecondSection = ({ data }: any) => {
   return (
     <div id="second-section" className={styles.containerSecondSection}>
       <div className={styles.widthContainerSecondSection}>
-        <Flex gap={'15.71px'}>
-          <div className={styles.cardContainer}>
-            <span>
-              <Heading
-                color="#F2F3F7"
-                variant={6}
-                style={{ display: 'inline' }}
-                fs={'40px'}
-                lh={'normal'}
-                fw={400}>
-                Wolf Planet{' '}
-              </Heading>
-              <Body
-                color="#F2F3F7"
-                variant={6}
-                style={{ display: 'inline' }}
-                fs={'40px'}
-                lh={'normal'}
-                fw={700}>
-                星球的玩法
-              </Body>
-            </span>
-            <Body
-              color="#9198B0"
-              variant={6}
-              style={{ display: 'inline' }}
-              fs={'18px'}
-              lh={'normal'}
-              fw={400}>
-              双代币体系是一种在区块链项目中常见的经济模型，其中包含两种不同的代币。狼牙是平台上的股票币，狼牙的主要功能是用于平台的分红。Wolftoken,狼币是平台的通用货币，可以用于购买平台上的商品和服务。
-              在狼星球上，用户可以使用狼币购买课程、铸造NFT，或进行其他交易。狼币具有现实世界的价值，可以在虚拟货币交易所上兑换成法币或其他资产。
-              双代币体系的优势在于可以实现不同的功能分离，并为用户提供不同的激励机制。狼牙作为激励用户在平台上的发展，而狼币的支付功能可以方便用户进行交易。
-            </Body>
-          </div>
-          <Stack spacing={'28.18px'}>
-            <div className={styles.cardSubContainer}>
-              <Flex gap={'9.39px'} align={'center'}>
+        <Stack
+          align="center"
+          justify="center"
+          spacing={'18.67px'}
+          p={'32.667px 48.222px'}>
+          <span>
+            <BodyBold color="#F2F3F7" variant={7}>
+              {data.headline}
+            </BodyBold>
+          </span>
+          <Body color="#9198B0" variant={1} style={{ textAlign: 'center' }}>
+            {data.subheader}
+          </Body>
+        </Stack>
+        <Flex align="center" justify="center" mt={'14px'}>
+          <Grid gutter="xl">
+            {data.cards.map((card: any, index: number) => (
+              <Grid.Col span={4} key={index}>
                 <Image
-                  src={WolfTooth}
-                  alt="WolfTooth"
-                  className={styles.icon}
+                  src={card.image}
+                  alt="wolfavatar"
+                  className={`${styles[`daoCardImages${index + 1}`]}`}
                 />
+
+                <div className={styles.cardDarkContainer}>
+                  <BodyBold color="#F2F3F7" variant={7}>
+                    {card.title}
+                  </BodyBold>
+                  <Body color="#9198B0" variant={1}>
+                    {card.description}
+                  </Body>
+                </div>
+              </Grid.Col>
+            ))}
+
+            {/* <Grid.Col span={4}>
+              <div className={styles.cardDarkContainer}>
                 <Body
                   color="#F2F3F7"
                   variant={6}
-                  style={{ display: 'inline' }}
-                  fs={'40px'}
+                  fw={700}
                   lh={'normal'}
-                  fw={700}>
-                  狼牙
+                  fs={'40px'}>
+                  部落
                 </Body>
-              </Flex>
-              <Body
-                color="#9198B0"
-                variant={6}
-                style={{ display: 'inline' }}
-                fs={'18px'}
-                lh={'normal'}
-                fw={400}>
-                狼财会根据用户持有的狼牙比例进行Wolftoken空投。
-              </Body>
-            </div>
-            <div className={styles.cardSubContainer}>
-              <Flex gap={'9.39px'} align={'center'}>
-                <Image
-                  src={WolfToken}
-                  alt="WolfToken"
-                  className={styles.icon}
-                />
+                <Body
+                  color="#9198B0"
+                  variant={6}
+                  fw={400}
+                  lh={'normal'}
+                  fs={'18px'}>
+                  部落是星球内的子单位，是一个由志同道合用户组成的社区。部落可以根据用户的兴趣爱好、投资理念等因素进行划分。部落可以制定自己的规则和规范，自主管理部落的内部事务。
+                </Body>
+              </div>
+            </Grid.Col>
+            <Grid.Col span={4}>
+              <div className={styles.cardDarkContainer}>
                 <Body
                   color="#F2F3F7"
                   variant={6}
-                  style={{ display: 'inline' }}
-                  fs={'40px'}
+                  fw={700}
                   lh={'normal'}
-                  fw={700}>
-                  狼币
+                  fs={'40px'}>
+                  机构
                 </Body>
-              </Flex>
-              <Body
-                color="#9198B0"
-                variant={6}
-                style={{ display: 'inline' }}
-                fs={'18px'}
-                lh={'normal'}
-                fw={400}>
-                支付：用户可以使用狼币购买课程、铸造NFT，或进行其他交易。
-              </Body>
-            </div>
-          </Stack>
+                <Body
+                  color="#9198B0"
+                  variant={6}
+                  fw={400}
+                  lh={'normal'}
+                  fs={'18px'}>
+                  机构与部落是同等架构，是由现实存在的机构建立的私有单位，其属性为私有单位。用户需要在平台上核实身份后，其所属机构会在SBT上显示，则用户在加入机构时可以以SBT作审核核实
+                </Body>
+              </div>
+            </Grid.Col> */}
+          </Grid>
         </Flex>
       </div>
     </div>

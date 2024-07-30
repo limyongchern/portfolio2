@@ -1,0 +1,35 @@
+@use 'styles/common/colors';
+
+.container {
+  //   background-image: url('/Download 1.png');
+  background-image: url('/contactBotBg.png');
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  // height: 500px;
+  padding-inline: 4%;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  color: white;
+  margin-top: -1px;
+  //   text-align: center;
+  display: flex;
+  justify-content: center;
+  max-width: -webkit-fill-available;
+  @media (max-width: 835px) {
+    padding-top: 90px;
+  }
+}
+
+.content {
+  display: flex;
+  max-width: 836px;
+  height: 100%;
+  // padding: 0px 60px;
+  //   align-items: center;
+  gap: 24px;
+  margin: auto;
+  //   text-align: center;
+}
