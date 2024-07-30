@@ -31,7 +31,6 @@ const SecondSection = ({ data }: any) => {
                   alt="wolfavatar"
                   className={`${styles[`daoCardImages${index + 1}`]}`}
                 />
-
                 <div className={styles.cardDarkContainer}>
                   <BodyBold color="#F2F3F7" variant={7}>
                     {card.title}

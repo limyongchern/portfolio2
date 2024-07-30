@@ -2,6 +2,7 @@ import { Flex, Grid, Stack } from '@mantine/core';
 import { Body, BodyBold, Heading } from 'components/typography';
 import React from 'react';
 import styles from './community.module.scss';
+import Image from 'next/image';
 
 const SecondMobileSection = ({ data }: any) => {
   return (
@@ -21,14 +22,21 @@ const SecondMobileSection = ({ data }: any) => {
         </Body>
 
         {data.cards.map((card: any, index: number) => (
-          <div className={styles.cardDarkMobileContainer} key={index}>
-            <BodyBold color="#F2F3F7" variant={7}>
-              {card.title}
-            </BodyBold>
-            <Body color="#9198B0" variant={1}>
-              {card.description}
-            </Body>
-          </div>
+          <>
+            <Image
+              src={card.image}
+              alt="wolfavatar"
+              className={`${styles[`daoCardImagesMobile${index + 1}`]}`}
+            />
+            <div className={styles.cardDarkMobileContainer} key={index}>
+              <BodyBold color="#F2F3F7" variant={7}>
+                {card.title}
+              </BodyBold>
+              <Body color="#9198B0" variant={1}>
+                {card.description}
+              </Body>
+            </div>
+          </>
         ))}
 
         {/* <div className={styles.cardDarkMobileContainer}>

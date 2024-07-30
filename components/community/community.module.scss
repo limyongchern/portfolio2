@@ -56,18 +56,28 @@
 }
 
 .daoCardImages1 {
-  width: 197px;
-  height: 197px;
+  width: 190px;
+  height: 190px;
+  z-index: 2;
+  margin-bottom: -61px;
+  position: relative;
 }
 
 .daoCardImages2 {
   width: 197px;
   height: 179px;
+  z-index: 2;
+  margin-bottom: -50px;
+  margin-left: 10px;
+  position: relative;
 }
 
 .daoCardImages3 {
   width: 262px;
   height: 187px;
+  z-index: 2;
+  margin-bottom: -57px;
+  position: relative;
 }
 
 .cardContainer {
@@ -133,6 +143,8 @@
   border-radius: 12.444px;
   background: var(--Main-Primary-Varient, #272935);
   backdrop-filter: blur(31.11111068725586px);
+  z-index: 1;
+  position: relative;
 }
 
 .containerFourthSection {
@@ -249,7 +261,7 @@
 
 .cardDarkMobileContainer {
   display: flex;
-  padding: 30px;
+  padding: 50px 30px 30px 30px;
   flex-direction: column;
   align-items: flex-start;
   gap: 18.667px;
@@ -258,6 +270,33 @@
   background: var(--Main-Primary-Varient, #272935);
   backdrop-filter: blur(31.11111068725586px);
   margin-bottom: 36px;
+}
+
+.daoCardImagesMobile1 {
+  width: 176px;
+  height: 176px;
+  z-index: 2;
+  margin-bottom: -50px;
+  margin-left: -150px;
+  position: relative;
+}
+
+.daoCardImagesMobile2 {
+  width: 197px;
+  height: 179px;
+  z-index: 2;
+  margin-bottom: -40px;
+  margin-left: -90px;
+  position: relative;
+}
+
+.daoCardImagesMobile3 {
+  width: 262px;
+  height: 187px;
+  z-index: 2;
+  margin-bottom: -57px;
+  position: relative;
+  margin-left: -80px;
 }
 
 .planetCard {
