@@ -3,7 +3,7 @@ import styles from './index.module.scss';
 import Playstore from 'public/playstore.png';
 import Apple from 'public/apple.png';
 import Image from 'next/image';
-import { Body, Heading } from 'components/typography';
+import { Body, BodyBold, Heading } from 'components/typography';
 import Sample from 'public/Cards-Landing.png';
 import Button from 'components/button';
 import Download2 from 'public/Download2.png';
@@ -11,6 +11,18 @@ import { PencilLine, Phone, PhoneCall, Star } from '@phosphor-icons/react';
 import { useEffect, useState } from 'react';
 import FirstSection from 'components/download/firstSection';
 import SecondSection from 'components/download/secondSection';
+import PlaystoreCn from 'public/GooglePlayCn.svg';
+import AppleCn from 'public/AppleStoreCn.svg';
+import DownloadMobileImage from 'public/Download/DownloadMobileImage.png';
+import { motion } from 'framer-motion';
+
+const data = {
+  headline: '加入 Wolf Planet 星球，开启您的全球投资之旅！',
+  subheader: '立即下载 Wolf Planet App',
+  googlePlayButton: PlaystoreCn,
+  appStoreButton: AppleCn,
+  downloadMobileImage: DownloadMobileImage,
+};
 
 const Download = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -39,185 +51,78 @@ const Download = () => {
   }, [width]);
   return (
     <>
-      {!isMobile && (
-        <>
-          <div className={styles.topContainer}>
-            <Stack className={styles.downloadContent}>
-              <div style={{ maxWidth: 706.667 }}>
-                <Heading
-                  variant={8}
-                  color="#F2F3F7"
-                  style={{ lineHeight: 1.5 }}>
-                  加入 Wolf Planet 星球，开启您的全球投资之旅！
-                </Heading>
-                <Body
-                  variant={1}
-                  color="#9198B0"
-                  style={{ lineHeight: 1.5, padding: '24px 0px' }}>
-                  立即下载 Wolf Planet App：
-                </Body>
+      <div id="first-section" className={styles.container}>
+        <div className={styles.widthContainer}>
+          <span
+            style={{
+              textAlign: isMobile ? 'center' : 'start',
+              marginBottom: 100,
+            }}>
+            <BodyBold color="#F2F3F7" variant={7} style={{ marginTop: 15 }}>
+              {data.headline}
+            </BodyBold>
+            <Body color="#9198B0" variant={8} style={{ marginTop: 15 }}>
+              {data.subheader}
+            </Body>
 
+            {!isMobile ? (
+              <div className={styles.buttonsContainer}>
+                <Flex gap={24} style={{ marginLeft: -5 }}>
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 1 }}
+                    style={{
+                      backgroundColor: 'transparent',
+                      border: 'none',
+                    }}>
+                    <Image
+                      src={PlaystoreCn}
+                      alt="play store"
+                      className={styles.downloadImage}
+                    />
+                  </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 1 }}
+                    style={{
+                      backgroundColor: 'transparent',
+                      border: 'none',
+                    }}>
+                    <Image
+                      src={AppleCn}
+                      alt="apple"
+                      className={styles.downloadImage}
+                    />
+                  </motion.button>
+                </Flex>
+              </div>
+            ) : (
+              <div className={styles.buttonsContainer}>
                 <Flex
-                  gap={24}
-                  style={{ alignItems: 'center', justifyContent: 'center' }}>
-                  <Image src={Playstore} alt="play store" />
-                  <Image src={Apple} alt="apple" />
+                  gap={30}
+                  style={{ display: 'flex', flexDirection: 'column' }}>
+                  <Image
+                    src={PlaystoreCn}
+                    alt="play store"
+                    className={styles.downloadImage}
+                  />
+
+                  <Image
+                    src={AppleCn}
+                    alt="apple"
+                    className={styles.downloadImage}
+                  />
                 </Flex>
               </div>
-              <div>
-                <Image src={Sample} alt="sample" className={styles.image} />
-
-                <Heading
-                  fs={42}
-                  variant={1}
-                  color="#F2F3F7"
-                  style={{ lineHeight: 1.5, padding: '0px 106px' }}>
-                  Wolf Planet 星球，您的全球投资新天地！
-                </Heading>
-                <Body
-                  fs={20}
-                  variant={1}
-                  color="#9198B0"
-                  style={{
-                    lineHeight: 1.5,
-                    padding: '20px 150px',
-                    textAlign: 'center',
-                    margin: '0px auto',
-                    maxWidth: '800px',
-                  }}>
-                  Linear Asks is a new take on intake. Submit requests directly
-                  from Slack and automatically send them to the relevant team in
-                  Linear. Eliminate cluttered channels and reduce context
-                  switching.
-                </Body>
-              </div>
-
-              <Button className={styles.Button2}>Download</Button>
-            </Stack>
-          </div>
-          <div className={styles.bottomContainer}>
-            <Stack align="center" style={{}}>
-              <Heading
-                variant={0}
-                color="#F2F3F7"
-                style={{ lineHeight: 1.5 }}
-                fs={40}>
-                Download
-              </Heading>
-              <Body
-                variant={1}
-                color="#9198B0"
-                style={{ lineHeight: 1.5, paddingBottom: '32.59px' }}>
-                下载 Wolf Planet App，您可以：
-              </Body>
-
-              <div className={styles.downloadContainer2}>
-                <Flex gap={23.28}>
-                  <Stack className={styles.iconSection}>
-                    <Stack>
-                      <Flex className={styles.iconContainer}>
-                        <PhoneCall size={24.83} className={styles.icon} />
-                        <Heading
-                          variant={3}
-                          color="#F2F3F7"
-                          style={{ lineHeight: 1.5, paddingBottom: '20px' }}>
-                          Communicate
-                        </Heading>
-                      </Flex>
-                      <Body
-                        variant={1}
-                        color="#9198B0"
-                        style={{ lineHeight: 1.5 }}>
-                        与来自全球各地的投资者交流互动，分享观点、进行讨论、发布文章等。
-                      </Body>
-                    </Stack>
-                    <Flex className={styles.iconContainer}>
-                      <PencilLine
-                        size={24.83}
-                        className={styles.icon}
-                        style={{ marginTop: '30px' }}
-                      />
-                      <Heading
-                        variant={3}
-                        color="#F2F3F7"
-                        style={{ lineHeight: 1.5 }}>
-                        Create
-                      </Heading>
-                    </Flex>
-                    <Body
-                      variant={1}
-                      color="#9198B0"
-                      style={{ lineHeight: 1.5 }}>
-                      创建或加入由志同道合的用户组成的部落，根据兴趣爱好、投资理念等因素进行划分，打造专属的投资交流空间。
-                    </Body>
-                  </Stack>
-                  <Stack className={styles.iconSection}>
-                    <Stack>
-                      <Flex className={styles.iconContainer}>
-                        <PhoneCall size={24.83} className={styles.icon} />
-                        <Heading
-                          variant={3}
-                          color="#F2F3F7"
-                          style={{ lineHeight: 1.5, paddingBottom: '20px' }}>
-                          Communicate
-                        </Heading>
-                      </Flex>
-                      <Body
-                        variant={1}
-                        color="#9198B0"
-                        style={{ lineHeight: 1.5 }}>
-                        与来自全球各地的投资者交流互动，分享观点、进行讨论、发布文章等。
-                      </Body>
-                    </Stack>
-                    <Flex className={styles.iconContainer}>
-                      <PencilLine
-                        size={24.83}
-                        className={styles.icon}
-                        style={{ marginTop: '30px' }}
-                      />
-                      <Heading
-                        variant={3}
-                        color="#F2F3F7"
-                        style={{ lineHeight: 1.5 }}>
-                        Create
-                      </Heading>
-                    </Flex>
-                    <Body
-                      variant={1}
-                      color="#9198B0"
-                      style={{ lineHeight: 1.5 }}>
-                      创建或加入由志同道合的用户组成的部落，根据兴趣爱好、投资理念等因素进行划分，打造专属的投资交流空间。
-                    </Body>
-                  </Stack>
-                  <Stack className={styles.iconSection}>
-                    <Flex className={styles.iconContainer}>
-                      <Star size={24.83} className={styles.icon} />
-                      <Heading
-                        variant={3}
-                        color="#F2F3F7"
-                        style={{ lineHeight: 1.5, paddingBottom: '20px' }}>
-                        Obtain
-                      </Heading>
-                    </Flex>
-                    <Body
-                      variant={1}
-                      color="#9198B0"
-                      style={{ lineHeight: 1.5 }}>
-                      获取高质量的投资资讯和分析，助力您做出更明智的投资决策。
-                    </Body>
-                  </Stack>
-                </Flex>
-              </div>
-            </Stack>
-          </div>
-        </>
-      )}
-      {isMobile && (
-        <>
-          <FirstSection />
-          <SecondSection />
-        </>
-      )}
+            )}
+          </span>
+          <Image
+            src={data.downloadMobileImage}
+            className={styles.mobileIllustration}
+            alt="wolfavatar"
+          />
+        </div>
+      </div>
     </>
   );
 };
