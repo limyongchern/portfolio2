@@ -1,7 +1,11 @@
 @use 'styles/common/colors';
 
 .container {
-  background-image: url('/contactBotBg.png');
+  background-image: url('/DownloadDesktopBg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  // width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;

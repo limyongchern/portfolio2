@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const FourthMobileSection = ({ data }: any) => {
   return (
-    <div id="fourth-section" className={styles.fourthContainer}>
+    <div id="fourth-section" className={styles.fourthMobileContainer}>
       <div className={styles.fourthInnerContainer}>
         <Image
           src={data.image}

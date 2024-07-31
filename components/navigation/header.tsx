@@ -31,6 +31,7 @@ const links = [
   { name: '关于我们', link: '/about' },
   { name: '白皮书', link: '/whitepaper' },
   { name: '社群', link: '/community' },
+  { name: 'NFT', link: '/nft' },
   { name: '下载', link: '/download' },
 ];
 
