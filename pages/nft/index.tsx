@@ -115,7 +115,7 @@ const Nft = () => {
                 marginBottom: 20,
               }}>
               {SecondSectionData.cards.map((item, index) => (
-                <div className={styles.imageContainer}>
+                <div className={styles.imageContainer} key={index}>
                   <Image
                     src={item}
                     alt=""
