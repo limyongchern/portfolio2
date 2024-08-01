@@ -126,21 +126,25 @@ const Footer = (props: IProps) => {
             </Group>
             <Flex justify={'center'} style={{ paddingTop: '56px' }}>
               <span style={{ display: 'flex' }}>
-                <BodyBold
-                  variant={5}
-                  color="#F2F3F7"
-                  style={{ cursor: 'pointer' }}>
-                  隐私条款 &nbsp;
-                </BodyBold>
+                <Link href="/privacy-policy">
+                  <BodyBold
+                    variant={5}
+                    color="#F2F3F7"
+                    style={{ cursor: 'pointer' }}>
+                    隐私条款 &nbsp;
+                  </BodyBold>
+                </Link>
                 <Body variant={2} color="#9198B0" style={{ marginTop: 2 }}>
                   | &nbsp;
                 </Body>
-                <BodyBold
-                  variant={5}
-                  color="#F2F3F7"
-                  style={{ cursor: 'pointer' }}>
-                  使用条款 &nbsp;
-                </BodyBold>
+                <Link href="/terms-of-use">
+                  <BodyBold
+                    variant={5}
+                    color="#F2F3F7"
+                    style={{ cursor: 'pointer' }}>
+                    使用条款 &nbsp;
+                  </BodyBold>
+                </Link>
               </span>
             </Flex>
             <Body variant={2} color="#9198B0" style={{ marginTop: -5 }}>
