@@ -176,7 +176,10 @@ const Nft = () => {
               style={{ textAlign: 'center' }}>
               {FirstSectionData.headline}
             </BodyBold>
-            <Body color="#9198B0" variant={8} style={{ textAlign: 'center' }}>
+            <Body
+              color="#9198B0"
+              variant={isMobile ? 1 : 8}
+              style={{ textAlign: 'center' }}>
               {FirstSectionData.subheader}
             </Body>
           </Stack>
