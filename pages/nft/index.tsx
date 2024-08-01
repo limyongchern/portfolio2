@@ -17,7 +17,6 @@ import Mobile3 from 'public/NFT/Mobile3.png';
 import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 
 const FirstSectionData = {
   headline: 'Wolf NFT (Non-Fungible Token)',
@@ -80,83 +79,79 @@ const Nft = () => {
     };
   }, [width]);
 
-  gsap.registerPlugin(ScrollTrigger);
-
-  const container = useRef();
-
   const endValue = '+=800';
-  useGSAP(
-    () => {
-      gsap.to('.box1', {
-        scrollTrigger: {
-          trigger: '.box1',
-          start: 'top 90%',
-          toggleActions: 'play pause reverse reset',
-          end: endValue,
-          scrub: 1,
-          // markers: true,
-        },
-        x: 410,
-        // rotation: 360,
-        duration: 1,
-      });
-    }
-    // { scope: container }
-  );
-  useGSAP(
-    () => {
-      gsap.to('.box2', {
-        scrollTrigger: {
-          trigger: '.box2',
-          start: '-50px 90%',
-          toggleActions: 'play pause reverse reset',
-          end: endValue,
-          scrub: 1,
-          // markers: true,
-        },
-        x: 205,
-        // rotation: 360,
-        duration: 1,
-      });
-    }
-    // { scope: container }
-  );
-  useGSAP(
-    () => {
-      gsap.to('.box4', {
-        scrollTrigger: {
-          trigger: '.box4',
-          start: '-50px 90%',
-          toggleActions: 'play pause reverse reset',
-          end: endValue,
-          scrub: 1,
-          // markers: true,
-        },
-        x: -205,
-        // rotation: 360,
-        duration: 1,
-      });
-    }
-    // { scope: container }
-  );
-  useGSAP(
-    () => {
-      gsap.to('.box5', {
-        scrollTrigger: {
-          trigger: '.box5',
-          start: '-50px 90%',
-          toggleActions: 'play pause reverse reset',
-          end: endValue,
-          scrub: 1,
-          // markers: true,
-        },
-        x: -410,
-        // rotation: 360,
-        duration: 1,
-      });
-    }
-    // { scope: container }
-  );
+  // useGSAP(
+  //   () => {
+  //     gsap.to('.box1', {
+  //       scrollTrigger: {
+  //         trigger: '.box1',
+  //         start: 'top 90%',
+  //         toggleActions: 'play pause reverse reset',
+  //         end: endValue,
+  //         scrub: 1,
+  //         // markers: true,
+  //       },
+  //       x: 410,
+  //       // rotation: 360,
+  //       duration: 1,
+  //     });
+  //   }
+  //   // { scope: container }
+  // );
+  // useGSAP(
+  //   () => {
+  //     gsap.to('.box2', {
+  //       scrollTrigger: {
+  //         trigger: '.box2',
+  //         start: '-50px 90%',
+  //         toggleActions: 'play pause reverse reset',
+  //         end: endValue,
+  //         scrub: 1,
+  //         // markers: true,
+  //       },
+  //       x: 205,
+  //       // rotation: 360,
+  //       duration: 1,
+  //     });
+  //   }
+  //   // { scope: container }
+  // );
+  // useGSAP(
+  //   () => {
+  //     gsap.to('.box4', {
+  //       scrollTrigger: {
+  //         trigger: '.box4',
+  //         start: '-50px 90%',
+  //         toggleActions: 'play pause reverse reset',
+  //         end: endValue,
+  //         scrub: 1,
+  //         // markers: true,
+  //       },
+  //       x: -205,
+  //       // rotation: 360,
+  //       duration: 1,
+  //     });
+  //   }
+  //   // { scope: container }
+  // );
+  // useGSAP(
+  //   () => {
+  //     gsap.to('.box5', {
+  //       scrollTrigger: {
+  //         trigger: '.box5',
+  //         start: '-50px 90%',
+  //         toggleActions: 'play pause reverse reset',
+  //         end: endValue,
+  //         scrub: 1,
+  //         // markers: true,
+  //       },
+  //       x: -410,
+  //       // rotation: 360,
+  //       duration: 1,
+  //     });
+  //   }
+  //   // { scope: container }
+  // );
 
   return (
     <>
