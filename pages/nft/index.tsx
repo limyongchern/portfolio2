@@ -6,13 +6,18 @@ import { CaretCircleLeft, CaretCircleRight } from '@phosphor-icons/react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import BlueEar from 'public/NFT/BlueEar.png';
-import BlueEyeBrow from 'public/NFT/BlueEyeBrow.png';
+import BlueEyebrow from 'public/NFT/BlueEyebrow.png';
 import BlueEye from 'public/NFT/BlueEye.png';
 import BlueNose from 'public/NFT/BlueNose.png';
 import BlueBody from 'public/NFT/BlueBody.png';
 import Mobile1 from 'public/NFT/Mobile1.png';
 import Mobile2 from 'public/NFT/Mobile2.png';
 import Mobile3 from 'public/NFT/Mobile3.png';
+
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
 const FirstSectionData = {
   headline: 'Wolf NFT (Non-Fungible Token)',
@@ -25,7 +30,7 @@ const SecondSectionData = {
   subheader:
     '萌狼，是每一位冒险家在Wolf Planet探索过程当中个人形象的代表，更是社区身份的体现。用户在收集到包括眼睛、眉毛、耳朵、嘴巴和身体在内的五个碎片NFT后，便可以一步步打造出一只属于自己的萌狼。',
   title: '积极参与社区互动，收集稀有度更高的萌狼NFT，组合出独一无二的萌狼吧！',
-  cards: [BlueEar, BlueEyeBrow, BlueEye, BlueNose, BlueBody],
+  cards: [BlueEar, BlueEyebrow, BlueEye, BlueNose, BlueBody],
 };
 
 const ThirdSectionData = {
@@ -75,6 +80,84 @@ const Nft = () => {
     };
   }, [width]);
 
+  gsap.registerPlugin(ScrollTrigger);
+
+  const container = useRef();
+
+  const endValue = '+=800';
+  useGSAP(
+    () => {
+      gsap.to('.box1', {
+        scrollTrigger: {
+          trigger: '.box1',
+          start: 'top 90%',
+          toggleActions: 'play pause reverse reset',
+          end: endValue,
+          scrub: 1,
+          // markers: true,
+        },
+        x: 410,
+        // rotation: 360,
+        duration: 1,
+      });
+    }
+    // { scope: container }
+  );
+  useGSAP(
+    () => {
+      gsap.to('.box2', {
+        scrollTrigger: {
+          trigger: '.box2',
+          start: '-50px 90%',
+          toggleActions: 'play pause reverse reset',
+          end: endValue,
+          scrub: 1,
+          // markers: true,
+        },
+        x: 205,
+        // rotation: 360,
+        duration: 1,
+      });
+    }
+    // { scope: container }
+  );
+  useGSAP(
+    () => {
+      gsap.to('.box4', {
+        scrollTrigger: {
+          trigger: '.box4',
+          start: '-50px 90%',
+          toggleActions: 'play pause reverse reset',
+          end: endValue,
+          scrub: 1,
+          // markers: true,
+        },
+        x: -205,
+        // rotation: 360,
+        duration: 1,
+      });
+    }
+    // { scope: container }
+  );
+  useGSAP(
+    () => {
+      gsap.to('.box5', {
+        scrollTrigger: {
+          trigger: '.box5',
+          start: '-50px 90%',
+          toggleActions: 'play pause reverse reset',
+          end: endValue,
+          scrub: 1,
+          // markers: true,
+        },
+        x: -410,
+        // rotation: 360,
+        duration: 1,
+      });
+    }
+    // { scope: container }
+  );
+
   return (
     <>
       {/* First Section */}
@@ -107,6 +190,7 @@ const Nft = () => {
               {SecondSectionData.subheader}
             </Body>
             <div
+              // ref={container}
               style={{
                 display: 'flex',
                 flexDirection: isMobile ? 'column' : 'row',
@@ -115,7 +199,9 @@ const Nft = () => {
                 marginBottom: 20,
               }}>
               {SecondSectionData.cards.map((item, index) => (
-                <div className={styles.imageContainer} key={index}>
+                <div
+                  className={`box${index + 1} ${styles.imageContainer}`}
+                  key={index}>
                   <Image
                     src={item}
                     alt=""
