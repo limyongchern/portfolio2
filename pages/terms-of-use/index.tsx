@@ -69,7 +69,7 @@ const TermsOfUse = () => {
           </div>
           <Body
             variant={1}
-            color={isMobile ? '#9198B0' : 'rgba(254, 254, 254, 1.00)'}
+            color="#F2F3F7"
             style={{
               paddingLeft: isMobile ? 8 : 4,
               //   paddingRight: 4,

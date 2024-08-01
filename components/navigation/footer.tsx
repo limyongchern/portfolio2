@@ -76,7 +76,9 @@ const Footer = (props: IProps) => {
               </Group>
               <Flex justify={'center'} mt={40}>
                 <span style={{ display: 'flex' }}>
-                  <Link href="/privacy-policy">
+                  <Link
+                    href="/privacy-policy"
+                    style={{ textDecoration: 'none' }}>
                     <BodyBold
                       variant={5}
                       color="#F2F3F7"
@@ -87,7 +89,7 @@ const Footer = (props: IProps) => {
                   <Body variant={2} color="#9198B0" style={{ marginTop: 4 }}>
                     | &nbsp;
                   </Body>
-                  <Link href="/terms-of-use">
+                  <Link href="/terms-of-use" style={{ textDecoration: 'none' }}>
                     <BodyBold
                       variant={5}
                       color="#F2F3F7"
@@ -126,7 +128,7 @@ const Footer = (props: IProps) => {
             </Group>
             <Flex justify={'center'} style={{ paddingTop: '56px' }}>
               <span style={{ display: 'flex' }}>
-                <Link href="/privacy-policy">
+                <Link href="/privacy-policy" style={{ textDecoration: 'none' }}>
                   <BodyBold
                     variant={5}
                     color="#F2F3F7"
@@ -137,7 +139,7 @@ const Footer = (props: IProps) => {
                 <Body variant={2} color="#9198B0" style={{ marginTop: 2 }}>
                   | &nbsp;
                 </Body>
-                <Link href="/terms-of-use">
+                <Link href="/terms-of-use" style={{ textDecoration: 'none' }}>
                   <BodyBold
                     variant={5}
                     color="#F2F3F7"
