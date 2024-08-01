@@ -17,7 +17,9 @@ import Mobile3 from 'public/NFT/Mobile3.png';
 import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 const FirstSectionData = {
   headline: 'Wolf NFT (Non-Fungible Token)',
   subheader:
@@ -40,10 +42,13 @@ const ThirdSectionData = {
 
 const FourthSectionData = {
   headline: '内容NFT',
-  subheader: `Wolf Planet希望更好地保护创作者的版权，每一位创作者都具有将自己原创的帖子铸造成为NFT的权利。
-每位用户都可以将自己认为有价值的文字或是一段宝贵的投资经验铸造为具有价值的NFT，从而将其分享给其他人，并从中获得收益；
-对于课程的创作者们来说，平台提供了将课程以NFT形式存放在区块链上的功能，鼓励创作者们以更加安全高效的方式通过创作获利；
-在Wolf Planet，我们鼓励“创作获利”（Create to Earn），你的每一次付出都应该有回报。`,
+  subheader1: `Wolf Planet希望更好地保护创作者的版权，每一位创作者都具有将自己原创的帖子铸造成为NFT的权利。`,
+  list1:
+    '每位用户都可以将自己认为有价值的文字或是一段宝贵的投资经验铸造为具有价值的NFT，从而将其分享给其他人，并从中获得收益；',
+  list2:
+    '对于课程的创作者们来说，平台提供了将课程以NFT形式存放在区块链上的功能，鼓励创作者们以更加安全高效的方式通过创作获利；',
+  subheader2:
+    '在Wolf Planet，我们鼓励“创作获利”（Create to Earn），你的每一次付出都应该有回报。',
 };
 
 const PDFViewer = dynamic(
@@ -79,21 +84,27 @@ const Nft = () => {
     };
   }, [width]);
 
+  const startValue = 'top 90%';
   const endValue = '+=800';
+  const toggleActionsValue = 'play pause reverse reset';
+  // const toggleActionsValue = 'play none none none';
+  const scrubValue = 1;
+  const durationValue = 0.5;
+
   // useGSAP(
   //   () => {
   //     gsap.to('.box1', {
   //       scrollTrigger: {
   //         trigger: '.box1',
-  //         start: 'top 90%',
-  //         toggleActions: 'play pause reverse reset',
+  //         start: startValue,
+  //         toggleActions: toggleActionsValue,
   //         end: endValue,
-  //         scrub: 1,
-  //         // markers: true,
+  //         scrub: scrubValue,
+  //         markers: true,
   //       },
   //       x: 410,
   //       // rotation: 360,
-  //       duration: 1,
+  //       duration: durationValue,
   //     });
   //   }
   //   // { scope: container }
@@ -103,15 +114,15 @@ const Nft = () => {
   //     gsap.to('.box2', {
   //       scrollTrigger: {
   //         trigger: '.box2',
-  //         start: '-50px 90%',
-  //         toggleActions: 'play pause reverse reset',
+  //         start: startValue,
+  //         toggleActions: toggleActionsValue,
   //         end: endValue,
-  //         scrub: 1,
+  //         scrub: scrubValue,
   //         // markers: true,
   //       },
   //       x: 205,
   //       // rotation: 360,
-  //       duration: 1,
+  //       duration: durationValue,
   //     });
   //   }
   //   // { scope: container }
@@ -121,15 +132,15 @@ const Nft = () => {
   //     gsap.to('.box4', {
   //       scrollTrigger: {
   //         trigger: '.box4',
-  //         start: '-50px 90%',
-  //         toggleActions: 'play pause reverse reset',
+  //         start: startValue,
+  //         toggleActions: toggleActionsValue,
   //         end: endValue,
-  //         scrub: 1,
+  //         scrub: scrubValue,
   //         // markers: true,
   //       },
   //       x: -205,
   //       // rotation: 360,
-  //       duration: 1,
+  //       duration: durationValue,
   //     });
   //   }
   //   // { scope: container }
@@ -139,15 +150,15 @@ const Nft = () => {
   //     gsap.to('.box5', {
   //       scrollTrigger: {
   //         trigger: '.box5',
-  //         start: '-50px 90%',
-  //         toggleActions: 'play pause reverse reset',
+  //         start: startValue,
+  //         toggleActions: toggleActionsValue,
   //         end: endValue,
-  //         scrub: 1,
+  //         scrub: scrubValue,
   //         // markers: true,
   //       },
   //       x: -410,
   //       // rotation: 360,
-  //       duration: 1,
+  //       duration: durationValue,
   //     });
   //   }
   //   // { scope: container }
@@ -214,19 +225,13 @@ const Nft = () => {
 
       {/* Third Section */}
       <div
-        id="first-section"
+        id="third-section"
         className={styles.thirdContainer}
         style={{ padding: '70px 0px' }}>
         <div className={styles.thirdWidthContainer}>
           <Image src={Mobile1} className={styles.mobile1} alt="wolfavatar" />
 
-          <span
-            style={{
-              textAlign: isMobile ? 'center' : 'start',
-              marginBottom: 100,
-              width: isMobile ? '100%' : 444,
-              marginLeft: isMobile ? 0 : 10,
-            }}>
+          <div className={styles.firstTextContainer}>
             <BodyBold
               color="#F2F3F7"
               variant={isMobile ? 1 : 7}
@@ -239,16 +244,16 @@ const Nft = () => {
               style={{ marginTop: 15, lineHeight: 1.4 }}>
               {ThirdSectionData.subheader}
             </Body>
-          </span>
+          </div>
         </div>
       </div>
       <div
-        id="first-section"
+        id="third-section"
         className={styles.thirdContainer}
         style={{ padding: '10px 0px 60px 0px' }}>
         <div className={styles.thirdWidthContainer}>
           {isMobile ? (
-            <div style={{ display: 'flex', gap: 15 }}>
+            <div className={styles.secondPartContainer}>
               <Image
                 src={Mobile2}
                 className={styles.mobile1}
@@ -275,7 +280,7 @@ const Nft = () => {
             </>
           )}
 
-          <span
+          <div
             style={{
               textAlign: isMobile ? 'center' : 'start',
               marginBottom: 100,
@@ -292,9 +297,12 @@ const Nft = () => {
               color="#9198B0"
               variant={isMobile ? 2 : 1}
               style={{ marginTop: 15, lineHeight: 1.4 }}>
-              {FourthSectionData.subheader}
+              {FourthSectionData.subheader1}
+              <li style={{ marginLeft: 10 }}>{FourthSectionData.list1}</li>
+              <li style={{ marginLeft: 10 }}>{FourthSectionData.list2}</li>
+              {FourthSectionData.subheader2}
             </Body>
-          </span>
+          </div>
         </div>
       </div>
     </>
