@@ -82,6 +82,36 @@
   box-shadow: 0px 0px 10px 0px rgba(160, 167, 212, 0.2);
 }
 
+.imageContainerFull {
+  display: flex;
+  padding: 16px;
+  height: 150px;
+  width: 150px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 20px;
+  background: var(--Main-Primary-Varient, #272935);
+  box-shadow: 0px 0px 10px 0px rgba(160, 167, 212, 0.2);
+  animation: fadeIn 1s linear forwards;
+  opacity: 0;
+  margin-top: -225px;
+  margin-bottom: 20px;
+  z-index: 2;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .wolfImage1 {
   width: 150px;
   height: 53px;
@@ -105,6 +135,11 @@
 .wolfImage5 {
   width: 113px;
   height: 85px;
+}
+
+.wolfImageFull {
+  width: 113px;
+  height: 113px;
 }
 
 .thirdContainer {

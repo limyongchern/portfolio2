@@ -10,6 +10,7 @@ import BlueEyebrow from 'public/NFT/BlueEyebrow.png';
 import BlueEye from 'public/NFT/BlueEye.png';
 import BlueNose from 'public/NFT/BlueNose.png';
 import BlueBody from 'public/NFT/BlueBody.png';
+import BlueFull from 'public/NFT/BlueFull.png';
 import Mobile1 from 'public/NFT/Mobile1.png';
 import Mobile2 from 'public/NFT/Mobile2.png';
 import Mobile3 from 'public/NFT/Mobile3.png';
@@ -20,6 +21,7 @@ import { useGSAP } from '@gsap/react';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 const FirstSectionData = {
   headline: 'Wolf NFT (Non-Fungible Token)',
   subheader:
@@ -51,18 +53,15 @@ const FourthSectionData = {
     '在Wolf Planet，我们鼓励“创作获利”（Create to Earn），你的每一次付出都应该有回报。',
 };
 
-const PDFViewer = dynamic(
-  () => import('../../components/whitepaper/PdfViewer'),
-  {
-    ssr: false,
-  }
-);
 const Nft = () => {
   //MOBILE AND DESKTOP
   const [isMobile, setIsMobile] = useState(false);
   const [width, setWidth] = useState<number>(
     typeof window !== 'undefined' ? window.innerWidth : 0
   );
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [displayFull, setDisplayFull] = useState(false);
+
   const handleWindowSizeChange = () => {
     setWidth(typeof window !== 'undefined' ? window.innerWidth : 0);
   };
@@ -72,6 +71,33 @@ const Nft = () => {
       setIsMobile(true);
     } else setIsMobile(false);
   }, [width]);
+
+  const handleScroll = () => {
+    const position = window.scrollY;
+    setScrollPosition(position);
+    console.log('scroll', position);
+    if (!isMobile) {
+      if (position > 900) {
+        setDisplayFull(true);
+      } else if (position < 520) {
+        setDisplayFull(false);
+      }
+    } else {
+      if (position > 3400) {
+        setDisplayFull(true);
+      } else if (position < 3200) {
+        setDisplayFull(false);
+      }
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -84,85 +110,148 @@ const Nft = () => {
     };
   }, [width]);
 
-  const startValue = 'top 90%';
+  // const startValue = '25% 20%';
+  const startValue = 'top 5%';
+  const startValueMobile = 'top 20%';
   const endValue = '+=800';
+  const endValueMobile = '+=3000';
   const toggleActionsValue = 'play pause reverse reset';
   // const toggleActionsValue = 'play none none none';
   const scrubValue = 1;
   const durationValue = 0.5;
 
-  // useGSAP(
-  //   () => {
-  //     gsap.to('.box1', {
-  //       scrollTrigger: {
-  //         trigger: '.box1',
-  //         start: startValue,
-  //         toggleActions: toggleActionsValue,
-  //         end: endValue,
-  //         scrub: scrubValue,
-  //         markers: true,
-  //       },
-  //       x: 410,
-  //       // rotation: 360,
-  //       duration: durationValue,
-  //     });
-  //   }
-  //   // { scope: container }
-  // );
-  // useGSAP(
-  //   () => {
-  //     gsap.to('.box2', {
-  //       scrollTrigger: {
-  //         trigger: '.box2',
-  //         start: startValue,
-  //         toggleActions: toggleActionsValue,
-  //         end: endValue,
-  //         scrub: scrubValue,
-  //         // markers: true,
-  //       },
-  //       x: 205,
-  //       // rotation: 360,
-  //       duration: durationValue,
-  //     });
-  //   }
-  //   // { scope: container }
-  // );
-  // useGSAP(
-  //   () => {
-  //     gsap.to('.box4', {
-  //       scrollTrigger: {
-  //         trigger: '.box4',
-  //         start: startValue,
-  //         toggleActions: toggleActionsValue,
-  //         end: endValue,
-  //         scrub: scrubValue,
-  //         // markers: true,
-  //       },
-  //       x: -205,
-  //       // rotation: 360,
-  //       duration: durationValue,
-  //     });
-  //   }
-  //   // { scope: container }
-  // );
-  // useGSAP(
-  //   () => {
-  //     gsap.to('.box5', {
-  //       scrollTrigger: {
-  //         trigger: '.box5',
-  //         start: startValue,
-  //         toggleActions: toggleActionsValue,
-  //         end: endValue,
-  //         scrub: scrubValue,
-  //         // markers: true,
-  //       },
-  //       x: -410,
-  //       // rotation: 360,
-  //       duration: durationValue,
-  //     });
-  //   }
-  //   // { scope: container }
-  // );
+  //Desktop Animation
+
+  useGSAP(() => {
+    gsap.to('.boxContainer', {
+      scrollTrigger: {
+        trigger: '.boxContainer',
+        start: startValue,
+        toggleActions: toggleActionsValue,
+        // start: 'top 5%',
+        // end: '34% 50%',
+        end: endValue,
+        pin: true,
+      },
+      duration: durationValue,
+    });
+  });
+
+  useGSAP(() => {
+    gsap.to('.box1', {
+      scrollTrigger: {
+        trigger: '.box1',
+        start: startValue,
+        toggleActions: toggleActionsValue,
+        scrub: scrubValue,
+        // markers: true,
+      },
+      x: 410,
+      duration: durationValue,
+    });
+  });
+  useGSAP(() => {
+    gsap.to('.box2', {
+      scrollTrigger: {
+        trigger: '.box2',
+        start: startValue,
+        toggleActions: toggleActionsValue,
+        scrub: scrubValue,
+      },
+      x: 205,
+      duration: durationValue,
+    });
+  });
+  useGSAP(() => {
+    gsap.to('.box4', {
+      scrollTrigger: {
+        trigger: '.box4',
+        start: startValue,
+        toggleActions: toggleActionsValue,
+        scrub: scrubValue,
+      },
+      x: -205,
+      duration: durationValue,
+    });
+  });
+  useGSAP(() => {
+    gsap.to('.box5', {
+      scrollTrigger: {
+        trigger: '.box5',
+        start: startValue,
+        toggleActions: toggleActionsValue,
+        scrub: scrubValue,
+      },
+      x: -410,
+      duration: durationValue,
+    });
+  });
+
+  //Mobile Animation
+
+  // useGSAP(() => {
+  //   gsap.to('.boxMobileContainer', {
+  //     scrollTrigger: {
+  //       trigger: '.boxMobileContainer',
+  //       start: startValue,
+  //       toggleActions: toggleActionsValue,
+  //       // start: 'top 5%',
+  //       // end: '34% 50%',
+  //       end: endValueMobile,
+  //       pin: true,
+  //     },
+  //     duration: durationValue,
+  //   });
+  // });
+  // useGSAP(() => {
+  //   gsap.to('.boxMobile2', {
+  //     scrollTrigger: {
+  //       trigger: '.boxMobileContainer',
+  //       start: startValueMobile,
+  //       toggleActions: toggleActionsValue,
+  //       scrub: scrubValue,
+  //     },
+  //     y: -205,
+  //     duration: durationValue,
+  //   });
+  // });
+  // useGSAP(() => {
+  //   gsap.to('.boxMobile3', {
+  //     scrollTrigger: {
+  //       trigger: '.boxMobileContainer',
+  //       start: startValueMobile,
+  //       toggleActions: toggleActionsValue,
+  //       scrub: scrubValue,
+  //     },
+  //     y: -410,
+  //     duration: durationValue,
+  //   });
+  // });
+  // useGSAP(() => {
+  //   gsap.to('.boxMobile4', {
+  //     scrollTrigger: {
+  //       trigger: '.boxMobileContainer',
+  //       start: startValueMobile,
+  //       toggleActions: toggleActionsValue,
+  //       scrub: scrubValue,
+  //     },
+  //     y: -615,
+  //     duration: durationValue,
+  //   });
+  // });
+  // useGSAP(() => {
+  //   gsap.to('.boxMobile5', {
+  //     scrollTrigger: {
+  //       trigger: '.boxMobileContainer',
+  //       start: startValueMobile,
+  //       toggleActions: toggleActionsValue,
+  //       scrub: scrubValue,
+  //       // markers: true,
+  //     },
+  //     y: -820,
+  //     duration: durationValue,
+  //   });
+  // });
 
   return (
     <>
@@ -186,125 +275,172 @@ const Nft = () => {
         </div>
       </div>
       {/* Second Section */}
-      <div className={styles.secondContainer}>
-        <div className={styles.secondContainerWidth}>
-          <Stack justify="center" align="center" spacing={'24px'}>
-            <BodyBold
-              color="#F2F3F7"
-              variant={7}
-              style={{ textAlign: 'center' }}>
-              {SecondSectionData.headline}
-            </BodyBold>
-            <Body color="#9198B0" variant={1} style={{ textAlign: 'center' }}>
-              {SecondSectionData.subheader}
-            </Body>
-            <div
-              // ref={container}
-              style={{
-                display: 'flex',
-                flexDirection: isMobile ? 'column' : 'row',
-                gap: 24,
-                marginTop: 20,
-                marginBottom: 20,
-              }}>
-              {SecondSectionData.cards.map((item, index) => (
-                <div
-                  className={`box${index + 1} ${styles.imageContainer}`}
-                  key={index}>
-                  <Image
-                    src={item}
-                    alt=""
-                    className={`${styles[`wolfImage${index + 1}`]}`}
-                  />
-                </div>
-              ))}
-            </div>
-            <Body color="#9198B0" variant={1} style={{ textAlign: 'center' }}>
-              {SecondSectionData.title}
-            </Body>
-          </Stack>
-        </div>
-      </div>
-
-      {/* Third Section */}
       <div
-        id="third-section"
-        className={styles.thirdContainer}
-        style={{ padding: '70px 0px' }}>
-        <div className={styles.thirdWidthContainer}>
-          <Image src={Mobile1} className={styles.mobile1} alt="wolfavatar" />
+        className={isMobile ? `boxMobileContainer ` : `boxContainer`}
+        onScroll={handleScroll}>
+        <div className={` ${styles.secondContainer}`}>
+          <div className={styles.secondContainerWidth}>
+            <Stack justify="center" align="center" spacing={'24px'}>
+              <BodyBold
+                color="#F2F3F7"
+                variant={7}
+                style={{ textAlign: 'center' }}>
+                {SecondSectionData.headline}
+              </BodyBold>
+              <Body color="#9198B0" variant={1} style={{ textAlign: 'center' }}>
+                {SecondSectionData.subheader}
+              </Body>
+              {!isMobile ? (
+                <>
+                  <div
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'row',
+                      gap: 24,
+                      marginTop: 20,
+                      marginBottom: 20,
+                    }}>
+                    {SecondSectionData.cards.map((item, index) => (
+                      <div
+                        className={`box${index + 1} ${styles.imageContainer}`}
+                        key={index}>
+                        <Image
+                          src={item}
+                          alt=""
+                          className={`${styles[`wolfImage${index + 1}`]}`}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                  {displayFull && (
+                    <div className={` ${styles.imageContainerFull}`} key={'12'}>
+                      <Image
+                        src={BlueFull}
+                        alt=""
+                        className={styles.wolfImageFull}
+                      />
+                    </div>
+                  )}
+                </>
+              ) : (
+                <>
+                  <div
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: 24,
+                      marginTop: 20,
+                      marginBottom: 20,
+                    }}>
+                    {SecondSectionData.cards.map((item, index) => (
+                      <div className={` ${styles.imageContainer}`} key={index}>
+                        <Image
+                          src={item}
+                          alt=""
+                          className={`${styles[`wolfImage${index + 1}`]}`}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                  {displayFull && (
+                    <div className={` ${styles.imageContainerFull}`} key={'12'}>
+                      <Image
+                        src={BlueFull}
+                        alt=""
+                        className={styles.wolfImageFull}
+                      />
+                    </div>
+                  )}
+                </>
+              )}
 
-          <div className={styles.firstTextContainer}>
-            <BodyBold
-              color="#F2F3F7"
-              variant={isMobile ? 1 : 7}
-              style={{ marginTop: 15 }}>
-              {ThirdSectionData.headline}
-            </BodyBold>
-            <Body
-              color="#9198B0"
-              variant={isMobile ? 2 : 1}
-              style={{ marginTop: 15, lineHeight: 1.4 }}>
-              {ThirdSectionData.subheader}
-            </Body>
+              <Body color="#9198B0" variant={1} style={{ textAlign: 'center' }}>
+                {SecondSectionData.title}
+              </Body>
+            </Stack>
           </div>
         </div>
-      </div>
-      <div
-        id="third-section"
-        className={styles.thirdContainer}
-        style={{ padding: '10px 0px 0px 0px' }}>
-        <div className={styles.thirdWidthContainer}>
-          {isMobile ? (
-            <div className={styles.secondPartContainer}>
-              <Image
-                src={Mobile2}
-                className={styles.mobile1}
-                alt="wolfavatar"
-              />
-              <Image
-                src={Mobile3}
-                className={styles.mobile1}
-                alt="wolfavatar"
-              />
-            </div>
-          ) : (
-            <>
-              <Image
-                src={Mobile2}
-                className={styles.mobile1}
-                alt="wolfavatar"
-              />
-              <Image
-                src={Mobile3}
-                className={styles.mobile1}
-                alt="wolfavatar"
-              />
-            </>
-          )}
 
-          <div
-            style={{
-              textAlign: isMobile ? 'center' : 'start',
-              marginBottom: 100,
-              width: isMobile ? '100%' : 444,
-              marginLeft: isMobile ? 0 : 10,
-            }}>
-            <BodyBold
-              color="#F2F3F7"
-              variant={isMobile ? 1 : 7}
-              style={{ marginTop: 15 }}>
-              {FourthSectionData.headline}
-            </BodyBold>
-            <Body
-              color="#9198B0"
-              variant={isMobile ? 2 : 1}
-              style={{ marginTop: 15, lineHeight: 1.4 }}>
-              {FourthSectionData.subheader1}
-              <li style={{ marginLeft: 10 }}>{FourthSectionData.list1}</li>
-              <li style={{ marginLeft: 10 }}>{FourthSectionData.list2}</li>
-              {FourthSectionData.subheader2}
-            </Body>
+        {/* Third Section */}
+        <div
+          id="third-section"
+          className={styles.thirdContainer}
+          style={{ padding: '70px 0px' }}>
+          <div className={styles.thirdWidthContainer}>
+            <Image src={Mobile1} className={styles.mobile1} alt="wolfavatar" />
+
+            <div className={styles.firstTextContainer}>
+              <BodyBold
+                color="#F2F3F7"
+                variant={isMobile ? 1 : 7}
+                style={{ marginTop: 15 }}>
+                {ThirdSectionData.headline}
+              </BodyBold>
+              <Body
+                color="#9198B0"
+                variant={isMobile ? 2 : 1}
+                style={{ marginTop: 15, lineHeight: 1.4 }}>
+                {ThirdSectionData.subheader}
+              </Body>
+            </div>
+          </div>
+        </div>
+        <div
+          id="third-section"
+          className={styles.thirdContainer}
+          style={{ padding: '10px 0px 0px 0px' }}>
+          <div className={styles.thirdWidthContainer}>
+            {isMobile ? (
+              <div className={styles.secondPartContainer}>
+                <Image
+                  src={Mobile2}
+                  className={styles.mobile1}
+                  alt="wolfavatar"
+                />
+                <Image
+                  src={Mobile3}
+                  className={styles.mobile1}
+                  alt="wolfavatar"
+                />
+              </div>
+            ) : (
+              <>
+                <Image
+                  src={Mobile2}
+                  className={styles.mobile1}
+                  alt="wolfavatar"
+                />
+                <Image
+                  src={Mobile3}
+                  className={styles.mobile1}
+                  alt="wolfavatar"
+                />
+              </>
+            )}
+
+            <div
+              style={{
+                textAlign: isMobile ? 'center' : 'start',
+                marginBottom: 100,
+                width: isMobile ? '100%' : 444,
+                marginLeft: isMobile ? 0 : 10,
+              }}>
+              <BodyBold
+                color="#F2F3F7"
+                variant={isMobile ? 1 : 7}
+                style={{ marginTop: 15 }}>
+                {FourthSectionData.headline}
+              </BodyBold>
+              <Body
+                color="#9198B0"
+                variant={isMobile ? 2 : 1}
+                style={{ marginTop: 15, lineHeight: 1.4 }}>
+                {FourthSectionData.subheader1}
+                <li style={{ marginLeft: 10 }}>{FourthSectionData.list1}</li>
+                <li style={{ marginLeft: 10 }}>{FourthSectionData.list2}</li>
+                {FourthSectionData.subheader2}
+              </Body>
+            </div>
           </div>
         </div>
       </div>
