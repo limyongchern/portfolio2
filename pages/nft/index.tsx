@@ -75,7 +75,7 @@ const Nft = () => {
   const handleScroll = () => {
     const position = window.scrollY;
     setScrollPosition(position);
-    console.log('scroll', position);
+    // console.log('scroll', position);
     if (!isMobile) {
       if (position > 900) {
         setDisplayFull(true);
@@ -114,7 +114,7 @@ const Nft = () => {
   const startValue = 'top 5%';
   const startValueMobile = 'top 20%';
   const endValue = '+=800';
-  const endValueMobile = '+=3000';
+  const endValueMobile = '+=100';
   const toggleActionsValue = 'play pause reverse reset';
   // const toggleActionsValue = 'play none none none';
   const scrubValue = 1;
@@ -131,6 +131,21 @@ const Nft = () => {
         // start: 'top 5%',
         // end: '34% 50%',
         end: endValue,
+        pin: true,
+      },
+      duration: durationValue,
+    });
+  });
+
+  useGSAP(() => {
+    gsap.to('.boxContainerMobile', {
+      scrollTrigger: {
+        trigger: '.boxContainerMobile',
+        start: startValue,
+        toggleActions: toggleActionsValue,
+        // start: 'top 5%',
+        // end: '34% 50%',
+        end: endValueMobile,
         pin: true,
       },
       duration: durationValue,
@@ -274,9 +289,9 @@ const Nft = () => {
           </Stack>
         </div>
       </div>
-      {/* Second Section */}
+      {/* Second Desktop Section */}
       <div
-        className={isMobile ? `boxMobileContainer ` : `boxContainer`}
+        className={isMobile ? `boxContainerMobile ` : `boxContainer`}
         onScroll={handleScroll}>
         <div className={` ${styles.secondContainer}`}>
           <div className={styles.secondContainerWidth}>
@@ -309,6 +324,7 @@ const Nft = () => {
                           alt=""
                           className={`${styles[`wolfImage${index + 1}`]}`}
                         />
+                        123
                       </div>
                     ))}
                   </div>
@@ -333,7 +349,9 @@ const Nft = () => {
                       marginBottom: 20,
                     }}>
                     {SecondSectionData.cards.map((item, index) => (
-                      <div className={` ${styles.imageContainer}`} key={index}>
+                      <div
+                        className={` ${styles.imageContainer}`}
+                        key={index + 100}>
                         <Image
                           src={item}
                           alt=""
@@ -342,15 +360,13 @@ const Nft = () => {
                       </div>
                     ))}
                   </div>
-                  {displayFull && (
-                    <div className={` ${styles.imageContainerFull}`} key={'12'}>
-                      <Image
-                        src={BlueFull}
-                        alt=""
-                        className={styles.wolfImageFull}
-                      />
-                    </div>
-                  )}
+                  <div className={` ${styles.imageContainerFull}`} key={'12'}>
+                    <Image
+                      src={BlueFull}
+                      alt=""
+                      className={styles.wolfImageFull}
+                    />
+                  </div>
                 </>
               )}
 
