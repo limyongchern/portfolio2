@@ -60,11 +60,12 @@
 }
 
 .homeHeroImage {
-  width: 660px;
+  width: 620px;
   height: 100%;
   // margin-left: -30px;
   // height: 768px;
-  margin-top: 50px;
+  margin-top: 150px;
+  margin-left: -120px;
   @media (max-width: 835px) {
     width: 310px;
     height: 421px;

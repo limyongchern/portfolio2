@@ -37,10 +37,10 @@ const FirstSection = ({ data }: any) => {
           <span
             style={{
               textAlign: isMobile ? 'center' : 'start',
-              marginBottom: 100,
-              marginLeft: -20,
+              marginBottom: 230,
+              marginLeft: 90,
             }}>
-            <BodyBold color="#F2F3F7" variant={10} style={{ marginTop: 15 }}>
+            <BodyBold color="#F2F3F7" variant={10} style={{ marginTop: 0 }}>
               {data.headline1}
             </BodyBold>
             <BodyBold
@@ -51,8 +51,8 @@ const FirstSection = ({ data }: any) => {
             </BodyBold>
             <Body
               color="#9198B0"
-              variant={8}
-              style={{ marginTop: 15, width: 520 }}>
+              variant={13}
+              style={{ marginTop: 15, width: 630 }}>
               {data.subheader}
             </Body>
           </span>
