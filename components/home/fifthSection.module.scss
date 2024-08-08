@@ -8,7 +8,11 @@
   background: var(--Main-Primary-Varient, #3e404e);
   margin: auto;
   object-fit: fill;
-
+  background-image: url('/Home/HomeBg6.png');
+  background-size: cover;
+  background-position: relative;
+  background-repeat: no-repeat;
+  margin-top: -2px;
   @media (max-width: 835px) {
     display: inline-flex;
     flex-direction: column;

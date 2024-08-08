@@ -1,5 +1,6 @@
 .containerPlanetSection {
-  background-image: url('/sky.png');
+  background-image: url('/Home/HomeBg5Planets.png');
+  // background-image: url('/sky.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -9,11 +10,12 @@
   flex-direction: column;
   padding: 100px 0 390px 0;
   overflow: hidden;
+  margin-top: -2px;
 }
 
 .planetSize {
-  width: 44px;
-  height: 44px;
+  width: 56px;
+  height: 56px;
 }
 
 .planetCard {
@@ -156,4 +158,16 @@
 
 .carouselContainer {
   margin-top: 20px;
+}
+
+.activePlanetNameContainer {
+  border-radius: 100px;
+  background: var(--Main-Primary, #3e404e);
+  display: flex;
+  width: 210px;
+  height: 75px;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  margin-left: -25px;
 }

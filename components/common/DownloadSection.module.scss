@@ -2,11 +2,15 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 40px 100px 0px 100px;
+  padding: 40px 100px 150px 100px;
   margin-top: -55px;
   margin-bottom: -55px;
   overflow: hidden;
   background: var(--Main-Primary-Varient, #272935);
+  background-image: url('/Download/DownloadBg.png');
+  background-size: cover;
+  background-position: relative;
+  background-repeat: no-repeat;
   justify-content: center;
   align-items: center;
   @media (max-width: 835px) {
@@ -40,8 +44,8 @@
 
 .bottomContainer {
   display: flex;
-  justify-content: space-between;
-  margin-top: -30px;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 .bottomContainerMobile {
@@ -75,4 +79,10 @@
 
 .downloadImage {
   cursor: pointer;
+}
+
+.wolfTokensImage {
+  width: 360px;
+  height: 196px;
+  margin-top: 50px;
 }

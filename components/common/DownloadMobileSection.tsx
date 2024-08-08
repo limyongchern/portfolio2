@@ -7,8 +7,8 @@ import Image from 'next/image';
 import WolfAvatarBlueMobile from 'public/WolfAvatar/WolfAvatarBlueMobile.png';
 import PlaystoreEn from 'public/GooglePlayEn.svg';
 import AppleEn from 'public/AppleStoreEn.svg';
-import PlaystoreCn from 'public/GooglePlayCn.svg';
-import AppleCn from 'public/AppleStoreCn.svg';
+import PlaystoreCn from 'public/Download/Button-GoogleplayCn.svg';
+import AppleCn from 'public/Download/Button-AppstoreCn.svg';
 
 const DownloadSectionData = {
   headline: '加入狼星球 - 您的专属Web3投资交流社区!',

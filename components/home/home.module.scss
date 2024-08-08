@@ -422,6 +422,10 @@
   background: var(--Main-Primary-Varient, #3e404e);
   margin: auto;
   object-fit: fill;
+  background-image: url('/Home/HomeBg2.png');
+  background-size: cover;
+  background-position: relative;
+  background-repeat: no-repeat;
 
   @media (max-width: 835px) {
     display: inline-flex;
@@ -439,9 +443,14 @@
   text-align: center;
   gap: 300px;
   width: 100%;
-  background: var(--Main-Primary-Varient, #3e404e);
+  background: red;
+  background-image: url('/Home/HomeBg4.png');
+  background-size: cover;
+  background-position: relative;
+  background-repeat: no-repeat;
   margin: auto;
   object-fit: fill;
+  margin-top: -1px;
 
   @media (max-width: 835px) {
     display: inline-flex;
@@ -458,8 +467,12 @@
   position: relative;
   text-align: start;
   padding: 24px 40px;
-  background-color: #272935;
-  color: white;
+  // background-color: #272935;
+  // background: linear-gradient(180deg, #3e404e 0%, #272935 100%);
+  background: linear-gradient(180deg, #3e404e 0%, #272935 100%);
+
+  backdrop-filter: blur(20px);
+
   border: 0;
   border-radius: 16px;
   width: 400px;

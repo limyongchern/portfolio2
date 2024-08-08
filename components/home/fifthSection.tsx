@@ -5,14 +5,14 @@ import { Body, BodyBold } from 'components/typography';
 import { MagicMotion } from 'react-magic-motion';
 
 const FifthSection = ({ data }: any) => {
-  const [currentCard, setCurrentCard] = useState(0);
+  const [currentCard, setCurrentCard] = useState(2);
 
   const isActive = (index: number) => {
     return index === currentCard;
   };
 
   return (
-    <div className={styles.fifthSection} style={{ backgroundColor: '#272935' }}>
+    <div className={styles.fifthSection} style={{}}>
       <Body variant={9} color="white" style={{ marginBottom: '-265px' }}>
         {data.headline}
       </Body>

@@ -18,6 +18,9 @@ import PlanetMobileSection from 'components/home/planetMobileSection';
 import DownloadSection from 'components/common/DownloadSection';
 import DownloadMobileSection from 'components/common/DownloadMobileSection';
 
+//image for FirstSection
+import HomeHeroPhone from 'public/Home/HomeHeroPhone.png';
+
 //images for SecondSection
 import TempImage1 from 'public/TempImages/TempImage1.jpg';
 import TempImage2 from 'public/TempImages/TempImage2.jpg';
@@ -44,9 +47,11 @@ import iPhoneImage from 'public/Home/iPhoneImage.png';
 interface IProps {}
 
 const FirstSectionData = {
-  headline: '全球领先的Web3投资交流社区',
+  headline1: '全球领先的',
+  headline2: 'Web3投资交流社区',
   subheader:
     'WolfPlanet 是基于区块链技术，让投资知识交流无界限，让创作更有价值',
+  homeHeroImage: HomeHeroPhone,
 };
 
 const SecondSectionData = {

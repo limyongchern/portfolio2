@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './planetSection.module.scss';
 import { Flex, Stack } from '@mantine/core';
-import { Body } from 'components/typography';
+import { Body, BodyBold } from 'components/typography';
 
 import { PlanetList } from 'utils/planet';
 import Image from 'next/image';
@@ -22,24 +22,31 @@ const PlanetSection = ({ data }: any) => {
         <div
           style={{
             position: 'absolute',
-            marginTop: '16rem',
-            padding: '0 200px',
+            marginTop: '18rem',
+            padding: '0 400px',
             zIndex: 4,
           }}>
           {PlanetList.map((item, index) => (
             <Flex
               key={index}
               align={'center'}
-              mb={'12px'}
+              mb={'20px'}
               style={{ cursor: 'pointer' }}
               onClick={() => handlePlanetChange(index)}
-              onMouseEnter={() => handlePlanetChange(index)}>
+              onMouseEnter={() => handlePlanetChange(index)}
+              className={
+                activePlanet === index + 1
+                  ? styles.activePlanetNameContainer
+                  : styles.planetNameContainer
+              }>
               <Image
                 src={item.planet}
                 alt=""
                 className={styles.planetSize}
                 style={
-                  activePlanet === index + 1 ? { opacity: 1 } : { opacity: 0.5 }
+                  activePlanet === index + 1
+                    ? { opacity: 1, marginLeft: -5 }
+                    : { opacity: 0.5 }
                 }
               />
               <Body
@@ -48,45 +55,49 @@ const PlanetSection = ({ data }: any) => {
                   opacity: activePlanet === index + 1 ? 1 : 0.7,
                   marginLeft: 5,
                 }}
-                variant={8}>
-                {index + 1}. {item.name}
+                variant={13}>
+                {item.name}
               </Body>
             </Flex>
           ))}
         </div>
         <span style={{ textAlign: 'center', marginBottom: '24px' }}>
-          <Body color="#F2F3F7" variant={9} style={{ display: 'inline' }}>
+          <BodyBold color="#F2F3F7" variant={7} style={{ display: 'inline' }}>
             {data.headline}
-          </Body>
+          </BodyBold>
         </span>
-        <Body color="#9198B0" variant={1} style={{ textAlign: 'center' }}>
+        <Body color="#F2F3F7" variant={1} style={{ textAlign: 'center' }}>
           {data.subheader}
         </Body>
 
-        <div style={{ position: 'relative' }}>
-          <Stack align="center" justify="center" mt={'80px'} spacing={'24px'}>
+        <div style={{ position: 'relative', marginLeft: 200 }}>
+          <Stack align="center" justify="center" mt={'60px'} spacing={'24px'}>
+            <MagicMotion transition={{ type: 'spring', damping: 300 }}>
+              <div>
+                <Image
+                  key={currentPlanet.name}
+                  src={currentPlanet.planetFull}
+                  alt=""
+                  style={{
+                    // position: 'absolute',
+                    // top: '-260px',
+                    width: '480px',
+                    height: '480px',
+                    // width: '130%',
+                    // height: '450%',
+                  }}
+                />
+              </div>
+            </MagicMotion>
             <MagicMotion transition={{ type: 'spring', stiffness: 100 }}>
               <>
                 <Body color="#F2F3F7" variant={9}>
                   {currentPlanet.title}
                 </Body>
-                <Body color="#9198B0" variant={1}>
+                <Body color="#F2F3F7" variant={1}>
                   {currentPlanet.description}
                 </Body>
               </>
-            </MagicMotion>
-            <MagicMotion transition={{ type: 'ease', damping: 300 }}>
-              <Image
-                key={currentPlanet.name}
-                src={currentPlanet.planetCropped}
-                alt=""
-                style={{
-                  position: 'absolute',
-                  top: '-260px',
-                  width: '130%',
-                  height: '450%',
-                }}
-              />
             </MagicMotion>
           </Stack>
         </div>

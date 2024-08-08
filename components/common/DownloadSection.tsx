@@ -6,10 +6,9 @@ import { Body } from 'components/typography';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import WolfAvatarBlue from 'public/WolfAvatar/WolfAvatarBlue.png';
-import PlaystoreEn from 'public/GooglePlayEn.svg';
-import AppleEn from 'public/AppleStoreEn.svg';
-import PlaystoreCn from 'public/GooglePlayCn.svg';
-import AppleCn from 'public/AppleStoreCn.svg';
+import PlaystoreCn from 'public/Download/Button-GoogleplayCn.svg';
+import AppleCn from 'public/Download/Button-AppstoreCn.svg';
+import WolfTokensImage from 'public/Download/DownloadWolfTokens.png';
 
 const DownloadSectionData = {
   headline: '加入狼星球 - 您的专属Web3投资交流社区!',
@@ -21,19 +20,20 @@ const DownloadSection = () => {
   return (
     <>
       <div id="fourth-section" className={styles.containerDownloadSection}>
+        <Image
+          src={WolfTokensImage}
+          alt="apple"
+          className={styles.wolfTokensImage}
+        />
+
         <div className={styles.innerContainer}>
-          <Body color="#F2F3F7" variant={9} style={{}}>
+          <Body color="#F2F3F7" variant={9} style={{ marginTop: 50 }}>
             {DownloadSectionData.headline}
           </Body>
           <Body color="#9198B0" variant={1} style={{ marginTop: 20 }}>
             {DownloadSectionData.subheader}
           </Body>
           <div className={styles.bottomContainer}>
-            <Image
-              src={WolfAvatarBlue}
-              alt=""
-              className={styles.wolfAvatarImage}
-            />
             <div className={styles.buttonsContainer}>
               <Flex
                 gap={24}
@@ -60,12 +60,6 @@ const DownloadSection = () => {
                 </motion.button>
               </Flex>
             </div>
-
-            <Image
-              src={WolfAvatarBlue}
-              alt=""
-              className={styles.wolfAvatarImage}
-            />
           </div>
         </div>
       </div>
