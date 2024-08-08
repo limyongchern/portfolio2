@@ -4,7 +4,7 @@ import { Body, BodyBold } from 'components/typography';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
-const firstSection = ({ data }: any) => {
+const FirstSection = ({ data }: any) => {
   const [isMobile, setIsMobile] = useState(false);
   const [width, setWidth] = useState<number>(
     typeof window !== 'undefined' ? window.innerWidth : 0
@@ -67,4 +67,4 @@ const firstSection = ({ data }: any) => {
   );
 };
 
-export default firstSection;
+export default FirstSection;

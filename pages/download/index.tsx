@@ -5,8 +5,8 @@ import Apple from 'public/apple.png';
 import Image from 'next/image';
 import { Body, BodyBold, Heading } from 'components/typography';
 import { useEffect, useState } from 'react';
-import PlaystoreCn from 'public/GooglePlayCn.svg';
-import AppleCn from 'public/AppleStoreCn.svg';
+import PlaystoreCn from 'public/Download/Button-GoogleplayCn.svg';
+import AppleCn from 'public/Download/Button-AppstoreCn.svg';
 import DownloadMobileImage from 'public/Download/DownloadMobileImage.png';
 import { motion } from 'framer-motion';
 
