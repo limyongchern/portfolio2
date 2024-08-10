@@ -6,10 +6,10 @@
   // gap: 300px;
   width: 100%;
   background: var(--Main-Primary-Varient, #3e404e);
-  // background-image: url('/Home/HomeBg3.png');
-  // background-size: cover;
-  // background-position: center;
-  // background-repeat: no-repeat;
+  background-image: url('/Home/HomeBg3.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   margin: auto;
   object-fit: fill;
   margin-bottom: 0px;
@@ -29,6 +29,10 @@
   width: 100%;
   background: var(--Main-Primary-Varient, #272935);
   margin-top: -2px;
+  background-image: url('/Home/HomeMobileBg3.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   // margin: auto;
   // object-fit: fill;
 

@@ -9,6 +9,7 @@ import PlaystoreEn from 'public/GooglePlayEn.svg';
 import AppleEn from 'public/AppleStoreEn.svg';
 import PlaystoreCn from 'public/Download/Button-GoogleplayCn.svg';
 import AppleCn from 'public/Download/Button-AppstoreCn.svg';
+import WolfTokensImage from 'public/Download/DownloadWolfTokens.png';
 
 const DownloadSectionData = {
   headline: '加入狼星球 - 您的专属Web3投资交流社区!',
@@ -20,22 +21,28 @@ const DownloadMobileSection = () => {
   return (
     <>
       <div id="fourth-section" className={styles.containerDownloadSection}>
+        <Image
+          src={WolfTokensImage}
+          alt="apple"
+          className={styles.wolfTokensImage}
+        />
         <div className={styles.innerContainer}>
           <BodyBold color="#F2F3F7" variant={3} style={{}}>
             {DownloadSectionData.headline}
           </BodyBold>
-          <Body color="#9198B0" variant={1} style={{ marginTop: 20 }}>
+          <Body color="#F2F3F7" variant={1} style={{ marginTop: 20 }}>
             {DownloadSectionData.subheader}
           </Body>
         </div>
         <div className={styles.bottomContainerMobile}>
-          <Image
-            src={WolfAvatarBlueMobile}
-            alt=""
-            className={styles.wolfAvatarImageMobile}
-          />
           <div className={styles.buttonsContainer}>
-            <Flex gap={30} style={{ display: 'flex', flexDirection: 'column' }}>
+            <Flex
+              gap={30}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                marginTop: 50,
+              }}>
               <Image
                 src={PlaystoreCn}
                 alt="play store"
@@ -49,12 +56,6 @@ const DownloadMobileSection = () => {
               />
             </Flex>
           </div>
-
-          <Image
-            src={WolfAvatarBlueMobile}
-            alt=""
-            className={styles.wolfAvatarImageMobile}
-          />
         </div>
       </div>
     </>

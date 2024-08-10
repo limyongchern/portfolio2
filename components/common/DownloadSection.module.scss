@@ -16,6 +16,10 @@
   @media (max-width: 835px) {
     margin-bottom: -5px;
     margin-top: 0px;
+    background-image: url('/Download/DownloadMobileBg.png');
+    background-size: cover;
+    background-position: relative;
+    background-repeat: no-repeat;
   }
   //   @media (max-width: 380px) {
   //     padding-right: 2px;
@@ -24,6 +28,7 @@
 
 .containerDownloadMobileSection {
   background-color: #272935;
+
   position: relative;
   display: flex;
   flex-direction: column;
@@ -85,4 +90,9 @@
   width: 360px;
   height: 196px;
   margin-top: 50px;
+  @media (max-width: 835px) {
+    width: 200px;
+    height: 110px;
+    margin-bottom: 20px;
+  }
 }
