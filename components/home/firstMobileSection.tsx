@@ -1,28 +1,46 @@
 import BackgroundVideo from 'components/BackgroundVideo';
-import styles from './home.module.scss';
-import { Body } from 'components/typography';
+import styles from './firstSection.module.scss';
 
-const firstMobileSection = ({ data }: any) => {
+import { Body, BodyBold } from 'components/typography';
+import Image from 'next/image';
+
+const FirstMobileSection = ({ data }: any) => {
   return (
     <>
-      <div className={styles.video}>
-        <BackgroundVideo />
-      </div>
-      <div className={styles.titleColumnMobile}>
-        <Body
-          variant={9}
-          color="#F2F3F7"
-          fw={700}
-          fs={40}
-          style={{ paddingTop: '0px', lineHeight: 1.5 }}>
-          {data.headline}
-        </Body>
-        <Body variant={8} className={styles.subheading}>
-          {data.subheader}
-        </Body>
+      <div id="first-section-mobile" className={styles.containerMobile}>
+        <div className={styles.widthContainer}>
+          <span
+            style={{
+              textAlign: 'center',
+
+              // marginBottom: 230,
+              // marginLeft: 90,
+            }}>
+            <BodyBold color="#F2F3F7" variant={7} style={{ marginTop: 80 }}>
+              {data.headline1}
+            </BodyBold>
+            <BodyBold
+              color="#F2F3F7"
+              variant={7}
+              style={{ marginTop: 0, padding: '0px 50px' }}>
+              {data.headline2}
+            </BodyBold>
+            <Body
+              color="#9198B0"
+              variant={1}
+              style={{ marginTop: 15, padding: '0px 35px' }}>
+              {data.subheader}
+            </Body>
+          </span>
+          <Image
+            src={data.homeHeroImage}
+            className={styles.homeHeroImage}
+            alt="wolfavatar"
+          />
+        </div>
       </div>
     </>
   );
 };
 
-export default firstMobileSection;
+export default FirstMobileSection;

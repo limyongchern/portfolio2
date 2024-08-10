@@ -12,17 +12,22 @@
   gap: 100px;
   height: 100vh;
   margin-top: -90px;
-  //   padding: 32px;
-  //   padding-top: 32px;
-  //   position: fixed;
-  //   top: 0;
-  //   left: 0px;
-  //   width: 100%;
-  //   height: 100%;
-  //   position: relative;
-  //   z-index: 1;
-  //   height: 35vh;
   width: 100%;
+}
+
+.containerMobile {
+  background-image: url('/Home/HomeHeroMobileBg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  height: 100vh;
+  margin-top: -90px;
+  width: 100%;
+  padding: 30px 0px;
 }
 
 .widthContainer {
@@ -37,6 +42,8 @@
   text-align: start;
   @media (max-width: 835px) {
     flex-direction: column;
+    width: 100%;
+    align-items: center;
     text-align: center;
   }
 }
@@ -67,9 +74,11 @@
   margin-top: 150px;
   margin-left: -120px;
   @media (max-width: 835px) {
-    width: 310px;
-    height: 421px;
-    margin-top: -50px;
+    width: 330px;
+    height: 100%;
+    margin-top: 0px;
+    align-items: center;
+    margin-left: 0px;
   }
 }
 

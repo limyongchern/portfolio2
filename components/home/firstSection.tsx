@@ -1,42 +1,15 @@
-import BackgroundVideo from 'components/BackgroundVideo';
 import styles from './firstSection.module.scss';
 import { Body, BodyBold } from 'components/typography';
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 const FirstSection = ({ data }: any) => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [width, setWidth] = useState<number>(
-    typeof window !== 'undefined' ? window.innerWidth : 0
-  );
-  const handleWindowSizeChange = () => {
-    setWidth(typeof window !== 'undefined' ? window.innerWidth : 0);
-  };
-
-  useEffect(() => {
-    if (width <= 835) {
-      setIsMobile(true);
-    } else setIsMobile(false);
-  }, [width]);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', handleWindowSizeChange);
-    }
-    return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', handleWindowSizeChange);
-      }
-    };
-  }, [width]);
-
   return (
     <>
       <div id="first-section" className={styles.container}>
         <div className={styles.widthContainer}>
           <span
             style={{
-              textAlign: isMobile ? 'center' : 'start',
+              textAlign: 'start',
               marginBottom: 230,
               marginLeft: 90,
             }}>
