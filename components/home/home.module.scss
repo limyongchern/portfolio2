@@ -335,6 +335,27 @@
   cursor: pointer;
 }
 
+.secondSectionCardMobile {
+  margin: 15px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 0px 0px;
+  overflow: hidden;
+  height: 400px;
+  width: 290px;
+  position: relative;
+}
+
+.secondSectionImageMobile {
+  width: 85%;
+  height: 245px;
+  // padding: 0px 32px;
+  border-radius: 8px;
+  margin-bottom: 0px;
+  object-fit: cover;
+  background: var(--main-primary-varient-55, rgba(39, 41, 53, 0.5));
+}
+
 .collapsibleCardMobile {
   margin: 15px;
   border-radius: 8px;
@@ -419,7 +440,7 @@
   align-items: center;
   gap: 300px;
   width: 100%;
-  background: var(--Main-Primary-Varient, #3e404e);
+  background: #272935;
   margin: auto;
   object-fit: fill;
   background-image: url('/Home/HomeBg2.png');
@@ -432,6 +453,8 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    background-image: none;
+    gap: 0px;
   }
 }
 
