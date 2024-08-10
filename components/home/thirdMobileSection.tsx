@@ -1,9 +1,17 @@
 import Image from 'next/image';
+import { Card, UnstyledButton } from '@mantine/core';
 import { Body, BodyBold } from 'components/typography';
 import styles from './thirdSection.module.scss';
-import { Card } from '@mantine/core';
+import { MagicMotion } from 'react-magic-motion';
+import { useState } from 'react';
 
 const ThirdMobileSection = ({ data }: any) => {
+  const [currentCard, setCurrentCard] = useState(0);
+
+  const isActive = (index: number) => {
+    return index === currentCard;
+  };
+
   return (
     <div className={styles.outerContainerMobile}>
       <BodyBold
@@ -36,7 +44,7 @@ const ThirdMobileSection = ({ data }: any) => {
                 {card.bulletPoints.map((point: any, index: number) => (
                   <Body
                     variant={2}
-                    color="#9198B0"
+                    color="#F2F3F7"
                     key={index}
                     style={{
                       marginTop: '5px',
@@ -51,7 +59,7 @@ const ThirdMobileSection = ({ data }: any) => {
           </Card>
         ))}
       </div>
-      <div className={styles.illustrationContainer}>
+      {/* <div className={styles.illustrationContainer}>
         {data.bottomCards.map((card: any, index: number) => (
           <div className={styles.illustrationSection} key={index}>
             <Image
@@ -78,7 +86,63 @@ const ThirdMobileSection = ({ data }: any) => {
             </div>
           </div>
         ))}
+      </div> */}
+      <div style={{ display: 'flex', marginTop: 100, gap: 10 }}>
+        <div className={styles.nav}>
+          <UnstyledButton
+            key={'0'}
+            onClick={() => setCurrentCard(0)}
+            className={`${styles.link} ${isActive(0) ? styles.active : ''}`}>
+            <BodyBold
+              variant={1}
+              color="#F2F3F7"
+              className={`${isActive(0) ? styles.active : ''}`}>
+              新手投资者
+            </BodyBold>
+          </UnstyledButton>
+        </div>
+        <div className={styles.nav}>
+          <UnstyledButton
+            key={'0'}
+            onClick={() => setCurrentCard(1)}
+            className={`${styles.link} ${isActive(1) ? styles.active : ''}`}>
+            <BodyBold
+              variant={1}
+              color="#F2F3F7"
+              className={`${isActive(1) ? styles.active : ''}`}>
+              专业投资者
+            </BodyBold>
+          </UnstyledButton>
+        </div>
       </div>
+
+      <MagicMotion transition={{ type: 'ease' }}>
+        <div className={styles.illustrationContainer}>
+          <>
+            <Image
+              src={data.bottomCards[currentCard].image}
+              alt="card icon"
+              className={styles.illustrationMobile}
+            />
+            <div style={{ marginTop: 0 }}>
+              {data.bottomCards[currentCard].bulletPoints.map(
+                (point: any, index2: number) => (
+                  <Body
+                    variant={1}
+                    key={index2}
+                    color={'#F2F3F7'}
+                    style={{
+                      marginTop: '8px',
+                      lineHeight: '2rem',
+                    }}>
+                    <li>{point}</li>
+                  </Body>
+                )
+              )}
+            </div>
+          </>
+        </div>
+      </MagicMotion>
     </div>
   );
 };

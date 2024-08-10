@@ -282,7 +282,7 @@ const Home = (props: IProps) => {
         <>
           <FirstMobileSection data={FirstSectionData} />
           <SecondMobileSection data={SecondSectionData} />
-          {/* <ThirdMobileSection data={ThirdSectionData} /> */}
+          <ThirdMobileSection data={ThirdSectionData} />
           <FourthMobileSection data={FourthSectionData} />
           <PlanetMobileSection data={PlanetSectionData} />
           <FifthMobileSection data={FifthSectionData} />
