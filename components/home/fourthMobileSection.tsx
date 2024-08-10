@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { Body, BodyBold } from 'components/typography';
 import { MagicTabSelect } from 'react-magic-motion';
+import { CaretUp, CaretDown } from '@phosphor-icons/react';
 
 const FourthMobileSection = ({ data }: any) => {
   const [selectedImage, setSelectedImage] = useState(
@@ -24,38 +25,72 @@ const FourthMobileSection = ({ data }: any) => {
       <button
         key={item.id}
         onMouseEnter={() => setHoveredIndex(i)}
-        className={styles.buttonsContainer}>
+        className={styles.buttonsContainer}
+        style={{
+          background:
+            hoveredIndex != i
+              ? 'none'
+              : 'linear-gradient(180deg, #3e404e 0%, #272935 100%)',
+          backdropFilter: 'blur(20px)',
+        }}>
         {hoveredIndex === i && (
-          <MagicTabSelect
-            id="pillTabs"
-            transition={{ type: 'spring', bounce: 0.35 }}>
-            <span
-              style={{
-                borderRadius: '16px',
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                zIndex: 10,
-                background:
-                  'var(--neutral-glass-1-add-blur, rgba(255, 255, 255, 0.12))',
-              }}
-            />
-          </MagicTabSelect>
+          <span
+            style={{
+              borderRadius: '16px',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              zIndex: 10,
+              // background:
+              //   'var(--neutral-glass-1-add-blur, rgba(255, 255, 255, 0.12))',
+            }}
+          />
         )}
-        <BodyBold variant={2} color="white" className={styles.cardTitle3}>
+        {/* <BodyBold variant={2} color="white" className={styles.cardTitle3}>
           {item.title}
-        </BodyBold>
-        {item.content.map((content: string, i: number) => (
-          <Body
-            variant={2}
-            color="#9198B0"
-            key={i}
-            style={{ marginTop: '8px', lineHeight: '2rem' }}>
-            <li>{content}</li>
+        </BodyBold> */}
+        <div
+          style={{
+            display: 'flex',
+            textAlign: 'center',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+          }}>
+          <Body variant={10} color="white" className={styles.cardTitle3}>
+            {item.title}
           </Body>
-        ))}
+          {hoveredIndex === i ? (
+            <CaretUp
+              style={{ cursor: 'not-allowed' }}
+              width={'32px'}
+              height={'32px'}
+              color="white"
+            />
+          ) : (
+            <CaretDown
+              style={{ cursor: 'not-allowed' }}
+              width={'32px'}
+              height={'32px'}
+              color="white"
+            />
+          )}
+        </div>
+
+        {hoveredIndex === i && (
+          <>
+            {item.content.map((content: string, i: number) => (
+              <Body
+                variant={1}
+                color="#9198B0"
+                key={i}
+                style={{ marginTop: '8px', lineHeight: '2rem' }}>
+                <li>{content}</li>
+              </Body>
+            ))}
+          </>
+        )}
       </button>
     );
   });

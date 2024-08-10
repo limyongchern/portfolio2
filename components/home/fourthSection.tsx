@@ -46,8 +46,8 @@ const FourthSection = ({ data }: any) => {
                 right: 0,
                 bottom: 0,
                 zIndex: 10,
-                background:
-                  'var(--neutral-glass-1-add-blur, rgba(255, 255, 255, 0.12))',
+                // background:
+                //   'var(--neutral-glass-1-add-blur, rgba(255, 255, 255, 0.12))',
               }}
             />
           </MagicTabSelect>

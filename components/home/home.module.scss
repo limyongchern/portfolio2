@@ -466,11 +466,11 @@
   text-align: center;
   gap: 300px;
   width: 100%;
-  background: red;
-  background-image: url('/Home/HomeBg4.png');
-  background-size: cover;
-  background-position: relative;
-  background-repeat: no-repeat;
+  background: var(--Main-Primary-Varient, #272935);
+  // background-image: url('/Home/HomeBg4.png');
+  // background-size: cover;
+  // background-position: relative;
+  // background-repeat: no-repeat;
   margin: auto;
   object-fit: fill;
   margin-top: -1px;
