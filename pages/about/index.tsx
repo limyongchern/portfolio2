@@ -14,8 +14,8 @@ import { useEffect, useState } from 'react';
 import styles from './index.module.scss';
 import AboutUsTempImage from 'public/TempImages/AboutUsTempImage.png';
 import WholePlanet3 from 'public/Planet/wholeplanet3.png';
-import PressImg1 from 'public/About/PressImg1.png';
-import PressImg2 from 'public/About/PressImg2.png';
+import PressImg1 from 'public/PressImg1.png';
+import PressImg2 from 'public/PressImg2.png';
 
 const AboutUsData = {
   about: '关于 WolfPlanet',
