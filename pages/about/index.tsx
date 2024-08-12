@@ -273,7 +273,7 @@ const AboutUs = () => {
             {!isMobile ? (
               <div style={{ display: 'flex', gap: 15 }}>
                 {SecondSectionData.sections.map((section, index) => (
-                  <div className={styles.infoCard}>
+                  <div className={styles.infoCard} key={index}>
                     <Stack spacing={'20px'} style={{ minWidth: 228 }}>
                       <Group spacing={'11px'}>
                         <div className={styles.iconContainer}>
@@ -301,31 +301,29 @@ const AboutUs = () => {
               <div
                 style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
                 {SecondSectionData.sections.map((section, index) => (
-                  <>
-                    <div className={styles.infoCard}>
-                      <Stack spacing={'20px'}>
-                        <Group spacing={'11px'}>
-                          <div className={styles.iconContainer}>
-                            {section.icon}
-                          </div>
-                          <BodyBold variant={1} color="#F2F3F7">
-                            {section.title}
-                          </BodyBold>
-                        </Group>
-                        <Body
-                          variant={2}
-                          lh={1.5}
-                          color="#F2F3F7"
-                          // style={{ letterSpacing: 1.2 }}
-                        >
-                          {section.description}
-                        </Body>
-                      </Stack>
-                      {/* {index !== SecondSectionData.sections.length - 1 && (
+                  <div className={styles.infoCard} key={index}>
+                    <Stack spacing={'20px'}>
+                      <Group spacing={'11px'}>
+                        <div className={styles.iconContainer}>
+                          {section.icon}
+                        </div>
+                        <BodyBold variant={1} color="#F2F3F7">
+                          {section.title}
+                        </BodyBold>
+                      </Group>
+                      <Body
+                        variant={2}
+                        lh={1.5}
+                        color="#F2F3F7"
+                        // style={{ letterSpacing: 1.2 }}
+                      >
+                        {section.description}
+                      </Body>
+                    </Stack>
+                    {/* {index !== SecondSectionData.sections.length - 1 && (
                       <Divider my={'23px'} color="#3E404E" />
                     )} */}
-                    </div>
-                  </>
+                  </div>
                 ))}
               </div>
             )}
