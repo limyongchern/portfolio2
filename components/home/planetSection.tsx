@@ -72,23 +72,23 @@ const PlanetSection = ({ data }: any) => {
 
         <div style={{ position: 'relative', marginLeft: 200 }}>
           <Stack align="center" justify="center" mt={'60px'} spacing={'24px'}>
-            <MagicMotion transition={{ type: 'spring', damping: 300 }}>
-              <div>
-                <Image
-                  key={currentPlanet.name}
-                  src={currentPlanet.planetFull}
-                  alt=""
-                  style={{
-                    // position: 'absolute',
-                    // top: '-260px',
-                    width: '480px',
-                    height: '480px',
-                    // width: '130%',
-                    // height: '450%',
-                  }}
-                />
-              </div>
-            </MagicMotion>
+            <div key={currentPlanet.name}>
+              <Image
+                key={currentPlanet.name}
+                src={currentPlanet.planetFull}
+                alt=""
+                style={{
+                  // position: 'absolute',
+                  // top: '-260px',
+                  width: '480px',
+                  height: '480px',
+                  // width: '130%',
+                  // height: '450%',
+                }}
+                className={styles.planetImage}
+              />
+            </div>
+
             <MagicMotion transition={{ type: 'spring', stiffness: 100 }}>
               <>
                 <Body color="#F2F3F7" variant={9}>

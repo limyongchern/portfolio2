@@ -55,6 +55,27 @@
   background-repeat: no-repeat;
 }
 
+.planetImage {
+  opacity: 1;
+  animation: moveIn 0.3s linear;
+}
+
+@keyframes moveIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  100% {
+    opacity: 1;
+
+    transform: translateX(0px);
+  }
+
+  // 0% {
+  //   transform: translateX(100px);
+  // }
+}
+
 .planetImageDiselect {
   display: flex;
   width: 365.29px;
