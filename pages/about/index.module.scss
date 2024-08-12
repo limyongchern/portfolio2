@@ -11,7 +11,6 @@
   max-width: -webkit-fill-available;
 
   background: url('/aboutHero.png');
-  // background-image: url('/planetCardBg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -115,7 +114,7 @@
 }
 
 .middleContainer {
-  background-image: url('/contactMidBg.png');
+  background-image: url('/About/AboutBg2.png');
   width: 100vw;
   background-size: cover;
   background-position: center;
@@ -123,15 +122,18 @@
   height: 500px;
   padding-inline: 4%;
   color: white;
-  margin-top: -1px;
+  // margin-top: -8px;
+  // margin-bottom: -8px;
   display: flex;
   justify-content: center;
   // background-color: #3e404e;
   max-width: -webkit-fill-available;
   @media (max-width: 835px) {
+    background-image: url('/About/AboutMobileBg2.png');
     height: auto;
     padding-top: 80px;
     padding-bottom: 100px;
+    margin-top: -3px;
   }
 }
 
@@ -177,7 +179,7 @@
 }
 
 .botContainer {
-  background-image: url('/contactBotBg.png');
+  background-image: url('/About/AboutBg3.png');
   // background-color: #272935;
   width: 100vw;
   background-size: cover;
@@ -194,11 +196,13 @@
     padding-left: 30px;
     padding-right: 30px;
     padding-bottom: 80px;
-    background-image: url('/contactBotBg1.png');
+    background-image: url('/About/AboutMobileBg3.png');
+    margin-top: -3px;
   }
 }
 .botContainer2 {
   background-color: #272935;
+  background-image: url('/About/AboutBgNotice.png');
   width: 100vw;
   background-size: cover;
   background-position: center;
@@ -235,9 +239,31 @@
   box-shadow: 0px 4px 20px 0px rgba(12, 11, 11, 0.8);
 }
 
+.infoCard {
+  display: flex;
+  padding: 33px;
+  max-width: 262px;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1 0 0;
+  align-self: stretch;
+  border-radius: 16px;
+  background: var(
+    --Gradients-Card,
+    linear-gradient(180deg, #3e404e 0%, #272935 100%)
+  );
+}
+
 .cardMobile {
   border: 1px solid #3e404e;
   box-shadow: 0px 4px 20px 0px rgba(12, 11, 11, 0.8);
+}
+
+.activityCardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
 }
 
 .badge {

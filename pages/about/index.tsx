@@ -14,6 +14,8 @@ import { useEffect, useState } from 'react';
 import styles from './index.module.scss';
 import AboutUsTempImage from 'public/TempImages/AboutUsTempImage.png';
 import WholePlanet3 from 'public/Planet/wholeplanet3.png';
+import PressImg1 from 'public/About/PressImg1.png';
+import PressImg2 from 'public/About/PressImg2.png';
 
 const AboutUsData = {
   about: '关于 WolfPlanet',
@@ -63,7 +65,7 @@ const ThirdSectionData = {
       date: '28/12/2024',
       description:
         '羽高您蝴目早村交村，停雞枝合對節完扒紅甲六黃聽第門久身裏？月月家歌親拉自少進海而汗快清比平雨坐對、牠交五做貫大。夕忍乞節弓，飽足米裏合力科貓害苗。幸尾昌助收這己封正休植跟常雲都沒定。都裏北斗車地戶刃吃人！去喜它玉事你正皮美雄什尺筆好波道父祖，毛在蝴還立問條京幾物的人化。',
-      image: '/pressImg1.png',
+      image: PressImg1,
       mobileImage: AboutUsTempImage,
     },
     {
@@ -73,7 +75,7 @@ const ThirdSectionData = {
       date: '28/12/2024',
       description:
         '羽高您蝴目早村交村，停雞枝合對節完扒紅甲六黃聽第門久身裏？月月家歌親拉自少進海而汗快清比平雨坐對、牠交五做貫大。夕忍乞節弓，飽足米裏合力科貓害苗。幸尾昌助收這己封正休植跟常雲都沒定。都裏北斗車地戶刃吃人！去喜它玉事你正皮美雄什尺筆好波道父祖，毛在蝴還立問條京幾物的人化。',
-      image: '/pressImg2.png',
+      image: PressImg2,
       mobileImage: AboutUsTempImage,
     },
   ],
@@ -260,8 +262,8 @@ const AboutUs = () => {
 
       {/* Second section */}
       <div className={styles.middleContainer}>
-        <Stack align="center" maw={'850px'} mt={isMobile ? '0px' : '48px'}>
-          <Stack align="center" px={'36px'} w={isMobile ? '278px' : 'auto'}>
+        <Stack align="center" maw={'850px'} mt={isMobile ? '0px' : '80px'}>
+          <Stack align="center" px={'36px'} w={isMobile ? '320px' : '262px'}>
             <BodyBold
               variant={7}
               fs={isMobile ? 36 : 40}
@@ -269,44 +271,10 @@ const AboutUs = () => {
               {SecondSectionData.headline}
             </BodyBold>
             {!isMobile ? (
-              <Card bg={'#272935'} radius={16} className={styles.card}>
-                <div style={{ display: 'flex' }}>
-                  {SecondSectionData.sections.map((section, index) => (
-                    <>
-                      <Stack spacing={'20px'} style={{ minWidth: 228 }}>
-                        <Group spacing={'11px'}>
-                          <div className={styles.iconContainer}>
-                            {section.icon}
-                          </div>
-                          <BodyBold variant={1} color="#F2F3F7">
-                            {section.title}
-                          </BodyBold>
-                        </Group>
-                        <Body
-                          variant={2}
-                          lh={1.3}
-                          color="#9198B0"
-                          style={{ letterSpacing: 1.2 }}>
-                          {section.description}
-                        </Body>
-                      </Stack>
-                      {index !== SecondSectionData.sections.length - 1 && (
-                        <Divider mx={'23px'} color="#3E404E" />
-                      )}
-                    </>
-                  ))}
-                </div>
-              </Card>
-            ) : (
-              <Card
-                p={'32px'}
-                w={'352px'}
-                bg={'#272935'}
-                radius={12}
-                className={styles.cardMobile}>
+              <div style={{ display: 'flex', gap: 15 }}>
                 {SecondSectionData.sections.map((section, index) => (
-                  <>
-                    <Stack spacing={'20px'}>
+                  <div className={styles.infoCard}>
+                    <Stack spacing={'20px'} style={{ minWidth: 228 }}>
                       <Group spacing={'11px'}>
                         <div className={styles.iconContainer}>
                           {section.icon}
@@ -317,19 +285,49 @@ const AboutUs = () => {
                       </Group>
                       <Body
                         variant={2}
-                        lh={1.5}
+                        lh={1.3}
                         color="#9198B0"
-                        // style={{ letterSpacing: 1.2 }}
-                      >
+                        style={{ letterSpacing: 1.2 }}>
                         {section.description}
                       </Body>
                     </Stack>
-                    {index !== SecondSectionData.sections.length - 1 && (
+                    {/* {index !== SecondSectionData.sections.length - 1 && (
+                        <Divider mx={'23px'} color="#3E404E" />
+                      )} */}
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div
+                style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+                {SecondSectionData.sections.map((section, index) => (
+                  <>
+                    <div className={styles.infoCard}>
+                      <Stack spacing={'20px'}>
+                        <Group spacing={'11px'}>
+                          <div className={styles.iconContainer}>
+                            {section.icon}
+                          </div>
+                          <BodyBold variant={1} color="#F2F3F7">
+                            {section.title}
+                          </BodyBold>
+                        </Group>
+                        <Body
+                          variant={2}
+                          lh={1.5}
+                          color="#F2F3F7"
+                          // style={{ letterSpacing: 1.2 }}
+                        >
+                          {section.description}
+                        </Body>
+                      </Stack>
+                      {/* {index !== SecondSectionData.sections.length - 1 && (
                       <Divider my={'23px'} color="#3E404E" />
-                    )}
+                    )} */}
+                    </div>
                   </>
                 ))}
-              </Card>
+              </div>
             )}
           </Stack>
         </Stack>
@@ -338,7 +336,7 @@ const AboutUs = () => {
       {/* Third section */}
       <div className={styles.botContainer}>
         <Stack align="center">
-          <Stack mt={isMobile ? '80px' : '150px'} align="center">
+          <Stack mt={isMobile ? '80px' : '80px'} align="center">
             <Stack
               spacing={'10px'}
               align="center"
@@ -356,13 +354,20 @@ const AboutUs = () => {
                       href={`/activity/${index}`}
                       style={{ textDecoration: 'none' }}
                       key={index}>
-                      <Card p={'33px'} bg="#272935" radius={'16px'} w={'403px'}>
+                      <Card
+                        p={'33px'}
+                        radius={'16px'}
+                        w={'403px'}
+                        style={{
+                          background:
+                            'linear-gradient(180deg, #3E404E 0%, #272935 100%)',
+                        }}>
                         <Stack spacing={'40px'}>
                           <Image
                             src={section.image}
-                            width={352}
-                            height={230}
-                            // width={'100%'}
+                            className={styles.activityCardImage}
+                            // width={352}
+                            // height={230}
                             alt="Press Release 1"
                           />
                           <Stack spacing={'0px'} align="center" px={'18px'}>
@@ -390,7 +395,7 @@ const AboutUs = () => {
                             </Group>
                             <Body
                               variant={1}
-                              color="#9198B0"
+                              color="#F2F3F7"
                               style={{ paddingTop: 30, height: 234 }}>
                               {section.description}
                             </Body>
@@ -476,7 +481,7 @@ const AboutUs = () => {
                         }}>
                         <Body
                           variant={4}
-                          color="#9198B0"
+                          color="#F2F3F7"
                           style={{
                             paddingTop: 30,
                             height: 119,
@@ -543,14 +548,20 @@ const AboutUs = () => {
                   alignItems: 'center',
                   cursor: 'pointer',
                   marginTop: isMobile ? 20 : 0,
+                  color: isMobile ? '#F2F3F7' : '#9198B0',
                 }}>
-                <Link href={'/announcement'} style={{ textDecoration: 'none' }}>
-                  <BodyBold variant={9} color="#9198B0" onClick={() => {}}>
+                <Link
+                  href={'/announcement'}
+                  style={{
+                    textDecoration: 'none',
+                    color: isMobile ? '#F2F3F7' : '#9198B0',
+                  }}>
+                  <BodyBold variant={9} onClick={() => {}}>
                     {FourthSectionData.more}
                   </BodyBold>
                 </Link>
 
-                <CaretDoubleRight color="#9198B0" size={28} />
+                <CaretDoubleRight size={28} />
               </div>
             </div>
             <div style={{ width: '100%', maxWidth: '1064px' }}>
@@ -563,25 +574,29 @@ const AboutUs = () => {
                       w={'100%'}
                     />
                   )}
-                  <div
-                    style={{
-                      width: isMobile ? '' : '100%',
-                      maxWidth: '1064px',
-                      display: 'flex',
-                      padding: '24px 24px',
-                    }}>
-                    <div style={{ display: 'flex', gap: 25 }}>
-                      <Body variant={1} color="#F2F3F7">
-                        {section.date}
-                      </Body>
-                      <BodyBold
-                        variant={1}
-                        color="#4178FA"
-                        style={{ cursor: 'pointer' }}>
-                        {section.title}
-                      </BodyBold>
+                  <Link
+                    href={`/announcement/${index}`}
+                    style={{ textDecoration: 'none' }}>
+                    <div
+                      style={{
+                        width: isMobile ? '' : '100%',
+                        maxWidth: '1064px',
+                        display: 'flex',
+                        padding: '24px 24px',
+                      }}>
+                      <div style={{ display: 'flex', gap: 25 }}>
+                        <Body variant={1} color="#F2F3F7">
+                          {section.date}
+                        </Body>
+                        <BodyBold
+                          variant={1}
+                          color="#4178FA"
+                          style={{ cursor: 'pointer' }}>
+                          {section.title}
+                        </BodyBold>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
 
                   <Divider
                     pb={'0px'}

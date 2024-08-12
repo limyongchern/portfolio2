@@ -1,12 +1,6 @@
-import { Flex, Stack } from '@mantine/core';
+import { Stack } from '@mantine/core';
 import styles from './index.module.scss';
-import Playstore from 'public/playstore.png';
-import Apple from 'public/apple.png';
-import Image from 'next/image';
-import { Body, BodyBold, Heading } from 'components/typography';
-import Sample from 'public/Cards-Landing.png';
-import Button from 'components/button';
-import Download2 from 'public/Download2.png';
+import { Body, BodyBold } from 'components/typography';
 import {
   FacebookLogo,
   InstagramLogo,

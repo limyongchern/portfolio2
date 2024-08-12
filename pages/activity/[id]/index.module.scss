@@ -1,8 +1,7 @@
 @use 'styles/common/colors';
 
 .container {
-  //   background-image: url('/Download 1.png');
-  background-image: url('/contactBotBg.png');
+  background-image: url('/Activity/ActivityBg.png');
   width: 100vw;
   background-size: cover;
   background-position: center;
@@ -20,6 +19,7 @@
   max-width: -webkit-fill-available;
   @media (max-width: 835px) {
     padding-top: 90px;
+    background-image: url('/Activity/ActivityMobileBg.png');
   }
 }
 

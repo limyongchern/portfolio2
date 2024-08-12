@@ -21,13 +21,13 @@ import Planet7 from '../public/Planet/Planet_7.png';
 // import PlanetCropped6 from 'public/Planet/BigPlanet_6.png';
 // import PlanetCropped7 from 'public/Planet/BigPlanet_7.png';
 
-import PlanetCropped1 from 'public/Planet/CroppedPlanet_1.png';
-import PlanetCropped2 from 'public/Planet/CroppedPlanet_2.png';
-import PlanetCropped3 from 'public/Planet/CroppedPlanet_3.png';
-import PlanetCropped4 from 'public/Planet/CroppedPlanet_4.png';
-import PlanetCropped5 from 'public/Planet/CroppedPlanet_5.png';
-import PlanetCropped6 from 'public/Planet/CroppedPlanet_6.png';
-import PlanetCropped7 from 'public/Planet/CroppedPlanet_7.png';
+// import PlanetCropped1 from 'public/Planet/CroppedPlanet_1.png';
+// import PlanetCropped2 from 'public/Planet/CroppedPlanet_2.png';
+// import PlanetCropped3 from 'public/Planet/CroppedPlanet_3.png';
+// import PlanetCropped4 from 'public/Planet/CroppedPlanet_4.png';
+// import PlanetCropped5 from 'public/Planet/CroppedPlanet_5.png';
+// import PlanetCropped6 from 'public/Planet/CroppedPlanet_6.png';
+// import PlanetCropped7 from 'public/Planet/CroppedPlanet_7.png';
 
 export const PlanetList = [
   {
@@ -37,7 +37,6 @@ export const PlanetList = [
       '获取贵金属投资的各项技能，与同道中人建立深厚联系，共同把握市场机遇。',
     planetFull: WholePlanet1,
     planet: Planet1,
-    planetCropped: PlanetCropped1,
   },
   {
     name: '璀璨星球',
@@ -45,7 +44,6 @@ export const PlanetList = [
     description: '拓展投资视野，构建更加多元化的投资组合。',
     planetFull: WholePlanet2,
     planet: Planet2,
-    planetCropped: PlanetCropped2,
   },
   {
     name: '汇神星球',
@@ -53,7 +51,6 @@ export const PlanetList = [
     description: '汇集众多外汇交易专家，提供专业的市场分享和操作策略指导。',
     planetFull: WholePlanet3,
     planet: Planet3,
-    planetCropped: PlanetCropped3,
   },
   {
     name: '债魔星球',
@@ -61,7 +58,6 @@ export const PlanetList = [
     description: '洞悉利率走势和信用风险，优化自己的投资组合。',
     planetFull: WholePlanet4,
     planet: Planet4,
-    planetCropped: PlanetCropped4,
   },
   {
     name: '繁荣星球',
@@ -69,7 +65,6 @@ export const PlanetList = [
     description: '聚集众多股市投资专家，分享优质股票研究报告。',
     planetFull: WholePlanet5,
     planet: Planet5,
-    planetCropped: PlanetCropped5,
   },
   {
     name: '时光星球',
@@ -77,7 +72,6 @@ export const PlanetList = [
     description: '解锁期货投资的各种玩法，把握各类期货商品的投资机会。',
     planetFull: WholePlanet6,
     planet: Planet6,
-    planetCropped: PlanetCropped6,
   },
   {
     name: '虚幻星球',
@@ -85,7 +79,6 @@ export const PlanetList = [
     description: '全面了解数字资产投资的前沿动态，与业内大咖一起探讨未来趋势。',
     planetFull: WholePlanet7,
     planet: Planet7,
-    planetCropped: PlanetCropped7,
   },
 ];
 

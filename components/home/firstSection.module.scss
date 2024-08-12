@@ -166,7 +166,6 @@
 }
 
 .topContainer {
-  background-image: url('/Download 1.png');
   width: 100vw;
   background-size: cover;
   background-position: center;
@@ -179,24 +178,6 @@
   color: white;
   margin-top: -1px;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  max-width: -webkit-fill-available;
-}
-
-.bottomContainer {
-  background-image: url('/Download2.png');
-
-  width: 100vw;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  // height: 500px;
-  padding-inline: 4%;
-  padding-top: 120px;
-  padding-bottom: 120px;
-  color: white;
-  margin-top: -1px;
   display: flex;
   justify-content: center;
   max-width: -webkit-fill-available;
