@@ -11,21 +11,21 @@ const FirstSection = ({ data }: any) => {
             style={{
               textAlign: 'start',
               marginBottom: 230,
-              marginLeft: 90,
+              marginLeft: 60,
             }}>
-            <BodyBold color="#F2F3F7" variant={10} style={{ marginTop: 0 }}>
+            <BodyBold color="#F2F3F7" variant={11} style={{ marginTop: 0 }}>
               {data.headline1}
             </BodyBold>
             <BodyBold
               color="#F2F3F7"
-              variant={10}
+              variant={11}
               style={{ marginTop: 0, width: 620, whiteSpace: 'nowrap' }}>
               {data.headline2}
             </BodyBold>
             <Body
               color="#9198B0"
-              variant={13}
-              style={{ marginTop: 15, width: 630 }}>
+              variant={8}
+              style={{ marginTop: 15, width: 550 }}>
               {data.subheader}
             </Body>
           </span>

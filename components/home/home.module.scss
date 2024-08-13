@@ -398,12 +398,28 @@
 
 .collapsibleCard {
   margin: 15px;
-  border-radius: 8px;
   // box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
   background-color: #ffffff;
   padding: 0px 0px;
   overflow: hidden;
   height: 500px;
+  width: 515px;
+  border-radius: 16px;
+  box-shadow: 5px 0px 20px 0px rgba(7, 12, 17, 0.9);
+  // z-index: 100;
+}
+
+.collapsibleCardUnfocused {
+  margin: 15px;
+  // box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  padding: 0px 0px;
+  overflow: hidden;
+  height: 500px;
+  width: 515px;
+  border-radius: 16px;
+  box-shadow: 5px 0px 20px 0px rgba(7, 12, 17, 0.9);
+  margin-left: -500px;
 }
 
 .content {
@@ -415,6 +431,45 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  animation: fadeIn 0.5s linear;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.gradientContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.gradientOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  pointer-events: none;
+}
+
+.collapsibleImageUnfocused {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 5px 0px 20px 0px rgba(7, 12, 17, 0.9);
+  background: linear-gradient(
+      0deg,
+      rgba(39, 41, 53, 0.5) 0%,
+      rgba(39, 41, 53, 0.5) 100%
+    )
+    lightgray 50% / cover no-repeat;
 }
 
 .cardTitle2 {
@@ -445,7 +500,7 @@
   object-fit: fill;
   background-image: url('/Home/HomeBg2.png');
   background-size: cover;
-  background-position: relative;
+  background-position: center;
   background-repeat: no-repeat;
 
   @media (max-width: 835px) {
@@ -457,7 +512,7 @@
     gap: 0px;
     background-image: url('/Home/HomeMobileBg2.png');
     background-size: cover;
-    background-position: relative;
+    background-position: center;
     background-repeat: no-repeat;
   }
 }

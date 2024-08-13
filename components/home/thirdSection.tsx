@@ -59,8 +59,8 @@ const ThirdSection = ({ data }: any) => {
             className={`${styles.link} ${isActive(0) ? styles.active : ''}`}>
             <BodyBold
               variant={4}
-              color="#F2F3F7"
-              className={`${isActive(0) ? styles.active : ''}`}>
+              className={`${isActive(0) ? styles.active : ''}`}
+              style={{ color: isActive(0) ? '#F2F3F7' : '#9198B0' }}>
               新手投资者
             </BodyBold>
           </UnstyledButton>
@@ -72,7 +72,7 @@ const ThirdSection = ({ data }: any) => {
             className={`${styles.link} ${isActive(1) ? styles.active : ''}`}>
             <BodyBold
               variant={4}
-              color="#F2F3F7"
+              style={{ color: isActive(1) ? '#F2F3F7' : '#9198B0' }}
               className={`${isActive(1) ? styles.active : ''}`}>
               专业投资者
             </BodyBold>
@@ -100,16 +100,20 @@ const ThirdSection = ({ data }: any) => {
                     : styles.illustration
                 }
               />
-              <Body
-                variant={10}
+              <BodyBold
+                variant={isActive(index) ? 4 : 6}
                 color={isActive(index) ? '#F2F3F7' : '#9198B0'}
-                style={{ marginTop: 20 }}>
+                style={{ marginTop: isActive(index) ? 20 : 20 }}>
                 {card.title}
-              </Body>
-              <div style={{ marginTop: 0 }}>
+              </BodyBold>
+              <div
+                style={{
+                  marginTop: isActive(index) ? 10 : 0,
+                  marginBottom: isActive(index) ? 0 : 30,
+                }}>
                 {card.bulletPoints.map((point: any, index2: number) => (
                   <Body
-                    variant={1}
+                    variant={isActive(index) ? 1 : 2}
                     color={isActive(index) ? '#F2F3F7' : '#9198B0'}
                     key={index2}
                     style={{

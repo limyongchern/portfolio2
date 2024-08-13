@@ -1,7 +1,7 @@
 import styles from './home.module.scss';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { Body } from 'components/typography';
+import { Body, BodyBold } from 'components/typography';
 import { MagicMotion } from 'react-magic-motion';
 import { PauseCircle, PlayCircle } from '@phosphor-icons/react';
 
@@ -19,40 +19,93 @@ const SecondSection = ({ data }: any) => {
     return () => clearTimeout(timer);
   }, [cardOpen, isTimerPaused]);
 
+  const getZIndex = (index: number) => {
+    if (index === 0) {
+      if (cardOpen === 0) return 4;
+      if (cardOpen === 1) return 3;
+      if (cardOpen === 2) return 2;
+      if (cardOpen === 3) return 1;
+    }
+    if (index === 1) {
+      if (cardOpen === 0) return 3;
+      if (cardOpen === 1) return 4;
+      if (cardOpen === 2) return 3;
+      if (cardOpen === 3) return 2;
+    }
+    if (index === 2) {
+      if (cardOpen === 0) return 2;
+      if (cardOpen === 1) return 3;
+      if (cardOpen === 2) return 4;
+      if (cardOpen === 3) return 3;
+    }
+    if (index === 3) {
+      if (cardOpen === 0) return 1;
+      if (cardOpen === 1) return 2;
+      if (cardOpen === 2) return 3;
+      if (cardOpen === 3) return 4;
+    }
+  };
+
   const Cards = ({ data, index }: any) => {
     return (
       <div
-        className={styles.collapsibleCard}
+        className={
+          index === 0 ? styles.collapsibleCard : styles.collapsibleCardUnfocused
+        }
         onMouseEnter={() => setCardOpen(index)}
         onClick={() => {
           setCardOpen(index);
         }}
         key={index}
         style={{
-          width: cardOpen === index ? '440px' : '177px',
+          width: cardOpen === index ? '680px' : '680px',
+          zIndex: getZIndex(index),
         }}>
-        <Image
-          src={data.image}
-          className={styles.collapsibleImage}
-          alt="wolfavatar"
-        />
-
         {cardOpen === index ? (
-          <div style={{ marginTop: index === 1 ? -210 : -130 }}>
-            <Body variant={9} color="white" className={styles.cardTitleOpen}>
-              {data.title}
-            </Body>
-            <Body
-              variant={10}
-              color="white"
-              className={styles.cardDescription2}>
-              {data.description}
-            </Body>
-          </div>
+          <Image
+            src={data.image}
+            className={
+              cardOpen === index
+                ? styles.collapsibleImage
+                : styles.collapsibleImageUnfocused
+            }
+            alt="wolfavatar"
+          />
         ) : (
-          <Body variant={9} color="white" className={styles.cardTitle2}>
-            {data.title}
-          </Body>
+          <div className={styles.gradientContainer}>
+            <Image
+              src={data.image}
+              className={
+                cardOpen === index
+                  ? styles.collapsibleImage
+                  : styles.collapsibleImageUnfocused
+              }
+              alt="wolfavatar"
+            />
+            <div className={styles.gradientOverlay}></div>
+          </div>
+        )}
+
+        {cardOpen === index && (
+          <div
+            style={{
+              display: 'flex',
+              height: 25,
+              padding: '0px 40px',
+
+              width: '60%',
+            }}>
+            <BodyBold
+              variant={4}
+              color="white"
+              style={{
+                marginBottom: 60,
+                display: 'inline-block',
+                alignSelf: 'flex-end',
+              }}>
+              {data.description}
+            </BodyBold>
+          </div>
         )}
       </div>
     );

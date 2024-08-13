@@ -79,7 +79,7 @@ const SecondSectionData = {
     {
       id: 4,
       title: '4',
-      description: '每个星球都是一个理想的投资交流场所，故事由此开始…',
+      description: '每个星球都是一个理想的投资交流场所，故事由此开始...',
       image: TempImage4,
     },
   ],
