@@ -21,7 +21,7 @@ import LogoSVG from 'public/wolfplanet.svg';
 import { Translate } from '@phosphor-icons/react';
 import { useRouter } from 'next/router';
 import GlobeIcon from 'public/GlobeIcon.svg';
-
+import { Footer } from 'components/navigation';
 interface IProps {
   baseProps?: Partial<HeaderProps>;
 }
@@ -166,11 +166,11 @@ const Header = (props: IProps) => {
         </div>
       </div>
       {menuOpen && (
-        <Stack
-          mt={'42px'}
-          align="center"
-          justify="center"
-          spacing={width > 400 ? '42px' : '30px'}
+        <div
+          // mt={'42px'}
+          // align="center"
+          // justify="center"
+          // spacing={width > 400 ? '42px' : '30px'}
           className={styles.linkMobile}>
           {links.map((link) => (
             <Link
@@ -194,7 +194,7 @@ const Header = (props: IProps) => {
               </BodyBold>
             </Link>
           ))}
-          <Divider color="#3E404E" w={'100%'} />
+          <Divider color="#3E404E" w={'100%'} mb={'30px'} />
           {languages.map((language, index) => (
             <div
               key={index}
@@ -204,7 +204,8 @@ const Header = (props: IProps) => {
               <BodyBold variant={2}>{language.name}</BodyBold>
             </div>
           ))}
-        </Stack>
+          <Footer />
+        </div>
       )}
     </HeaderMantine>
   );

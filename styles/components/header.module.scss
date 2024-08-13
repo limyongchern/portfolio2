@@ -139,6 +139,13 @@
 }
 
 .linkMobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 42px;
+  z-index: 100;
+  background: var(--Main-Primary, #272935);
   @media screen and (min-width: 836px) {
     display: none;
   }
@@ -146,6 +153,7 @@
 
 .linkClicked {
   color: var(--Main-Secondary, #4178fa);
+  margin-bottom: 30px;
 
   @media (max-width: 835px) {
     text-underline-offset: 3px;
@@ -157,6 +165,8 @@
 
 .linkUnclicked {
   color: var(--Main-BG, #f2f3f7);
+  margin-bottom: 30px;
+
   // font-size: 20px;
   // font-style: normal;
   // font-weight: 400;
@@ -170,6 +180,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin-bottom: 30px;
 }
 
 .languageUnclicked {
@@ -178,4 +189,5 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin-bottom: 30px;
 }
