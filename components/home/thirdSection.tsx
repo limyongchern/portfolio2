@@ -35,7 +35,7 @@ const ThirdSection = ({ data }: any) => {
                 {card.bulletPoints.map((point: any, index: number) => (
                   <Body
                     variant={1}
-                    color="#F2F3F7"
+                    color="#9198B0"
                     key={index}
                     style={{
                       marginTop: '8px',

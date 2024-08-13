@@ -10,7 +10,7 @@
   object-fit: fill;
   background-image: url('/Home/HomeBg6.png');
   background-size: cover;
-  background-position: relative;
+  background-position: center;
   background-repeat: no-repeat;
   margin-top: -2px;
   @media (max-width: 835px) {
@@ -88,7 +88,7 @@
   background-color: #272935;
   background-image: url('/Home/HomeMobileBg6.png');
   background-size: cover;
-  background-position: relative;
+  background-position: center;
   background-repeat: no-repeat;
   position: relative;
   display: flex;

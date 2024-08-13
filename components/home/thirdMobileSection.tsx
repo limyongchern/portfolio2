@@ -44,7 +44,7 @@ const ThirdMobileSection = ({ data }: any) => {
                 {card.bulletPoints.map((point: any, index: number) => (
                   <Body
                     variant={2}
-                    color="#F2F3F7"
+                    color="#9198B0"
                     key={index}
                     style={{
                       marginTop: '5px',
@@ -95,7 +95,7 @@ const ThirdMobileSection = ({ data }: any) => {
             className={`${styles.link} ${isActive(0) ? styles.active : ''}`}>
             <BodyBold
               variant={1}
-              color="#F2F3F7"
+              style={{ color: isActive(0) ? '#F2F3F7' : '#9198B0' }}
               className={`${isActive(0) ? styles.active : ''}`}>
               新手投资者
             </BodyBold>
@@ -108,7 +108,7 @@ const ThirdMobileSection = ({ data }: any) => {
             className={`${styles.link} ${isActive(1) ? styles.active : ''}`}>
             <BodyBold
               variant={1}
-              color="#F2F3F7"
+              style={{ color: isActive(1) ? '#F2F3F7' : '#9198B0' }}
               className={`${isActive(1) ? styles.active : ''}`}>
               专业投资者
             </BodyBold>

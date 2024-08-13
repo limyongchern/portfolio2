@@ -34,11 +34,13 @@
 .transparent {
   background-color: transparent !important; // Ensure the background is transparent
   transition: background-color 0.5s ease-in-out;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
 }
 
 .normalHeader {
   background-color: #272935;
   transition: background-color 0.5s ease-in-out;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
 
   @media screen and (max-width: 835px) {
     background-color: #272935;
@@ -80,9 +82,10 @@
 
 .menu {
   border-radius: 20px;
-  background: var(--neutral-glass-1-add-blur, rgba(255, 255, 255, 0.12));
+  background: var(--Main-Primary-Varient, #272935);
   border: transparent;
-
+  margin-top: 22px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
   /* Glassmorphism/BG Blur 1 */
   backdrop-filter: blur(10px);
   display: flex;
@@ -90,6 +93,11 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
+}
+
+.menuItem:hover {
+  background-color: transparent;
+  color: #4178fa;
 }
 
 .nav .link {

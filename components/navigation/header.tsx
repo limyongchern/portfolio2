@@ -134,14 +134,14 @@ const Header = (props: IProps) => {
               </Menu.Target>
 
               <Menu.Dropdown className={styles.menu}>
-                <Menu.Item>
+                <Menu.Item className={styles.menuItem}>
                   {
                     <BodyBold variant={5} color="#F2F3F7">
                       English
                     </BodyBold>
                   }
                 </Menu.Item>
-                <Menu.Item>
+                <Menu.Item className={styles.menuItem}>
                   {
                     <BodyBold variant={5} color="#4178FA">
                       简体中文

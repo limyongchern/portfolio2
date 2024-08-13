@@ -6,10 +6,12 @@
   height: 30%;
   position: relative;
   display: flex;
+  // flex-direction: row;
   flex-direction: column;
   padding: 100px 0 390px 0;
   overflow: hidden;
-  margin-top: -2px;
+  margin-top: -3px;
+  align-items: center;
 }
 
 .planetSize {
@@ -55,6 +57,11 @@
 }
 
 .planetImage {
+  opacity: 1;
+  animation: moveIn 0.3s linear;
+}
+
+.transitionAnimation {
   opacity: 1;
   animation: moveIn 0.3s linear;
 }
@@ -132,7 +139,8 @@
 .planetCardMobileDeselect {
   display: flex;
   width: 300px;
-  height: 380px;
+  height: 450px;
+  margin-top: 40px;
   padding-top: 29px;
   flex-direction: column;
   align-items: center;

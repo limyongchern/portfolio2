@@ -42,7 +42,11 @@ import IllustrationDAOCommunity from 'public/Home/IllustrationDAOCommunity.png';
 import IllustrationRevenue from 'public/Home/IllustrationRevenue.png';
 
 //images for FifthSection
-import iPhoneImage from 'public/Home/iPhoneImage.png';
+import iPhoneImage1 from 'public/Home/iPhoneImage1.png';
+import iPhoneImage2 from 'public/Home/iPhoneImage2.png';
+import iPhoneImage3 from 'public/Home/iPhoneImage3.png';
+import iPhoneImage4 from 'public/Home/iPhoneImage4.png';
+import iPhoneImage5 from 'public/Home/iPhoneImage5.png';
 
 interface IProps {}
 
@@ -208,31 +212,31 @@ const FifthSectionData = {
       id: 1,
       title: 'DAO社区',
       description: '让每个人拥有社区治理权力',
-      image: iPhoneImage,
+      image: iPhoneImage1,
     },
     {
       id: 2,
       title: 'NFT',
       description: '收藏数字资产藏品',
-      image: iPhoneImage,
+      image: iPhoneImage2,
     },
     {
       id: 3,
       title: '投资课程',
       description: '来自全球的投资课程分享任你选择 ',
-      image: iPhoneImage,
+      image: iPhoneImage3,
     },
     {
       id: 4,
       title: '盲盒',
       description: '收获意想不到的惊喜与乐趣',
-      image: iPhoneImage,
+      image: iPhoneImage4,
     },
     {
       id: 5,
       title: '狼牙',
       description: '更多权益和活动等着你',
-      image: iPhoneImage,
+      image: iPhoneImage5,
     },
   ],
 };
