@@ -19,13 +19,13 @@ const FirstSection = ({ data }: any) => {
             <BodyBold
               color="#F2F3F7"
               variant={11}
-              style={{ marginTop: 0, width: 620, whiteSpace: 'nowrap' }}>
+              style={{ marginTop: 0, width: 500, whiteSpace: 'nowrap' }}>
               {data.headline2}
             </BodyBold>
             <Body
               color="#9198B0"
               variant={8}
-              style={{ marginTop: 15, width: 550 }}>
+              style={{ marginTop: 15, width: 510 }}>
               {data.subheader}
             </Body>
           </span>
