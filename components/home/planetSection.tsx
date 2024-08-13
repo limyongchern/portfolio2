@@ -82,8 +82,8 @@ const PlanetSection = ({ data }: any) => {
                   style={{
                     // position: 'absolute',
                     // top: '-260px',
-                    width: '480px',
-                    height: '480px',
+                    width: '400px',
+                    height: '400px',
                     // width: '130%',
                     // height: '450%',
                   }}
