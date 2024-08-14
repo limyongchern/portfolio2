@@ -21,6 +21,10 @@ interface IProps {
   baseProps?: Partial<FooterProps>;
 }
 
+const PrivacyPolicyText = '隐私政策';
+const TermsOfUseText = '用户协议';
+const WolfPlanetAllRights = '© 2024 WolfPlanet 版权所有';
+
 const Footer = (props: IProps) => {
   const [isMobile, setIsMobile] = useState(false);
   const [width, setWidth] = useState<number>(
@@ -83,7 +87,7 @@ const Footer = (props: IProps) => {
                       variant={5}
                       color="#F2F3F7"
                       style={{ cursor: 'pointer' }}>
-                      隐私条款 &nbsp;
+                      {PrivacyPolicyText} &nbsp;
                     </BodyBold>
                   </Link>
                   <Body variant={2} color="#9198B0" style={{ marginTop: 4 }}>
@@ -94,11 +98,11 @@ const Footer = (props: IProps) => {
                       variant={5}
                       color="#F2F3F7"
                       style={{ cursor: 'pointer' }}>
-                      使用条款 &nbsp;
+                      {TermsOfUseText} &nbsp;
                     </BodyBold>
                   </Link>
                   <Body variant={2} color="#9198B0" style={{ marginTop: 4 }}>
-                    © 2024 WolfPlanet 版权所有
+                    {WolfPlanetAllRights}
                   </Body>
                 </span>
               </Flex>
@@ -133,7 +137,7 @@ const Footer = (props: IProps) => {
                     variant={5}
                     color="#F2F3F7"
                     style={{ cursor: 'pointer' }}>
-                    隐私条款 &nbsp;
+                    {PrivacyPolicyText} &nbsp;
                   </BodyBold>
                 </Link>
                 <Body variant={2} color="#9198B0" style={{ marginTop: 2 }}>
@@ -144,13 +148,13 @@ const Footer = (props: IProps) => {
                     variant={5}
                     color="#F2F3F7"
                     style={{ cursor: 'pointer' }}>
-                    使用条款 &nbsp;
+                    {TermsOfUseText} &nbsp;
                   </BodyBold>
                 </Link>
               </span>
             </Flex>
             <Body variant={2} color="#9198B0" style={{ marginTop: -5 }}>
-              © 2024 WolfPlanet 版权所有
+              {WolfPlanetAllRights}
             </Body>
           </Stack>
         </div>

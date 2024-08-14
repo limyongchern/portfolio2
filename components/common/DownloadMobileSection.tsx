@@ -30,7 +30,7 @@ const DownloadMobileSection = () => {
           <BodyBold color="#F2F3F7" variant={3} style={{}}>
             {DownloadSectionData.headline}
           </BodyBold>
-          <Body color="#F2F3F7" variant={1} style={{ marginTop: 20 }}>
+          <Body color="#9198B0" variant={1} style={{ marginTop: 20 }}>
             {DownloadSectionData.subheader}
           </Body>
         </div>

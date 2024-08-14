@@ -82,7 +82,25 @@ const Header = (props: IProps) => {
 
   useEffect(() => {
     setActive(router.pathname);
+    console.log('header router', router);
   }, [router.pathname]);
+
+  const isActivePath = (path: string) => {
+    if (router.pathname === path) {
+      return true;
+    } else {
+      if (
+        router.pathname.split('/')[1] === 'announcement' &&
+        path === '/about'
+      ) {
+        return true;
+      }
+      if (router.pathname.split('/')[1] === 'activity' && path === '/about') {
+        return true;
+      }
+    }
+  };
+
   return (
     <HeaderMantine
       height={'9rem'}
@@ -108,13 +126,11 @@ const Header = (props: IProps) => {
                 key={index}
                 onClick={() => router.push(link.link)}
                 className={`${styles.link} ${
-                  router.pathname === link.link ? styles.active : ''
+                  isActivePath(link.link) ? styles.active : ''
                 }`}>
                 <BodyBold
                   variant={5}
-                  className={`${
-                    router.pathname === link.link ? styles.active : ''
-                  }`}>
+                  className={`${isActivePath(link.link) ? styles.active : ''}`}>
                   {link.name}
                 </BodyBold>
               </UnstyledButton>
@@ -177,7 +193,9 @@ const Header = (props: IProps) => {
               key={link.name}
               href={link.link}
               className={
-                active === link.link ? styles.linkClicked : styles.linkUnclicked
+                isActivePath(link.link)
+                  ? styles.linkClicked
+                  : styles.linkUnclicked
               }
               onClick={(event) => {
                 event.preventDefault();
@@ -187,9 +205,7 @@ const Header = (props: IProps) => {
               }}>
               <BodyBold
                 variant={2}
-                className={`${
-                  router.pathname === link.link ? styles.active : ''
-                }`}>
+                className={`${isActivePath(link.link) ? styles.active : ''}`}>
                 {link.name}
               </BodyBold>
             </Link>

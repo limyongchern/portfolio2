@@ -314,7 +314,7 @@ const AboutUs = () => {
                       <Body
                         variant={2}
                         lh={1.5}
-                        color="#F2F3F7"
+                        color="#9198B0"
                         // style={{ letterSpacing: 1.2 }}
                       >
                         {section.description}
