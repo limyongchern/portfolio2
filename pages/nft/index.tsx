@@ -14,6 +14,7 @@ import BlueFull from 'public/NFT/BlueFull.png';
 import Mobile1 from 'public/NFT/Mobile1.png';
 import Mobile2 from 'public/NFT/Mobile2.png';
 import Mobile3 from 'public/NFT/Mobile3.png';
+import WholePlanet3 from 'public/Planet/wholePlanet3.png';
 
 import { useRef } from 'react';
 import gsap from 'gsap';
@@ -273,11 +274,19 @@ const Nft = () => {
       {/* First Section */}
       <div className={styles.container}>
         <div className={styles.containerWidth}>
-          <Stack justify="center" align="center" spacing={'24px'}>
+          <Stack justify="center" align="center" spacing={'24px'} mt={'0px'}>
+            {isMobile && (
+              <Image
+                src={WholePlanet3}
+                alt=""
+                className={styles.planetImage}
+                style={{ marginTop: -50 }}
+              />
+            )}
             <BodyBold
               color="#F2F3F7"
               variant={7}
-              style={{ textAlign: 'center' }}>
+              style={{ textAlign: 'center', marginTop: isMobile ? 0 : 150 }}>
               {FirstSectionData.headline}
             </BodyBold>
             <Body
@@ -324,7 +333,6 @@ const Nft = () => {
                           alt=""
                           className={`${styles[`wolfImage${index + 1}`]}`}
                         />
-                        123
                       </div>
                     ))}
                   </div>
@@ -402,9 +410,9 @@ const Nft = () => {
           </div>
         </div>
         <div
-          id="third-section"
-          className={styles.thirdContainer}
-          style={{ padding: '10px 0px 0px 0px' }}>
+          id="fourth-section"
+          className={styles.fourthContainer}
+          style={{ padding: '50px 0px 0px 0px' }}>
           <div className={styles.thirdWidthContainer}>
             {isMobile ? (
               <div className={styles.secondPartContainer}>

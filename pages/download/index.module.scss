@@ -1,7 +1,7 @@
 @use 'styles/common/colors';
 
 .container {
-  background-image: url('/Download/DownloadDesktopBg.png');
+  background-image: url('/Download/DownloadBg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -11,6 +11,13 @@
   align-items: center;
   justify-content: center;
   gap: 100px;
+  @media (max-width: 835px) {
+    background-image: url('/Download/DownloadMobileBg.png');
+    height: 120vh;
+  }
+  @media (max-width: 380px) {
+    height: 150vh;
+  }
 }
 
 .widthContainer {
@@ -54,7 +61,7 @@
   @media (max-width: 835px) {
     width: 310px;
     height: 421px;
-    margin-top: -50px;
+    margin-top: 50px;
   }
 }
 

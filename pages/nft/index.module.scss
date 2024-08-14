@@ -1,14 +1,17 @@
 .container {
   // height: 100%;
   background: var(--Main-Primary-Varient, #272935);
-  background-image: url('/NftFirstSectionBg.png');
+  background-image: url('/NFT/NftBg1.png');
   background-size: cover;
-  // background-position: center;
+  background-position: center;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 120px;
+  @media (max-width: 835px) {
+    background-image: url('/NFT/NftMobileBg1.png');
+  }
 }
 
 .containerWidth {
@@ -44,14 +47,17 @@
 .secondContainer {
   // height: 100%;
   background: var(--Main-Primary, #3e404e);
-  // background-image: url('/NftFirstSectionBg.png');
-  // background-size: cover;
-  // background-position: center;
-  // background-repeat: no-repeat;
+  background-image: url('/NFT/NftBg2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 120px;
+  @media (max-width: 835px) {
+    background-image: url('/NFT/NftMobileBg2.png');
+  }
 }
 
 .secondContainerWidth {
@@ -156,21 +162,48 @@
   height: 113px;
 }
 
+.planetImage {
+  width: 330px;
+  height: 330px;
+}
+
 .thirdContainer {
   background: var(--Main-Primary-Varient, #272935);
-  // width: 100vw;
-  // height: 80vh;
+  background-image: url('/NFT/NftBg3.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  // gap: 100px;
-  // padding: 50px 0;
   @media (max-width: 835px) {
-    // height: 100%;
     gap: 0px;
+    background-image: url('/NFT/NftMobileBg3.png');
+    margin-top: -2px;
   }
   @media (max-width: 380px) {
-    // height: 100%;
+    background-image: url('/NFT/NftMobileBg3.png');
+    gap: 0px;
+  }
+}
+
+.fourthContainer {
+  background: var(--Main-Primary-Varient, #272935);
+  background-image: url('/NFT/NftBg4.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 835px) {
+    gap: 0px;
+    background-image: url('/NFT/NftMobileBg4.png');
+    margin-top: -2px;
+    padding-top: 50px;
+  }
+  @media (max-width: 380px) {
+    background-image: url('/NFT/NftMobileBg4.png');
     gap: 0px;
   }
 }

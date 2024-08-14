@@ -48,7 +48,8 @@ const Download = () => {
           <span
             style={{
               textAlign: isMobile ? 'center' : 'start',
-              marginBottom: 100,
+              marginBottom: isMobile ? 0 : 100,
+              marginTop: isMobile ? 0 : 0,
             }}>
             <BodyBold color="#F2F3F7" variant={7} style={{ marginTop: 15 }}>
               {data.headline}
