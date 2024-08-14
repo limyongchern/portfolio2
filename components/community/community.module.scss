@@ -1,9 +1,16 @@
 .container {
   background: var(--Main-Primary-Varient, #272935);
+  background-image: url('/Community/CommunityBg1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 100px;
+  @media (max-width: 835px) {
+    background-image: url('/Community/CommunityMobileBg1.png');
+  }
 }
 
 .widthContainer {
@@ -39,7 +46,11 @@
 
 .containerSecondSection {
   // background: linear-gradient(to bottom, #2e303c, #323442, #3e404e);
-  background-image: url('/contactMidBg.png');
+  // background-image: url('/contactMidBg.png');
+  background-image: url('/Community/CommunityBg2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -141,7 +152,10 @@
   align-items: flex-start;
   gap: 18.667px;
   border-radius: 12.444px;
-  background: var(--Main-Primary-Varient, #272935);
+  background: var(
+    --Gradients-Card,
+    linear-gradient(180deg, #3e404e 0%, #272935 100%)
+  );
   backdrop-filter: blur(31.11111068725586px);
   z-index: 1;
   position: relative;
@@ -235,7 +249,8 @@
 
 .containerSecondMobileSection {
   background: linear-gradient(to bottom, #2e303c, #323442, #3e404e);
-  background-image: url('/CommunityDaoBg.png');
+  // background-image: url('/CommunityDaoBg.png');
+  background-image: url('/Community/CommunityMobileBg2.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -262,9 +277,12 @@
   gap: 18.667px;
   flex-shrink: 0;
   border-radius: 12.444px;
-  background: var(--Main-Primary-Varient, #272935);
-  backdrop-filter: blur(31.11111068725586px);
   margin-bottom: 36px;
+  background: var(
+    --Gradients-Card,
+    linear-gradient(180deg, #3e404e 0%, #272935 100%)
+  );
+  backdrop-filter: blur(31.11111068725586px);
 }
 
 .daoCardImagesMobile1 {
@@ -339,7 +357,10 @@
 
 .fourthContainer {
   // background: var(--Main-Primary-Varient, #272935);
-  background-image: url('/contactMidBg.png');
+  background-image: url('/Community/CommunityBg4.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -348,7 +369,7 @@
 
 .fourthMobileContainer {
   // background: var(--Main-Primary-Varient, #272935);
-  background-image: url('/PersonalizedBg.png');
+  background-image: url('/Community/CommunityMobileBg4.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -357,6 +378,7 @@
   justify-content: center;
   gap: 100px;
   margin-bottom: -2px;
+  margin-top: -2px;
 }
 
 .fourthInnerContainer {
@@ -372,4 +394,28 @@
   @media (max-width: 835px) {
     flex-direction: column;
   }
+}
+
+.fifthContainer {
+  background: var(--Main-Primary-Varient, #272935);
+  background-image: url('/Community/CommunityBg5.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
+.fifthMobileContainer {
+  background: var(--Main-Primary-Varient, #272935);
+  background-image: url('/Community/CommunityMobileBg5.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
 }

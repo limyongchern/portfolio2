@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const FifthSection = ({ data }: any) => {
   return (
-    <div id="first-section" className={styles.container}>
+    <div id="first-section" className={styles.fifthContainer}>
       <div className={styles.widthContainer}>
         <span style={{ textAlign: 'start' }}>
           <BodyBold color="#F2F3F7" variant={7} style={{ marginTop: 15 }}>
