@@ -14,7 +14,7 @@ import BlueFull from 'public/NFT/BlueFull.png';
 import Mobile1 from 'public/NFT/Mobile1.png';
 import Mobile2 from 'public/NFT/Mobile2.png';
 import Mobile3 from 'public/NFT/Mobile3.png';
-import WholePlanet3 from 'public/Planet/wholePlanet3.png';
+import WholePlanet3 from 'public/Planet/wholeplanet3.png';
 
 import { useRef } from 'react';
 import gsap from 'gsap';
