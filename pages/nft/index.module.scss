@@ -118,7 +118,7 @@
   opacity: 0;
   margin-top: -225px;
   margin-bottom: 20px;
-  z-index: 2;
+  z-index: 10;
 }
 @keyframes fadeIn {
   0% {
@@ -130,6 +130,26 @@
   100% {
     opacity: 1;
   }
+}
+
+.wolfImageIndex1 {
+  z-index: 1;
+}
+
+.wolfImageIndex2 {
+  z-index: 2;
+}
+
+.wolfImageIndex3 {
+  z-index: 5;
+}
+
+.wolfImageIndex4 {
+  z-index: 4;
+}
+
+.wolfImageIndex5 {
+  z-index: 3;
 }
 
 .wolfImage1 {
@@ -160,6 +180,7 @@
 .wolfImageFull {
   width: 113px;
   height: 113px;
+  z-index: 6;
 }
 
 .planetImage {

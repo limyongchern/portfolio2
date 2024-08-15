@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './index.module.scss';
-import { Button, Flex, Stack } from '@mantine/core';
-import { Body, BodyBold, Heading } from 'components/typography';
-import { CaretCircleLeft, CaretCircleRight } from '@phosphor-icons/react';
-import dynamic from 'next/dynamic';
+import { Stack } from '@mantine/core';
+import { Body, BodyBold } from 'components/typography';
 import Image from 'next/image';
 import BlueEar from 'public/NFT/BlueEar.png';
 import BlueEyebrow from 'public/NFT/BlueEyebrow.png';
@@ -16,7 +14,6 @@ import Mobile2 from 'public/NFT/Mobile2.png';
 import Mobile3 from 'public/NFT/Mobile3.png';
 import WholePlanet3 from 'public/Planet/wholeplanet3.png';
 
-import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
@@ -320,13 +317,16 @@ const Nft = () => {
                     style={{
                       display: 'flex',
                       flexDirection: 'row',
+                      position: 'relative',
                       gap: 24,
                       marginTop: 20,
                       marginBottom: 20,
                     }}>
                     {SecondSectionData.cards.map((item, index) => (
                       <div
-                        className={`box${index + 1} ${styles.imageContainer}`}
+                        className={`box${index + 1} ${styles.imageContainer} ${
+                          styles[`wolfImageIndex${index + 1}`]
+                        }`}
                         key={index}>
                         <Image
                           src={item}
@@ -412,7 +412,9 @@ const Nft = () => {
         <div
           id="fourth-section"
           className={styles.fourthContainer}
-          style={{ padding: '50px 0px 0px 0px' }}>
+          style={{
+            padding: isMobile ? '90px 0px 50px 0px' : '100px 0px 100px 0px',
+          }}>
           <div className={styles.thirdWidthContainer}>
             {isMobile ? (
               <div className={styles.secondPartContainer}>

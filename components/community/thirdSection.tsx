@@ -16,11 +16,11 @@ const ThirdSection = ({ data }: any) => {
                 {data.firstCard.title}
               </BodyBold>
             </span>
-            <Body color="#9198B0" variant={1}>
+            <Body color="#F2F3F7" variant={1}>
               {data.firstCard.description}
             </Body>
           </div>
-          <Stack spacing={'28.18px'}>
+          <Stack spacing={'15.71px'}>
             <div className={styles.cardSubContainer}>
               <Flex gap={'9.39px'} align={'center'}>
                 <Image
@@ -32,7 +32,7 @@ const ThirdSection = ({ data }: any) => {
                   {data.secondCard.title}
                 </BodyBold>
               </Flex>
-              <Body color="#9198B0" variant={1}>
+              <Body color="#F2F3F7" variant={1}>
                 {data.secondCard.description}
               </Body>
             </div>
@@ -47,7 +47,7 @@ const ThirdSection = ({ data }: any) => {
                   {data.thirdCard.title}
                 </BodyBold>
               </Flex>
-              <Body color="#9198B0" variant={1}>
+              <Body color="#F2F3F7" variant={1}>
                 {data.thirdCard.description}
               </Body>
             </div>
