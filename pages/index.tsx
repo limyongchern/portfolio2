@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+
 import FirstSection from 'components/home/firstSection';
 import FirstMobileSection from 'components/home/firstMobileSection';
 import SecondSection from 'components/home/secondSection';
@@ -50,11 +52,19 @@ import iPhoneImage5 from 'public/Home/iPhoneImage5.png';
 
 interface IProps {}
 
-const FirstSectionData = {
+const FirstSectionDataCn = {
   headline1: '全球领先的',
   headline2: 'Web3投资交流社区',
   subheader:
     'WolfPlanet 是基于区块链技术，让投资知识交流无界限，让创作更有价值',
+  homeHeroImage: HomeHeroPhone,
+};
+
+const FirstSectionDataEn = {
+  headline1: 'Globally Leading Web3',
+  headline2: 'Investment and Communication Community',
+  subheader:
+    'Based on blockchain technology, make investment knowledge exchange limitless and creation more valuable',
   homeHeroImage: HomeHeroPhone,
 };
 
@@ -242,10 +252,12 @@ const FifthSectionData = {
 };
 
 const Home = (props: IProps) => {
+  const router = useRouter();
   const [isMobile, setIsMobile] = useState(false);
   const [width, setWidth] = useState<number>(
     typeof window !== 'undefined' ? window.innerWidth : 0
   );
+
   const handleWindowSizeChange = () => {
     setWidth(typeof window !== 'undefined' ? window.innerWidth : 0);
   };
@@ -256,6 +268,10 @@ const Home = (props: IProps) => {
       setIsMobile(true);
     } else setIsMobile(false);
   }, [width]);
+
+  useEffect(() => {
+    console.log('homepage router.locale', router.locale);
+  }, [router]);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -272,7 +288,11 @@ const Home = (props: IProps) => {
     <>
       {!isMobile && (
         <div>
-          <FirstSection data={FirstSectionData} />
+          <FirstSection
+            data={
+              router.locale === 'en' ? FirstSectionDataEn : FirstSectionDataCn
+            }
+          />
           <SecondSection data={SecondSectionData} />
           <ThirdSection data={ThirdSectionData} />
           <FourthSection data={FourthSectionData} />
@@ -284,7 +304,7 @@ const Home = (props: IProps) => {
 
       {isMobile && (
         <>
-          <FirstMobileSection data={FirstSectionData} />
+          <FirstMobileSection data={FirstSectionDataCn} />
           <SecondMobileSection data={SecondSectionData} />
           <ThirdMobileSection data={ThirdSectionData} />
           <FourthMobileSection data={FourthSectionData} />

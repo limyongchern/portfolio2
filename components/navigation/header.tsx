@@ -38,6 +38,8 @@ const links = [
 const languages = [{ name: 'English' }, { name: '简体中文' }];
 
 const Header = (props: IProps) => {
+  const router = useRouter();
+  const { pathname, asPath, query, locale } = router;
   const [menuOpen, setMenuOpen] = useState(false);
   const [translateClicked, setTranslateClicked] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -52,8 +54,6 @@ const Header = (props: IProps) => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-  const router = useRouter();
 
   const [isMobile, setIsMobile] = useState(false);
   const [width, setWidth] = useState<number>(
@@ -84,6 +84,10 @@ const Header = (props: IProps) => {
     setActive(router.pathname);
     console.log('header router', router);
   }, [router.pathname]);
+
+  const setLanguage = (language: string) => {
+    router.push({ pathname, query }, asPath, { locale: language });
+  };
 
   const isActivePath = (path: string) => {
     if (router.pathname === path) {
@@ -150,14 +154,18 @@ const Header = (props: IProps) => {
               </Menu.Target>
 
               <Menu.Dropdown className={styles.menu}>
-                <Menu.Item className={styles.menuItem}>
+                <Menu.Item
+                  className={styles.menuItem}
+                  onClick={() => setLanguage('en')}>
                   {
                     <BodyBold variant={5} color="#F2F3F7">
                       English
                     </BodyBold>
                   }
                 </Menu.Item>
-                <Menu.Item className={styles.menuItem}>
+                <Menu.Item
+                  className={styles.menuItem}
+                  onClick={() => setLanguage('cn')}>
                   {
                     <BodyBold variant={5} color="#4178FA">
                       简体中文
