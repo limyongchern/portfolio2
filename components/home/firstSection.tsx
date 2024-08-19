@@ -10,7 +10,7 @@ const FirstSection = ({ data }: any) => {
   const Typewriter = ({
     srcString,
     srcString2,
-    minTypingDelay = 50,
+    minTypingDelay = 100,
     typingDelayVariation = 200,
   }: any) => {
     const [content, setContent] = useState('');
@@ -45,7 +45,7 @@ const FirstSection = ({ data }: any) => {
     }, [content, content2]);
 
     return (
-      <span>
+      <div style={{ height: 150 }}>
         <BodyBold color="#F2F3F7" variant={11} style={{ marginTop: 0 }}>
           {content} {srcString !== content && <span>|</span>}
         </BodyBold>
@@ -53,7 +53,7 @@ const FirstSection = ({ data }: any) => {
           {content2}{' '}
           {srcString2 !== content2 && content === srcString && <span>|</span>}
         </BodyBold>
-      </span>
+      </div>
     );
   };
 
