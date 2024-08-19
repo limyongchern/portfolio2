@@ -82,6 +82,23 @@
   }
 }
 
+.homeHeroVideo {
+  width: 600px;
+  height: 100%;
+  background: transparent;
+  // margin-left: -30px;
+  // height: 768px;
+  margin-top: 130px;
+  margin-left: -100px;
+  @media (max-width: 835px) {
+    width: 330px;
+    height: 100%;
+    margin-top: 0px;
+    align-items: center;
+    margin-left: 0px;
+  }
+}
+
 .downloadContainer {
   position: relative;
   width: 100%;
@@ -205,5 +222,55 @@
   @media (max-width: 835px) {
     max-width: 350px;
     max-height: 210px;
+  }
+}
+
+.cursorAnimate {
+  animation: 1s blink step-end infinite;
+  color: #fff;
+}
+@keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: #000;
+  }
+}
+@-moz-keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: #000;
+  }
+}
+@-webkit-keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: #000;
+  }
+}
+@-ms-keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: #000;
+  }
+}
+@-o-keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: #000;
   }
 }

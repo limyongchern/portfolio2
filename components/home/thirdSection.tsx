@@ -28,9 +28,9 @@ const ThirdSection = ({ data }: any) => {
               color={'#9198B0'}
             />
             <div>
-              <Heading variant={1} color="#F2F3F7" fw={700}>
+              <BodyBold variant={4} color="#F2F3F7">
                 {card.title}
-              </Heading>
+              </BodyBold>
               <div style={{ marginTop: 20 }}>
                 {card.bulletPoints.map((point: any, index: number) => (
                   <Body

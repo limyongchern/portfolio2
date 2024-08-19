@@ -6,6 +6,11 @@
 }
 
 @font-face {
+  font-family: fonts.$family-body-dmsans;
+  src: url('./fonts/DMSans-VariableFont_opsz,wght.ttf');
+}
+
+@font-face {
   font-family: fonts.$family-body;
   src: url('./fonts/NotoSansSC-Regular.ttf');
 }
@@ -71,3 +76,25 @@
 @include text-options('bodybold9', fonts.$family-body-bold, 18px, auto, 700);
 @include text-options('bodybold10', fonts.$family-body-bold, 66px, auto, 700);
 @include text-options('bodybold11', fonts.$family-body-bold, 54px, auto, 700);
+
+@include text-options(
+  'bodydmsans1',
+  fonts.$family-body-dmsans,
+  16px,
+  auto,
+  400
+);
+@include text-options(
+  'bodydmsans2',
+  fonts.$family-body-dmsans,
+  18px,
+  auto,
+  400
+);
+@include text-options(
+  'bodydmsans3',
+  fonts.$family-body-dmsans,
+  12px,
+  auto,
+  400
+);

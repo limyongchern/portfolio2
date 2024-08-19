@@ -27,12 +27,12 @@ interface IProps {
 }
 
 const links = [
-  { name: '主页', link: '/' },
-  { name: '关于我们', link: '/about' },
-  { name: '白皮书', link: '/whitepaper' },
-  { name: '社群', link: '/community' },
-  { name: 'NFT', link: '/nft' },
-  { name: '下载', link: '/download' },
+  { name: '主页', nameEn: 'Home', link: '/' },
+  { name: '关于我们', nameEn: 'About Us', link: '/about' },
+  { name: '白皮书', nameEn: 'White Paper', link: '/whitepaper' },
+  { name: '社群', nameEn: 'Community', link: '/community' },
+  { name: 'NFT', nameEn: 'NFT', link: '/nft' },
+  { name: '下载', nameEn: 'Download', link: '/download' },
 ];
 
 const languages = [{ name: 'English' }, { name: '简体中文' }];
@@ -132,11 +132,23 @@ const Header = (props: IProps) => {
                 className={`${styles.link} ${
                   isActivePath(link.link) ? styles.active : ''
                 }`}>
-                <BodyBold
-                  variant={5}
-                  className={`${isActivePath(link.link) ? styles.active : ''}`}>
-                  {link.name}
-                </BodyBold>
+                {router.locale === 'en' ? (
+                  <Heading
+                    variant={4}
+                    className={`${
+                      isActivePath(link.link) ? styles.active : ''
+                    }`}>
+                    {link.nameEn}
+                  </Heading>
+                ) : (
+                  <BodyBold
+                    variant={5}
+                    className={`${
+                      isActivePath(link.link) ? styles.active : ''
+                    }`}>
+                    {link.name}
+                  </BodyBold>
+                )}
               </UnstyledButton>
             ))}
 
@@ -158,7 +170,9 @@ const Header = (props: IProps) => {
                   className={styles.menuItem}
                   onClick={() => setLanguage('en')}>
                   {
-                    <BodyBold variant={5} color="#F2F3F7">
+                    <BodyBold
+                      variant={5}
+                      color={locale === 'en' ? '#4178FA' : 'white'}>
                       English
                     </BodyBold>
                   }
@@ -167,7 +181,9 @@ const Header = (props: IProps) => {
                   className={styles.menuItem}
                   onClick={() => setLanguage('cn')}>
                   {
-                    <BodyBold variant={5} color="#4178FA">
+                    <BodyBold
+                      variant={5}
+                      color={locale !== 'en' ? '#4178FA' : 'white'}>
                       简体中文
                     </BodyBold>
                   }

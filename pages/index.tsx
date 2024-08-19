@@ -53,6 +53,7 @@ import iPhoneImage5 from 'public/Home/iPhoneImage5.png';
 interface IProps {}
 
 const FirstSectionDataCn = {
+  headline: '全球领先的 Web3投资交流社区',
   headline1: '全球领先的',
   headline2: 'Web3投资交流社区',
   subheader:
@@ -61,6 +62,7 @@ const FirstSectionDataCn = {
 };
 
 const FirstSectionDataEn = {
+  headline: 'Globally Leading Web3 Investment and Communication Community',
   headline1: 'Globally Leading Web3',
   headline2: 'Investment and Communication Community',
   subheader:
