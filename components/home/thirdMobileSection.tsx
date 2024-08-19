@@ -51,7 +51,7 @@ const ThirdMobileSection = ({ data }: any) => {
                       lineHeight: '2rem',
                       width: 200,
                     }}>
-                    <li>{point}</li>
+                    &middot;{point}
                   </Body>
                 ))}
               </ul>
@@ -135,7 +135,7 @@ const ThirdMobileSection = ({ data }: any) => {
                       marginTop: '8px',
                       lineHeight: '2rem',
                     }}>
-                    <li>{point}</li>
+                    &middot;{point}
                   </Body>
                 )
               )}

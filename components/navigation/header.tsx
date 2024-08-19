@@ -86,6 +86,7 @@ const Header = (props: IProps) => {
   }, [router.pathname]);
 
   const setLanguage = (language: string) => {
+    console.log('setting Language', language);
     router.push({ pathname, query }, asPath, { locale: language });
   };
 

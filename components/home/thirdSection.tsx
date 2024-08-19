@@ -42,7 +42,7 @@ const ThirdSection = ({ data }: any) => {
                       lineHeight: '2rem',
                       width: 320,
                     }}>
-                    <li>{point}</li>
+                    &middot;{point}
                   </Body>
                 ))}
               </div>
@@ -120,7 +120,7 @@ const ThirdSection = ({ data }: any) => {
                       marginTop: '8px',
                       lineHeight: '2rem',
                     }}>
-                    <li>{point}</li>
+                    &middot;{point}
                   </Body>
                 ))}
               </div>
