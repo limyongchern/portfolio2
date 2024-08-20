@@ -3,6 +3,8 @@ import styles from './firstSection.module.scss';
 
 import { Body, BodyBold } from 'components/typography';
 import Image from 'next/image';
+import HomeHeroImage from 'public/Home/Home-Hero-Image.png';
+import HomeHeroMascot from 'public/Home/Home-Hero-Mascot.png';
 
 const FirstMobileSection = ({ data }: any) => {
   return (
@@ -33,10 +35,20 @@ const FirstMobileSection = ({ data }: any) => {
             </Body>
           </span>
           <Image
+            src={HomeHeroImage}
+            className={styles.homeHeroImagePhone}
+            alt="wolfavatar"
+          />
+          <Image
+            src={HomeHeroMascot}
+            className={styles.homeHeroMascot}
+            alt="wolfavatar"
+          />
+          {/* <Image
             src={data.homeHeroImage}
             className={styles.homeHeroImage}
             alt="wolfavatar"
-          />
+          /> */}
         </div>
       </div>
     </>

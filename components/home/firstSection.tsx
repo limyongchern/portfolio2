@@ -3,6 +3,8 @@ import { useRouter } from 'next/router';
 import { Body, BodyBold, BodyDmsans } from 'components/typography';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import HomeHeroImage from 'public/Home/Home-Hero-Image.png';
+import HomeHeroMascot from 'public/Home/Home-Hero-Mascot.png';
 
 const FirstSection = ({ data }: any) => {
   const router = useRouter();
@@ -94,10 +96,25 @@ const FirstSection = ({ data }: any) => {
             </BodyDmsans> */}
           </span>
           <Image
+            src={HomeHeroImage}
+            className={styles.homeHeroImagePhone}
+            alt="wolfavatar"
+          />
+          <Image
+            src={HomeHeroMascot}
+            className={styles.homeHeroMascot}
+            alt="wolfavatar"
+          />
+          {/* <Image
+            src={HomeHeroImageGif}
+            className={styles.homeHeroImageGif}
+            alt="wolfavatar"
+          /> */}
+          {/* <Image
             src={data.homeHeroImage}
             className={styles.homeHeroImage}
             alt="wolfavatar"
-          />
+          /> */}
           {/* <div className={styles.homeHeroVideo}>
             <video
               autoPlay
