@@ -1,4 +1,5 @@
 import { Card, Container, Divider, Group, Stack } from '@mantine/core';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -9,7 +10,7 @@ import {
   Star,
   CaretDoubleRight,
 } from '@phosphor-icons/react';
-import { Body, BodyBold } from 'components/typography';
+import { Body, BodyBold, BodyDmsans, Heading } from 'components/typography';
 import { useEffect, useState } from 'react';
 import styles from './index.module.scss';
 import AboutUsTempImage from 'public/TempImages/AboutUsTempImage.png';
@@ -26,6 +27,17 @@ const AboutUsData = {
   ourMission: '我们的使命',
   ourMissionDescription:
     '运用区块链技术，为不同背景不同身份投资爱好者们创建一个跨地域、跨领域的交流、学习合作社区，以促进相互交流及知识共享。我们将提供平等的沟通环境，实时的资讯更新，以及高质量的经验分享，打造一个安全、可靠、高效的投资交流平台',
+};
+
+const AboutUsDataEn = {
+  about: 'About WolfPlanet',
+  wolfPlanet: 'WolfPlanet',
+  from: 'comes from',
+  description:
+    'One day, a group of innovative and ambitious wolf cubs used their keen senses to uncover investment opportunities in space, giving rise to the WolfPlanet investment community. The wolves explore planets like precious metals, forex, and digital collectibles, tracking market trends and collaborating on investment strategies. From interstellar wanderers to planetary commanders, the wolves grow and earn investment returns, forging a new era for the space investment community.',
+  ourMission: 'Our Mission',
+  ourMissionDescription:
+    'By leveraging blockchain technology, we aim to create a cross-regional and cross-sectoral community for investors of diverse backgrounds and identities, enabling exchange, learning, and collaboration. We will provide an equitable communication environment, real-time information updates, and high-quality experience sharing, building a secure, reliable, and efficient investment exchange platform.',
 };
 
 const SecondSectionData = {
@@ -55,6 +67,33 @@ const SecondSectionData = {
   ],
 };
 
+const SecondSectionDataEn = {
+  headline: 'Our Values',
+  sections: [
+    {
+      id: 0,
+      title: 'Professional Community',
+      description:
+        'We understand the importance of professionalism. We encourage in-depth analysis and the discovery of investment opportunities. We hope to grow together with our users and embrace lifelong learning.',
+      icon: <UsersThree className={styles.icons} />,
+    },
+    {
+      id: 1,
+      title: 'Egalitarian Haven',
+      description:
+        'We firmly believe that equality fosters exchange, and exchange facilitates growth. We welcome investment enthusiasts from all backgrounds to join us, cultivating an investment haven with a win-win mindset and an egalitarian culture.',
+      icon: <Handshake className={styles.icons} />,
+    },
+    {
+      id: 2,
+      title: 'Comprehensive Technology',
+      description:
+        'We strive for better technology and higher presentation standards. Through the application of Web3 technology and continuous innovation, we refuse to stand still, using action to make investing more rewarding.',
+      icon: <Star className={styles.icons} />,
+    },
+  ],
+};
+
 const ThirdSectionData = {
   headline: '活动',
   sections: [
@@ -75,6 +114,32 @@ const ThirdSectionData = {
       date: '28/12/2024',
       description:
         '羽高您蝴目早村交村，停雞枝合對節完扒紅甲六黃聽第門久身裏？月月家歌親拉自少進海而汗快清比平雨坐對、牠交五做貫大。夕忍乞節弓，飽足米裏合力科貓害苗。幸尾昌助收這己封正休植跟常雲都沒定。都裏北斗車地戶刃吃人！去喜它玉事你正皮美雄什尺筆好波道父祖，毛在蝴還立問條京幾物的人化。',
+      image: PressImg2,
+      mobileImage: AboutUsTempImage,
+    },
+  ],
+};
+
+const ThirdSectionDataEn = {
+  headline: 'Activities',
+  sections: [
+    {
+      id: 0,
+      title: 'Activity 1',
+      location: 'India',
+      date: '28/12/2024',
+      description:
+        'Lorem ipsum odor amet, consectetuer adipiscing elit. Sollicitudin ex ipsum libero curabitur molestie; et praesent duis. Bibendum condimentum eu mi libero curae proin imperdiet egestas. Ornare nec taciti dictumst tempor viverra molestie, sit vivamus elementum.',
+      image: PressImg1,
+      mobileImage: AboutUsTempImage,
+    },
+    {
+      id: 1,
+      title: 'Activity 2',
+      location: 'India',
+      date: '28/12/2024',
+      description:
+        'Lorem ipsum odor amet, consectetuer adipiscing elit. Sollicitudin ex ipsum libero curabitur molestie; et praesent duis. Bibendum condimentum eu mi libero curae proin imperdiet egestas. Ornare nec taciti dictumst tempor viverra molestie, sit vivamus elementum.',
       image: PressImg2,
       mobileImage: AboutUsTempImage,
     },
@@ -113,7 +178,40 @@ const FourthSectionData = {
   ],
 };
 
+const FourthSectionDataEn = {
+  headline: 'Company Announcement',
+  more: 'More',
+  sections: [
+    {
+      id: 0,
+      title: 'Product Iteration',
+      date: '28/12/2024',
+    },
+    {
+      id: 1,
+      title: 'Product Iteration',
+      date: '28/12/2024',
+    },
+    {
+      id: 2,
+      title: 'Product Iteration',
+      date: '28/12/2024',
+    },
+    {
+      id: 3,
+      title: 'Product Iteration',
+      date: '28/12/2024',
+    },
+    {
+      id: 4,
+      title: 'Product Iteration',
+      date: '28/12/2024',
+    },
+  ],
+};
+
 const AboutUs = () => {
+  const router = useRouter();
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   // MOBILE AND DESKTOP
@@ -155,25 +253,52 @@ const AboutUs = () => {
                 spacing={0}
                 style={{ alignItems: 'center', justifyContent: 'center' }}>
                 <div className={styles.planetTextCont}>
-                  <div className={styles.planetTextCard}>
-                    <BodyBold
-                      variant={5}
-                      style={{ marginBottom: '16px' }}
-                      color="#F2F3F7">
-                      {AboutUsData.about}
-                    </BodyBold>
-                    <BodyBold variant={7} color="#F2F3F7">
-                      <span style={{ color: '#4178FA' }}>
-                        {AboutUsData.wolfPlanet}
-                      </span>{' '}
-                      {AboutUsData.from}
-                    </BodyBold>
-                    <Body
-                      variant={1}
-                      style={{ marginTop: '20px' }}
-                      color="#F2F3F7">
-                      {AboutUsData.description}
-                    </Body>
+                  <div
+                    className={styles.planetTextCard}
+                    style={{ height: router.locale === 'en' ? 385 : 277 }}>
+                    {router.locale === 'en' ? (
+                      <>
+                        <BodyDmsans
+                          variant={2}
+                          style={{ marginBottom: '10px' }}
+                          color="#F2F3F7">
+                          {AboutUsDataEn.about}
+                        </BodyDmsans>
+                        <Heading variant={9} color="#F2F3F7">
+                          <span style={{ color: '#4178FA', lineHeight: 1.2 }}>
+                            {AboutUsData.wolfPlanet}
+                          </span>{' '}
+                          {AboutUsDataEn.from}
+                        </Heading>
+                        <BodyDmsans
+                          variant={2}
+                          style={{ marginTop: '15px' }}
+                          color="#F2F3F7">
+                          {AboutUsDataEn.description}
+                        </BodyDmsans>
+                      </>
+                    ) : (
+                      <>
+                        <BodyBold
+                          variant={5}
+                          style={{ marginBottom: '16px' }}
+                          color="#F2F3F7">
+                          {AboutUsData.about}
+                        </BodyBold>
+                        <BodyBold variant={7} color="#F2F3F7">
+                          <span style={{ color: '#4178FA' }}>
+                            {AboutUsData.wolfPlanet}
+                          </span>{' '}
+                          {AboutUsData.from}
+                        </BodyBold>
+                        <Body
+                          variant={1}
+                          style={{ marginTop: '20px' }}
+                          color="#F2F3F7">
+                          {AboutUsData.description}
+                        </Body>
+                      </>
+                    )}
                   </div>
                 </div>
 
@@ -188,21 +313,39 @@ const AboutUs = () => {
               </Group>
               <div className={styles.bottomTextOuterContainer}>
                 <div className={styles.bottomTextContainer}>
-                  <BodyBold
-                    variant={7}
-                    style={{ marginBottom: '16px' }}
-                    color="#F2F3F7">
-                    {AboutUsData.ourMission}
-                  </BodyBold>
+                  {router.locale === 'en' ? (
+                    <Heading
+                      variant={1}
+                      style={{ marginBottom: '16px' }}
+                      color="#F2F3F7">
+                      {AboutUsDataEn.ourMission}
+                    </Heading>
+                  ) : (
+                    <BodyBold
+                      variant={7}
+                      style={{ marginBottom: '16px' }}
+                      color="#F2F3F7">
+                      {AboutUsData.ourMission}
+                    </BodyBold>
+                  )}
                 </div>
 
                 <div className={styles.bottomTextContainer}>
-                  <Body
-                    variant={1}
-                    style={{ marginBottom: '16px' }}
-                    color="#9198B0">
-                    {AboutUsData.ourMissionDescription}
-                  </Body>
+                  {router.locale === 'en' ? (
+                    <BodyDmsans
+                      variant={2}
+                      style={{ marginBottom: '16px' }}
+                      color="#9198B0">
+                      {AboutUsDataEn.ourMissionDescription}
+                    </BodyDmsans>
+                  ) : (
+                    <Body
+                      variant={1}
+                      style={{ marginBottom: '16px' }}
+                      color="#9198B0">
+                      {AboutUsData.ourMissionDescription}
+                    </Body>
+                  )}
                 </div>
               </div>
             </>
@@ -219,41 +362,91 @@ const AboutUs = () => {
               </div>
               <div className={styles.planetTextCont}>
                 <div className={styles.planetTextCard}>
-                  <BodyBold
-                    variant={5}
-                    style={{ marginBottom: '16px' }}
-                    color="#F2F3F7">
-                    {AboutUsData.about}
-                  </BodyBold>
-                  <BodyBold variant={7} color="#F2F3F7">
-                    <span style={{ color: '#4178FA' }}>
-                      {AboutUsData.wolfPlanet}
-                    </span>
-                  </BodyBold>
-                  <BodyBold variant={7} color="#F2F3F7">
-                    {AboutUsData.from}
-                  </BodyBold>
-                  <Body
-                    variant={1}
-                    style={{ marginTop: '20px' }}
-                    color="#F2F3F7">
-                    {AboutUsData.description}
-                  </Body>
+                  {router.locale === 'en' ? (
+                    <>
+                      <BodyDmsans
+                        variant={1}
+                        style={{ marginBottom: '10px' }}
+                        color="#F2F3F7">
+                        {AboutUsDataEn.about}
+                      </BodyDmsans>
+                      <Heading variant={1} color="#F2F3F7">
+                        <span style={{ color: '#4178FA', lineHeight: 1.2 }}>
+                          {AboutUsData.wolfPlanet}
+                        </span>{' '}
+                        {AboutUsDataEn.from}
+                      </Heading>
+                      <BodyDmsans
+                        variant={1}
+                        style={{ marginTop: '15px', textAlign: 'justify' }}
+                        color="#F2F3F7">
+                        {AboutUsDataEn.description}
+                      </BodyDmsans>
+                    </>
+                  ) : (
+                    <>
+                      <BodyBold
+                        variant={5}
+                        style={{ marginBottom: '16px' }}
+                        color="#F2F3F7">
+                        {AboutUsData.about}
+                      </BodyBold>
+                      <BodyBold variant={7} color="#F2F3F7">
+                        <span style={{ color: '#4178FA' }}>
+                          {AboutUsData.wolfPlanet}
+                        </span>
+                      </BodyBold>
+                      <BodyBold variant={7} color="#F2F3F7">
+                        {AboutUsData.from}
+                      </BodyBold>
+                      <Body
+                        variant={1}
+                        style={{ marginTop: '20px' }}
+                        color="#F2F3F7">
+                        {AboutUsData.description}
+                      </Body>
+                    </>
+                  )}
                 </div>
               </div>
               <div className={styles.bottomTextContainer}>
-                <BodyBold
-                  variant={3}
-                  style={{ marginBottom: 16, marginTop: 30 }}
-                  color="#F2F3F7">
-                  {AboutUsData.ourMission}
-                </BodyBold>
+                {router.locale === 'en' ? (
+                  <Heading
+                    variant={2}
+                    style={{ marginBottom: 16, marginTop: 30 }}
+                    color="#F2F3F7">
+                    {AboutUsDataEn.ourMission}
+                  </Heading>
+                ) : (
+                  <BodyBold
+                    variant={3}
+                    style={{ marginBottom: 16, marginTop: 30 }}
+                    color="#F2F3F7">
+                    {AboutUsData.ourMission}
+                  </BodyBold>
+                )}
               </div>
 
               <div className={styles.bottomTextContainer}>
-                <Body variant={1} style={{ marginBottom: 80 }} color="#9198B0">
-                  {AboutUsData.ourMissionDescription}
-                </Body>
+                {router.locale === 'en' ? (
+                  <BodyDmsans
+                    variant={1}
+                    style={{
+                      marginBottom: 80,
+                      padding: '0px 10px',
+                      textAlign: 'justify',
+                    }}
+                    color="#9198B0">
+                    {AboutUsDataEn.ourMissionDescription}
+                  </BodyDmsans>
+                ) : (
+                  <Body
+                    variant={1}
+                    style={{ marginBottom: 80 }}
+                    color="#9198B0">
+                    {AboutUsData.ourMissionDescription}
+                  </Body>
+                )}
               </div>
             </Group>
           )}
@@ -264,67 +457,131 @@ const AboutUs = () => {
       <div className={styles.middleContainer}>
         <Stack align="center" maw={'850px'} mt={isMobile ? '0px' : '80px'}>
           <Stack align="center" px={'36px'} w={isMobile ? '320px' : '262px'}>
-            <BodyBold
-              variant={7}
-              fs={isMobile ? 36 : 40}
-              style={{ marginBottom: '24px', textAlign: 'center' }}>
-              {SecondSectionData.headline}
-            </BodyBold>
+            {router.locale === 'en' ? (
+              <Heading
+                variant={isMobile ? 2 : 1}
+                style={{ marginBottom: '24px', textAlign: 'center' }}>
+                {SecondSectionDataEn.headline}
+              </Heading>
+            ) : (
+              <BodyBold
+                variant={7}
+                fs={isMobile ? 36 : 40}
+                style={{ marginBottom: '24px', textAlign: 'center' }}>
+                {SecondSectionData.headline}
+              </BodyBold>
+            )}
+
             {!isMobile ? (
               <div style={{ display: 'flex', gap: 15 }}>
-                {SecondSectionData.sections.map((section, index) => (
-                  <div className={styles.infoCard} key={index}>
-                    <Stack spacing={'20px'} style={{ minWidth: 228 }}>
-                      <Group spacing={'11px'}>
-                        <div className={styles.iconContainer}>
-                          {section.icon}
-                        </div>
-                        <BodyBold variant={1} color="#F2F3F7">
-                          {section.title}
-                        </BodyBold>
-                      </Group>
-                      <Body
-                        variant={2}
-                        lh={1.3}
-                        color="#9198B0"
-                        style={{ letterSpacing: 1.2 }}>
-                        {section.description}
-                      </Body>
-                    </Stack>
-                    {/* {index !== SecondSectionData.sections.length - 1 && (
-                        <Divider mx={'23px'} color="#3E404E" />
-                      )} */}
-                  </div>
-                ))}
+                {router.locale === 'en' ? (
+                  <>
+                    {SecondSectionDataEn.sections.map((section, index) => (
+                      <div className={styles.infoCard} key={index}>
+                        <Stack spacing={'20px'} style={{ minWidth: 272 }}>
+                          <div
+                            style={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: 11,
+                            }}>
+                            <div className={styles.iconContainer}>
+                              {section.icon}
+                            </div>
+                            <Heading variant={3} color="#F2F3F7" style={{}}>
+                              {section.title}
+                            </Heading>
+                          </div>
+                          <BodyDmsans
+                            variant={1}
+                            lh={1.2}
+                            color="#9198B0"
+                            style={{}}>
+                            {section.description}
+                          </BodyDmsans>
+                        </Stack>
+                      </div>
+                    ))}
+                  </>
+                ) : (
+                  <>
+                    {SecondSectionData.sections.map((section, index) => (
+                      <div className={styles.infoCard} key={index}>
+                        <Stack spacing={'20px'} style={{ minWidth: 228 }}>
+                          <Group spacing={'11px'}>
+                            <div className={styles.iconContainer}>
+                              {section.icon}
+                            </div>
+                            <BodyBold variant={1} color="#F2F3F7">
+                              {section.title}
+                            </BodyBold>
+                          </Group>
+                          <Body
+                            variant={2}
+                            lh={1.3}
+                            color="#9198B0"
+                            style={{ letterSpacing: 1.2 }}>
+                            {section.description}
+                          </Body>
+                        </Stack>
+                      </div>
+                    ))}
+                  </>
+                )}
               </div>
             ) : (
               <div
                 style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-                {SecondSectionData.sections.map((section, index) => (
-                  <div className={styles.infoCard} key={index}>
-                    <Stack spacing={'20px'}>
-                      <Group spacing={'11px'}>
-                        <div className={styles.iconContainer}>
-                          {section.icon}
-                        </div>
-                        <BodyBold variant={1} color="#F2F3F7">
-                          {section.title}
-                        </BodyBold>
-                      </Group>
-                      <Body
-                        variant={2}
-                        lh={1.5}
-                        color="#9198B0"
-                        // style={{ letterSpacing: 1.2 }}
-                      >
-                        {section.description}
-                      </Body>
-                    </Stack>
-                    {/* {index !== SecondSectionData.sections.length - 1 && (
-                      <Divider my={'23px'} color="#3E404E" />
-                    )} */}
-                  </div>
-                ))}
+                {router.locale === 'en' ? (
+                  <>
+                    {SecondSectionDataEn.sections.map((section, index) => (
+                      <div className={styles.infoCard} key={index}>
+                        <Stack spacing={'20px'}>
+                          <div
+                            style={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: 11,
+                            }}>
+                            <div className={styles.iconContainer}>
+                              {section.icon}
+                            </div>
+                            <Heading variant={4} color="#F2F3F7" lh={1.1}>
+                              {section.title}
+                            </Heading>
+                          </div>
+                          <BodyDmsans
+                            variant={6}
+                            lh={1.5}
+                            color="#9198B0"
+                            style={{ textAlign: 'justify' }}>
+                            {section.description}
+                          </BodyDmsans>
+                        </Stack>
+                      </div>
+                    ))}
+                  </>
+                ) : (
+                  <>
+                    {SecondSectionData.sections.map((section, index) => (
+                      <div className={styles.infoCard} key={index}>
+                        <Stack spacing={'20px'}>
+                          <Group spacing={'11px'}>
+                            <div className={styles.iconContainer}>
+                              {section.icon}
+                            </div>
+                            <BodyBold variant={1} color="#F2F3F7">
+                              {section.title}
+                            </BodyBold>
+                          </Group>
+                          <Body variant={2} lh={1.5} color="#9198B0">
+                            {section.description}
+                          </Body>
+                        </Stack>
+                      </div>
+                    ))}
+                  </>
+                )}
               </div>
             )}
           </Stack>
@@ -340,68 +597,140 @@ const AboutUs = () => {
               align="center"
               w={isMobile ? '278px' : 'auto'}
               style={{ textAlign: 'center' }}>
-              <BodyBold variant={7} color="#F2F3F7">
-                {ThirdSectionData.headline}
-              </BodyBold>
+              {router.locale === 'en' ? (
+                <Heading variant={isMobile ? 2 : 1} color="#F2F3F7">
+                  {ThirdSectionDataEn.headline}
+                </Heading>
+              ) : (
+                <BodyBold variant={7} color="#F2F3F7">
+                  {ThirdSectionData.headline}
+                </BodyBold>
+              )}
             </Stack>
             <Group py={'47px'} spacing={'28px'} noWrap>
               {!isMobile ? (
                 <>
-                  {ThirdSectionData.sections.map((section, index) => (
-                    <Link
-                      href={`/activity/${index}`}
-                      style={{ textDecoration: 'none' }}
-                      key={index}>
-                      <Card
-                        p={'33px'}
-                        radius={'16px'}
-                        w={'403px'}
-                        style={{
-                          background:
-                            'linear-gradient(180deg, #3E404E 0%, #272935 100%)',
-                        }}>
-                        <Stack spacing={'40px'}>
-                          <Image
-                            src={section.image}
-                            className={styles.activityCardImage}
-                            // width={352}
-                            // height={230}
-                            alt="Press Release 1"
-                          />
-                          <Stack spacing={'0px'} align="center" px={'18px'}>
-                            <BodyBold
-                              variant={6}
-                              color="#F2F3F7"
-                              style={{ textAlign: 'center' }}>
-                              {section.title}
-                            </BodyBold>
-                            <Group
-                              position="apart"
-                              noWrap
-                              w={'100%'}
-                              style={{ marginTop: 20 }}>
-                              <div className={styles.badge}>
-                                <BodyBold variant={9} color="#FEFEFEFE">
-                                  地点: {section.location}
+                  {router.locale === 'en' ? (
+                    <>
+                      {ThirdSectionDataEn.sections.map((section, index) => (
+                        <Link
+                          href={`/activity/${index}`}
+                          style={{ textDecoration: 'none' }}
+                          key={index}>
+                          <Card
+                            p={'33px'}
+                            radius={'16px'}
+                            w={'403px'}
+                            style={{
+                              background:
+                                'linear-gradient(180deg, #3E404E 0%, #272935 100%)',
+                            }}>
+                            <Stack spacing={'40px'}>
+                              <Image
+                                src={section.image}
+                                className={styles.activityCardImage}
+                                // width={352}
+                                // height={230}
+                                alt="Press Release 1"
+                              />
+                              <Stack spacing={'0px'} align="center" px={'18px'}>
+                                <Heading
+                                  variant={7}
+                                  color="#F2F3F7"
+                                  style={{ textAlign: 'center' }}>
+                                  {section.title}
+                                </Heading>
+                                <Group
+                                  position="apart"
+                                  noWrap
+                                  w={'100%'}
+                                  style={{ marginTop: 20 }}>
+                                  <div className={styles.badge}>
+                                    <BodyDmsans variant={7} color="#FEFEFEFE">
+                                      Venue: {section.location}
+                                    </BodyDmsans>
+                                  </div>
+                                  <div className={styles.badge}>
+                                    <BodyDmsans variant={7} color="#FEFEFEFE">
+                                      Date: {section.date}
+                                    </BodyDmsans>
+                                  </div>
+                                </Group>
+                                <BodyDmsans
+                                  variant={1}
+                                  color="#F2F3F7"
+                                  style={{
+                                    paddingTop: 30,
+                                    height: 234,
+                                    textAlign: 'justify',
+                                  }}>
+                                  {section.description}
+                                </BodyDmsans>
+                              </Stack>
+                            </Stack>
+                          </Card>
+                        </Link>
+                      ))}
+                    </>
+                  ) : (
+                    <>
+                      {ThirdSectionData.sections.map((section, index) => (
+                        <Link
+                          href={`/activity/${index}`}
+                          style={{ textDecoration: 'none' }}
+                          key={index}>
+                          <Card
+                            p={'33px'}
+                            radius={'16px'}
+                            w={'403px'}
+                            style={{
+                              background:
+                                'linear-gradient(180deg, #3E404E 0%, #272935 100%)',
+                            }}>
+                            <Stack spacing={'40px'}>
+                              <Image
+                                src={section.image}
+                                className={styles.activityCardImage}
+                                // width={352}
+                                // height={230}
+                                alt="Press Release 1"
+                              />
+                              <Stack spacing={'0px'} align="center" px={'18px'}>
+                                <BodyBold
+                                  variant={6}
+                                  color="#F2F3F7"
+                                  style={{ textAlign: 'center' }}>
+                                  {section.title}
                                 </BodyBold>
-                              </div>
-                              <div className={styles.badge}>
-                                <BodyBold variant={9} color="#FEFEFEFE">
-                                  日期: {section.date}
-                                </BodyBold>
-                              </div>
-                            </Group>
-                            <Body
-                              variant={1}
-                              color="#F2F3F7"
-                              style={{ paddingTop: 30, height: 234 }}>
-                              {section.description}
-                            </Body>
-                          </Stack>
-                        </Stack>
-                      </Card>
-                    </Link>
-                  ))}
+                                <Group
+                                  position="apart"
+                                  noWrap
+                                  w={'100%'}
+                                  style={{ marginTop: 20 }}>
+                                  <div className={styles.badge}>
+                                    <BodyBold variant={9} color="#FEFEFEFE">
+                                      地点: {section.location}
+                                    </BodyBold>
+                                  </div>
+                                  <div className={styles.badge}>
+                                    <BodyBold variant={9} color="#FEFEFEFE">
+                                      日期: {section.date}
+                                    </BodyBold>
+                                  </div>
+                                </Group>
+                                <Body
+                                  variant={1}
+                                  color="#F2F3F7"
+                                  style={{ paddingTop: 30, height: 234 }}>
+                                  {section.description}
+                                </Body>
+                              </Stack>
+                            </Stack>
+                          </Card>
+                        </Link>
+                      ))}
+                    </>
+                  )}
                 </>
               ) : (
                 <Link
@@ -431,19 +760,33 @@ const AboutUs = () => {
                         // style={{ width: '100%', height: 293, objectFit: 'cover' }}
                       />
 
-                      <BodyBold
-                        variant={9}
-                        color="#F2F3F7"
-                        style={{
-                          textAlign: 'center',
-                          padding: '0px 24px',
-                          marginTop: 30,
-                        }}>
-                        {ThirdSectionData.sections[0].title}
-                      </BodyBold>
+                      {router.locale === 'en' ? (
+                        <Heading
+                          variant={4}
+                          color="#F2F3F7"
+                          style={{
+                            textAlign: 'center',
+                            padding: '0px 24px',
+                            marginTop: 30,
+                          }}>
+                          {ThirdSectionDataEn.sections[0].title}
+                        </Heading>
+                      ) : (
+                        <BodyBold
+                          variant={9}
+                          color="#F2F3F7"
+                          style={{
+                            textAlign: 'center',
+                            padding: '0px 24px',
+                            marginTop: 30,
+                          }}>
+                          {ThirdSectionData.sections[0].title}
+                        </BodyBold>
+                      )}
+
                       <div
                         style={{
-                          width: 247,
+                          width: router.locale === 'en' ? 300 : 247,
                           display: 'flex',
                           justifyContent: 'center',
                           flexDirection: 'column',
@@ -456,37 +799,64 @@ const AboutUs = () => {
                           w={'100%'}
                           style={{ marginTop: 20 }}>
                           <div className={styles.badge}>
-                            <BodyBold variant={8} color="#FEFEFEFE">
-                              地点: {ThirdSectionData.sections[0].location}
-                            </BodyBold>
+                            {router.locale === 'en' ? (
+                              <BodyDmsans variant={7} color="#FEFEFEFE">
+                                Venue: {ThirdSectionDataEn.sections[0].location}
+                              </BodyDmsans>
+                            ) : (
+                              <BodyBold variant={8} color="#FEFEFEFE">
+                                地点: {ThirdSectionData.sections[0].location}
+                              </BodyBold>
+                            )}
                           </div>
                           <div className={styles.badge}>
-                            <BodyBold variant={8} color="#FEFEFEFE">
-                              日期: {ThirdSectionData.sections[0].date}
-                            </BodyBold>
+                            {router.locale === 'en' ? (
+                              <BodyDmsans variant={7} color="#FEFEFEFE">
+                                Date: {ThirdSectionDataEn.sections[0].date}
+                              </BodyDmsans>
+                            ) : (
+                              <BodyBold variant={8} color="#FEFEFEFE">
+                                日期: {ThirdSectionData.sections[0].date}
+                              </BodyBold>
+                            )}
                           </div>
                         </Group>
                       </div>
 
                       <div
                         style={{
-                          width: 254,
+                          width: router.locale === 'en' ? 300 : 254,
                           display: 'flex',
                           justifyContent: 'center',
                           flexDirection: 'column',
                           alignItems: 'center',
                           textAlign: 'center',
                         }}>
-                        <Body
-                          variant={4}
-                          color="#F2F3F7"
-                          style={{
-                            paddingTop: 30,
-                            height: 119,
-                            lineHeight: 1.4,
-                          }}>
-                          {ThirdSectionData.sections[0].description}
-                        </Body>
+                        {router.locale === 'en' ? (
+                          <BodyDmsans
+                            variant={6}
+                            color="#F2F3F7"
+                            style={{
+                              paddingTop: 20,
+                              paddingBottom: 20,
+                              height: 119,
+                              lineHeight: 1.4,
+                              textAlign: 'justify',
+                            }}>
+                            {ThirdSectionDataEn.sections[0].description}
+                          </BodyDmsans>
+                        ) : (
+                          <Body
+                            variant={4}
+                            color="#F2F3F7"
+                            style={{
+                              paddingTop: 30,
+                              height: 119,
+                              lineHeight: 1.4,
+                            }}>
+                            {ThirdSectionData.sections[0].description}
+                          </Body>
+                        )}
                       </div>
                     </div>
                   </Card>
@@ -537,72 +907,135 @@ const AboutUs = () => {
                 marginBottom: 40,
               }}>
               <div></div>
-              <BodyBold variant={7} color="#F2F3F7">
-                {FourthSectionData.headline}
-              </BodyBold>
+              {router.locale === 'en' ? (
+                <Heading
+                  variant={isMobile ? 2 : 1}
+                  color="#F2F3F7"
+                  style={{ textAlign: 'center' }}>
+                  {FourthSectionDataEn.headline}
+                </Heading>
+              ) : (
+                <BodyBold variant={7} color="#F2F3F7">
+                  {FourthSectionData.headline}
+                </BodyBold>
+              )}
+
               <div
                 style={{
                   display: 'flex',
                   alignItems: 'center',
                   cursor: 'pointer',
                   marginTop: isMobile ? 20 : 0,
-                  color: isMobile ? '#F2F3F7' : '#9198B0',
+                  color: '#9198B0',
                 }}>
                 <Link
                   href={'/announcement'}
                   style={{
                     textDecoration: 'none',
-                    color: isMobile ? '#F2F3F7' : '#9198B0',
+                    color: '#9198B0',
                   }}>
-                  <BodyBold variant={9} onClick={() => {}}>
-                    {FourthSectionData.more}
-                  </BodyBold>
+                  {router.locale === 'en' ? (
+                    <BodyDmsans variant={4} onClick={() => {}}>
+                      {FourthSectionDataEn.more}
+                    </BodyDmsans>
+                  ) : (
+                    <BodyBold variant={9} onClick={() => {}}>
+                      {FourthSectionData.more}
+                    </BodyBold>
+                  )}
                 </Link>
 
                 <CaretDoubleRight size={28} />
               </div>
             </div>
             <div style={{ width: '100%', maxWidth: '1064px' }}>
-              {FourthSectionData.sections.map((section, index) => (
+              {router.locale === 'en' ? (
                 <>
-                  {index === 0 && (
-                    <Divider
-                      pb={'0px'}
-                      color="rgba(145, 152, 176, 0.50)"
-                      w={'100%'}
-                    />
-                  )}
-                  <Link
-                    href={`/announcement/${index}`}
-                    style={{ textDecoration: 'none' }}>
-                    <div
-                      style={{
-                        width: isMobile ? '' : '100%',
-                        maxWidth: '1064px',
-                        display: 'flex',
-                        padding: '24px 24px',
-                      }}>
-                      <div style={{ display: 'flex', gap: 25 }}>
-                        <Body variant={1} color="#F2F3F7">
-                          {section.date}
-                        </Body>
-                        <BodyBold
-                          variant={1}
-                          color="#4178FA"
-                          style={{ cursor: 'pointer' }}>
-                          {section.title}
-                        </BodyBold>
-                      </div>
-                    </div>
-                  </Link>
+                  {FourthSectionDataEn.sections.map((section, index) => (
+                    <>
+                      {index === 0 && (
+                        <Divider
+                          pb={'0px'}
+                          color="rgba(145, 152, 176, 0.50)"
+                          w={'100%'}
+                        />
+                      )}
+                      <Link
+                        href={`/announcement/${index}`}
+                        style={{ textDecoration: 'none' }}>
+                        <div
+                          style={{
+                            width: isMobile ? '' : '100%',
+                            maxWidth: '1064px',
+                            display: 'flex',
+                            padding: '24px 24px',
+                          }}>
+                          <div style={{ display: 'flex', gap: 25 }}>
+                            <BodyDmsans variant={2} color="#F2F3F7">
+                              {section.date}
+                            </BodyDmsans>
+                            <BodyDmsans
+                              variant={4}
+                              color="#4178FA"
+                              style={{ cursor: 'pointer' }}>
+                              {section.title}
+                            </BodyDmsans>
+                          </div>
+                        </div>
+                      </Link>
 
-                  <Divider
-                    pb={'0px'}
-                    color="rgba(145, 152, 176, 0.50)"
-                    w={'100%'}
-                  />
+                      <Divider
+                        pb={'0px'}
+                        color="rgba(145, 152, 176, 0.50)"
+                        w={'100%'}
+                      />
+                    </>
+                  ))}
                 </>
-              ))}
+              ) : (
+                <>
+                  {FourthSectionData.sections.map((section, index) => (
+                    <>
+                      {index === 0 && (
+                        <Divider
+                          pb={'0px'}
+                          color="rgba(145, 152, 176, 0.50)"
+                          w={'100%'}
+                        />
+                      )}
+                      <Link
+                        href={`/announcement/${index}`}
+                        style={{ textDecoration: 'none' }}>
+                        <div
+                          style={{
+                            width: isMobile ? '' : '100%',
+                            maxWidth: '1064px',
+                            display: 'flex',
+                            padding: '24px 24px',
+                          }}>
+                          <div style={{ display: 'flex', gap: 25 }}>
+                            <Body variant={1} color="#F2F3F7">
+                              {section.date}
+                            </Body>
+                            <BodyBold
+                              variant={1}
+                              color="#4178FA"
+                              style={{ cursor: 'pointer' }}>
+                              {section.title}
+                            </BodyBold>
+                          </div>
+                        </div>
+                      </Link>
+
+                      <Divider
+                        pb={'0px'}
+                        color="rgba(145, 152, 176, 0.50)"
+                        w={'100%'}
+                      />
+                    </>
+                  ))}
+                </>
+              )}
             </div>
           </Stack>
           <Divider pb={'15px'} color="rgba(145, 152, 176, 0.50)" w={'100%'} />

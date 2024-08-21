@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from './index.module.scss';
-import { Flex, Grid, Stack, Transition } from '@mantine/core';
-import { Body, Heading } from 'components/typography';
-// import WolfTooth from '../../public/Coin.svg';
-// import WolfToken from '../../public/WolfCoin.svg';
-import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 import FirstSection from 'components/community/firstSection';
 import FirstMobileSection from 'components/community/firstMobileSection';
@@ -48,6 +43,13 @@ const FirstSectionData = {
   image: CommunityIllustration1,
 };
 
+const FirstSectionDataEn = {
+  title: 'Community Gameplay',
+  headline: 'Join Wolf Planet',
+  description: `Join the world's leading decentralized investment community to learn, exchange ideas, and access industry insights with investment enthusiasts globally. Experience a secure and efficient new investment exchange.`,
+  image: CommunityIllustration1,
+};
+
 const SecondSectionData = {
   headline: '欢迎来到DAO',
   subheader:
@@ -77,6 +79,31 @@ const SecondSectionData = {
   ],
 };
 
+const SecondSectionDataEn = {
+  headline: 'Welcome to DAO',
+  subheader: `Each planet/tribe/squad in WolfPlanet is an independent DAO with genuine decentralization and user autonomy. We encourage every visionary to join and participate in the creation and governance of the DAO, exerting your influence to collectively shape the future of the community!`,
+  cards: [
+    {
+      id: 0,
+      title: 'Planet',
+      description: `Planets are the fundamental units of WolfPlanet, where users can engage in investment exchange, content creation, and personal IP development. Each planet has its own governance mechanism, enabling user participation through voting, proposals, and other means.`,
+      image: DaoImage1,
+    },
+    {
+      id: 1,
+      title: 'Tribe',
+      description: `Tribes are sub-units within the planets, comprising communities of like-minded users. Tribes can be organized based on shared interests, investment approaches, and other criteria. Tribes have the autonomy to establish their own rules and manage their internal affairs.`,
+      image: DaoImage2,
+    },
+    {
+      id: 2,
+      title: 'Squad',
+      description: `Squads are self-organized, cross-planetary and cross-domain social groups that allow users with shared interests to communicate directly, share experiences, and learn together.`,
+      image: DaoImage3,
+    },
+  ],
+};
+
 const ThirdSectionData = {
   firstCard: {
     title: '让内容 “有回响”，更“有价值”',
@@ -97,10 +124,34 @@ const ThirdSectionData = {
   },
 };
 
+const ThirdSectionDataEn = {
+  firstCard: {
+    title: `Making content "resonate" and more "valuable"`,
+    description: `In WolfPlanet, every voice matters! Share your unique perspectives and insights through posts, engage in discussions through comments, or show your appreciation by liking, sharing, and saving meaningful content. No matter how you choose to participate, you can find like-minded partners here and uncover endless investment possibilities. Each post and interaction will also earn you experience points and Wolf Tooth rewards, which will determine your status within the community and serve as a guarantee for future Wolf Coin acquisition.`,
+  },
+  secondCard: {
+    icon: WolfTooth,
+    title: 'Wolf Tooth',
+    description: `Wolf Tooth is the platform's equity token. The primary function of Wolf Tooth is to facilitate platform dividends, as the platform will periodically airdrop Wolf Coins to users based on their proportional Wolf Tooth holdings.`,
+  },
+  thirdCard: {
+    icon: WolfToken,
+    title: 'Wolf Coin',
+    description: `Wolf Coin is the platform's universal currency, which can be used to purchase courses, mint NFTs, and conduct other transactions.
+`,
+  },
+};
+
 const FourthSectionData = {
   headline: '个性化的“你”',
   subheader:
     '不断地互动和完成社区任务，即可获得能够彰显个人专业性的勋章！佩戴多种多样的勋章，抽取然后组合出独特的萌狼NFT，打造SBT，个性化属于你的狼星身份吧！',
+  image: MobilePersonalized,
+};
+
+const FourthSectionDataEn = {
+  headline: `Personalized "You"`,
+  subheader: `By continuously interacting and completing community tasks, you can earn badges that showcase your personal expertise. Collect and combine a variety of badges to randomly generate unique Wolf NFTs, creating your own SBT and personalized WolfPlanet identity.`,
   image: MobilePersonalized,
 };
 
@@ -111,7 +162,14 @@ const FifthSectionData = {
   image: CommunityIllustration2,
 };
 
+const FifthSectionDataEn = {
+  headline: 'Learn, become your best self',
+  subheader: `Afraid of lacking knowledge and falling behind your peers in investments? Don’t Worry! WolfPlanet has prepared comprehensive investment courses to save you from pitfalls, and also assembled top global analysts to guide you on your investment journey. Whether it's financial knowledge or investment skills, we will provide you with the highest-quality resources to ensure you excel in investments and stay ahead of the curve.`,
+  image: CommunityIllustration2,
+};
+
 const Community = () => {
+  const router = useRouter();
   //MOBILE AND DESKTOP
   const [isMobile, setIsMobile] = useState(false);
   const [width, setWidth] = useState<number>(
@@ -143,20 +201,60 @@ const Community = () => {
     <>
       {!isMobile && (
         <>
-          <FirstSection data={FirstSectionData} />
-          <SecondSection data={SecondSectionData} />
-          <ThirdSection data={ThirdSectionData} />
-          <FourthSection data={FourthSectionData} />
-          <FifthSection data={FifthSectionData} />
+          <FirstSection
+            data={
+              router.locale === 'en' ? FirstSectionDataEn : FirstSectionData
+            }
+          />
+          <SecondSection
+            data={
+              router.locale === 'en' ? SecondSectionDataEn : SecondSectionData
+            }
+          />
+          <ThirdSection
+            data={
+              router.locale === 'en' ? ThirdSectionDataEn : ThirdSectionData
+            }
+          />
+          <FourthSection
+            data={
+              router.locale === 'en' ? FourthSectionDataEn : FourthSectionData
+            }
+          />
+          <FifthSection
+            data={
+              router.locale === 'en' ? FifthSectionDataEn : FifthSectionData
+            }
+          />
         </>
       )}
       {isMobile && (
         <>
-          <FirstMobileSection data={FirstSectionData} />
-          <SecondMobileSection data={SecondSectionData} />
-          <ThirdMobileSection data={ThirdSectionData} />
-          <FourthMobileSection data={FourthSectionData} />
-          <FifthMobileSection data={FifthSectionData} />
+          <FirstMobileSection
+            data={
+              router.locale === 'en' ? FirstSectionDataEn : FirstSectionData
+            }
+          />
+          <SecondMobileSection
+            data={
+              router.locale === 'en' ? SecondSectionDataEn : SecondSectionData
+            }
+          />
+          <ThirdMobileSection
+            data={
+              router.locale === 'en' ? ThirdSectionDataEn : ThirdSectionData
+            }
+          />
+          <FourthMobileSection
+            data={
+              router.locale === 'en' ? FourthSectionDataEn : FourthSectionData
+            }
+          />
+          <FifthMobileSection
+            data={
+              router.locale === 'en' ? FifthSectionDataEn : FifthSectionData
+            }
+          />
         </>
       )}
     </>
