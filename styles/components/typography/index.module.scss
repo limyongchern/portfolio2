@@ -42,16 +42,6 @@
 
 // Example usage with responsive font sizes
 
-@include text-options('heading0', fonts.$family-head, 50px, 2rem, 400);
-@include text-options('heading1', fonts.$family-head, 30px, 2rem, 400);
-@include text-options('heading2', fonts.$family-head, 24px, 1.6rem, 400);
-@include text-options('heading3', fonts.$family-head, 20px, auto, 400);
-@include text-options('heading4', fonts.$family-head, 16px, 1.5rem, 400);
-@include text-options('heading5', fonts.$family-head, 14px, 1rem, 400);
-@include text-options('heading6', fonts.$family-head, 56px, 60px, 400);
-@include text-options('heading7', fonts.$family-head, 20px, normal, 400);
-@include text-options('heading8', fonts.$family-head, 40px, 4rem, 400);
-
 @include text-options('body1', fonts.$family-body, 18px, auto, 400);
 @include text-options('body2', fonts.$family-body, 16px, 1.4rem, 400);
 @include text-options('body3', fonts.$family-body, 14px, 1.4rem, 400);
@@ -77,6 +67,17 @@
 @include text-options('bodybold10', fonts.$family-body-bold, 66px, auto, 700);
 @include text-options('bodybold11', fonts.$family-body-bold, 54px, auto, 700);
 
+@include text-options('heading0', fonts.$family-head, 50px, 2rem, 400);
+@include text-options('heading1', fonts.$family-head, 30px, auto, 400);
+@include text-options('heading2', fonts.$family-head, 24px, auto, 400);
+@include text-options('heading3', fonts.$family-head, 20px, auto, 400);
+@include text-options('heading4', fonts.$family-head, 16px, 1.5rem, 400);
+@include text-options('heading5', fonts.$family-head, 14px, 1rem, 400);
+@include text-options('heading6', fonts.$family-head, 56px, 60px, 400);
+@include text-options('heading7', fonts.$family-head, 20px, normal, 400);
+@include text-options('heading8', fonts.$family-head, 40px, 4rem, 400);
+@include text-options('heading9', fonts.$family-head, 42px, 4rem, 400);
+
 @include text-options(
   'bodydmsans1',
   fonts.$family-body-dmsans,
@@ -95,6 +96,27 @@
   'bodydmsans3',
   fonts.$family-body-dmsans,
   12px,
+  auto,
+  400
+);
+@include text-options(
+  'bodydmsans4',
+  fonts.$family-body-dmsans,
+  18px,
+  auto,
+  700
+);
+@include text-options(
+  'bodydmsans5',
+  fonts.$family-body-dmsans,
+  14px,
+  auto,
+  700
+);
+@include text-options(
+  'bodydmsans6',
+  fonts.$family-body-dmsans,
+  14px,
   auto,
   400
 );

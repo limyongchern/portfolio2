@@ -52,7 +52,7 @@ import iPhoneImage5 from 'public/Home/iPhoneImage5.png';
 
 interface IProps {}
 
-const FirstSectionDataCn = {
+const FirstSectionData = {
   headline: '全球领先的 Web3投资交流社区',
   headline1: '全球领先的',
   headline2: 'Web3投资交流社区',
@@ -96,6 +96,40 @@ const SecondSectionData = {
       id: 4,
       title: '4',
       description: '每个星球都是一个理想的投资交流场所，故事由此开始...',
+      image: TempImage4,
+    },
+  ],
+};
+
+const SecondSectionDataEn = {
+  headline: 'The starting point of the Investment Journey',
+  cards: [
+    {
+      id: 1,
+      title: '1',
+      description:
+        'One day, the young wolves began exploring space investment opportunities.',
+      image: TempImage1,
+    },
+    {
+      id: 2,
+      title: '2',
+      description:
+        'The wolves transformed into space wanderers, co-founding WolfPlanet investment community.',
+      image: TempImage2,
+    },
+    {
+      id: 3,
+      title: '3',
+      description:
+        'Venturing deeper, the wanderers discovered planets with investment and communication potential.',
+      image: TempImage3,
+    },
+    {
+      id: 4,
+      title: '4',
+      description:
+        'Each planet they discovered proved to be an ideal place for investment communication. And the Investment Journey of the WolfPlanet community begins here…',
       image: TempImage4,
     },
   ],
@@ -164,6 +198,73 @@ const ThirdSectionData = {
     },
   ],
 };
+const ThirdSectionDataEn = {
+  headline: 'A Comprehensive Global Investment Community',
+  cards: [
+    {
+      id: 1,
+      title: 'Knowledge Sharing',
+      bulletPoints: [
+        'Global Community of Investment Enthusiasts',
+        'Exchanging investment Insights and Strategies',
+        'Real-time interactive discussions',
+      ],
+      logo: CardIcon1,
+    },
+    {
+      id: 2,
+      title: 'Tribal Camaraderie',
+      bulletPoints: [
+        'Building a Global, Cross-Disciplinary Investor Community',
+        'Share Investment Insights in Real-Time',
+        'Connect with Like-Minded Investment Partners',
+      ],
+      logo: CardIcon2,
+    },
+    {
+      id: 3,
+      title: 'Global Perspective',
+      bulletPoints: [
+        'Insights on Global Market Dynamics',
+        'Explore investment opportunities across asset classes',
+        'Accessing real-time investment Insights',
+      ],
+      logo: CardIcon3,
+    },
+    {
+      id: 4,
+      title: 'Investment Education',
+      bulletPoints: [
+        'Professional investment Education Courses',
+        'Investment Skills Development Guided by Industry Experts',
+        'Stay Ahead of the Curve with Continuously Updated Insights',
+      ],
+      logo: CardIcon4,
+    },
+  ],
+  bottomCards: [
+    {
+      id: 1,
+      title: 'New Investor',
+      bulletPoints: [
+        'Accelerate Your Investment Skills ',
+        'Connect with investment experts',
+        'Gain Insights into global market trends',
+      ],
+      image: IllustrationImage1,
+    },
+    {
+      id: 2,
+      title: 'Professional Investor',
+      bulletPoints: [
+        'Knowledge sharing for economic benefits',
+        'Grow Your Audience Reach',
+        'Share investment knowledge Across Borders',
+      ],
+      image: IllustrationImage2,
+    },
+  ],
+};
 
 const FourthSectionData = {
   headline: '区块链驱动，打造自主安全的无界投资交流社区',
@@ -211,10 +312,101 @@ const FourthSectionData = {
   ],
 };
 
+const FourthSectionDataEn = {
+  headline:
+    'Leveraging blockchain technology, establish an independent, secure, and limitless investment exchange community.',
+  cardsContent: [
+    {
+      id: 1,
+      title: 'Decentralization',
+      content: [
+        'Robust system security',
+        'Transparent and Immutable Information',
+        'Safer, More Equitable, and Transparent Technology',
+      ],
+      image: IllustrationDecentralisation,
+    },
+    {
+      id: 2,
+      title: 'Borderless Ecosystem',
+      content: [
+        'Borderless Communication and Collaboration',
+        'Global Community Building and Resource Sharing',
+        'Equitable Opportunities and Access',
+      ],
+      image: IllustrationNoGeographical,
+    },
+    {
+      id: 3,
+      title: 'DAO Governance',
+      content: [
+        'Decentralized Autonomy via Smart Contracts',
+        'Community-Driven User Participation',
+        'Transparent and open governance',
+      ],
+      image: IllustrationDAOCommunity,
+    },
+    {
+      id: 4,
+      title: 'Revenue Model',
+      content: [
+        'Community contributions Rewarded in Tokens',
+        'Participation Rewarded',
+        'Monetize Content through NFTs',
+      ],
+      image: IllustrationRevenue,
+    },
+  ],
+};
+
 const PlanetSectionData = {
   headline: '七星奇遇：探索Wolf Planet 星球',
   subheader:
     'Wolf Planet 星球是一个由七个独具特色的星球组成的神秘社区，每个星球都拥有独特的属性和玩法。',
+};
+
+const PlanetSectionDataEn = {
+  headline:
+    'Embark on an Odyssey through the Seven Stars: Discover the WolfPlanet Universe',
+  subheader:
+    'WolfPlanet is a captivating interplanetary community, where seven distinct worlds offer diverse attributes and gameplay experiences.',
+};
+
+const FifthSectionDataEn = {
+  headline: 'Application User Interface',
+  cards: [
+    {
+      id: 1,
+      title: 'DAO community',
+      description: 'Empower the community with shared governance.',
+      image: iPhoneImage1,
+    },
+    {
+      id: 2,
+      title: 'NFT',
+      description: 'Collect Digital Asset Collections',
+      image: iPhoneImage2,
+    },
+    {
+      id: 3,
+      title: 'Investment course',
+      description:
+        'Explore a diverse range of investment courses shared by global experts. ',
+      image: iPhoneImage3,
+    },
+    {
+      id: 4,
+      title: 'Mystery box',
+      description: 'Discover delightful surprises and joyful experiences.',
+      image: iPhoneImage4,
+    },
+    {
+      id: 5,
+      title: 'Wolf Tooth',
+      description: 'Exciting rewards and events await you.',
+      image: iPhoneImage5,
+    },
+  ],
 };
 
 const FifthSectionData = {
@@ -292,26 +484,70 @@ const Home = (props: IProps) => {
         <div>
           <FirstSection
             data={
-              router.locale === 'en' ? FirstSectionDataEn : FirstSectionDataCn
+              router.locale === 'en' ? FirstSectionDataEn : FirstSectionData
             }
           />
-          <SecondSection data={SecondSectionData} />
-          <ThirdSection data={ThirdSectionData} />
-          <FourthSection data={FourthSectionData} />
-          <PlanetSection data={PlanetSectionData} />
-          <FifthSection data={FifthSectionData} />
+          <SecondSection
+            data={
+              router.locale === 'en' ? SecondSectionDataEn : SecondSectionData
+            }
+          />
+          <ThirdSection
+            data={
+              router.locale === 'en' ? ThirdSectionDataEn : ThirdSectionData
+            }
+          />
+          <FourthSection
+            data={
+              router.locale === 'en' ? FourthSectionDataEn : FourthSectionData
+            }
+          />
+          <PlanetSection
+            data={
+              router.locale === 'en' ? PlanetSectionDataEn : PlanetSectionData
+            }
+          />
+          <FifthSection
+            data={
+              router.locale === 'en' ? FifthSectionDataEn : FifthSectionData
+            }
+          />
           <DownloadSection />
         </div>
       )}
 
       {isMobile && (
         <>
-          <FirstMobileSection data={FirstSectionDataCn} />
-          <SecondMobileSection data={SecondSectionData} />
-          <ThirdMobileSection data={ThirdSectionData} />
-          <FourthMobileSection data={FourthSectionData} />
-          <PlanetMobileSection data={PlanetSectionData} />
-          <FifthMobileSection data={FifthSectionData} />
+          <FirstMobileSection
+            data={
+              router.locale === 'en' ? FirstSectionDataEn : FirstSectionData
+            }
+          />
+          <SecondMobileSection
+            data={
+              router.locale === 'en' ? SecondSectionDataEn : SecondSectionData
+            }
+          />
+          <ThirdMobileSection
+            data={
+              router.locale === 'en' ? ThirdSectionDataEn : ThirdSectionData
+            }
+          />
+          <FourthMobileSection
+            data={
+              router.locale === 'en' ? FourthSectionDataEn : FourthSectionData
+            }
+          />
+          <PlanetMobileSection
+            data={
+              router.locale === 'en' ? PlanetSectionDataEn : PlanetSectionData
+            }
+          />
+          <FifthMobileSection
+            data={
+              router.locale === 'en' ? FifthSectionDataEn : FifthSectionData
+            }
+          />
           <DownloadMobileSection />
         </>
       )}

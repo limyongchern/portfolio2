@@ -5,8 +5,9 @@ import {
   Group,
   Stack,
 } from '@mantine/core';
+import { useRouter } from 'next/router';
 import styles from 'styles/components/footer.module.scss';
-import { Body, BodyBold, Heading } from '../typography';
+import { Body, BodyBold, Heading, BodyDmsans } from '../typography';
 import Link from 'next/link';
 import Image from 'next/image';
 import LogoSVG from 'public/wolfplanet.svg';
@@ -25,7 +26,12 @@ const PrivacyPolicyText = '隐私政策';
 const TermsOfUseText = '用户协议';
 const WolfPlanetAllRights = '© 2024 WolfPlanet 版权所有';
 
+const PrivacyPolicyTextEn = 'Privacy Policy';
+const TermsOfUseTextEn = 'User Agreement';
+const WolfPlanetAllRightsEn = 'Copyright © 2024 WolfPlanet';
+
 const Footer = (props: IProps) => {
+  const router = useRouter();
   const [isMobile, setIsMobile] = useState(false);
   const [width, setWidth] = useState<number>(
     typeof window !== 'undefined' ? window.innerWidth : 0
@@ -83,27 +89,54 @@ const Footer = (props: IProps) => {
                   <Link
                     href="/privacy-policy"
                     style={{ textDecoration: 'none' }}>
-                    <BodyBold
-                      variant={5}
-                      color="#F2F3F7"
-                      style={{ cursor: 'pointer' }}>
-                      {PrivacyPolicyText} &nbsp;
-                    </BodyBold>
+                    {router.locale === 'en' ? (
+                      <BodyDmsans
+                        variant={1}
+                        color="#F2F3F7"
+                        style={{ cursor: 'pointer', fontWeight: 700 }}>
+                        {PrivacyPolicyTextEn} &nbsp;
+                      </BodyDmsans>
+                    ) : (
+                      <BodyBold
+                        variant={5}
+                        color="#F2F3F7"
+                        style={{ cursor: 'pointer' }}>
+                        {PrivacyPolicyText} &nbsp;
+                      </BodyBold>
+                    )}
                   </Link>
                   <Body variant={2} color="#9198B0" style={{ marginTop: 4 }}>
                     | &nbsp;
                   </Body>
                   <Link href="/terms-of-use" style={{ textDecoration: 'none' }}>
-                    <BodyBold
-                      variant={5}
-                      color="#F2F3F7"
-                      style={{ cursor: 'pointer' }}>
-                      {TermsOfUseText} &nbsp;
-                    </BodyBold>
+                    {router.locale === 'en' ? (
+                      <BodyDmsans
+                        variant={1}
+                        color="#F2F3F7"
+                        style={{ cursor: 'pointer', fontWeight: 700 }}>
+                        {TermsOfUseTextEn} &nbsp;
+                      </BodyDmsans>
+                    ) : (
+                      <BodyBold
+                        variant={5}
+                        color="#F2F3F7"
+                        style={{ cursor: 'pointer' }}>
+                        {TermsOfUseText} &nbsp;
+                      </BodyBold>
+                    )}
                   </Link>
-                  <Body variant={2} color="#9198B0" style={{ marginTop: 4 }}>
-                    {WolfPlanetAllRights}
-                  </Body>
+                  {router.locale === 'en' ? (
+                    <BodyDmsans
+                      variant={1}
+                      color="#9198B0"
+                      style={{ marginTop: 0 }}>
+                      {WolfPlanetAllRightsEn}
+                    </BodyDmsans>
+                  ) : (
+                    <Body variant={2} color="#9198B0" style={{ marginTop: 4 }}>
+                      {WolfPlanetAllRights}
+                    </Body>
+                  )}
                 </span>
               </Flex>
             </Stack>
@@ -133,29 +166,56 @@ const Footer = (props: IProps) => {
             <Flex justify={'center'} style={{ paddingTop: '56px' }}>
               <span style={{ display: 'flex' }}>
                 <Link href="/privacy-policy" style={{ textDecoration: 'none' }}>
-                  <BodyBold
-                    variant={5}
-                    color="#F2F3F7"
-                    style={{ cursor: 'pointer' }}>
-                    {PrivacyPolicyText} &nbsp;
-                  </BodyBold>
+                  {router.locale === 'en' ? (
+                    <BodyDmsans
+                      variant={1}
+                      color="#F2F3F7"
+                      style={{ cursor: 'pointer', fontWeight: 700 }}>
+                      {PrivacyPolicyTextEn} &nbsp;
+                    </BodyDmsans>
+                  ) : (
+                    <BodyBold
+                      variant={5}
+                      color="#F2F3F7"
+                      style={{ cursor: 'pointer' }}>
+                      {PrivacyPolicyText} &nbsp;
+                    </BodyBold>
+                  )}
                 </Link>
                 <Body variant={2} color="#9198B0" style={{ marginTop: 2 }}>
                   | &nbsp;
                 </Body>
                 <Link href="/terms-of-use" style={{ textDecoration: 'none' }}>
-                  <BodyBold
-                    variant={5}
-                    color="#F2F3F7"
-                    style={{ cursor: 'pointer' }}>
-                    {TermsOfUseText} &nbsp;
-                  </BodyBold>
+                  {router.locale === 'en' ? (
+                    <BodyDmsans
+                      variant={1}
+                      color="#F2F3F7"
+                      style={{ cursor: 'pointer', fontWeight: 700 }}>
+                      {TermsOfUseTextEn} &nbsp;
+                    </BodyDmsans>
+                  ) : (
+                    <BodyBold
+                      variant={5}
+                      color="#F2F3F7"
+                      style={{ cursor: 'pointer' }}>
+                      {TermsOfUseText} &nbsp;
+                    </BodyBold>
+                  )}
                 </Link>
               </span>
             </Flex>
-            <Body variant={2} color="#9198B0" style={{ marginTop: -5 }}>
-              {WolfPlanetAllRights}
-            </Body>
+            {router.locale === 'en' ? (
+              <BodyDmsans
+                variant={1}
+                color="#9198B0"
+                style={{ marginTop: -10 }}>
+                {WolfPlanetAllRightsEn}
+              </BodyDmsans>
+            ) : (
+              <Body variant={2} color="#9198B0" style={{ marginTop: 4 }}>
+                {WolfPlanetAllRights}
+              </Body>
+            )}
           </Stack>
         </div>
       )}

@@ -1,11 +1,13 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { Card, UnstyledButton } from '@mantine/core';
-import { Body, BodyBold } from 'components/typography';
+import { Body, BodyBold, BodyDmsans, Heading } from 'components/typography';
 import styles from './thirdSection.module.scss';
 import { MagicMotion } from 'react-magic-motion';
 import { useState } from 'react';
 
 const ThirdMobileSection = ({ data }: any) => {
+  const router = useRouter();
   const [currentCard, setCurrentCard] = useState(0);
 
   const isActive = (index: number) => {
@@ -14,16 +16,30 @@ const ThirdMobileSection = ({ data }: any) => {
 
   return (
     <div className={styles.outerContainerMobile}>
-      <BodyBold
-        variant={3}
-        color="white"
-        style={{
-          marginBottom: '0px',
-          textAlign: 'center',
-          padding: '0px 20px',
-        }}>
-        {data.headline}
-      </BodyBold>
+      {router.locale === 'en' ? (
+        <Heading
+          variant={2}
+          color="white"
+          style={{
+            marginBottom: '0px',
+            textAlign: 'center',
+            padding: '0px 20px',
+          }}>
+          {data.headline}
+        </Heading>
+      ) : (
+        <BodyBold
+          variant={3}
+          color="white"
+          style={{
+            marginBottom: '0px',
+            textAlign: 'center',
+            padding: '0px 20px',
+          }}>
+          {data.headline}
+        </BodyBold>
+      )}
+
       <div className={styles.cardsContainerMobile}>
         {data.cards.map((card: any, index: number) => (
           <Card className={styles.card} key={index}>
@@ -35,70 +51,74 @@ const ThirdMobileSection = ({ data }: any) => {
               color={'#9198B0'}
             />
             <div>
-              <BodyBold variant={2} color="#F2F3F7">
-                {card.title}
-              </BodyBold>
+              {router.locale === 'en' ? (
+                <Heading variant={4} color="#F2F3F7">
+                  {card.title}
+                </Heading>
+              ) : (
+                <BodyBold variant={2} color="#F2F3F7">
+                  {card.title}
+                </BodyBold>
+              )}
+
               <ul
                 className="custom-list"
-                style={{ marginTop: 0, marginLeft: -15 }}>
+                style={{ marginTop: 10, marginLeft: -35 }}>
                 {card.bulletPoints.map((point: any, index: number) => (
-                  <Body
-                    variant={2}
-                    color="#9198B0"
-                    key={index}
-                    style={{
-                      marginTop: '5px',
-                      lineHeight: '2rem',
-                      width: 200,
-                    }}>
-                    &middot;{point}
-                  </Body>
+                  <>
+                    {router.locale === 'en' ? (
+                      <BodyDmsans
+                        variant={6}
+                        color="#9198B0"
+                        key={index}
+                        style={{
+                          marginTop: '3px',
+                          // lineHeight: '2rem',
+                          width: 220,
+                        }}>
+                        &bull; {point}
+                      </BodyDmsans>
+                    ) : (
+                      <Body
+                        variant={2}
+                        color="#9198B0"
+                        key={index}
+                        style={{
+                          marginTop: '5px',
+                          lineHeight: '2rem',
+                          width: 220,
+                        }}>
+                        &middot;{point}
+                      </Body>
+                    )}
+                  </>
                 ))}
               </ul>
             </div>
           </Card>
         ))}
       </div>
-      {/* <div className={styles.illustrationContainer}>
-        {data.bottomCards.map((card: any, index: number) => (
-          <div className={styles.illustrationSection} key={index}>
-            <Image
-              src={card.image}
-              alt="card icon"
-              className={styles.illustration}
-            />
-            <BodyBold variant={2} color="#F2F3F7" style={{ marginTop: 40 }}>
-              {card.title}
-            </BodyBold>
-            <div style={{ marginTop: 0, marginBottom: 30 }}>
-              {card.bulletPoints.map((point: any, index: number) => (
-                <Body
-                  variant={2}
-                  color="#9198B0"
-                  key={index}
-                  style={{
-                    marginTop: '8px',
-                    lineHeight: '2rem',
-                  }}>
-                  <li>{point}</li>
-                </Body>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div> */}
       <div style={{ display: 'flex', marginTop: 100, gap: 10 }}>
         <div className={styles.nav}>
           <UnstyledButton
             key={'0'}
             onClick={() => setCurrentCard(0)}
             className={`${styles.link} ${isActive(0) ? styles.active : ''}`}>
-            <BodyBold
-              variant={1}
-              style={{ color: isActive(0) ? '#F2F3F7' : '#9198B0' }}
-              className={`${isActive(0) ? styles.active : ''}`}>
-              新手投资者
-            </BodyBold>
+            {router.locale === 'en' ? (
+              <Heading
+                variant={4}
+                style={{ color: isActive(0) ? '#F2F3F7' : '#9198B0' }}
+                className={`${isActive(0) ? styles.active : ''}`}>
+                {data.bottomCards[0].title}
+              </Heading>
+            ) : (
+              <BodyBold
+                variant={1}
+                style={{ color: isActive(0) ? '#F2F3F7' : '#9198B0' }}
+                className={`${isActive(0) ? styles.active : ''}`}>
+                {data.bottomCards[0].title}
+              </BodyBold>
+            )}
           </UnstyledButton>
         </div>
         <div className={styles.nav}>
@@ -106,12 +126,21 @@ const ThirdMobileSection = ({ data }: any) => {
             key={'0'}
             onClick={() => setCurrentCard(1)}
             className={`${styles.link} ${isActive(1) ? styles.active : ''}`}>
-            <BodyBold
-              variant={1}
-              style={{ color: isActive(1) ? '#F2F3F7' : '#9198B0' }}
-              className={`${isActive(1) ? styles.active : ''}`}>
-              专业投资者
-            </BodyBold>
+            {router.locale === 'en' ? (
+              <Heading
+                variant={4}
+                style={{ color: isActive(1) ? '#F2F3F7' : '#9198B0' }}
+                className={`${isActive(1) ? styles.active : ''}`}>
+                {data.bottomCards[1].title}
+              </Heading>
+            ) : (
+              <BodyBold
+                variant={1}
+                style={{ color: isActive(1) ? '#F2F3F7' : '#9198B0' }}
+                className={`${isActive(1) ? styles.active : ''}`}>
+                {data.bottomCards[1].title}
+              </BodyBold>
+            )}
           </UnstyledButton>
         </div>
       </div>
@@ -127,16 +156,36 @@ const ThirdMobileSection = ({ data }: any) => {
             <div style={{ marginTop: 0 }}>
               {data.bottomCards[currentCard].bulletPoints.map(
                 (point: any, index2: number) => (
-                  <Body
-                    variant={1}
-                    key={index2}
-                    color={'#F2F3F7'}
-                    style={{
-                      marginTop: '8px',
-                      lineHeight: '2rem',
-                    }}>
-                    &middot;{point}
-                  </Body>
+                  <>
+                    {router.locale === 'en' ? (
+                      <div>
+                        <BodyDmsans
+                          variant={6}
+                          key={index2}
+                          color={'#F2F3F7'}
+                          style={{
+                            marginTop: '8px',
+                            // lineHeight: '2rem',
+                            transform: 'none',
+                          }}>
+                          &bull; {point}
+                        </BodyDmsans>
+                      </div>
+                    ) : (
+                      <div>
+                        <Body
+                          variant={1}
+                          key={index2}
+                          color={'#F2F3F7'}
+                          style={{
+                            marginTop: '8px',
+                            lineHeight: '2rem',
+                          }}>
+                          &middot;{point}
+                        </Body>
+                      </div>
+                    )}
+                  </>
                 )
               )}
             </div>

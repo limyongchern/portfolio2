@@ -1,11 +1,13 @@
 import styles from './home.module.scss';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { Body, BodyBold } from 'components/typography';
+import { Body, BodyBold, BodyDmsans, Heading } from 'components/typography';
 import { MagicTabSelect } from 'react-magic-motion';
 import { CaretUp, CaretDown } from '@phosphor-icons/react';
 
 const FourthMobileSection = ({ data }: any) => {
+  const router = useRouter();
   const [selectedImage, setSelectedImage] = useState(
     data.cardsContent[0].image
   );
@@ -24,7 +26,7 @@ const FourthMobileSection = ({ data }: any) => {
     return (
       <button
         key={item.id}
-        onMouseEnter={() => setHoveredIndex(i)}
+        onClick={() => setHoveredIndex(i)}
         className={styles.buttonsContainer}
         style={{
           background:
@@ -58,9 +60,16 @@ const FourthMobileSection = ({ data }: any) => {
             alignItems: 'center',
             justifyContent: 'space-between',
           }}>
-          <Body variant={10} color="white" className={styles.cardTitle3}>
-            {item.title}
-          </Body>
+          {router.locale === 'en' ? (
+            <Heading variant={4} color="white" className={styles.cardTitle3}>
+              {item.title}
+            </Heading>
+          ) : (
+            <Body variant={10} color="white" className={styles.cardTitle3}>
+              {item.title}
+            </Body>
+          )}
+
           {hoveredIndex === i ? (
             <CaretUp
               style={{ cursor: 'not-allowed' }}
@@ -81,13 +90,25 @@ const FourthMobileSection = ({ data }: any) => {
         {hoveredIndex === i && (
           <>
             {item.content.map((content: string, i: number) => (
-              <Body
-                variant={1}
-                color="#9198B0"
-                key={i}
-                style={{ marginTop: '8px', lineHeight: '2rem' }}>
-                <li>{content}</li>
-              </Body>
+              <>
+                {router.locale === 'en' ? (
+                  <BodyDmsans
+                    variant={6}
+                    color="#9198B0"
+                    key={i}
+                    style={{ marginTop: '0px', lineHeight: '2rem' }}>
+                    <li>{content}</li>
+                  </BodyDmsans>
+                ) : (
+                  <Body
+                    variant={1}
+                    color="#9198B0"
+                    key={i}
+                    style={{ marginTop: '8px', lineHeight: '2rem' }}>
+                    <li>{content}</li>
+                  </Body>
+                )}
+              </>
             ))}
           </>
         )}
@@ -99,12 +120,22 @@ const FourthMobileSection = ({ data }: any) => {
     <div
       className={styles.fourthSection}
       style={{ backgroundColor: '#272935' }}>
-      <BodyBold
-        variant={3}
-        color="white"
-        style={{ marginBottom: '-240px', padding: '0px 20px' }}>
-        {data.headline}
-      </BodyBold>
+      {router.locale === 'en' ? (
+        <Heading
+          variant={2}
+          color="white"
+          style={{ marginBottom: '-240px', padding: '0px 20px' }}>
+          {data.headline}
+        </Heading>
+      ) : (
+        <BodyBold
+          variant={3}
+          color="white"
+          style={{ marginBottom: '-240px', padding: '0px 20px' }}>
+          {data.headline}
+        </BodyBold>
+      )}
+
       <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
         <div className={styles.selectedImageContainer} style={{}}>
           <Image

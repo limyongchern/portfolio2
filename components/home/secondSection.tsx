@@ -1,11 +1,13 @@
 import styles from './home.module.scss';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { Body, BodyBold } from 'components/typography';
+import { Body, BodyBold, BodyDmsans, Heading } from 'components/typography';
 import { MagicMotion } from 'react-magic-motion';
 import { PauseCircle, PlayCircle } from '@phosphor-icons/react';
 
 const SecondSection = ({ data }: any) => {
+  const router = useRouter();
   const timerLength = 3000;
   const [cardOpen, setCardOpen] = useState(0);
   const [isTimerPaused, setIsTimerPaused] = useState(false);
@@ -93,18 +95,31 @@ const SecondSection = ({ data }: any) => {
               height: 25,
               padding: '0px 40px',
 
-              width: '60%',
+              width: '80%',
             }}>
-            <BodyBold
-              variant={4}
-              color="white"
-              style={{
-                marginBottom: 60,
-                display: 'inline-block',
-                alignSelf: 'flex-end',
-              }}>
-              {data.description}
-            </BodyBold>
+            {router.locale === 'en' ? (
+              <BodyDmsans
+                variant={4}
+                color="white"
+                style={{
+                  marginBottom: 60,
+                  display: 'inline-block',
+                  alignSelf: 'flex-end',
+                }}>
+                {data.description}
+              </BodyDmsans>
+            ) : (
+              <BodyBold
+                variant={4}
+                color="white"
+                style={{
+                  marginBottom: 60,
+                  display: 'inline-block',
+                  alignSelf: 'flex-end',
+                }}>
+                {data.description}
+              </BodyBold>
+            )}
           </div>
         )}
       </div>
@@ -114,9 +129,16 @@ const SecondSection = ({ data }: any) => {
     <div
       className={styles.collapsibleCardSection}
       style={{ backgroundColor: '#272935' }}>
-      <Body variant={9} color="white" style={{ marginBottom: '-265px' }}>
-        {data.headline}
-      </Body>
+      {router.locale === 'en' ? (
+        <Heading variant={1} color="white" style={{ marginBottom: '-265px' }}>
+          {data.headline}
+        </Heading>
+      ) : (
+        <Body variant={9} color="white" style={{ marginBottom: '-265px' }}>
+          {data.headline}
+        </Body>
+      )}
+
       <MagicMotion transition={{ type: 'ease' }}>
         <div className={styles.collapsibleCardsContainer}>
           {data.cards.map((item: any, index: number) => (

@@ -35,7 +35,10 @@ const links = [
   { name: '下载', nameEn: 'Download', link: '/download' },
 ];
 
-const languages = [{ name: 'English' }, { name: '简体中文' }];
+const languages = [
+  { name: 'English', language: 'en' },
+  { name: '简体中文', language: 'cn' },
+];
 
 const Header = (props: IProps) => {
   const router = useRouter();
@@ -228,11 +231,19 @@ const Header = (props: IProps) => {
                 router.push(link.link);
                 setMenuOpen(false);
               }}>
-              <BodyBold
-                variant={2}
-                className={`${isActivePath(link.link) ? styles.active : ''}`}>
-                {link.name}
-              </BodyBold>
+              {router.locale === 'en' ? (
+                <Heading
+                  variant={3}
+                  className={`${isActivePath(link.link) ? styles.active : ''}`}>
+                  {link.nameEn}
+                </Heading>
+              ) : (
+                <BodyBold
+                  variant={2}
+                  className={`${isActivePath(link.link) ? styles.active : ''}`}>
+                  {link.name}
+                </BodyBold>
+              )}
             </Link>
           ))}
           <Divider color="#3E404E" w={'100%'} mb={'30px'} />
@@ -240,8 +251,11 @@ const Header = (props: IProps) => {
             <div
               key={index}
               className={
-                index === 1 ? styles.languageClicked : styles.languageUnclicked
-              }>
+                locale === language.language
+                  ? styles.languageClicked
+                  : styles.languageUnclicked
+              }
+              onClick={() => setLanguage(language.language)}>
               <BodyBold variant={2}>{language.name}</BodyBold>
             </div>
           ))}

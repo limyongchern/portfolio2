@@ -1,12 +1,14 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import styles from './fifthSection.module.scss';
+import { useRouter } from 'next/router';
 
 import Image from 'next/image';
 import { easeInOut, motion } from 'framer-motion';
 import { Carousel, Embla } from '@mantine/carousel';
-import { Body, BodyBold } from 'components/typography';
+import { Body, BodyBold, BodyDmsans, Heading } from 'components/typography';
 
 const FifthMobileSection = ({ data }: any) => {
+  const router = useRouter();
   const [embla, setEmbla] = useState<Embla | null>(null);
   const [currentPage, setCurrentPage] = useState(0);
   const handleScroll = useCallback(() => {
@@ -36,22 +38,45 @@ const FifthMobileSection = ({ data }: any) => {
         <div style={{ paddingTop: '10px' }}>
           <div className={styles.planetMobileCard}>
             <div className={styles.widthPlanetMobileCard}>
-              <BodyBold
-                style={{
-                  justifyContent: 'center',
-                  textAlign: 'center',
-                  padding: '0px 50px',
-                }}
-                variant={6}
-                color={'#F2F3F7'}>
-                {item.title}
-              </BodyBold>
-              <Body
-                style={{ textAlign: 'center', marginTop: '10px' }}
-                variant={2}
-                color={'#9198B0'}>
-                {item.description}
-              </Body>
+              {router.locale === 'en' ? (
+                <>
+                  <Heading
+                    style={{
+                      justifyContent: 'center',
+                      textAlign: 'center',
+                      padding: '0px 50px',
+                    }}
+                    variant={4}
+                    color={'#F2F3F7'}>
+                    {item.title}
+                  </Heading>
+                  <BodyDmsans
+                    style={{ textAlign: 'center', marginTop: '10px' }}
+                    variant={6}
+                    color={'#9198B0'}>
+                    {item.description}
+                  </BodyDmsans>
+                </>
+              ) : (
+                <>
+                  <BodyBold
+                    style={{
+                      justifyContent: 'center',
+                      textAlign: 'center',
+                      padding: '0px 50px',
+                    }}
+                    variant={6}
+                    color={'#F2F3F7'}>
+                    {item.title}
+                  </BodyBold>
+                  <Body
+                    style={{ textAlign: 'center', marginTop: '10px' }}
+                    variant={2}
+                    color={'#9198B0'}>
+                    {item.description}
+                  </Body>
+                </>
+              )}
             </div>
             <Image
               src={item.image}
@@ -63,23 +88,46 @@ const FifthMobileSection = ({ data }: any) => {
       ) : (
         <div className={styles.planetCardMobileDeselect}>
           <div className={styles.widthPlanetMobileCard}>
-            <BodyBold
-              style={{
-                justifyContent: 'center',
-                textAlign: 'center',
-                padding: '0px 50px',
-              }}
-              variant={8}
-              color={'#F2F3F7'}>
-              {item.title}
-            </BodyBold>
-            <div style={{ height: '10px' }}>
-              <Body
-                style={{ textAlign: 'center', marginTop: '15px' }}
+            {router.locale === 'en' ? (
+              <Heading
+                style={{
+                  justifyContent: 'center',
+                  textAlign: 'center',
+                  padding: '0px 50px',
+                }}
                 variant={4}
-                color={'#9198B0'}>
-                {item.description}
-              </Body>
+                color={'#F2F3F7'}>
+                {item.title}
+              </Heading>
+            ) : (
+              <BodyBold
+                style={{
+                  justifyContent: 'center',
+                  textAlign: 'center',
+                  padding: '0px 50px',
+                }}
+                variant={8}
+                color={'#F2F3F7'}>
+                {item.title}
+              </BodyBold>
+            )}
+
+            <div style={{ height: '10px' }}>
+              {router.locale === 'en' ? (
+                <BodyDmsans
+                  style={{ textAlign: 'center', marginTop: '10px' }}
+                  variant={6}
+                  color={'#9198B0'}>
+                  {item.description}
+                </BodyDmsans>
+              ) : (
+                <Body
+                  style={{ textAlign: 'center', marginTop: '15px' }}
+                  variant={4}
+                  color={'#9198B0'}>
+                  {item.description}
+                </Body>
+              )}
             </div>
           </div>
           <Image
@@ -93,12 +141,21 @@ const FifthMobileSection = ({ data }: any) => {
   ));
   return (
     <div id="fourth-section" className={styles.containerFifthMobileSection}>
-      <BodyBold
-        variant={3}
-        color="white"
-        style={{ padding: '0px 70px', textAlign: 'center' }}>
-        {data.headline}
-      </BodyBold>
+      {router.locale === 'en' ? (
+        <Heading
+          variant={3}
+          color="white"
+          style={{ padding: '0px 40px', textAlign: 'center' }}>
+          {data.headline}
+        </Heading>
+      ) : (
+        <BodyBold
+          variant={3}
+          color="white"
+          style={{ padding: '0px 70px', textAlign: 'center' }}>
+          {data.headline}
+        </BodyBold>
+      )}
 
       <motion.div
         className={styles.carouselContainer}
@@ -129,7 +186,7 @@ const FifthMobileSection = ({ data }: any) => {
         style={{
           display: 'flex',
           gap: 10,
-          paddingTop: 0,
+          paddingTop: 30,
           justifyContent: 'center',
           alignItems: 'center',
         }}>

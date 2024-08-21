@@ -1,11 +1,13 @@
 import styles from './home.module.scss';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { Body } from 'components/typography';
+import { Body, BodyDmsans, Heading } from 'components/typography';
 import { MagicTabSelect } from 'react-magic-motion';
 import { CaretUp, CaretDown } from '@phosphor-icons/react';
 
 const FourthSection = ({ data }: any) => {
+  const router = useRouter();
   const [selectedImage, setSelectedImage] = useState(
     data.cardsContent[0].image
   );
@@ -59,9 +61,16 @@ const FourthSection = ({ data }: any) => {
             alignItems: 'center',
             justifyContent: 'space-between',
           }}>
-          <Body variant={10} color="white" className={styles.cardTitle3}>
-            {item.title}
-          </Body>
+          {router.locale === 'en' ? (
+            <Heading variant={3} color="white" className={styles.cardTitle3}>
+              {item.title}
+            </Heading>
+          ) : (
+            <Body variant={10} color="white" className={styles.cardTitle3}>
+              {item.title}
+            </Body>
+          )}
+
           {hoveredIndex === i ? (
             <CaretUp
               style={{ cursor: 'not-allowed' }}
@@ -82,13 +91,32 @@ const FourthSection = ({ data }: any) => {
         {hoveredIndex === i && (
           <>
             {item.content.map((content: string, i: number) => (
-              <Body
-                variant={1}
-                color="#9198B0"
-                key={i}
-                style={{ marginTop: '8px', lineHeight: '2rem' }}>
-                <li>{content}</li>
-              </Body>
+              <>
+                {router.locale === 'en' ? (
+                  <>
+                    <BodyDmsans
+                      variant={1}
+                      color="#9198B0"
+                      key={i}
+                      style={{
+                        marginTop: '8px',
+                        lineHeight: '2rem',
+                        marginLeft: 5,
+                        display: 'inline-block',
+                      }}>
+                      &bull; {content}
+                    </BodyDmsans>
+                  </>
+                ) : (
+                  <Body
+                    variant={1}
+                    color="#9198B0"
+                    key={i}
+                    style={{ marginTop: '8px', lineHeight: '2rem' }}>
+                    <li>{content}</li>
+                  </Body>
+                )}
+              </>
             ))}
           </>
         )}
@@ -100,15 +128,31 @@ const FourthSection = ({ data }: any) => {
     <div
       className={styles.fourthSection}
       style={{ backgroundColor: '#272935' }}>
-      <Body
-        variant={9}
-        color="white"
-        style={{
-          marginBottom: '-240px',
-          textAlign: 'center',
-        }}>
-        {data.headline}
-      </Body>
+      {router.locale === 'en' ? (
+        <Heading
+          variant={1}
+          color="white"
+          style={{
+            marginBottom: '-240px',
+            textAlign: 'center',
+            lineHeight: '1',
+
+            width: 1080,
+          }}>
+          {data.headline}
+        </Heading>
+      ) : (
+        <Body
+          variant={9}
+          color="white"
+          style={{
+            marginBottom: '-240px',
+            textAlign: 'center',
+          }}>
+          {data.headline}
+        </Body>
+      )}
+
       <div style={{ display: 'flex', gap: 20 }}>
         <div className={styles.selectedImageContainer} style={{}}>
           <Image
