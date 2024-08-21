@@ -110,7 +110,7 @@ const FirstSection = ({ data }: any) => {
               <BodyDmsans
                 color="#9198B0"
                 variant={2}
-                style={{ marginTop: 5, width: 510 }}>
+                style={{ marginTop: 5, width: 650 }}>
                 {data.subheader}
               </BodyDmsans>
             ) : (

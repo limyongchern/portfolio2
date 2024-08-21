@@ -180,27 +180,31 @@ const ThirdSection = ({ data }: any) => {
                 {card.bulletPoints.map((point: any, index2: number) => (
                   <>
                     {router.locale === 'en' ? (
-                      <BodyDmsans
-                        variant={isActive(index) ? 1 : 3}
-                        color={isActive(index) ? '#F2F3F7' : '#9198B0'}
-                        key={index2}
-                        style={{
-                          marginTop: '8px',
-                          lineHeight: '2rem',
-                        }}>
-                        &bull; {point}
-                      </BodyDmsans>
+                      <div>
+                        <BodyDmsans
+                          variant={isActive(index) ? 1 : 3}
+                          color={isActive(index) ? '#F2F3F7' : '#9198B0'}
+                          key={index2}
+                          style={{
+                            marginTop: '8px',
+                            lineHeight: '2rem',
+                          }}>
+                          &bull; {point}
+                        </BodyDmsans>
+                      </div>
                     ) : (
-                      <Body
-                        variant={isActive(index) ? 1 : 2}
-                        color={isActive(index) ? '#F2F3F7' : '#9198B0'}
-                        key={index2}
-                        style={{
-                          marginTop: '8px',
-                          lineHeight: '2rem',
-                        }}>
-                        &middot;{point}
-                      </Body>
+                      <div>
+                        <Body
+                          variant={isActive(index) ? 1 : 2}
+                          color={isActive(index) ? '#F2F3F7' : '#9198B0'}
+                          key={index2}
+                          style={{
+                            marginTop: '8px',
+                            lineHeight: '2rem',
+                          }}>
+                          &middot;{point}
+                        </Body>
+                      </div>
                     )}
                   </>
                 ))}
