@@ -52,7 +52,7 @@ const SecondSection = ({ data }: any) => {
                   className={styles.cardDarkContainer}
                   style={{
                     width: router.locale === 'en' ? 276 : 201,
-                    height: router.locale === 'en' ? 326 : 299,
+                    height: router.locale === 'en' ? 260 : 299,
                   }}>
                   {router.locale === 'en' ? (
                     <>

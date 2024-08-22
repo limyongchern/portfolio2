@@ -106,15 +106,37 @@ const Whitepaper = () => {
               align="center"
               spacing={'24px'}
               p={'0px 10px 0 10px'}>
-              <BodyBold
-                color="#F2F3F7"
-                variant={7}
-                style={{ textAlign: 'center' }}>
-                {WhitepaperData.headline}
-              </BodyBold>
-              <Body color="#9198B0" variant={1} style={{ textAlign: 'center' }}>
-                {WhitepaperData.subheader}
-              </Body>
+              {router.locale === 'en' ? (
+                <>
+                  <Heading
+                    color="#F2F3F7"
+                    variant={2}
+                    style={{ textAlign: 'center' }}>
+                    {WhitepaperDataEn.headline}
+                  </Heading>
+                  <BodyDmsans
+                    color="#9198B0"
+                    variant={1}
+                    style={{ textAlign: 'center' }}>
+                    {WhitepaperDataEn.subheader}
+                  </BodyDmsans>
+                </>
+              ) : (
+                <>
+                  <BodyBold
+                    color="#F2F3F7"
+                    variant={7}
+                    style={{ textAlign: 'center' }}>
+                    {WhitepaperData.headline}
+                  </BodyBold>
+                  <Body
+                    color="#9198B0"
+                    variant={1}
+                    style={{ textAlign: 'center' }}>
+                    {WhitepaperData.subheader}
+                  </Body>
+                </>
+              )}
             </Stack>
             <div style={{ margin: '56px 0' }}>
               <PDFViewer />

@@ -272,7 +272,7 @@ const AboutUs = () => {
                         </Heading>
                         <BodyDmsans
                           variant={2}
-                          style={{ marginTop: '15px' }}
+                          style={{ marginTop: '15px', textAlign: 'justify' }}
                           color="#F2F3F7">
                           {AboutUsDataEn.description}
                         </BodyDmsans>
@@ -496,7 +496,7 @@ const AboutUs = () => {
                             variant={1}
                             lh={1.2}
                             color="#9198B0"
-                            style={{}}>
+                            style={{ textAlign: 'justify' }}>
                             {section.description}
                           </BodyDmsans>
                         </Stack>
@@ -738,9 +738,8 @@ const AboutUs = () => {
                   style={{ textDecoration: 'none' }}>
                   <Card
                     p={'24px'}
-                    bg="#272935"
+                    bg="var(--Gradients-Card, linear-gradient(180deg, #3E404E 0%, #272935 100%))"
                     radius={'16px'}
-                    withBorder
                     className={styles.bordercard}
                     w={'350px'}>
                     <div

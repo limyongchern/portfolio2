@@ -1,6 +1,7 @@
 import { Flex } from '@mantine/core';
+import { useRouter } from 'next/router';
 import { CaretCircleLeft, CaretCircleRight } from '@phosphor-icons/react';
-import { Body, Heading } from 'components/typography';
+import { Body, BodyDmsans } from 'components/typography';
 import { PDFDocumentProxy } from 'pdfjs-dist';
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
@@ -14,7 +15,11 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   import.meta.url
 ).toString();
 
+const AccessToWhitepaper = '打开白皮书';
+const AccessToWhitepaperEn = 'Access to link';
+
 const PdfViewer = () => {
+  const router = useRouter();
   const [numPages, setNumPages] = useState<number | null>(null);
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [onHover, setOnHover] = useState<boolean>(false);
@@ -103,9 +108,20 @@ const PdfViewer = () => {
                   target="_blank"
                   className={styles.openPdfButtonContainer}>
                   <div className={styles.openPdfButton}>
-                    <Body variant={1} color="white" fw={700}>
-                      打开白皮书
-                    </Body>
+                    {router.locale === 'en' ? (
+                      <BodyDmsans
+                        variant={1}
+                        color="white"
+                        fw={700}
+                        style={{ width: 110, marginTop: 4 }}>
+                        {AccessToWhitepaperEn}
+                      </BodyDmsans>
+                    ) : (
+                      <Body variant={1} color="white" fw={700}>
+                        {AccessToWhitepaper}
+                      </Body>
+                    )}
+
                     <ArrowSquareOut
                       size={24}
                       style={{ marginTop: 1, marginLeft: 10 }}
@@ -173,9 +189,20 @@ const PdfViewer = () => {
                   target="_blank"
                   className={styles.openPdfButtonContainer}>
                   <div className={styles.openPdfButton}>
-                    <Body variant={1} color="white" fw={700}>
-                      打开白皮书
-                    </Body>
+                    {router.locale === 'en' ? (
+                      <BodyDmsans
+                        variant={1}
+                        color="white"
+                        fw={700}
+                        style={{ width: 110, marginTop: 4 }}>
+                        {AccessToWhitepaperEn}
+                      </BodyDmsans>
+                    ) : (
+                      <Body variant={1} color="white" fw={700}>
+                        {AccessToWhitepaper}
+                      </Body>
+                    )}
+
                     <ArrowSquareOut
                       size={24}
                       style={{ marginTop: 1, marginLeft: 10 }}
