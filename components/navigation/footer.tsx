@@ -105,7 +105,10 @@ const Footer = (props: IProps) => {
                       </BodyBold>
                     )}
                   </Link>
-                  <Body variant={2} color="#9198B0" style={{ marginTop: 4 }}>
+                  <Body
+                    variant={2}
+                    color="#9198B0"
+                    style={{ marginTop: router.locale === 'en' ? 2 : 4 }}>
                     | &nbsp;
                   </Body>
                   <Link href="/terms-of-use" style={{ textDecoration: 'none' }}>
