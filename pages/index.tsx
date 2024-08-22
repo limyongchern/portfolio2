@@ -24,10 +24,10 @@ import DownloadMobileSection from 'components/common/DownloadMobileSection';
 import HomeHeroPhone from 'public/Home/HomeHeroPhone.png';
 
 //images for SecondSection
-import TempImage1 from 'public/TempImages/TempImage1.jpg';
-import TempImage2 from 'public/TempImages/TempImage2.jpg';
-import TempImage3 from 'public/TempImages/TempImage3.jpg';
-import TempImage4 from 'public/TempImages/TempImage4.jpg';
+import IllustrationStory1 from 'public/Home/IllustrationStory1.png';
+import IllustrationStory2 from 'public/Home/IllustrationStory2.png';
+import IllustrationStory3 from 'public/Home/IllustrationStory3.png';
+import IllustrationStory4 from 'public/Home/IllustrationStory4.png';
 
 //images for ThirdSection
 import CardIcon1 from 'public/Home/CardIcon1.png';
@@ -77,26 +77,26 @@ const SecondSectionData = {
       id: 1,
       title: '1',
       description: '某一天，萌狼们开始探索太空投资的机会',
-      image: TempImage1,
+      image: IllustrationStory1,
     },
     {
       id: 2,
       title: '2',
       description:
         '萌狼们化身太空流浪者在太空中探索并共同创立了Wolf Planet投资交流社区',
-      image: TempImage2,
+      image: IllustrationStory2,
     },
     {
       id: 3,
       title: '3',
       description: '太空流浪者们在外太空中探索发现了不同的星球',
-      image: TempImage3,
+      image: IllustrationStory3,
     },
     {
       id: 4,
       title: '4',
       description: '每个星球都是一个理想的投资交流场所，故事由此开始...',
-      image: TempImage4,
+      image: IllustrationStory4,
     },
   ],
 };
@@ -109,28 +109,28 @@ const SecondSectionDataEn = {
       title: '1',
       description:
         'One day, the young wolves began exploring space investment opportunities.',
-      image: TempImage1,
+      image: IllustrationStory1,
     },
     {
       id: 2,
       title: '2',
       description:
         'The wolves transformed into space wanderers, co-founding WolfPlanet investment community.',
-      image: TempImage2,
+      image: IllustrationStory2,
     },
     {
       id: 3,
       title: '3',
       description:
         'Venturing deeper, the wanderers discovered planets with investment and communication potential.',
-      image: TempImage3,
+      image: IllustrationStory3,
     },
     {
       id: 4,
       title: '4',
       description:
         'Each planet they discovered proved to be an ideal place for investment communication. And the Investment Journey of the WolfPlanet community begins here…',
-      image: TempImage4,
+      image: IllustrationStory4,
     },
   ],
 };
