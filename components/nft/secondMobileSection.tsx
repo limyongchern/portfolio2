@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import styles from './index.module.scss';
 import { Stack } from '@mantine/core';
-import { Body, BodyBold } from 'components/typography';
+import { Body, BodyBold, BodyDmsans, Heading } from 'components/typography';
 import Image from 'next/image';
 import BlueEar from 'public/NFT/BlueEar.png';
 import BlueEyebrow from 'public/NFT/BlueEyebrow.png';
@@ -21,10 +22,23 @@ const SecondSectionData = {
   cards: [BlueEar, BlueEyebrow, BlueEye, BlueNose, BlueBody],
 };
 
+const SecondSectionDataEn = {
+  headline: 'Personal Identity NFT',
+  subheader: `The cute Wolf is the representative of each adventurer's personal identity as they explore WolfPlanet, and also a reflection of their community identity. Users can gradually build their own cute Wolf by collecting five fragment NFTs representing the eyes, eyebrows, ears, mouth, and body.`,
+  title:
+    'Actively participate in community interactions and collect rarer Wolf NFTs to build your one-of-a-kind cute Wolf!',
+  cards: [BlueEar, BlueEyebrow, BlueEye, BlueNose, BlueBody],
+};
+
 const ThirdSectionData = {
   headline: '角色成就NFT',
   subheader:
     '不断在社区中做出贡献，参与Wolf Planet不定期举办的活动即有机会获得社区发放的专属NFT勋章，可能是“最佳创作者”，或是“金牌评论家”，甚至是“社区管理员”。收集不同的NFT勋章，合成为你专属的SBT（Soulbound Token）吧！',
+};
+
+const ThirdSectionDataEn = {
+  headline: 'Character Achievement NFT',
+  subheader: `Contribute to the community and participate in activities to earn exclusive NFT badges, such as "Best Creator" or "Premier Commentator“ or “Community Moderator”. Collect these badges and combine them into your own unique SBT (Soulbound Token).`,
 };
 
 const FourthSectionData = {
@@ -38,7 +52,18 @@ const FourthSectionData = {
     '在Wolf Planet，我们鼓励“创作获利”（Create to Earn），你的每一次付出都应该有回报。',
 };
 
+const FourthSectionDataEn = {
+  headline: 'Content NFT',
+  subheader1: `WolfPlanet aims to better protect creators' copyrights, and every creator has the right to mint their original posts as NFTs.`,
+  list1:
+    'Each user can mint valuable text or investment insights they have as NFTs, and share them with others to generate earnings;',
+  list2: `or course creators, the platform provides the function to store courses as NFTs on the blockchain, encouraging creators to earn through their creations in a more secure and efficient way.`,
+  subheader2:
+    'In WolfPlanet, we encourage "Create to Earn" - your every contribution should be rewarded.',
+};
+
 const SecondMobileSection = () => {
+  const router = useRouter();
   //MOBILE AND DESKTOP
   const [isMobile, setIsMobile] = useState(false);
   const [width, setWidth] = useState<number>(
@@ -62,15 +87,37 @@ const SecondMobileSection = () => {
       <div className={` ${styles.secondContainer}`}>
         <div className={styles.secondContainerWidth}>
           <Stack justify="center" align="center" spacing={'24px'}>
-            <BodyBold
-              color="#F2F3F7"
-              variant={7}
-              style={{ textAlign: 'center' }}>
-              {SecondSectionData.headline}
-            </BodyBold>
-            <Body color="#9198B0" variant={1} style={{ textAlign: 'center' }}>
-              {SecondSectionData.subheader}
-            </Body>
+            {router.locale === 'en' ? (
+              <>
+                <Heading
+                  color="#F2F3F7"
+                  variant={isMobile ? 2 : 1}
+                  style={{ textAlign: 'center' }}>
+                  {SecondSectionDataEn.headline}
+                </Heading>
+                <BodyDmsans
+                  color="#9198B0"
+                  variant={isMobile ? 1 : 2}
+                  style={{ textAlign: 'justify' }}>
+                  {SecondSectionDataEn.subheader}
+                </BodyDmsans>
+              </>
+            ) : (
+              <>
+                <BodyBold
+                  color="#F2F3F7"
+                  variant={7}
+                  style={{ textAlign: 'center' }}>
+                  {SecondSectionData.headline}
+                </BodyBold>
+                <Body
+                  color="#9198B0"
+                  variant={1}
+                  style={{ textAlign: 'center' }}>
+                  {SecondSectionData.subheader}
+                </Body>
+              </>
+            )}
             {!isMobile ? (
               <>
                 <div
@@ -138,9 +185,18 @@ const SecondMobileSection = () => {
               </>
             )}
 
-            <Body color="#9198B0" variant={1} style={{ textAlign: 'center' }}>
-              {SecondSectionData.title}
-            </Body>
+            {router.locale === 'en' ? (
+              <BodyDmsans
+                color="#9198B0"
+                variant={isMobile ? 1 : 2}
+                style={{ textAlign: 'justify' }}>
+                {SecondSectionDataEn.title}
+              </BodyDmsans>
+            ) : (
+              <Body color="#9198B0" variant={1} style={{ textAlign: 'center' }}>
+                {SecondSectionData.title}
+              </Body>
+            )}
           </Stack>
         </div>
       </div>
@@ -154,18 +210,41 @@ const SecondMobileSection = () => {
           <Image src={Mobile1} className={styles.mobile1} alt="wolfavatar" />
 
           <div className={styles.firstTextContainer}>
-            <BodyBold
-              color="#F2F3F7"
-              variant={isMobile ? 1 : 7}
-              style={{ marginTop: 15 }}>
-              {ThirdSectionData.headline}
-            </BodyBold>
-            <Body
-              color="#9198B0"
-              variant={isMobile ? 2 : 1}
-              style={{ marginTop: 15, lineHeight: 1.4 }}>
-              {ThirdSectionData.subheader}
-            </Body>
+            {router.locale === 'en' ? (
+              <>
+                <Heading
+                  color="#F2F3F7"
+                  variant={isMobile ? 2 : 1}
+                  style={{ marginTop: 15 }}>
+                  {ThirdSectionDataEn.headline}
+                </Heading>
+                <BodyDmsans
+                  color="#9198B0"
+                  variant={isMobile ? 1 : 2}
+                  style={{
+                    marginTop: 15,
+                    lineHeight: 1.4,
+                    textAlign: 'justify',
+                  }}>
+                  {ThirdSectionDataEn.subheader}
+                </BodyDmsans>
+              </>
+            ) : (
+              <>
+                <BodyBold
+                  color="#F2F3F7"
+                  variant={isMobile ? 1 : 7}
+                  style={{ marginTop: 15 }}>
+                  {ThirdSectionData.headline}
+                </BodyBold>
+                <Body
+                  color="#9198B0"
+                  variant={isMobile ? 2 : 1}
+                  style={{ marginTop: 15, lineHeight: 1.4 }}>
+                  {ThirdSectionData.subheader}
+                </Body>
+              </>
+            )}
           </div>
         </div>
       </div>
@@ -211,21 +290,51 @@ const SecondMobileSection = () => {
               width: isMobile ? '100%' : 444,
               marginLeft: isMobile ? 0 : 10,
             }}>
-            <BodyBold
-              color="#F2F3F7"
-              variant={isMobile ? 1 : 7}
-              style={{ marginTop: 15 }}>
-              {FourthSectionData.headline}
-            </BodyBold>
-            <Body
-              color="#9198B0"
-              variant={isMobile ? 2 : 1}
-              style={{ marginTop: 15, lineHeight: 1.4 }}>
-              {FourthSectionData.subheader1}
-              <li style={{ marginLeft: 10 }}>{FourthSectionData.list1}</li>
-              <li style={{ marginLeft: 10 }}>{FourthSectionData.list2}</li>
-              {FourthSectionData.subheader2}
-            </Body>
+            {router.locale === 'en' ? (
+              <>
+                <Heading
+                  color="#F2F3F7"
+                  variant={isMobile ? 2 : 1}
+                  style={{ marginTop: 15 }}>
+                  {FourthSectionDataEn.headline}
+                </Heading>
+                <BodyDmsans
+                  color="#9198B0"
+                  variant={isMobile ? 1 : 2}
+                  style={{
+                    marginTop: 15,
+                    lineHeight: 1.4,
+                    textAlign: 'justify',
+                  }}>
+                  {FourthSectionDataEn.subheader1}
+                  <li style={{ marginLeft: 10 }}>
+                    {FourthSectionDataEn.list1}
+                  </li>
+                  <li style={{ marginLeft: 10 }}>
+                    {FourthSectionDataEn.list2}
+                  </li>
+                  {FourthSectionDataEn.subheader2}
+                </BodyDmsans>
+              </>
+            ) : (
+              <>
+                <BodyBold
+                  color="#F2F3F7"
+                  variant={isMobile ? 1 : 7}
+                  style={{ marginTop: 15 }}>
+                  {FourthSectionData.headline}
+                </BodyBold>
+                <Body
+                  color="#9198B0"
+                  variant={isMobile ? 2 : 1}
+                  style={{ marginTop: 15, lineHeight: 1.4 }}>
+                  {FourthSectionData.subheader1}
+                  <li style={{ marginLeft: 10 }}>{FourthSectionData.list1}</li>
+                  <li style={{ marginLeft: 10 }}>{FourthSectionData.list2}</li>
+                  {FourthSectionData.subheader2}
+                </Body>
+              </>
+            )}
           </div>
         </div>
       </div>
