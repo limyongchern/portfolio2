@@ -95,7 +95,7 @@ If you have any questions or objections to the WOLF PLANET community penalty mec
         <p>If any attempt is made to reprint or quote the content of the WOLF PLANET community to other places for non-commercial, non-profit, and non-advertising purposes, the original source of the content must be indicated. If infringement is involved, the copyright owner can file a complaint to WOLF PLANET and provide relevant information proving copyright, and WOLF PLANET will handle it after verification.</p>
 
 
-        <h1>Langcai Technology (Hong Kong) Co., Ltd.</h1>
+        <h2>Langcai Technology (Hong Kong) Co., Ltd.</h2>
         
         
         `,
@@ -156,7 +156,7 @@ If you have any questions or objections to the WOLF PLANET community penalty mec
 </p>
         
 
-        <h1>狼財科技（香港）有限公司</h1>
+        <h2>狼財科技（香港）有限公司</h2>
         
         
         `,

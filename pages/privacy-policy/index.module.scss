@@ -61,6 +61,16 @@
   }
 }
 
+.myClassEn > h2 {
+  font-size: 20px;
+  font-family: fonts.$family-head;
+  margin-top: 56px;
+  margin-bottom: 32px;
+  @media (max-width: 835px) {
+    font-size: 16px;
+  }
+}
+
 .myClassCn > h1 {
   font-size: 30px;
   font-family: fonts.$family-body-bold;
@@ -78,4 +88,13 @@
   font-family: fonts.$family-body;
   text-align: justify;
   white-space: break-spaces;
+}
+.myClassCn > h2 {
+  font-size: 24px;
+  font-family: fonts.$family-body-bold;
+  margin-top: 56px;
+  margin-bottom: 32px;
+  @media (max-width: 835px) {
+    font-size: 20px;
+  }
 }

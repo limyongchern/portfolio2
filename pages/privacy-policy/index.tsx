@@ -145,7 +145,7 @@ We will make anonymous statistical assessments of the log data (logs) and these 
 
 4. The company may provide this privacy policy or any other documents, information and messages to its partners in multiple languages. This Privacy Policy stipulates that the partner should recognize and confirm that the company's working language is Chinese. If there is any contradiction or inconsistency between the non-Chinese expression and the Chinese expression in any documents, information and messages, both parties will use Chinese documents, information and messages as the standard.</p>
         
-        <h1>WOLF PLANET TECHNOLOGY (HK) CO., LIMITED</h1>
+        <h2>WOLF PLANET TECHNOLOGY (HK) CO., LIMITED</h2>
         
         
         `,
@@ -358,7 +358,7 @@ WOLF PLANET和WOLF PLANET支付實體將需要分享您的信息（包括個人�
         <p>如果您對本《隱私政策》或WOLF PLANET的信息處理方法有任何問題或意見，您可以通過App的在線客服與我們聯繫，或通過WOLF PLANET官方提供的各種聯繫方式與我們聯繫，WOLF PLANET將給予您幫助。</p>
 
 
-        <h1>狼財科技（香港）有限公司</h1>
+        <h2>狼財科技（香港）有限公司</h2>
         
         
         `,
