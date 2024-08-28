@@ -105,7 +105,7 @@ const Whitepaper = () => {
               justify="center"
               align="center"
               spacing={'24px'}
-              p={'0px 10px 0 10px'}>
+              p={'0px 20px 0 20px'}>
               {router.locale === 'en' ? (
                 <>
                   <Heading

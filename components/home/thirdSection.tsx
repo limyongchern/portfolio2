@@ -51,17 +51,31 @@ const ThirdSection = ({ data }: any) => {
                 {card.bulletPoints.map((point: any, index: number) => (
                   <>
                     {router.locale === 'en' ? (
-                      <BodyDmsans
-                        variant={1}
-                        color="#9198B0"
-                        key={index}
-                        style={{
-                          marginTop: '8px',
-                          lineHeight: '2rem',
-                          width: 320,
-                        }}>
-                        &bull; {point}
-                      </BodyDmsans>
+                      <span style={{ display: 'flex' }}>
+                        <BodyDmsans
+                          variant={1}
+                          color="#9198B0"
+                          key={index}
+                          style={{
+                            marginTop: '8px',
+                            lineHeight: '2rem',
+                            width: 5,
+                          }}>
+                          &bull;
+                        </BodyDmsans>
+                        <BodyDmsans
+                          variant={1}
+                          color="#9198B0"
+                          key={index}
+                          style={{
+                            marginTop: '8px',
+                            lineHeight: '2rem',
+                            marginLeft: 5,
+                            width: 320,
+                          }}>
+                          {point}
+                        </BodyDmsans>
+                      </span>
                     ) : (
                       <Body
                         variant={1}
@@ -156,58 +170,66 @@ const ThirdSection = ({ data }: any) => {
                     : styles.illustration
                 }
               />
-              {router.locale === 'en' ? (
-                <Heading
-                  variant={isActive(index) ? 2 : 4}
-                  color={isActive(index) ? '#F2F3F7' : '#9198B0'}
-                  style={{ marginTop: isActive(index) ? 20 : 20 }}>
-                  {card.title}
-                </Heading>
-              ) : (
-                <BodyBold
-                  variant={isActive(index) ? 4 : 6}
-                  color={isActive(index) ? '#F2F3F7' : '#9198B0'}
-                  style={{ marginTop: isActive(index) ? 20 : 20 }}>
-                  {card.title}
-                </BodyBold>
-              )}
+              <div>
+                {router.locale === 'en' ? (
+                  <Heading
+                    variant={isActive(index) ? 2 : 4}
+                    color={isActive(index) ? '#F2F3F7' : '#9198B0'}
+                    style={{
+                      marginTop: isActive(index) ? 20 : 20,
+                      textAlign: 'left',
+                    }}>
+                    {card.title}
+                  </Heading>
+                ) : (
+                  <BodyBold
+                    variant={isActive(index) ? 4 : 6}
+                    color={isActive(index) ? '#F2F3F7' : '#9198B0'}
+                    style={{
+                      marginTop: isActive(index) ? 20 : 20,
+                      textAlign: 'left',
+                    }}>
+                    {card.title}
+                  </BodyBold>
+                )}
 
-              <div
-                style={{
-                  marginTop: isActive(index) ? 10 : 0,
-                  marginBottom: isActive(index) ? 0 : 30,
-                }}>
-                {card.bulletPoints.map((point: any, index2: number) => (
-                  <>
-                    {router.locale === 'en' ? (
-                      <div>
-                        <BodyDmsans
-                          variant={isActive(index) ? 1 : 3}
-                          color={isActive(index) ? '#F2F3F7' : '#9198B0'}
-                          key={index2}
-                          style={{
-                            marginTop: '8px',
-                            lineHeight: '2rem',
-                          }}>
-                          &bull; {point}
-                        </BodyDmsans>
-                      </div>
-                    ) : (
-                      <div>
-                        <Body
-                          variant={isActive(index) ? 1 : 2}
-                          color={isActive(index) ? '#F2F3F7' : '#9198B0'}
-                          key={index2}
-                          style={{
-                            marginTop: '8px',
-                            lineHeight: '2rem',
-                          }}>
-                          &middot;{point}
-                        </Body>
-                      </div>
-                    )}
-                  </>
-                ))}
+                <div
+                  style={{
+                    marginTop: isActive(index) ? 10 : 0,
+                    marginBottom: isActive(index) ? 0 : 30,
+                  }}>
+                  {card.bulletPoints.map((point: any, index2: number) => (
+                    <>
+                      {router.locale === 'en' ? (
+                        <div>
+                          <BodyDmsans
+                            variant={isActive(index) ? 1 : 3}
+                            color={isActive(index) ? '#F2F3F7' : '#9198B0'}
+                            key={index2}
+                            style={{
+                              marginTop: '8px',
+                              lineHeight: '2rem',
+                            }}>
+                            &bull; {point}
+                          </BodyDmsans>
+                        </div>
+                      ) : (
+                        <div>
+                          <Body
+                            variant={isActive(index) ? 1 : 2}
+                            color={isActive(index) ? '#F2F3F7' : '#9198B0'}
+                            key={index2}
+                            style={{
+                              marginTop: '8px',
+                              lineHeight: '2rem',
+                            }}>
+                            &middot;{point}
+                          </Body>
+                        </div>
+                      )}
+                    </>
+                  ))}
+                </div>
               </div>
             </div>
           ))}

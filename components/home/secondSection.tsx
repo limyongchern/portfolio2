@@ -8,7 +8,7 @@ import { PauseCircle, PlayCircle } from '@phosphor-icons/react';
 
 const SecondSection = ({ data }: any) => {
   const router = useRouter();
-  const timerLength = 3000;
+  const timerLength = 5000;
   const [cardOpen, setCardOpen] = useState(0);
   const [isTimerPaused, setIsTimerPaused] = useState(false);
 

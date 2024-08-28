@@ -93,7 +93,20 @@ const FourthSection = ({ data }: any) => {
             {item.content.map((content: string, i: number) => (
               <>
                 {router.locale === 'en' ? (
-                  <>
+                  <span style={{ display: 'flex' }}>
+                    <BodyDmsans
+                      variant={1}
+                      color="#9198B0"
+                      key={i}
+                      style={{
+                        marginTop: '8px',
+                        lineHeight: '2rem',
+                        marginLeft: 5,
+                        display: 'inline-block',
+                        width: 5,
+                      }}>
+                      &bull;
+                    </BodyDmsans>
                     <BodyDmsans
                       variant={1}
                       color="#9198B0"
@@ -104,9 +117,9 @@ const FourthSection = ({ data }: any) => {
                         marginLeft: 5,
                         display: 'inline-block',
                       }}>
-                      &bull; {content}
+                      {content}
                     </BodyDmsans>
-                  </>
+                  </span>
                 ) : (
                   <Body
                     variant={1}

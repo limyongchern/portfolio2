@@ -92,13 +92,30 @@ const FourthMobileSection = ({ data }: any) => {
             {item.content.map((content: string, i: number) => (
               <>
                 {router.locale === 'en' ? (
-                  <BodyDmsans
-                    variant={6}
-                    color="#9198B0"
-                    key={i}
-                    style={{ marginTop: '0px', lineHeight: '2rem' }}>
-                    <li>{content}</li>
-                  </BodyDmsans>
+                  <span style={{ display: 'flex' }}>
+                    <BodyDmsans
+                      variant={6}
+                      color="#9198B0"
+                      key={i}
+                      style={{
+                        marginTop: '0px',
+                        lineHeight: '2rem',
+                        width: 5,
+                      }}>
+                      &bull;
+                    </BodyDmsans>
+                    <BodyDmsans
+                      variant={6}
+                      color="#9198B0"
+                      key={i}
+                      style={{
+                        marginTop: '0px',
+                        lineHeight: '2rem',
+                        marginLeft: 5,
+                      }}>
+                      {content}
+                    </BodyDmsans>
+                  </span>
                 ) : (
                   <Body
                     variant={1}

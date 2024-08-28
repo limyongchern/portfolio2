@@ -428,12 +428,34 @@ const SecondSection = () => {
                     variant={isMobile ? 2 : 1}
                     style={{ marginTop: 15, lineHeight: 1.4 }}>
                     {FourthSectionDataEn.subheader1}
-                    <li style={{ marginLeft: 10 }}>
-                      {FourthSectionDataEn.list1}
-                    </li>
-                    <li style={{ marginLeft: 10 }}>
-                      {FourthSectionDataEn.list2}
-                    </li>
+                    <span style={{ display: 'flex' }}>
+                      <BodyDmsans
+                        variant={1}
+                        color="#9198B0"
+                        style={{ width: 5, fontSize: 20 }}>
+                        &bull;
+                      </BodyDmsans>
+                      <BodyDmsans
+                        variant={1}
+                        color="#9198B0"
+                        style={{ marginLeft: 10, marginTop: 3 }}>
+                        {FourthSectionDataEn.list1}
+                      </BodyDmsans>
+                    </span>
+                    <span style={{ display: 'flex' }}>
+                      <BodyDmsans
+                        variant={1}
+                        color="#9198B0"
+                        style={{ width: 5, fontSize: 20 }}>
+                        &bull;
+                      </BodyDmsans>
+                      <BodyDmsans
+                        variant={1}
+                        color="#9198B0"
+                        style={{ marginLeft: 10, marginTop: 3 }}>
+                        {FourthSectionDataEn.list2}
+                      </BodyDmsans>
+                    </span>
                     {FourthSectionDataEn.subheader2}
                   </BodyDmsans>
                 </>
@@ -450,12 +472,35 @@ const SecondSection = () => {
                     variant={isMobile ? 2 : 1}
                     style={{ marginTop: 15, lineHeight: 1.4 }}>
                     {FourthSectionData.subheader1}
-                    <li style={{ marginLeft: 10 }}>
-                      {FourthSectionData.list1}
-                    </li>
-                    <li style={{ marginLeft: 10 }}>
-                      {FourthSectionData.list2}
-                    </li>
+                    <span style={{ display: 'flex' }}>
+                      <Body
+                        variant={1}
+                        color="#9198B0"
+                        style={{ width: 5, fontSize: 25 }}>
+                        &bull;
+                      </Body>
+                      <Body
+                        variant={1}
+                        color="#9198B0"
+                        style={{ marginLeft: 20, marginTop: 3 }}>
+                        {FourthSectionData.list1}
+                      </Body>
+                    </span>
+                    <span style={{ display: 'flex' }}>
+                      <Body
+                        variant={1}
+                        color="#9198B0"
+                        style={{ width: 5, fontSize: 25 }}>
+                        &bull;
+                      </Body>
+                      <Body
+                        variant={1}
+                        color="#9198B0"
+                        style={{ marginLeft: 20, marginTop: 3 }}>
+                        {FourthSectionData.list2}
+                      </Body>
+                    </span>
+
                     {FourthSectionData.subheader2}
                   </Body>
                 </>

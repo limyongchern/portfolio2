@@ -13,22 +13,6 @@ import Planet5 from '../public/Planet/Planet_5.png';
 import Planet6 from '../public/Planet/Planet_6.png';
 import Planet7 from '../public/Planet/Planet_7.png';
 
-// import PlanetCropped1 from 'public/Planet/BigPlanet_1.png';
-// import PlanetCropped2 from 'public/Planet/BigPlanet_2.png';
-// import PlanetCropped3 from 'public/Planet/BigPlanet_3.png';
-// import PlanetCropped4 from 'public/Planet/BigPlanet_4.png';
-// import PlanetCropped5 from 'public/Planet/BigPlanet_5.png';
-// import PlanetCropped6 from 'public/Planet/BigPlanet_6.png';
-// import PlanetCropped7 from 'public/Planet/BigPlanet_7.png';
-
-// import PlanetCropped1 from 'public/Planet/CroppedPlanet_1.png';
-// import PlanetCropped2 from 'public/Planet/CroppedPlanet_2.png';
-// import PlanetCropped3 from 'public/Planet/CroppedPlanet_3.png';
-// import PlanetCropped4 from 'public/Planet/CroppedPlanet_4.png';
-// import PlanetCropped5 from 'public/Planet/CroppedPlanet_5.png';
-// import PlanetCropped6 from 'public/Planet/CroppedPlanet_6.png';
-// import PlanetCropped7 from 'public/Planet/CroppedPlanet_7.png';
-
 export const PlanetList = [
   {
     name: '瑞金星球',

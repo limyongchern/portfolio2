@@ -327,10 +327,44 @@ const SecondMobileSection = () => {
                 <Body
                   color="#9198B0"
                   variant={isMobile ? 2 : 1}
-                  style={{ marginTop: 15, lineHeight: 1.4 }}>
+                  style={{ marginTop: 15, lineHeight: 1.4, textAlign: 'left' }}>
                   {FourthSectionData.subheader1}
-                  <li style={{ marginLeft: 10 }}>{FourthSectionData.list1}</li>
-                  <li style={{ marginLeft: 10 }}>{FourthSectionData.list2}</li>
+                  <span style={{ display: 'flex' }}>
+                    <Body
+                      variant={2}
+                      color="#9198B0"
+                      style={{ width: 5, fontSize: 25, lineHeight: 1.4 }}>
+                      &bull;
+                    </Body>
+                    <Body
+                      variant={2}
+                      color="#9198B0"
+                      style={{
+                        marginLeft: 20,
+                        marginTop: 6,
+                        lineHeight: 1.4,
+                      }}>
+                      {FourthSectionData.list1}
+                    </Body>
+                  </span>
+                  <span style={{ display: 'flex' }}>
+                    <Body
+                      variant={2}
+                      color="#9198B0"
+                      style={{ width: 5, fontSize: 25, lineHeight: 1.4 }}>
+                      &bull;
+                    </Body>
+                    <Body
+                      variant={2}
+                      color="#9198B0"
+                      style={{
+                        marginLeft: 20,
+                        marginTop: 6,
+                        lineHeight: 1.4,
+                      }}>
+                      {FourthSectionData.list2}
+                    </Body>
+                  </span>
                   {FourthSectionData.subheader2}
                 </Body>
               </>

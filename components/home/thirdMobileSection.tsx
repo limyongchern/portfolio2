@@ -67,17 +67,29 @@ const ThirdMobileSection = ({ data }: any) => {
                 {card.bulletPoints.map((point: any, index: number) => (
                   <>
                     {router.locale === 'en' ? (
-                      <BodyDmsans
-                        variant={6}
-                        color="#9198B0"
-                        key={index}
-                        style={{
-                          marginTop: '3px',
-                          // lineHeight: '2rem',
-                          width: 220,
-                        }}>
-                        &bull; {point}
-                      </BodyDmsans>
+                      <span style={{ display: 'flex' }}>
+                        <BodyDmsans
+                          variant={6}
+                          color="#9198B0"
+                          key={index}
+                          style={{
+                            marginTop: '3px',
+                            width: 5,
+                          }}>
+                          &bull;
+                        </BodyDmsans>
+                        <BodyDmsans
+                          variant={6}
+                          color="#9198B0"
+                          key={index}
+                          style={{
+                            marginTop: '3px',
+                            marginLeft: 5,
+                            width: 220,
+                          }}>
+                          {point}
+                        </BodyDmsans>
+                      </span>
                     ) : (
                       <Body
                         variant={2}

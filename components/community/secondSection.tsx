@@ -30,11 +30,14 @@ const SecondSection = ({ data }: any) => {
             <BodyDmsans
               color="#9198B0"
               variant={2}
-              style={{ textAlign: 'center', width: 836 }}>
+              style={{ textAlign: 'center', width: 1050 }}>
               {data.subheader}
             </BodyDmsans>
           ) : (
-            <Body color="#9198B0" variant={1} style={{ textAlign: 'center' }}>
+            <Body
+              color="#9198B0"
+              variant={1}
+              style={{ textAlign: 'center', width: 810 }}>
               {data.subheader}
             </Body>
           )}
