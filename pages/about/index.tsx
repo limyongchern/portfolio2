@@ -98,7 +98,7 @@ const ThirdSectionData = {
   headline: '活动',
   sections: [
     {
-      id: 0,
+      id: 1,
       title: '活动项目1',
       location: '印度',
       date: '28/12/2024',
@@ -108,8 +108,48 @@ const ThirdSectionData = {
       mobileImage: AboutUsTempImage,
     },
     {
-      id: 1,
+      id: 2,
       title: '活动项目2',
+      location: '印度',
+      date: '28/12/2024',
+      description:
+        '羽高您蝴目早村交村，停雞枝合對節完扒紅甲六黃聽第門久身裏？月月家歌親拉自少進海而汗快清比平雨坐對、牠交五做貫大。夕忍乞節弓，飽足米裏合力科貓害苗。幸尾昌助收這己封正休植跟常雲都沒定。都裏北斗車地戶刃吃人！去喜它玉事你正皮美雄什尺筆好波道父祖，毛在蝴還立問條京幾物的人化。',
+      image: PressImg2,
+      mobileImage: AboutUsTempImage,
+    },
+    {
+      id: 3,
+      title: '活动项目3',
+      location: '印度',
+      date: '28/12/2024',
+      description:
+        '羽高您蝴目早村交村，停雞枝合對節完扒紅甲六黃聽第門久身裏？月月家歌親拉自少進海而汗快清比平雨坐對、牠交五做貫大。夕忍乞節弓，飽足米裏合力科貓害苗。幸尾昌助收這己封正休植跟常雲都沒定。都裏北斗車地戶刃吃人！去喜它玉事你正皮美雄什尺筆好波道父祖，毛在蝴還立問條京幾物的人化。',
+      image: PressImg1,
+      mobileImage: AboutUsTempImage,
+    },
+    {
+      id: 4,
+      title: '活动项目4',
+      location: '印度',
+      date: '28/12/2024',
+      description:
+        '羽高您蝴目早村交村，停雞枝合對節完扒紅甲六黃聽第門久身裏？月月家歌親拉自少進海而汗快清比平雨坐對、牠交五做貫大。夕忍乞節弓，飽足米裏合力科貓害苗。幸尾昌助收這己封正休植跟常雲都沒定。都裏北斗車地戶刃吃人！去喜它玉事你正皮美雄什尺筆好波道父祖，毛在蝴還立問條京幾物的人化。',
+      image: PressImg2,
+      mobileImage: AboutUsTempImage,
+    },
+    {
+      id: 5,
+      title: '活动项目5',
+      location: '印度',
+      date: '28/12/2024',
+      description:
+        '羽高您蝴目早村交村，停雞枝合對節完扒紅甲六黃聽第門久身裏？月月家歌親拉自少進海而汗快清比平雨坐對、牠交五做貫大。夕忍乞節弓，飽足米裏合力科貓害苗。幸尾昌助收這己封正休植跟常雲都沒定。都裏北斗車地戶刃吃人！去喜它玉事你正皮美雄什尺筆好波道父祖，毛在蝴還立問條京幾物的人化。',
+      image: PressImg1,
+      mobileImage: AboutUsTempImage,
+    },
+    {
+      id: 6,
+      title: '活动项目6',
       location: '印度',
       date: '28/12/2024',
       description:
@@ -124,7 +164,7 @@ const ThirdSectionDataEn = {
   headline: 'Activities',
   sections: [
     {
-      id: 0,
+      id: 1,
       title: 'Activity 1',
       location: 'India',
       date: '28/12/2024',
@@ -134,8 +174,48 @@ const ThirdSectionDataEn = {
       mobileImage: AboutUsTempImage,
     },
     {
-      id: 1,
+      id: 2,
       title: 'Activity 2',
+      location: 'India',
+      date: '28/12/2024',
+      description:
+        'Lorem ipsum odor amet, consectetuer adipiscing elit. Sollicitudin ex ipsum libero curabitur molestie; et praesent duis. Bibendum condimentum eu mi libero curae proin imperdiet egestas. Ornare nec taciti dictumst tempor viverra molestie, sit vivamus elementum.',
+      image: PressImg2,
+      mobileImage: AboutUsTempImage,
+    },
+    {
+      id: 3,
+      title: 'Activity 3',
+      location: 'India',
+      date: '28/12/2024',
+      description:
+        'Lorem ipsum odor amet, consectetuer adipiscing elit. Sollicitudin ex ipsum libero curabitur molestie; et praesent duis. Bibendum condimentum eu mi libero curae proin imperdiet egestas. Ornare nec taciti dictumst tempor viverra molestie, sit vivamus elementum.',
+      image: PressImg1,
+      mobileImage: AboutUsTempImage,
+    },
+    {
+      id: 4,
+      title: 'Activity 4',
+      location: 'India',
+      date: '28/12/2024',
+      description:
+        'Lorem ipsum odor amet, consectetuer adipiscing elit. Sollicitudin ex ipsum libero curabitur molestie; et praesent duis. Bibendum condimentum eu mi libero curae proin imperdiet egestas. Ornare nec taciti dictumst tempor viverra molestie, sit vivamus elementum.',
+      image: PressImg2,
+      mobileImage: AboutUsTempImage,
+    },
+    {
+      id: 5,
+      title: 'Activity 5',
+      location: 'India',
+      date: '28/12/2024',
+      description:
+        'Lorem ipsum odor amet, consectetuer adipiscing elit. Sollicitudin ex ipsum libero curabitur molestie; et praesent duis. Bibendum condimentum eu mi libero curae proin imperdiet egestas. Ornare nec taciti dictumst tempor viverra molestie, sit vivamus elementum.',
+      image: PressImg1,
+      mobileImage: AboutUsTempImage,
+    },
+    {
+      id: 6,
+      title: 'Activity 6',
       location: 'India',
       date: '28/12/2024',
       description:
@@ -212,7 +292,7 @@ const FourthSectionDataEn = {
 
 const AboutUs = () => {
   const router = useRouter();
-  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [currentPage, setCurrentPage] = useState<number>(0);
 
   // MOBILE AND DESKTOP
   const [isMobile, setIsMobile] = useState(false);
@@ -239,6 +319,63 @@ const AboutUs = () => {
       }
     };
   }, [width]);
+
+  useEffect(() => {}, [currentPage]);
+
+  const GetPageNumber = () => {
+    if (isMobile) {
+      if (router.locale === 'en') {
+        return ThirdSectionDataEn.sections.length;
+      } else {
+        return ThirdSectionData.sections.length;
+      }
+    } else {
+      if (router.locale === 'en') {
+        return Math.ceil(ThirdSectionDataEn.sections.length / 2);
+      } else {
+        return Math.ceil(ThirdSectionData.sections.length / 2);
+      }
+    }
+  };
+
+  const IsLastPage = () => {
+    if (isMobile) {
+      if (router.locale === 'en') {
+        if (currentPage === ThirdSectionDataEn.sections.length - 1) {
+          return true;
+        } else return false;
+      } else {
+        if (currentPage === ThirdSectionData.sections.length - 1) {
+          console.log('returning TRUE CHINESE');
+          return true;
+        } else {
+          console.log('returning FALSE CHINESE');
+
+          return false;
+        }
+      }
+    } else {
+      if (router.locale === 'en') {
+        if (
+          currentPage ===
+          Math.ceil(ThirdSectionDataEn.sections.length / 2) - 1
+        ) {
+          return true;
+        } else return false;
+      } else {
+        if (
+          currentPage ===
+          Math.ceil(ThirdSectionData.sections.length / 2) - 1
+        ) {
+          return true;
+        } else return false;
+      }
+    }
+  };
+
+  console.log('GetPageNumber', GetPageNumber());
+  console.log('IsLastPage', IsLastPage());
+  console.log('currentPage', currentPage);
 
   return (
     <>
@@ -612,129 +749,139 @@ const AboutUs = () => {
                 <>
                   {router.locale === 'en' ? (
                     <>
-                      {ThirdSectionDataEn.sections.map((section, index) => (
-                        <Link
-                          href={`/activity/${index}`}
-                          style={{ textDecoration: 'none' }}
-                          key={index}>
-                          <Card
-                            p={'33px'}
-                            radius={'16px'}
-                            w={'403px'}
-                            style={{
-                              background:
-                                'linear-gradient(180deg, #3E404E 0%, #272935 100%)',
-                            }}>
-                            <Stack spacing={'40px'}>
-                              <Image
-                                src={section.image}
-                                className={styles.activityCardImage}
-                                // width={352}
-                                // height={230}
-                                alt="Press Release 1"
-                              />
-                              <Stack spacing={'0px'} align="center" px={'18px'}>
-                                <Heading
-                                  variant={7}
-                                  color="#F2F3F7"
-                                  style={{ textAlign: 'center' }}>
-                                  {section.title}
-                                </Heading>
-                                <Group
-                                  position="apart"
-                                  noWrap
-                                  w={'100%'}
-                                  style={{ marginTop: 20 }}>
-                                  <div className={styles.badge}>
-                                    <BodyDmsans variant={7} color="#FEFEFEFE">
-                                      Venue: {section.location}
-                                    </BodyDmsans>
-                                  </div>
-                                  <div className={styles.badge}>
-                                    <BodyDmsans variant={7} color="#FEFEFEFE">
-                                      Date: {section.date}
-                                    </BodyDmsans>
-                                  </div>
-                                </Group>
-                                <BodyDmsans
-                                  variant={1}
-                                  color="#F2F3F7"
-                                  style={{
-                                    paddingTop: 30,
-                                    height: 234,
-                                    textAlign: 'justify',
-                                  }}>
-                                  {section.description}
-                                </BodyDmsans>
+                      {ThirdSectionDataEn.sections
+                        .slice(currentPage * 2, (currentPage + 1) * 2)
+                        .map((section, index) => (
+                          <Link
+                            href={`/activity/${index}`}
+                            style={{ textDecoration: 'none' }}
+                            key={index}>
+                            <Card
+                              p={'33px'}
+                              radius={'16px'}
+                              w={'403px'}
+                              style={{
+                                background:
+                                  'linear-gradient(180deg, #3E404E 0%, #272935 100%)',
+                              }}>
+                              <Stack spacing={'40px'}>
+                                <Image
+                                  src={section.image}
+                                  className={styles.activityCardImage}
+                                  // width={352}
+                                  // height={230}
+                                  alt="Press Release 1"
+                                />
+                                <Stack
+                                  spacing={'0px'}
+                                  align="center"
+                                  px={'18px'}>
+                                  <Heading
+                                    variant={7}
+                                    color="#F2F3F7"
+                                    style={{ textAlign: 'center' }}>
+                                    {section.title}
+                                  </Heading>
+                                  <Group
+                                    position="apart"
+                                    noWrap
+                                    w={'100%'}
+                                    style={{ marginTop: 20 }}>
+                                    <div className={styles.badge}>
+                                      <BodyDmsans variant={7} color="#FEFEFEFE">
+                                        Venue: {section.location}
+                                      </BodyDmsans>
+                                    </div>
+                                    <div className={styles.badge}>
+                                      <BodyDmsans variant={7} color="#FEFEFEFE">
+                                        Date: {section.date}
+                                      </BodyDmsans>
+                                    </div>
+                                  </Group>
+                                  <BodyDmsans
+                                    variant={1}
+                                    color="#F2F3F7"
+                                    style={{
+                                      paddingTop: 30,
+                                      height: 234,
+                                      textAlign: 'justify',
+                                    }}>
+                                    {section.description}
+                                  </BodyDmsans>
+                                </Stack>
                               </Stack>
-                            </Stack>
-                          </Card>
-                        </Link>
-                      ))}
+                            </Card>
+                          </Link>
+                        ))}
                     </>
                   ) : (
                     <>
-                      {ThirdSectionData.sections.map((section, index) => (
-                        <Link
-                          href={`/activity/${index}`}
-                          style={{ textDecoration: 'none' }}
-                          key={index}>
-                          <Card
-                            p={'33px'}
-                            radius={'16px'}
-                            w={'403px'}
-                            style={{
-                              background:
-                                'linear-gradient(180deg, #3E404E 0%, #272935 100%)',
-                            }}>
-                            <Stack spacing={'40px'}>
-                              <Image
-                                src={section.image}
-                                className={styles.activityCardImage}
-                                // width={352}
-                                // height={230}
-                                alt="Press Release 1"
-                              />
-                              <Stack spacing={'0px'} align="center" px={'18px'}>
-                                <BodyBold
-                                  variant={6}
-                                  color="#F2F3F7"
-                                  style={{ textAlign: 'center' }}>
-                                  {section.title}
-                                </BodyBold>
-                                <Group
-                                  position="apart"
-                                  noWrap
-                                  w={'100%'}
-                                  style={{ marginTop: 20 }}>
-                                  <div className={styles.badge}>
-                                    <BodyBold variant={9} color="#FEFEFEFE">
-                                      地点: {section.location}
-                                    </BodyBold>
-                                  </div>
-                                  <div className={styles.badge}>
-                                    <BodyBold variant={9} color="#FEFEFEFE">
-                                      日期: {section.date}
-                                    </BodyBold>
-                                  </div>
-                                </Group>
-                                <Body
-                                  variant={1}
-                                  color="#F2F3F7"
-                                  style={{ paddingTop: 30, height: 234 }}>
-                                  {section.description}
-                                </Body>
+                      {ThirdSectionData.sections
+                        .slice(currentPage * 2, (currentPage + 1) * 2)
+                        .map((section, index) => (
+                          <Link
+                            href={`/activity/${index}`}
+                            style={{ textDecoration: 'none' }}
+                            key={index}>
+                            <Card
+                              p={'33px'}
+                              radius={'16px'}
+                              w={'403px'}
+                              style={{
+                                background:
+                                  'linear-gradient(180deg, #3E404E 0%, #272935 100%)',
+                              }}>
+                              <Stack spacing={'40px'}>
+                                <Image
+                                  src={section.image}
+                                  className={styles.activityCardImage}
+                                  // width={352}
+                                  // height={230}
+                                  alt="Press Release 1"
+                                />
+                                <Stack
+                                  spacing={'0px'}
+                                  align="center"
+                                  px={'18px'}>
+                                  <BodyBold
+                                    variant={6}
+                                    color="#F2F3F7"
+                                    style={{ textAlign: 'center' }}>
+                                    {section.title}
+                                  </BodyBold>
+                                  <Group
+                                    position="apart"
+                                    noWrap
+                                    w={'100%'}
+                                    style={{ marginTop: 20 }}>
+                                    <div className={styles.badge}>
+                                      <BodyBold variant={9} color="#FEFEFEFE">
+                                        地点: {section.location}
+                                      </BodyBold>
+                                    </div>
+                                    <div className={styles.badge}>
+                                      <BodyBold variant={9} color="#FEFEFEFE">
+                                        日期: {section.date}
+                                      </BodyBold>
+                                    </div>
+                                  </Group>
+                                  <Body
+                                    variant={1}
+                                    color="#F2F3F7"
+                                    style={{ paddingTop: 30, height: 234 }}>
+                                    {section.description}
+                                  </Body>
+                                </Stack>
                               </Stack>
-                            </Stack>
-                          </Card>
-                        </Link>
-                      ))}
+                            </Card>
+                          </Link>
+                        ))}
                     </>
                   )}
                 </>
               ) : (
                 <Link
-                  href={`/activity/${0}`}
+                  href={`/activity/${currentPage}`}
                   style={{ textDecoration: 'none' }}>
                   <Card
                     p={'24px'}
@@ -751,11 +898,11 @@ const AboutUs = () => {
                         textAlign: 'center',
                       }}>
                       <Image
-                        src={ThirdSectionData.sections[0].image}
+                        src={ThirdSectionData.sections[currentPage].image}
                         alt="Press Release 1"
                         width={307}
                         height={280}
-                        // className={styles.mobileImage}
+                        className={styles.mobileImage}
                         // style={{ width: '100%', height: 293, objectFit: 'cover' }}
                       />
 
@@ -768,7 +915,7 @@ const AboutUs = () => {
                             padding: '0px 24px',
                             marginTop: 30,
                           }}>
-                          {ThirdSectionDataEn.sections[0].title}
+                          {ThirdSectionDataEn.sections[currentPage].title}
                         </Heading>
                       ) : (
                         <BodyBold
@@ -779,7 +926,7 @@ const AboutUs = () => {
                             padding: '0px 24px',
                             marginTop: 30,
                           }}>
-                          {ThirdSectionData.sections[0].title}
+                          {ThirdSectionData.sections[currentPage].title}
                         </BodyBold>
                       )}
 
@@ -800,22 +947,32 @@ const AboutUs = () => {
                           <div className={styles.badge}>
                             {router.locale === 'en' ? (
                               <BodyDmsans variant={7} color="#FEFEFEFE">
-                                Venue: {ThirdSectionDataEn.sections[0].location}
+                                Venue:{' '}
+                                {
+                                  ThirdSectionDataEn.sections[currentPage]
+                                    .location
+                                }
                               </BodyDmsans>
                             ) : (
                               <BodyBold variant={8} color="#FEFEFEFE">
-                                地点: {ThirdSectionData.sections[0].location}
+                                地点:{' '}
+                                {
+                                  ThirdSectionData.sections[currentPage]
+                                    .location
+                                }
                               </BodyBold>
                             )}
                           </div>
                           <div className={styles.badge}>
                             {router.locale === 'en' ? (
                               <BodyDmsans variant={7} color="#FEFEFEFE">
-                                Date: {ThirdSectionDataEn.sections[0].date}
+                                Date:{' '}
+                                {ThirdSectionDataEn.sections[currentPage].date}
                               </BodyDmsans>
                             ) : (
                               <BodyBold variant={8} color="#FEFEFEFE">
-                                日期: {ThirdSectionData.sections[0].date}
+                                日期:{' '}
+                                {ThirdSectionData.sections[currentPage].date}
                               </BodyBold>
                             )}
                           </div>
@@ -842,7 +999,10 @@ const AboutUs = () => {
                               lineHeight: 1.4,
                               textAlign: 'justify',
                             }}>
-                            {ThirdSectionDataEn.sections[0].description}
+                            {
+                              ThirdSectionDataEn.sections[currentPage]
+                                .description
+                            }
                           </BodyDmsans>
                         ) : (
                           <Body
@@ -853,7 +1013,7 @@ const AboutUs = () => {
                               height: 119,
                               lineHeight: 1.4,
                             }}>
-                            {ThirdSectionData.sections[0].description}
+                            {ThirdSectionData.sections[currentPage].description}
                           </Body>
                         )}
                       </div>
@@ -867,24 +1027,33 @@ const AboutUs = () => {
           <Group position="apart" w={'100%'} align="start">
             <Body variant={3} color="#9198B0">
               <span style={{ color: '#F2F3F7' }}>
-                {currentPage.toString().padStart(2, '0')}
+                {`${currentPage + 1}`.toString().padStart(2, '0')}
               </span>{' '}
-              of 10
+              of {GetPageNumber()}
             </Body>
             <Group spacing={'10px'}>
-              {currentPage === 1 ? (
+              {currentPage === 0 ? (
                 <div className={styles.arrowContainerDisabled}>
                   <ArrowLeft color="#9198B080" size={30} />
                 </div>
               ) : (
-                <div className={styles.arrowContainer}>
+                <div
+                  className={styles.arrowContainer}
+                  onClick={() => setCurrentPage(currentPage - 1)}>
                   <ArrowLeft color="#9198B080" size={30} />
                 </div>
               )}
-
-              <div className={styles.arrowContainer}>
-                <ArrowRight color="#9198B0" size={30} />
-              </div>
+              {IsLastPage() ? (
+                <div className={styles.arrowContainerDisabled}>
+                  <ArrowRight color="#9198B080" size={30} />
+                </div>
+              ) : (
+                <div
+                  className={styles.arrowContainer}
+                  onClick={() => setCurrentPage(currentPage + 1)}>
+                  <ArrowRight color="#9198B0" size={30} />
+                </div>
+              )}
             </Group>
           </Group>
         </Stack>
@@ -1037,7 +1206,6 @@ const AboutUs = () => {
               )}
             </div>
           </Stack>
-          <Divider pb={'15px'} color="rgba(145, 152, 176, 0.50)" w={'100%'} />
         </div>
       </div>
     </>
