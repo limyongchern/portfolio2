@@ -92,7 +92,7 @@ const Activity = () => {
               <FacebookLogo className={styles.icons} />
               <InstagramLogo className={styles.icons} />
               <LinkedinLogo className={styles.icons} />
-              <Link className={styles.icons} />
+              {/* <Link className={styles.icons} /> */}
             </div>
             <div style={{ display: 'flex', gap: '8px', marginTop: 28 }}>
               {router.locale === 'en' ? (
