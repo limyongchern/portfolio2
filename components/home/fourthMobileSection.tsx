@@ -65,7 +65,7 @@ const FourthMobileSection = ({ data }: any) => {
               {item.title}
             </Heading>
           ) : (
-            <Body variant={10} color="white" className={styles.cardTitle3}>
+            <Body variant={7} color="white" className={styles.cardTitle3}>
               {item.title}
             </Body>
           )}
@@ -73,15 +73,15 @@ const FourthMobileSection = ({ data }: any) => {
           {hoveredIndex === i ? (
             <CaretUp
               style={{ cursor: 'not-allowed' }}
-              width={'32px'}
-              height={'32px'}
+              width={'24px'}
+              height={'24px'}
               color="white"
             />
           ) : (
             <CaretDown
               style={{ cursor: 'not-allowed' }}
-              width={'32px'}
-              height={'32px'}
+              width={'24px'}
+              height={'24px'}
               color="white"
             />
           )}
@@ -118,7 +118,7 @@ const FourthMobileSection = ({ data }: any) => {
                   </span>
                 ) : (
                   <Body
-                    variant={1}
+                    variant={2}
                     color="#9198B0"
                     key={i}
                     style={{ marginTop: '8px', lineHeight: '2rem' }}>
@@ -167,7 +167,8 @@ const FourthMobileSection = ({ data }: any) => {
               display: 'flex',
               flexDirection: 'column',
               gap: '0.75rem',
-              margin: '0.75rem 0',
+              marginTop: -70,
+              // margin: '0.75rem 0',
             }}>
             {tabsComponents}
           </div>

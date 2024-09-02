@@ -51,7 +51,12 @@ const FifthMobileSection = ({ data }: any) => {
                     {item.title}
                   </Heading>
                   <BodyDmsans
-                    style={{ textAlign: 'center', marginTop: '10px' }}
+                    style={{
+                      textAlign: 'center',
+                      marginTop: '10px',
+                      width: 210,
+                      lineHeight: '1.5rem',
+                    }}
                     variant={6}
                     color={'#9198B0'}>
                     {item.description}
@@ -70,7 +75,12 @@ const FifthMobileSection = ({ data }: any) => {
                     {item.title}
                   </BodyBold>
                   <Body
-                    style={{ textAlign: 'center', marginTop: '10px' }}
+                    style={{
+                      textAlign: 'center',
+                      marginTop: '10px',
+                      width: 220,
+                      lineHeight: '2rem',
+                    }}
                     variant={2}
                     color={'#9198B0'}>
                     {item.description}

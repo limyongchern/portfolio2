@@ -128,7 +128,7 @@
 .activeImageMobile {
   width: 100%;
   height: 80%;
-  margin-top: 50px;
+  margin-top: 30px;
   @media (max-width: 380px) {
     width: 100%;
     height: 80%;
@@ -192,6 +192,9 @@
 
 .widthPlanetMobileCard {
   width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .planetMobileImage {

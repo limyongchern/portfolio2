@@ -932,7 +932,7 @@ const AboutUs = () => {
 
                       <div
                         style={{
-                          width: router.locale === 'en' ? 300 : 247,
+                          // width: router.locale === 'en' ? 300 : 247,
                           display: 'flex',
                           justifyContent: 'center',
                           flexDirection: 'column',
@@ -981,7 +981,7 @@ const AboutUs = () => {
 
                       <div
                         style={{
-                          width: router.locale === 'en' ? 300 : 254,
+                          // width: router.locale === 'en' ? 300 : 254,
                           display: 'flex',
                           justifyContent: 'center',
                           flexDirection: 'column',
@@ -1074,7 +1074,7 @@ const AboutUs = () => {
                 maxWidth: '1064px',
                 marginBottom: 40,
               }}>
-              <div></div>
+              <div style={{ width: 50 }}></div>
               {router.locale === 'en' ? (
                 <Heading
                   variant={isMobile ? 2 : 1}
@@ -1083,7 +1083,10 @@ const AboutUs = () => {
                   {FourthSectionDataEn.headline}
                 </Heading>
               ) : (
-                <BodyBold variant={7} color="#F2F3F7">
+                <BodyBold
+                  variant={7}
+                  color="#F2F3F7"
+                  style={{ textAlign: 'center' }}>
                   {FourthSectionData.headline}
                 </BodyBold>
               )}

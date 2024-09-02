@@ -223,7 +223,7 @@ const SecondMobileSection = () => {
                   variant={isMobile ? 1 : 2}
                   style={{
                     marginTop: 15,
-                    lineHeight: 1.4,
+                    // lineHeight: 1.4,
                     textAlign: 'justify',
                   }}>
                   {ThirdSectionDataEn.subheader}
@@ -303,7 +303,7 @@ const SecondMobileSection = () => {
                   variant={isMobile ? 1 : 2}
                   style={{
                     marginTop: 15,
-                    lineHeight: 1.4,
+                    // lineHeight: 1.4,
                     textAlign: 'justify',
                   }}>
                   {FourthSectionDataEn.subheader1}
