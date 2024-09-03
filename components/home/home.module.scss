@@ -573,11 +573,11 @@
 .selectedImageContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
 
   // gap: 0.75rem;
-  margin: 0.75rem 0;
+  // margin: 0.75rem 0;
   border-radius: 16px;
   width: 500px;
   // height: 100%;
@@ -588,11 +588,18 @@
 }
 
 .selectedImage {
-  width: 75%;
-  height: 75%;
+  width: 90%;
+  height: 90%;
+  margin-top: -30px;
   border-radius: 16px;
   object-fit: fill;
   // background: var(--main-primary-varient-55, rgba(39, 41, 53, 0.5));
+  @media (max-width: 835px) {
+    width: 75%;
+    height: 75%;
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
 }
 
 .carouselStyles {
