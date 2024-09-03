@@ -1,7 +1,8 @@
 @use 'styles/common/colors';
 
 .container {
-  background-image: url('/Announcement/AnnouncementBg.png');
+  background-image: url('/Activity/ActivityBg.png');
+  // background-image: url('/Announcement/AnnouncementBg.png');
   width: 100vw;
   background-size: cover;
   background-position: center;
