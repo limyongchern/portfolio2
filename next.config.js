@@ -20,6 +20,27 @@ const nextConfig = {
     defaultLocale: 'cn', // Change this to your desired default locale
     localeDetection: false, // Disable automatic locale detection
   },
+  async redirects() {
+    return [
+      // Basic redirect
+      {
+        source: '/app',
+        destination: '/download',
+        permanent: true,
+      },
+      // Wildcard path matching
+      {
+        source: '/app/:slug',
+        destination: '/download',
+        permanent: true,
+      },
+      {
+        source: '/app/:slug/:slug',
+        destination: '/download',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
