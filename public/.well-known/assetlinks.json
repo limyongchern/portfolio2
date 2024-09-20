@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.example.wolf_planet",
+      "sha256_cert_fingerprints": [
+        "BA:1C:36:B8:E6:93:89:11:0D:F6:75:C8:C4:82:11:2D:7B:C7:63:DB:1C:D5:4E:E6:89:18:EE:F5:53:1A:C0:1A"
+      ]
+    }
+  }
+]
