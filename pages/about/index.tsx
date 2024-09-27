@@ -17,6 +17,7 @@ import AboutUsTempImage from 'public/TempImages/AboutUsTempImage.png';
 import WholePlanet3 from 'public/Planet/wholeplanet3.png';
 import PressImg1 from 'public/PressImg1.png';
 import PressImg2 from 'public/PressImg2.png';
+import { BACKEND_URL, API_KEY } from '../../utils/endpoints';
 
 const AboutUsData = {
   about: '关于 WolfPlanet',
@@ -299,6 +300,7 @@ const AboutUs = () => {
   const [width, setWidth] = useState<number>(
     typeof window !== 'undefined' ? window.innerWidth : 0
   );
+
   const handleWindowSizeChange = () => {
     setWidth(typeof window !== 'undefined' ? window.innerWidth : 0);
   };
@@ -372,6 +374,51 @@ const AboutUs = () => {
       }
     }
   };
+
+  const getPageAnnouncementData = async () => {
+    try {
+      const res = await fetch(
+        `${BACKEND_URL}/api/cms/website/content/list?contentTemplateName=Announcement`,
+        {
+          method: 'GET',
+          // @ts-ignore
+          headers: {
+            'x-api-key': API_KEY,
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      const data = await res.json();
+      console.log('data getPageAnnouncementData JSON', data);
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+
+  const getPageActivityData = async () => {
+    try {
+      const res = await fetch(
+        `${BACKEND_URL}/api/cms/website/content/list?contentTemplateName=Activity`,
+        {
+          method: 'GET',
+          // @ts-ignore
+          headers: {
+            'x-api-key': API_KEY,
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      const data = await res.json();
+      console.log('data getPageActivityData JSON', data);
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+
+  useEffect(() => {
+    getPageAnnouncementData();
+    getPageActivityData();
+  }, []);
 
   console.log('GetPageNumber', GetPageNumber());
   console.log('IsLastPage', IsLastPage());

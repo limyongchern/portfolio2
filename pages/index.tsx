@@ -50,6 +50,8 @@ import iPhoneImage3 from 'public/Home/iPhoneImage3.png';
 import iPhoneImage4 from 'public/Home/iPhoneImage4.png';
 import iPhoneImage5 from 'public/Home/iPhoneImage5.png';
 
+import { BACKEND_URL, API_KEY } from '../utils/endpoints';
+
 interface IProps {}
 
 const FirstSectionData = {
@@ -462,6 +464,31 @@ const Home = (props: IProps) => {
       setIsMobile(true);
     } else setIsMobile(false);
   }, [width]);
+
+  const getPageData = async () => {
+    try {
+      const res = await fetch(
+        `${BACKEND_URL}/api/cms/website/content/list?contentTemplateName=CMS`,
+        {
+          method: 'GET',
+          // @ts-ignore
+          headers: {
+            'x-api-key': API_KEY,
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      const data = await res.json();
+      console.log('res', res);
+      console.log('data JSON', data);
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+
+  useEffect(() => {
+    getPageData();
+  }, []);
 
   useEffect(() => {
     console.log('homepage router.locale', router.locale);

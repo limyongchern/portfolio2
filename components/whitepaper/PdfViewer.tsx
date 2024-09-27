@@ -23,6 +23,11 @@ const PdfViewer = () => {
   const [numPages, setNumPages] = useState<number | null>(null);
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [onHover, setOnHover] = useState<boolean>(false);
+  const [whitepaperUrl, setWhitepaperUrl] = useState<string>('/sample.pdf');
+
+  useEffect(() => {
+    setWhitepaperUrl(localStorage.getItem('whitepaperUrl') || '/sample.pdf');
+  }, [localStorage.getItem('whitepaperUrl')]);
 
   function onDocumentLoadSuccess({ numPages }: PDFDocumentProxy) {
     setNumPages(numPages);
@@ -97,13 +102,13 @@ const PdfViewer = () => {
                   onHover ? styles.overlayVisible : ''
                 }`}></div>
               <Document
-                file="/sample.pdf"
+                file={whitepaperUrl}
                 onLoadSuccess={onDocumentLoadSuccess}>
                 <Page height={700} pageNumber={pageNumber} />
               </Document>
               {onHover && (
                 <a
-                  href="/sample.pdf"
+                  href={whitepaperUrl}
                   rel="noopener noreferrer"
                   target="_blank"
                   className={styles.openPdfButtonContainer}>
@@ -184,7 +189,8 @@ const PdfViewer = () => {
               </Document>
               {onHover && (
                 <a
-                  href="/sample.pdf"
+                  // @ts-ignore
+                  href={localStorage.getItem('whitepaperUrl')}
                   rel="noopener noreferrer"
                   target="_blank"
                   className={styles.openPdfButtonContainer}>

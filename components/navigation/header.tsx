@@ -85,7 +85,6 @@ const Header = (props: IProps) => {
 
   useEffect(() => {
     setActive(router.pathname);
-    console.log('header router', router);
   }, [router.pathname]);
 
   const setLanguage = (language: string) => {

@@ -8,6 +8,7 @@ import dynamic from 'next/dynamic';
 
 import DownloadSection from 'components/common/DownloadSection';
 import DownloadMobileSection from 'components/common/DownloadMobileSection';
+import { BACKEND_URL, API_KEY } from '../../utils/endpoints';
 
 const WhitepaperData = {
   headline: '深入了解狼星球：技术架构、经济模型、治理机制',
@@ -31,6 +32,7 @@ const Whitepaper = () => {
   const router = useRouter();
   //MOBILE AND DESKTOP
   const [isMobile, setIsMobile] = useState(false);
+  const [whitepaperUrl, setWhitepaperUrl] = useState('');
   const [width, setWidth] = useState<number>(
     typeof window !== 'undefined' ? window.innerWidth : 0
   );
@@ -43,6 +45,50 @@ const Whitepaper = () => {
       setIsMobile(true);
     } else setIsMobile(false);
   }, [width]);
+
+  const getPageData = async () => {
+    try {
+      const res = await fetch(
+        `${BACKEND_URL}/api/cms/website/content/list?contentTemplateName=CMS`,
+        {
+          method: 'GET',
+          // @ts-ignore
+          headers: {
+            'x-api-key': API_KEY,
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      const data = await res.json();
+      console.log('data JSON', data);
+      let wpId =
+        router.locale === 'en'
+          ? data.message[0].body.Whitepaper
+          : data.message[0].body.WhitepaperCN;
+      if (data) {
+        const whitepaperRes = await fetch(
+          `${BACKEND_URL}/api/bucket/pocketBase/cms/get/${wpId}`,
+          {
+            method: 'GET',
+            // @ts-ignore
+            headers: {
+              'x-api-key': API_KEY,
+              'Content-Type': 'application/json',
+            },
+          }
+        );
+        const dataWhitepaper = await whitepaperRes.json();
+        console.log('dataWhitepaper JSON', dataWhitepaper);
+        setWhitepaperUrl(dataWhitepaper.message.url);
+        localStorage.setItem('whitepaperUrl', dataWhitepaper.message.url);
+      }
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+  useEffect(() => {
+    getPageData();
+  }, [router.locale]);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {

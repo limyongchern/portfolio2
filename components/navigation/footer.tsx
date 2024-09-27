@@ -17,6 +17,7 @@ import InsIcon from 'public/InsIcon.svg';
 import LinkedInIcon from 'public/LinkedInIcon.svg';
 import GoogleIcon from 'public/GoogleIcon.svg';
 import { useEffect, useState } from 'react';
+import { BACKEND_URL, API_KEY } from '../../utils/endpoints';
 
 interface IProps {
   baseProps?: Partial<FooterProps>;
@@ -39,12 +40,52 @@ const Footer = (props: IProps) => {
   const handleWindowSizeChange = () => {
     setWidth(typeof window !== 'undefined' ? window.innerWidth : 0);
   };
+  const [fbLink, setFbLink] = useState('');
+  const [igLink, setIgLink] = useState('');
+  const [linkedInLink, setLinkedInLink] = useState('');
+  const [twitterLink, setTwitterLink] = useState('');
+  const [googleLink, setGoogleLink] = useState('');
 
   useEffect(() => {
     if (width <= 835) {
       setIsMobile(true);
     } else setIsMobile(false);
   }, [width]);
+
+  const getPageData = async () => {
+    try {
+      const res = await fetch(
+        `${BACKEND_URL}/api/cms/website/content/list?contentTemplateName=CMS`,
+        {
+          method: 'GET',
+          // @ts-ignore
+          headers: {
+            'x-api-key': API_KEY,
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      const data = await res.json();
+      console.log('data JSON', data);
+      if (data) {
+        setFbLink(data.message[0].body.Facebook);
+        setIgLink(data.message[0].body.Instagram);
+        setLinkedInLink(data.message[0].body.LinkedIn);
+        setTwitterLink(data.message[0].body.Twitter);
+        setGoogleLink(data.message[0].body.Google);
+      }
+      console.log(
+        'data.message[0].body.Facebook',
+        data.message[0].body.Facebook
+      );
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+
+  useEffect(() => {
+    getPageData();
+  }, []);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -72,16 +113,36 @@ const Footer = (props: IProps) => {
                 </Link>
 
                 <Group spacing={24}>
-                  <Image src={FBIcon} height={24} width={24} alt="Facebook" />
-                  <Image src={XIcon} height={24} width={24} alt="X" />
-                  <Image src={InsIcon} height={24} width={24} alt="Instagram" />
-                  <Image
-                    src={LinkedInIcon}
-                    height={24}
-                    width={24}
-                    alt="LinkedIn"
-                  />
-                  <Image src={GoogleIcon} height={24} width={24} alt="Google" />
+                  <a href={fbLink} target="_blank">
+                    <Image src={FBIcon} height={24} width={24} alt="Facebook" />
+                  </a>
+                  <a href={igLink} target="_blank">
+                    <Image src={XIcon} height={24} width={24} alt="X" />
+                  </a>
+                  <a href={igLink} target="_blank">
+                    <Image
+                      src={InsIcon}
+                      height={24}
+                      width={24}
+                      alt="Instagram"
+                    />
+                  </a>
+                  <a href={linkedInLink} target="_blank">
+                    <Image
+                      src={LinkedInIcon}
+                      height={24}
+                      width={24}
+                      alt="LinkedIn"
+                    />
+                  </a>
+                  <a href={googleLink} target="_blank">
+                    <Image
+                      src={GoogleIcon}
+                      height={24}
+                      width={24}
+                      alt="Google"
+                    />
+                  </a>
                 </Group>
               </Group>
               <Flex justify={'center'} mt={40}>
