@@ -60,7 +60,6 @@ const Whitepaper = () => {
         }
       );
       const data = await res.json();
-      console.log('data JSON', data);
       let wpId =
         router.locale === 'en'
           ? data.message[0].body.Whitepaper
@@ -78,7 +77,6 @@ const Whitepaper = () => {
           }
         );
         const dataWhitepaper = await whitepaperRes.json();
-        console.log('dataWhitepaper JSON', dataWhitepaper);
         setWhitepaperUrl(dataWhitepaper.message.url);
         localStorage.setItem('whitepaperUrl', dataWhitepaper.message.url);
       }

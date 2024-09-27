@@ -73,7 +73,6 @@ const PrivacyPolicy = () => {
         }
       );
       const data = await res.json();
-      console.log('data JSON', data);
       if (data) {
         setContent(data.message[0].body.PrivacyPolicy);
         setContentCN(data.message[0].body.PrivacyPolicyCN);

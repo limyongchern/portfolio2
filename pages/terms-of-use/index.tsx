@@ -60,7 +60,6 @@ const TermsOfUse = () => {
         }
       );
       const data = await res.json();
-      console.log('data JSON', data);
       if (data) {
         setContent(data.message[0].body.ServiceAgreement);
         setContentCN(data.message[0].body.ServiceAgreementCN);

@@ -479,8 +479,7 @@ const Home = (props: IProps) => {
         }
       );
       const data = await res.json();
-      console.log('res', res);
-      console.log('data JSON', data);
+      console.log('Home DATA', data);
     } catch (error) {
       console.log('error', error);
     }

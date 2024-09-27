@@ -18,6 +18,7 @@ import WholePlanet3 from 'public/Planet/wholeplanet3.png';
 import PressImg1 from 'public/PressImg1.png';
 import PressImg2 from 'public/PressImg2.png';
 import { BACKEND_URL, API_KEY } from '../../utils/endpoints';
+import { formatDate } from 'utils/common';
 
 const AboutUsData = {
   about: '关于 WolfPlanet',
@@ -230,70 +231,72 @@ const ThirdSectionDataEn = {
 const FourthSectionData = {
   headline: '公司公告',
   more: '更多',
-  sections: [
-    {
-      id: 0,
-      title: '产品迭代',
-      date: '28/12/2024',
-    },
-    {
-      id: 1,
-      title: '产品迭代',
-      date: '28/12/2024',
-    },
-    {
-      id: 2,
-      title: '服务器更新',
-      date: '28/12/2024',
-    },
-    {
-      id: 3,
-      title: '产品迭代',
-      date: '28/12/2024',
-    },
-    {
-      id: 4,
-      title: '产品迭代',
-      date: '28/12/2024',
-    },
-  ],
+  // sections: [
+  //   {
+  //     id: 0,
+  //     title: '产品迭代',
+  //     date: '28/12/2024',
+  //   },
+  //   {
+  //     id: 1,
+  //     title: '产品迭代',
+  //     date: '28/12/2024',
+  //   },
+  //   {
+  //     id: 2,
+  //     title: '服务器更新',
+  //     date: '28/12/2024',
+  //   },
+  //   {
+  //     id: 3,
+  //     title: '产品迭代',
+  //     date: '28/12/2024',
+  //   },
+  //   {
+  //     id: 4,
+  //     title: '产品迭代',
+  //     date: '28/12/2024',
+  //   },
+  // ],
 };
 
 const FourthSectionDataEn = {
   headline: 'Company Announcement',
   more: 'More',
-  sections: [
-    {
-      id: 0,
-      title: 'Product Iteration',
-      date: '28/12/2024',
-    },
-    {
-      id: 1,
-      title: 'Product Iteration',
-      date: '28/12/2024',
-    },
-    {
-      id: 2,
-      title: 'Product Iteration',
-      date: '28/12/2024',
-    },
-    {
-      id: 3,
-      title: 'Product Iteration',
-      date: '28/12/2024',
-    },
-    {
-      id: 4,
-      title: 'Product Iteration',
-      date: '28/12/2024',
-    },
-  ],
+  // sections: [
+  //   {
+  //     id: 0,
+  //     title: 'Product Iteration',
+  //     date: '28/12/2024',
+  //   },
+  //   {
+  //     id: 1,
+  //     title: 'Product Iteration',
+  //     date: '28/12/2024',
+  //   },
+  //   {
+  //     id: 2,
+  //     title: 'Product Iteration',
+  //     date: '28/12/2024',
+  //   },
+  //   {
+  //     id: 3,
+  //     title: 'Product Iteration',
+  //     date: '28/12/2024',
+  //   },
+  //   {
+  //     id: 4,
+  //     title: 'Product Iteration',
+  //     date: '28/12/2024',
+  //   },
+  // ],
 };
 
 const AboutUs = () => {
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState<number>(0);
+  const [activities, setActivities] = useState();
+  const [announcements, setAnnouncements] = useState();
 
   // MOBILE AND DESKTOP
   const [isMobile, setIsMobile] = useState(false);
@@ -389,7 +392,8 @@ const AboutUs = () => {
         }
       );
       const data = await res.json();
-      console.log('data getPageAnnouncementData JSON', data);
+      console.log('getPageAnnouncementData', data);
+      setAnnouncements(data.message);
     } catch (error) {
       console.log('error', error);
     }
@@ -409,7 +413,8 @@ const AboutUs = () => {
         }
       );
       const data = await res.json();
-      console.log('data getPageActivityData JSON', data);
+      console.log('getPageActivityData', data);
+      setActivities(data.message);
     } catch (error) {
       console.log('error', error);
     }
@@ -1169,89 +1174,93 @@ const AboutUs = () => {
             <div style={{ width: '100%', maxWidth: '1064px' }}>
               {router.locale === 'en' ? (
                 <>
-                  {FourthSectionDataEn.sections.map((section, index) => (
-                    <>
-                      {index === 0 && (
+                  {announcements &&
+                    // @ts-ignore
+                    announcements.map((item: any, index: number) => (
+                      <>
+                        {index === 0 && (
+                          <Divider
+                            pb={'0px'}
+                            color="rgba(145, 152, 176, 0.50)"
+                            w={'100%'}
+                          />
+                        )}
+                        <Link
+                          href={`/announcement/${item._id}`}
+                          style={{ textDecoration: 'none' }}>
+                          <div
+                            style={{
+                              width: isMobile ? '' : '100%',
+                              maxWidth: '1064px',
+                              display: 'flex',
+                              padding: '24px 24px',
+                            }}>
+                            <div style={{ display: 'flex', gap: 25 }}>
+                              <BodyDmsans variant={2} color="#F2F3F7">
+                                {formatDate(item.createdAt)}
+                              </BodyDmsans>
+                              <BodyDmsans
+                                variant={4}
+                                color="#4178FA"
+                                style={{ cursor: 'pointer' }}>
+                                {item.body.Title}
+                              </BodyDmsans>
+                            </div>
+                          </div>
+                        </Link>
+
                         <Divider
                           pb={'0px'}
                           color="rgba(145, 152, 176, 0.50)"
                           w={'100%'}
                         />
-                      )}
-                      <Link
-                        href={`/announcement/${index}`}
-                        style={{ textDecoration: 'none' }}>
-                        <div
-                          style={{
-                            width: isMobile ? '' : '100%',
-                            maxWidth: '1064px',
-                            display: 'flex',
-                            padding: '24px 24px',
-                          }}>
-                          <div style={{ display: 'flex', gap: 25 }}>
-                            <BodyDmsans variant={2} color="#F2F3F7">
-                              {section.date}
-                            </BodyDmsans>
-                            <BodyDmsans
-                              variant={4}
-                              color="#4178FA"
-                              style={{ cursor: 'pointer' }}>
-                              {section.title}
-                            </BodyDmsans>
-                          </div>
-                        </div>
-                      </Link>
-
-                      <Divider
-                        pb={'0px'}
-                        color="rgba(145, 152, 176, 0.50)"
-                        w={'100%'}
-                      />
-                    </>
-                  ))}
+                      </>
+                    ))}
                 </>
               ) : (
                 <>
-                  {FourthSectionData.sections.map((section, index) => (
-                    <>
-                      {index === 0 && (
+                  {announcements &&
+                    // @ts-ignore
+                    announcements.map((item: any, index: number) => (
+                      <>
+                        {index === 0 && (
+                          <Divider
+                            pb={'0px'}
+                            color="rgba(145, 152, 176, 0.50)"
+                            w={'100%'}
+                          />
+                        )}
+                        <Link
+                          href={`/announcement/${item._id}`}
+                          style={{ textDecoration: 'none' }}>
+                          <div
+                            style={{
+                              width: isMobile ? '' : '100%',
+                              maxWidth: '1064px',
+                              display: 'flex',
+                              padding: '24px 24px',
+                            }}>
+                            <div style={{ display: 'flex', gap: 25 }}>
+                              <Body variant={1} color="#F2F3F7">
+                                {formatDate(item.createdAt)}
+                              </Body>
+                              <BodyBold
+                                variant={1}
+                                color="#4178FA"
+                                style={{ cursor: 'pointer' }}>
+                                {item.body.Title}
+                              </BodyBold>
+                            </div>
+                          </div>
+                        </Link>
+
                         <Divider
                           pb={'0px'}
                           color="rgba(145, 152, 176, 0.50)"
                           w={'100%'}
                         />
-                      )}
-                      <Link
-                        href={`/announcement/${index}`}
-                        style={{ textDecoration: 'none' }}>
-                        <div
-                          style={{
-                            width: isMobile ? '' : '100%',
-                            maxWidth: '1064px',
-                            display: 'flex',
-                            padding: '24px 24px',
-                          }}>
-                          <div style={{ display: 'flex', gap: 25 }}>
-                            <Body variant={1} color="#F2F3F7">
-                              {section.date}
-                            </Body>
-                            <BodyBold
-                              variant={1}
-                              color="#4178FA"
-                              style={{ cursor: 'pointer' }}>
-                              {section.title}
-                            </BodyBold>
-                          </div>
-                        </div>
-                      </Link>
-
-                      <Divider
-                        pb={'0px'}
-                        color="rgba(145, 152, 176, 0.50)"
-                        w={'100%'}
-                      />
-                    </>
-                  ))}
+                      </>
+                    ))}
                 </>
               )}
             </div>

@@ -66,7 +66,7 @@ const Footer = (props: IProps) => {
         }
       );
       const data = await res.json();
-      console.log('data JSON', data);
+      console.log('Footer Data', data);
       if (data) {
         setFbLink(data.message[0].body.Facebook);
         setIgLink(data.message[0].body.Instagram);
