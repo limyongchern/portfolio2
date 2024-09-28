@@ -9,6 +9,7 @@ import dynamic from 'next/dynamic';
 import DownloadSection from 'components/common/DownloadSection';
 import DownloadMobileSection from 'components/common/DownloadMobileSection';
 import { BACKEND_URL, API_KEY } from '../../utils/endpoints';
+import { isMobile } from 'react-device-detect';
 
 const WhitepaperData = {
   headline: '深入了解狼星球：技术架构、经济模型、治理机制',
@@ -31,20 +32,7 @@ const PDFViewer = dynamic(
 const Whitepaper = () => {
   const router = useRouter();
   //MOBILE AND DESKTOP
-  const [isMobile, setIsMobile] = useState(false);
   const [whitepaperUrl, setWhitepaperUrl] = useState('');
-  const [width, setWidth] = useState<number>(
-    typeof window !== 'undefined' ? window.innerWidth : 0
-  );
-  const handleWindowSizeChange = () => {
-    setWidth(typeof window !== 'undefined' ? window.innerWidth : 0);
-  };
-
-  useEffect(() => {
-    if (width <= 850) {
-      setIsMobile(true);
-    } else setIsMobile(false);
-  }, [width]);
 
   const getPageData = async () => {
     try {
@@ -87,17 +75,6 @@ const Whitepaper = () => {
   useEffect(() => {
     getPageData();
   }, [router.locale]);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', handleWindowSizeChange);
-    }
-    return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', handleWindowSizeChange);
-      }
-    };
-  }, [width]);
 
   return (
     <>

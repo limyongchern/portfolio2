@@ -20,6 +20,7 @@ import PressImg1 from 'public/PressImg1.png';
 import PressImg2 from 'public/PressImg2.png';
 import { BACKEND_URL, API_KEY } from '../../utils/endpoints';
 import { formatDate, formatActivityContent } from 'utils/common';
+import { isMobile } from 'react-device-detect';
 
 const AboutUsData = {
   about: '关于 WolfPlanet',
@@ -300,31 +301,31 @@ const AboutUs = () => {
   const [announcements, setAnnouncements] = useState();
 
   // MOBILE AND DESKTOP
-  const [isMobile, setIsMobile] = useState(false);
-  const [width, setWidth] = useState<number>(
-    typeof window !== 'undefined' ? window.innerWidth : 0
-  );
+  // const [isMobile, setIsMobile] = useState(false);
+  // const [width, setWidth] = useState<number>(
+  //   typeof window !== 'undefined' ? window.innerWidth : 0
+  // );
 
-  const handleWindowSizeChange = () => {
-    setWidth(typeof window !== 'undefined' ? window.innerWidth : 0);
-  };
+  // const handleWindowSizeChange = () => {
+  //   setWidth(typeof window !== 'undefined' ? window.innerWidth : 0);
+  // };
 
-  useEffect(() => {
-    if (width <= 850) {
-      setIsMobile(true);
-    } else setIsMobile(false);
-  }, [width]);
+  // useEffect(() => {
+  //   if (width <= 850) {
+  //     setIsMobile(true);
+  //   } else setIsMobile(false);
+  // }, [width]);
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', handleWindowSizeChange);
-    }
-    return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', handleWindowSizeChange);
-      }
-    };
-  }, [width]);
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined') {
+  //     window.addEventListener('resize', handleWindowSizeChange);
+  //   }
+  //   return () => {
+  //     if (typeof window !== 'undefined') {
+  //       window.removeEventListener('resize', handleWindowSizeChange);
+  //     }
+  //   };
+  // }, [width]);
 
   useEffect(() => {}, [currentPage]);
 
@@ -898,7 +899,9 @@ const AboutUs = () => {
                                         variant={7}
                                         color="#FEFEFEFE"
                                         style={{ whiteSpace: 'nowrap' }}>
-                                        Date: {formatDate(item.createdAt)}
+                                        Date:{' '}
+                                        {item.createdAt &&
+                                          formatDate(item.createdAt)}
                                       </BodyDmsans>
                                     </div>
                                   </Group>
@@ -913,10 +916,11 @@ const AboutUs = () => {
                                       textOverflow: 'ellipsis',
                                       // whiteSpace: 'nowrap',
                                     }}>
-                                    {formatActivityContent(
-                                      item.body.Content,
-                                      400
-                                    )}
+                                    {item.body.Content &&
+                                      formatActivityContent(
+                                        item.body.Content,
+                                        400
+                                      )}
                                   </BodyDmsans>
                                 </Stack>
                               </Stack>
@@ -980,7 +984,9 @@ const AboutUs = () => {
                                           whiteSpace: 'nowrap',
                                           textOverflow: 'ellipsis',
                                         }}>
-                                        日期: {formatDate(item.createdAt)}
+                                        日期:{' '}
+                                        {item.createdAt &&
+                                          formatDate(item.createdAt)}
                                       </BodyBold>
                                     </div>
                                   </Group>
@@ -991,10 +997,11 @@ const AboutUs = () => {
                                       paddingTop: 30,
                                       height: 234,
                                     }}>
-                                    {formatActivityContent(
-                                      item.body.ContentCN,
-                                      125
-                                    )}
+                                    {item.body.ContentCN &&
+                                      formatActivityContent(
+                                        item.body.ContentCN,
+                                        125
+                                      )}
                                   </Body>
                                 </Stack>
                               </Stack>
@@ -1006,7 +1013,7 @@ const AboutUs = () => {
                 </>
               ) : (
                 <Link
-                  href={`/activity/${activities[currentPage]._id}`}
+                  href={`/activity/${activities[currentPage]?._id}`}
                   // href={`/activity/${currentPage}`}
                   style={{ textDecoration: 'none' }}>
                   <Card
@@ -1024,7 +1031,7 @@ const AboutUs = () => {
                         textAlign: 'center',
                       }}>
                       <Image
-                        src={ThirdSectionData.sections[currentPage].image}
+                        src={activities[currentPage]?.imageUrl}
                         alt="Press Release 1"
                         width={307}
                         height={280}
@@ -1041,7 +1048,7 @@ const AboutUs = () => {
                             padding: '0px 24px',
                             marginTop: 30,
                           }}>
-                          {activities[currentPage].body.Title}
+                          {activities[currentPage]?.body?.Title}
                         </Heading>
                       ) : (
                         <BodyBold
@@ -1052,7 +1059,7 @@ const AboutUs = () => {
                             padding: '0px 24px',
                             marginTop: 30,
                           }}>
-                          {activities[currentPage].body.TitleCN}
+                          {activities[currentPage]?.body?.TitleCN}
                         </BodyBold>
                       )}
 
@@ -1073,11 +1080,12 @@ const AboutUs = () => {
                           <div className={styles.badge}>
                             {router.locale === 'en' ? (
                               <BodyDmsans variant={7} color="#FEFEFEFE">
-                                Venue: {activities[currentPage].body.Location}
+                                Venue: {activities[currentPage]?.body?.Location}
                               </BodyDmsans>
                             ) : (
                               <BodyBold variant={8} color="#FEFEFEFE">
-                                地点: {activities[currentPage].body.LocationCN}
+                                地点:{' '}
+                                {activities[currentPage]?.body?.LocationCN}
                               </BodyBold>
                             )}
                           </div>
@@ -1085,12 +1093,18 @@ const AboutUs = () => {
                             {router.locale === 'en' ? (
                               <BodyDmsans variant={7} color="#FEFEFEFE">
                                 Date:{' '}
-                                {formatDate(activities[currentPage].createdAt)}
+                                {activities[currentPage]?.createdAt &&
+                                  formatDate(
+                                    activities[currentPage]?.createdAt
+                                  )}
                               </BodyDmsans>
                             ) : (
                               <BodyBold variant={8} color="#FEFEFEFE">
                                 日期:{' '}
-                                {formatDate(activities[currentPage].createdAt)}
+                                {activities[currentPage]?.createdAt &&
+                                  formatDate(
+                                    activities[currentPage]?.createdAt
+                                  )}
                               </BodyBold>
                             )}
                           </div>
@@ -1117,10 +1131,11 @@ const AboutUs = () => {
                               lineHeight: 1.4,
                               textAlign: 'justify',
                             }}>
-                            {formatActivityContent(
-                              activities[currentPage].body.Content,
-                              320
-                            )}
+                            {activities[currentPage]?.body?.Content &&
+                              formatActivityContent(
+                                activities[currentPage]?.body?.Content,
+                                320
+                              )}
                           </BodyDmsans>
                         ) : (
                           <Body
@@ -1131,10 +1146,11 @@ const AboutUs = () => {
                               height: 119,
                               lineHeight: 1.4,
                             }}>
-                            {formatActivityContent(
-                              activities[currentPage].body.ContentCN,
-                              160
-                            )}
+                            {activities[currentPage]?.body?.ContentCN &&
+                              formatActivityContent(
+                                activities[currentPage]?.body?.ContentCN,
+                                160
+                              )}
                           </Body>
                         )}
                       </div>
@@ -1265,7 +1281,7 @@ const AboutUs = () => {
                             }}>
                             <div style={{ display: 'flex', gap: 25 }}>
                               <BodyDmsans variant={2} color="#F2F3F7">
-                                {formatDate(item.createdAt)}
+                                {item.createdAt && formatDate(item.createdAt)}
                               </BodyDmsans>
                               <BodyDmsans
                                 variant={4}
@@ -1309,7 +1325,7 @@ const AboutUs = () => {
                             }}>
                             <div style={{ display: 'flex', gap: 25 }}>
                               <Body variant={1} color="#F2F3F7">
-                                {formatDate(item.createdAt)}
+                                {item.createdAt && formatDate(item.createdAt)}
                               </Body>
                               <BodyBold
                                 variant={1}

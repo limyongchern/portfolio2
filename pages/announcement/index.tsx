@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Body, BodyBold, BodyDmsans, Heading } from 'components/typography';
 import { useEffect, useState } from 'react';
 import styles from './index.module.scss';
+import { isMobile } from 'react-device-detect';
 
 const FourthSectionData = {
   headline: '公司公告',
@@ -121,31 +122,6 @@ const FourthSectionDataEn = {
 
 const Announcement = () => {
   const router = useRouter();
-  // MOBILE AND DESKTOP
-  const [isMobile, setIsMobile] = useState(false);
-  const [width, setWidth] = useState<number>(
-    typeof window !== 'undefined' ? window.innerWidth : 0
-  );
-  const handleWindowSizeChange = () => {
-    setWidth(typeof window !== 'undefined' ? window.innerWidth : 0);
-  };
-
-  useEffect(() => {
-    if (width <= 850) {
-      setIsMobile(true);
-    } else setIsMobile(false);
-  }, [width]);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', handleWindowSizeChange);
-    }
-    return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', handleWindowSizeChange);
-      }
-    };
-  }, [width]);
 
   return (
     <>

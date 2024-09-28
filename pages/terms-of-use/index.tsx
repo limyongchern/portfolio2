@@ -6,6 +6,7 @@ import { Body, BodyDmsans, BodyBold, Heading } from 'components/typography';
 
 import { useEffect, useState } from 'react';
 import { BACKEND_URL, API_KEY } from '../../utils/endpoints';
+import { isMobile } from 'react-device-detect';
 
 const DummyData = {
   headline: '用户协议',
@@ -19,32 +20,32 @@ const DummyDataEn = {
 
 const TermsOfUse = () => {
   const router = useRouter();
-  const [isMobile, setIsMobile] = useState(false);
-  const [width, setWidth] = useState<number>(
-    typeof window !== 'undefined' ? window.innerWidth : 0
-  );
+  // const [isMobile, setIsMobile] = useState(false);
+  // const [width, setWidth] = useState<number>(
+  //   typeof window !== 'undefined' ? window.innerWidth : 0
+  // );
   const [content, setContent] = useState('');
   const [contentCN, setContentCN] = useState('');
-  const handleWindowSizeChange = () => {
-    setWidth(typeof window !== 'undefined' ? window.innerWidth : 0);
-  };
+  // const handleWindowSizeChange = () => {
+  //   setWidth(typeof window !== 'undefined' ? window.innerWidth : 0);
+  // };
 
-  useEffect(() => {
-    if (width <= 850) {
-      setIsMobile(true);
-    } else setIsMobile(false);
-  }, [width]);
+  // useEffect(() => {
+  //   if (width <= 850) {
+  //     setIsMobile(true);
+  //   } else setIsMobile(false);
+  // }, [width]);
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', handleWindowSizeChange);
-    }
-    return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', handleWindowSizeChange);
-      }
-    };
-  }, [width]);
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined') {
+  //     window.addEventListener('resize', handleWindowSizeChange);
+  //   }
+  //   return () => {
+  //     if (typeof window !== 'undefined') {
+  //       window.removeEventListener('resize', handleWindowSizeChange);
+  //     }
+  //   };
+  // }, [width]);
 
   const getPageData = async () => {
     try {

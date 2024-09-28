@@ -14,6 +14,7 @@ import DownloadSection from 'components/common/DownloadSection';
 import DownloadMobileSection from 'components/common/DownloadMobileSection';
 import { BACKEND_URL, API_KEY } from '../../../utils/endpoints';
 import { formatDate } from '../../../utils/common';
+import { isMobile } from 'react-device-detect';
 
 const DummyData = {
   author: 'WolfPlanet',
@@ -26,35 +27,10 @@ const DummyDataEn = {
 const AnnouncementDetail = () => {
   const router = useRouter();
   console.log('Activity page router.query.id', router.query.id);
-  const [isMobile, setIsMobile] = useState(false);
-  const [width, setWidth] = useState<number>(
-    typeof window !== 'undefined' ? window.innerWidth : 0
-  );
   const [announcementData, setAnnouncementData] = useState<any>();
   const [fbLink, setFbLink] = useState('');
   const [igLink, setIgLink] = useState('');
   const [linkedInLink, setLinkedInLink] = useState('');
-
-  const handleWindowSizeChange = () => {
-    setWidth(typeof window !== 'undefined' ? window.innerWidth : 0);
-  };
-
-  useEffect(() => {
-    if (width <= 850) {
-      setIsMobile(true);
-    } else setIsMobile(false);
-  }, [width]);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', handleWindowSizeChange);
-    }
-    return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', handleWindowSizeChange);
-      }
-    };
-  }, [width]);
 
   const getPageData = async () => {
     try {

@@ -51,6 +51,7 @@ import iPhoneImage4 from 'public/Home/iPhoneImage4.png';
 import iPhoneImage5 from 'public/Home/iPhoneImage5.png';
 
 import { BACKEND_URL, API_KEY } from '../utils/endpoints';
+import { isMobile } from 'react-device-detect';
 
 interface IProps {}
 
@@ -449,21 +450,21 @@ const FifthSectionData = {
 
 const Home = (props: IProps) => {
   const router = useRouter();
-  const [isMobile, setIsMobile] = useState(false);
+  // const [isMobile, setIsMobile] = useState(false);
   const [width, setWidth] = useState<number>(
     typeof window !== 'undefined' ? window.innerWidth : 0
   );
 
-  const handleWindowSizeChange = () => {
-    setWidth(typeof window !== 'undefined' ? window.innerWidth : 0);
-  };
+  // const handleWindowSizeChange = () => {
+  //   setWidth(typeof window !== 'undefined' ? window.innerWidth : 0);
+  // };
   // const [cardOpen, setCardOpen] = useState(0);
 
-  useEffect(() => {
-    if (width <= 850) {
-      setIsMobile(true);
-    } else setIsMobile(false);
-  }, [width]);
+  // useEffect(() => {
+  //   if (width <= 850) {
+  //     setIsMobile(true);
+  //   } else setIsMobile(false);
+  // }, [width]);
 
   const getPageData = async () => {
     try {
@@ -493,17 +494,17 @@ const Home = (props: IProps) => {
     console.log('homepage router.locale', router.locale);
   }, [router]);
 
-  useEffect(() => {
-    console.log('width', width);
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', handleWindowSizeChange);
-    }
-    return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', handleWindowSizeChange);
-      }
-    };
-  }, [width]);
+  // useEffect(() => {
+  //   console.log('width', width);
+  //   if (typeof window !== 'undefined') {
+  //     window.addEventListener('resize', handleWindowSizeChange);
+  //   }
+  //   return () => {
+  //     if (typeof window !== 'undefined') {
+  //       window.removeEventListener('resize', handleWindowSizeChange);
+  //     }
+  //   };
+  // }, [width]);
 
   return (
     <>

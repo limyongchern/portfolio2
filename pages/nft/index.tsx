@@ -16,6 +16,7 @@ import SecondMobileSection from 'components/nft/secondMobileSection';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import { isMobile } from 'react-device-detect';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -32,23 +33,9 @@ const FirstSectionDataEn = {
 
 const Nft = () => {
   const router = useRouter();
-  //MOBILE AND DESKTOP
-  const [isMobile, setIsMobile] = useState(false);
-  const [width, setWidth] = useState<number>(
-    typeof window !== 'undefined' ? window.innerWidth : 0
-  );
+
   const [scrollPosition, setScrollPosition] = useState(0);
   const [displayFull, setDisplayFull] = useState(false);
-
-  const handleWindowSizeChange = () => {
-    setWidth(typeof window !== 'undefined' ? window.innerWidth : 0);
-  };
-
-  useEffect(() => {
-    if (width <= 850) {
-      setIsMobile(true);
-    } else setIsMobile(false);
-  }, [width]);
 
   const handleScroll = () => {
     const position = window.scrollY;
@@ -76,17 +63,6 @@ const Nft = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', handleWindowSizeChange);
-    }
-    return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', handleWindowSizeChange);
-      }
-    };
-  }, [width]);
 
   return (
     <>

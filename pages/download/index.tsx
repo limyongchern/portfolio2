@@ -10,6 +10,7 @@ import PlaystoreEn from 'public/Download/Button-GoogleplayEn.svg';
 import AppleEn from 'public/Download/Button-AppstoreEn.svg';
 import DownloadMobileImage from 'public/Download/DownloadMobileImage.png';
 import { motion } from 'framer-motion';
+import { isMobile } from 'react-device-detect';
 
 const data = {
   headline: '加入 Wolf Planet 星球，开启您的全球投资之旅！',
@@ -30,30 +31,7 @@ const dataEn = {
 
 const Download = () => {
   const router = useRouter();
-  const [isMobile, setIsMobile] = useState(false);
-  const [width, setWidth] = useState<number>(
-    typeof window !== 'undefined' ? window.innerWidth : 0
-  );
-  const handleWindowSizeChange = () => {
-    setWidth(typeof window !== 'undefined' ? window.innerWidth : 0);
-  };
 
-  useEffect(() => {
-    if (width <= 850) {
-      setIsMobile(true);
-    } else setIsMobile(false);
-  }, [width]);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', handleWindowSizeChange);
-    }
-    return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', handleWindowSizeChange);
-      }
-    };
-  }, [width]);
   return (
     <>
       <div id="first-section" className={styles.container}>

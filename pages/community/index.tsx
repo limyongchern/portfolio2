@@ -34,6 +34,7 @@ import MobilePersonalized from 'public/Community/MobilePersonalized.png';
 
 // Images for fifth section
 import CommunityIllustration2 from 'public/Community/CommunityIllustration2.png';
+import { isMobile } from 'react-device-detect';
 
 const FirstSectionData = {
   title: '社区玩法',
@@ -170,32 +171,6 @@ const FifthSectionDataEn = {
 
 const Community = () => {
   const router = useRouter();
-  //MOBILE AND DESKTOP
-  const [isMobile, setIsMobile] = useState(false);
-  const [width, setWidth] = useState<number>(
-    typeof window !== 'undefined' ? window.innerWidth : 0
-  );
-  const handleWindowSizeChange = () => {
-    setWidth(typeof window !== 'undefined' ? window.innerWidth : 0);
-  };
-
-  useEffect(() => {
-    if (width <= 850) {
-      setIsMobile(true);
-    } else setIsMobile(false);
-  }, [width]);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', handleWindowSizeChange);
-    }
-    return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', handleWindowSizeChange);
-      }
-    };
-  }, [width]);
-  console.log(width);
 
   return (
     <>
