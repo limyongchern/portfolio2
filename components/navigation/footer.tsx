@@ -47,7 +47,7 @@ const Footer = (props: IProps) => {
   const [googleLink, setGoogleLink] = useState('');
 
   useEffect(() => {
-    if (width <= 835) {
+    if (width <= 850) {
       setIsMobile(true);
     } else setIsMobile(false);
   }, [width]);

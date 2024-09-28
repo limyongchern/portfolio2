@@ -55,7 +55,7 @@ const PdfViewer = () => {
   };
 
   useEffect(() => {
-    if (width <= 835) {
+    if (width <= 850) {
       setIsMobile(true);
     } else setIsMobile(false);
   }, [width]);
