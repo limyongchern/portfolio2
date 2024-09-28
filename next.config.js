@@ -20,6 +20,16 @@ const nextConfig = {
     defaultLocale: 'cn', // Change this to your desired default locale
     localeDetection: false, // Disable automatic locale detection
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'pb.codedsolution.tech',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
   async redirects() {
     return [
       // Basic redirect

@@ -22,3 +22,7 @@ export const formatDateTimeAndExpiry = (
   // todo: return formated date
   return `${formattedStartDate} - ${formattedEndDate} (expire in ${daysRemaining} days ${hoursRemaining} hours)`;
 };
+
+export const formatActivityContent = (content: string, limit: number) => {
+  return content.length > limit ? content.substring(0, limit) + '...' : content;
+};

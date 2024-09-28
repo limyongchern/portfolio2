@@ -14,8 +14,8 @@
   color: white;
   margin-top: -1px;
   //   text-align: center;
-  display: flex;
-  justify-content: center;
+  // display: flex;
+  // justify-content: center;
   max-width: -webkit-fill-available;
   @media (max-width: 835px) {
     padding-top: 90px;
@@ -46,6 +46,7 @@
   // max-height: 510px;
   border-radius: 16px;
   margin-top: 20px;
+  object-fit: cover;
 
   @media (max-width: 835px) {
     max-width: 350px;
@@ -56,4 +57,5 @@
 .icons {
   height: 32px;
   width: 32px;
+  color: white;
 }

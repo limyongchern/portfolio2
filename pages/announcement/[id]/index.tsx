@@ -12,38 +12,15 @@ import { useRouter } from 'next/router';
 
 import DownloadSection from 'components/common/DownloadSection';
 import DownloadMobileSection from 'components/common/DownloadMobileSection';
+import { BACKEND_URL, API_KEY } from '../../../utils/endpoints';
+import { formatDate } from '../../../utils/common';
 
 const DummyData = {
-  headline: '服务器更新',
-  date: '28/12/2024',
   author: 'WolfPlanet',
-  description1: `
-  
-  羽高您蝴目早村交村，停雞枝合對節完扒紅甲六黃聽第門久身裏？月月家歌親拉自少進海而汗快清比平雨坐對、牠交五做貫大。夕忍乞節弓，飽足米裏合力科貓害苗。幸尾昌助收這己封正休植跟常雲都沒定。都裏北斗車地戶刃吃人！去喜它玉事你正皮美雄什尺筆好波道父祖，毛在蝴還立問條京幾物的人化。羽高您蝴目早村交村，停雞枝合對節完扒紅甲六黃聽第門久身裏？月月家歌親拉自少進海而汗快清比平雨坐對、牠交五做貫大。夕忍乞節弓，飽足米裏合力科貓害苗。幸尾昌助收這己封正休植跟常雲都沒定。都裏北斗車地戶刃吃人！去喜它玉事你正皮美雄什尺筆好波道父祖，毛在蝴還立問條京幾物的人化。
-    
-    羽高您蝴目早村交村，停雞枝合對節完扒紅甲六黃聽第門久身裏？月月家歌親拉自少進海而汗快清比平雨坐對、牠交五做貫大。夕忍乞節弓，飽足米裏合力科貓害苗。幸尾昌助收這己封正休植跟常雲都沒定。都裏北斗車地戶刃吃人！去喜它玉事你正皮美雄什尺筆好波道父祖，毛在蝴還立問條京幾物的人化。羽高您蝴目早村交村，停雞枝合對節完扒紅甲六黃聽第門久身裏？月月家歌親拉自少進海而汗快清比平雨坐對、牠交五做貫大。夕忍乞節弓，飽足米裏合力科貓害苗。幸尾昌助收這己封正休植跟常雲都沒定。都裏北斗車地戶刃吃人！去喜它玉事你正皮美雄什尺筆好波道父祖，毛在蝴還立問條京幾物的人化。
-    
-    羽高您蝴目早村交村，停雞枝合對節完扒紅甲六黃聽第門久身裏？月月家歌親拉自少進海而汗快清比平雨坐對、牠交五做貫大。夕忍乞節弓，飽足米裏合力科貓害苗。幸尾昌助收這己封正休植跟常雲都沒定。都裏北斗車地戶刃吃人！去喜它玉事你正皮美雄什尺筆好波道父祖，毛在蝴還立問條京幾物的人化。羽高您蝴目早村交村，停雞枝合對節完扒紅甲六黃聽第門久身裏？月月家歌親拉自少進海而汗快清比平雨坐對、牠交五做貫大。夕忍乞節弓，飽足米裏合力科貓害苗。幸尾昌助收這己封正休植跟常雲都沒定。都裏北斗車地戶刃吃人！去喜它玉事你正皮美雄什尺筆好波道父祖，毛在蝴還立問條京幾物的人化。
-
-  羽高您蝴目早村交村，停雞枝合對節完扒紅甲六黃聽第門久身裏？月月家歌親拉自少進海而汗快清比平雨坐對、牠交五做貫大。夕忍乞節弓，飽足米裏合力科貓害苗。幸尾昌助收這己封正休植跟常雲都沒定。都裏北斗車地戶刃吃人！去喜它玉事你正皮美雄什尺筆好波道父祖，毛在蝴還立問條京幾物的人化。羽高您蝴目早村交村，停雞枝合對節完扒紅甲六黃聽第門久身裏？月月家歌親拉自少進海而汗快清比平雨坐對、牠交五做貫大。夕忍乞節弓，飽足米裏合力科貓害苗。幸尾昌助收這己封正休植跟常雲都沒定。都裏北斗車地戶刃吃人！去喜它玉事你正皮美雄什尺筆好波道父祖，毛在蝴還立問條京幾物的人化。
-    
-    羽高您蝴目早村交村，停雞枝合對節完扒紅甲六黃聽第門久身裏？月月家歌親拉自少進海而汗快清比平雨坐對、牠交五做貫大。夕忍乞節弓，飽足米裏合力科貓害苗。幸尾昌助收這己封正休植跟常雲都沒定。都裏北斗車地戶刃吃人！去喜它玉事你正皮美雄什尺筆好波道父祖，毛在蝴還立問條京幾物的人化。羽高您蝴目早村交村，停雞枝合對節完扒紅甲六黃聽第門久身裏？月月家歌親拉自少進海而汗快清比平雨坐對、牠交五做貫大。夕忍乞節弓，飽足米裏合力科貓害苗。幸尾昌助收這己封正休植跟常雲都沒定。都裏北斗車地戶刃吃人！去喜它玉事你正皮美雄什尺筆好波道父祖，毛在蝴還立問條京幾物的人化。
-    
-    羽高您蝴目早村交村，停雞枝合對節完扒紅甲六黃聽第門久身裏？月月家歌親拉自少進海而汗快清比平雨坐對、牠交五做貫大。夕忍乞節弓，飽足米裏合力科貓害苗。幸尾昌助收這己封正休植跟常雲都沒定。都裏北斗車地戶刃吃人！去喜它玉事你正皮美雄什尺筆好波道父祖，毛在蝴還立問條京幾物的人化。羽高您蝴目早村交村，停雞枝合對節完扒紅甲六黃聽第門久身裏？月月家歌親拉自少進海而汗快清比平雨坐對、牠交五做貫大。夕忍乞節弓，飽足米裏合力科貓害苗。幸尾昌助收這己封正休植跟常雲都沒定。都裏北斗車地戶刃吃人！去喜它玉事你正皮美雄什尺筆好波道父祖，毛在蝴還立問條京幾物的人化。
-    
-    `,
 };
 
 const DummyDataEn = {
-  headline: 'Product Iteration',
-  date: '28/12/2024',
   author: 'WolfPlanet',
-  description1: `Lorem ipsum odor amet, consectetuer adipiscing elit. Conubia dolor netus duis mi tincidunt cubilia. Faucibus mi sit placerat amet mollis luctus. Ligula dictum commodo viverra feugiat sociosqu. Vivamus netus congue nisi feugiat nunc accumsan tincidunt consequat. Ornare nullam mus morbi adipiscing est primis ridiculus nunc neque. Maximus nam per sollicitudin dolor nascetur. Odio luctus malesuada vel tellus class urna ante orci. Non posuere duis sagittis sit ultrices.
-
-Dis dictum aenean neque ridiculus elit pharetra. Neque nostra blandit semper per accumsan magna lorem proin maecenas. Etiam adipiscing duis eu maximus tellus nunc massa. Ac tempor nostra dapibus ultricies phasellus gravida nec. Montes vel arcu platea elementum lacinia. Consectetur vehicula dapibus tortor a vitae sit. Feugiat eleifend aliquet fusce erat sodales. Iaculis lacus nunc pretium est odio venenatis urna. Iaculis lobortis vestibulum fames nisi nam accumsan vitae natoque orci.
-
-Primis duis lectus torquent mus viverra auctor. Fringilla lacinia dui inceptos sodales elit ultricies nunc. Aenean lacus parturient hac blandit eros posuere nibh. Massa quis consectetur diam; arcu mattis consequat. Interdum id parturient nunc primis netus class conubia. Nisi vehicula potenti dictumst cursus varius ridiculus vestibulum. Porttitor tempor eu; nibh blandit ornare a enim.
-    `,
 };
 
 const AnnouncementDetail = () => {
@@ -53,6 +30,11 @@ const AnnouncementDetail = () => {
   const [width, setWidth] = useState<number>(
     typeof window !== 'undefined' ? window.innerWidth : 0
   );
+  const [announcementData, setAnnouncementData] = useState<any>();
+  const [fbLink, setFbLink] = useState('');
+  const [igLink, setIgLink] = useState('');
+  const [linkedInLink, setLinkedInLink] = useState('');
+
   const handleWindowSizeChange = () => {
     setWidth(typeof window !== 'undefined' ? window.innerWidth : 0);
   };
@@ -73,6 +55,38 @@ const AnnouncementDetail = () => {
       }
     };
   }, [width]);
+
+  const getPageData = async () => {
+    try {
+      const res = await fetch(
+        `${BACKEND_URL}/api/cms/website/content/info/${router.query.id}`,
+        {
+          method: 'GET',
+          // @ts-ignore
+          headers: {
+            'x-api-key': API_KEY,
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      const data = await res.json();
+      console.log('ANNOUCEMENT data', data);
+      if (data) {
+        setAnnouncementData(data.message);
+        setFbLink(data.message.body.Facebook);
+        setIgLink(data.message.body.Instagram);
+        setLinkedInLink(data.message.body.LinkedIn);
+      }
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+  useEffect(() => {
+    if (router.query.id) {
+      getPageData();
+    }
+  }, [router.query.id]);
+
   return (
     <>
       <div className={styles.container}>
@@ -88,19 +102,31 @@ const AnnouncementDetail = () => {
                 variant={isMobile ? 2 : 1}
                 color="#F2F3F7"
                 style={{ lineHeight: 1.5 }}>
-                {DummyDataEn.headline}
+                {announcementData?.body?.Title}
               </Heading>
             ) : (
               <BodyBold variant={7} color="#F2F3F7" style={{ lineHeight: 1.5 }}>
-                {DummyData.headline}
+                {announcementData?.body?.TitleCN}
               </BodyBold>
             )}
 
             <div style={{ display: 'flex', gap: '16px', marginTop: 28 }}>
-              <FacebookLogo className={styles.icons} />
-              <InstagramLogo className={styles.icons} />
-              <LinkedinLogo className={styles.icons} />
-              {/* <Link className={styles.icons} /> */}
+              {fbLink !== '' && (
+                <a href={fbLink} target="_blank">
+                  <FacebookLogo className={styles.icons} />
+                </a>
+              )}
+
+              {igLink !== '' && (
+                <a href={igLink} target="_blank">
+                  <InstagramLogo className={styles.icons} />
+                </a>
+              )}
+              {linkedInLink !== '' && (
+                <a href={linkedInLink} target="_blank">
+                  <LinkedinLogo className={styles.icons} />
+                </a>
+              )}
             </div>
             <div style={{ display: 'flex', gap: '8px', marginTop: 28 }}>
               {router.locale === 'en' ? (
@@ -108,14 +134,16 @@ const AnnouncementDetail = () => {
                   variant={isMobile ? 4 : 5}
                   color="#F2F3F7"
                   style={{ lineHeight: 1.5 }}>
-                  {DummyDataEn.date}
+                  {announcementData?.publishedDatetime &&
+                    formatDate(announcementData?.publishedDatetime)}
                 </Heading>
               ) : (
                 <BodyBold
                   variant={1}
                   color="#F2F3F7"
                   style={{ lineHeight: 1.5 }}>
-                  {DummyData.date}
+                  {announcementData?.publishedDatetime &&
+                    formatDate(announcementData?.publishedDatetime)}
                 </BodyBold>
               )}
 
@@ -152,7 +180,7 @@ const AnnouncementDetail = () => {
                 whiteSpace: 'pre-line',
                 textAlign: 'justify',
               }}>
-              {DummyDataEn.description1}
+              {announcementData?.body?.Content}
             </BodyDmsans>
           ) : (
             <Body
@@ -163,7 +191,7 @@ const AnnouncementDetail = () => {
                 paddingTop: 20,
                 whiteSpace: 'pre-line',
               }}>
-              {DummyData.description1}
+              {announcementData?.body?.ContentCN}
             </Body>
           )}
         </Stack>

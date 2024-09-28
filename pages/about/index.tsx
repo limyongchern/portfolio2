@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { Card, Container, Divider, Group, Stack } from '@mantine/core';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -18,7 +19,7 @@ import WholePlanet3 from 'public/Planet/wholeplanet3.png';
 import PressImg1 from 'public/PressImg1.png';
 import PressImg2 from 'public/PressImg2.png';
 import { BACKEND_URL, API_KEY } from '../../utils/endpoints';
-import { formatDate } from 'utils/common';
+import { formatDate, formatActivityContent } from 'utils/common';
 
 const AboutUsData = {
   about: '关于 WolfPlanet',
@@ -295,7 +296,7 @@ const FourthSectionDataEn = {
 const AboutUs = () => {
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState<number>(0);
-  const [activities, setActivities] = useState();
+  const [activities, setActivities] = useState([]);
   const [announcements, setAnnouncements] = useState();
 
   // MOBILE AND DESKTOP
@@ -330,15 +331,15 @@ const AboutUs = () => {
   const GetPageNumber = () => {
     if (isMobile) {
       if (router.locale === 'en') {
-        return ThirdSectionDataEn.sections.length;
+        return activities.length;
       } else {
-        return ThirdSectionData.sections.length;
+        return activities.length;
       }
     } else {
       if (router.locale === 'en') {
-        return Math.ceil(ThirdSectionDataEn.sections.length / 2);
+        return Math.ceil(activities.length / 2);
       } else {
-        return Math.ceil(ThirdSectionData.sections.length / 2);
+        return Math.ceil(activities.length / 2);
       }
     }
   };
@@ -346,11 +347,11 @@ const AboutUs = () => {
   const IsLastPage = () => {
     if (isMobile) {
       if (router.locale === 'en') {
-        if (currentPage === ThirdSectionDataEn.sections.length - 1) {
+        if (currentPage === activities.length - 1) {
           return true;
         } else return false;
       } else {
-        if (currentPage === ThirdSectionData.sections.length - 1) {
+        if (currentPage === activities.length - 1) {
           console.log('returning TRUE CHINESE');
           return true;
         } else {
@@ -361,17 +362,11 @@ const AboutUs = () => {
       }
     } else {
       if (router.locale === 'en') {
-        if (
-          currentPage ===
-          Math.ceil(ThirdSectionDataEn.sections.length / 2) - 1
-        ) {
+        if (currentPage === Math.ceil(activities.length / 2) - 1) {
           return true;
         } else return false;
       } else {
-        if (
-          currentPage ===
-          Math.ceil(ThirdSectionData.sections.length / 2) - 1
-        ) {
+        if (currentPage === Math.ceil(activities.length / 2) - 1) {
           return true;
         } else return false;
       }
@@ -414,7 +409,57 @@ const AboutUs = () => {
       );
       const data = await res.json();
       console.log('getPageActivityData', data);
-      setActivities(data.message);
+
+      // const activityPromise = data.message.map(
+      //   async (item: any) =>
+      //     await fetch(
+      //       `${BACKEND_URL}/api/bucket/pocketBase/cms/get/${item.body.Image}`,
+      //       {
+      //         method: 'GET',
+      //         headers: {
+      //           'x-api-key': API_KEY,
+      //           'Content-Type': 'application/json',
+      //         },
+      //       }
+      //     )
+      // );
+      const activityPromises = data.message.map(async (item: any) => {
+        const response = await fetch(
+          `${BACKEND_URL}/api/bucket/pocketBase/cms/get/${item.body.Image}`,
+          {
+            method: 'GET',
+            headers: {
+              'x-api-key': API_KEY,
+              'Content-Type': 'application/json',
+            },
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error(`Failed to fetch image for ${item.body.Image}`);
+        }
+
+        return await response.json(); // or `return await response.json();` if you need JSON data
+      });
+      const activityImages = await Promise.all(activityPromises);
+      const activitiesFinal = data.message.map((item: any, index: number) => {
+        return { ...item, imageUrl: activityImages[index].message.url };
+      });
+
+      // const whitepaperRes = await fetch(
+      //   `${BACKEND_URL}/api/bucket/pocketBase/cms/get/${wpId}`,
+      //   {
+      //     method: 'GET',
+      //     // @ts-ignore
+      //     headers: {
+      //       'x-api-key': API_KEY,
+      //       'Content-Type': 'application/json',
+      //     },
+      //   }
+      // );
+      console.log('activitiesFinal', activitiesFinal);
+
+      setActivities(activitiesFinal);
     } catch (error) {
       console.log('error', error);
     }
@@ -801,11 +846,11 @@ const AboutUs = () => {
                 <>
                   {router.locale === 'en' ? (
                     <>
-                      {ThirdSectionDataEn.sections
+                      {activities
                         .slice(currentPage * 2, (currentPage + 1) * 2)
-                        .map((section, index) => (
+                        .map((item, index) => (
                           <Link
-                            href={`/activity/${index}`}
+                            href={`/activity/${item._id}`}
                             style={{ textDecoration: 'none' }}
                             key={index}>
                             <Card
@@ -818,10 +863,11 @@ const AboutUs = () => {
                               }}>
                               <Stack spacing={'40px'}>
                                 <Image
-                                  src={section.image}
+                                  src={item.imageUrl}
                                   className={styles.activityCardImage}
-                                  // width={352}
-                                  // height={230}
+                                  // fill={true}
+                                  width={352}
+                                  height={230}
                                   alt="Press Release 1"
                                 />
                                 <Stack
@@ -832,7 +878,7 @@ const AboutUs = () => {
                                     variant={7}
                                     color="#F2F3F7"
                                     style={{ textAlign: 'center' }}>
-                                    {section.title}
+                                    {item.body.Title}
                                   </Heading>
                                   <Group
                                     position="apart"
@@ -840,13 +886,19 @@ const AboutUs = () => {
                                     w={'100%'}
                                     style={{ marginTop: 20 }}>
                                     <div className={styles.badge}>
-                                      <BodyDmsans variant={7} color="#FEFEFEFE">
-                                        Venue: {section.location}
+                                      <BodyDmsans
+                                        variant={7}
+                                        color="#FEFEFEFE"
+                                        style={{ whiteSpace: 'nowrap' }}>
+                                        Venue: {item.body.Location}
                                       </BodyDmsans>
                                     </div>
                                     <div className={styles.badge}>
-                                      <BodyDmsans variant={7} color="#FEFEFEFE">
-                                        Date: {section.date}
+                                      <BodyDmsans
+                                        variant={7}
+                                        color="#FEFEFEFE"
+                                        style={{ whiteSpace: 'nowrap' }}>
+                                        Date: {formatDate(item.createdAt)}
                                       </BodyDmsans>
                                     </div>
                                   </Group>
@@ -857,8 +909,14 @@ const AboutUs = () => {
                                       paddingTop: 30,
                                       height: 234,
                                       textAlign: 'justify',
+                                      display: 'inline-block',
+                                      textOverflow: 'ellipsis',
+                                      // whiteSpace: 'nowrap',
                                     }}>
-                                    {section.description}
+                                    {formatActivityContent(
+                                      item.body.Content,
+                                      400
+                                    )}
                                   </BodyDmsans>
                                 </Stack>
                               </Stack>
@@ -868,11 +926,11 @@ const AboutUs = () => {
                     </>
                   ) : (
                     <>
-                      {ThirdSectionData.sections
+                      {activities
                         .slice(currentPage * 2, (currentPage + 1) * 2)
-                        .map((section, index) => (
+                        .map((item, index) => (
                           <Link
-                            href={`/activity/${index}`}
+                            href={`/activity/${item._id}`}
                             style={{ textDecoration: 'none' }}
                             key={index}>
                             <Card
@@ -885,10 +943,10 @@ const AboutUs = () => {
                               }}>
                               <Stack spacing={'40px'}>
                                 <Image
-                                  src={section.image}
+                                  src={item.imageUrl}
                                   className={styles.activityCardImage}
-                                  // width={352}
-                                  // height={230}
+                                  width={352}
+                                  height={230}
                                   alt="Press Release 1"
                                 />
                                 <Stack
@@ -899,7 +957,7 @@ const AboutUs = () => {
                                     variant={6}
                                     color="#F2F3F7"
                                     style={{ textAlign: 'center' }}>
-                                    {section.title}
+                                    {item.body.TitleCN}
                                   </BodyBold>
                                   <Group
                                     position="apart"
@@ -907,21 +965,36 @@ const AboutUs = () => {
                                     w={'100%'}
                                     style={{ marginTop: 20 }}>
                                     <div className={styles.badge}>
-                                      <BodyBold variant={9} color="#FEFEFEFE">
-                                        地点: {section.location}
+                                      <BodyBold
+                                        variant={9}
+                                        color="#FEFEFEFE"
+                                        style={{ whiteSpace: 'nowrap' }}>
+                                        地点: {item.body.LocationCN}
                                       </BodyBold>
                                     </div>
                                     <div className={styles.badge}>
-                                      <BodyBold variant={9} color="#FEFEFEFE">
-                                        日期: {section.date}
+                                      <BodyBold
+                                        variant={9}
+                                        color="#FEFEFEFE"
+                                        style={{
+                                          whiteSpace: 'nowrap',
+                                          textOverflow: 'ellipsis',
+                                        }}>
+                                        日期: {formatDate(item.createdAt)}
                                       </BodyBold>
                                     </div>
                                   </Group>
                                   <Body
                                     variant={1}
                                     color="#F2F3F7"
-                                    style={{ paddingTop: 30, height: 234 }}>
-                                    {section.description}
+                                    style={{
+                                      paddingTop: 30,
+                                      height: 234,
+                                    }}>
+                                    {formatActivityContent(
+                                      item.body.ContentCN,
+                                      125
+                                    )}
                                   </Body>
                                 </Stack>
                               </Stack>
@@ -933,7 +1006,8 @@ const AboutUs = () => {
                 </>
               ) : (
                 <Link
-                  href={`/activity/${currentPage}`}
+                  href={`/activity/${activities[currentPage]._id}`}
+                  // href={`/activity/${currentPage}`}
                   style={{ textDecoration: 'none' }}>
                   <Card
                     p={'24px'}
@@ -967,7 +1041,7 @@ const AboutUs = () => {
                             padding: '0px 24px',
                             marginTop: 30,
                           }}>
-                          {ThirdSectionDataEn.sections[currentPage].title}
+                          {activities[currentPage].body.Title}
                         </Heading>
                       ) : (
                         <BodyBold
@@ -978,7 +1052,7 @@ const AboutUs = () => {
                             padding: '0px 24px',
                             marginTop: 30,
                           }}>
-                          {ThirdSectionData.sections[currentPage].title}
+                          {activities[currentPage].body.TitleCN}
                         </BodyBold>
                       )}
 
@@ -999,19 +1073,11 @@ const AboutUs = () => {
                           <div className={styles.badge}>
                             {router.locale === 'en' ? (
                               <BodyDmsans variant={7} color="#FEFEFEFE">
-                                Venue:{' '}
-                                {
-                                  ThirdSectionDataEn.sections[currentPage]
-                                    .location
-                                }
+                                Venue: {activities[currentPage].body.Location}
                               </BodyDmsans>
                             ) : (
                               <BodyBold variant={8} color="#FEFEFEFE">
-                                地点:{' '}
-                                {
-                                  ThirdSectionData.sections[currentPage]
-                                    .location
-                                }
+                                地点: {activities[currentPage].body.LocationCN}
                               </BodyBold>
                             )}
                           </div>
@@ -1019,12 +1085,12 @@ const AboutUs = () => {
                             {router.locale === 'en' ? (
                               <BodyDmsans variant={7} color="#FEFEFEFE">
                                 Date:{' '}
-                                {ThirdSectionDataEn.sections[currentPage].date}
+                                {formatDate(activities[currentPage].createdAt)}
                               </BodyDmsans>
                             ) : (
                               <BodyBold variant={8} color="#FEFEFEFE">
                                 日期:{' '}
-                                {ThirdSectionData.sections[currentPage].date}
+                                {formatDate(activities[currentPage].createdAt)}
                               </BodyBold>
                             )}
                           </div>
@@ -1051,10 +1117,10 @@ const AboutUs = () => {
                               lineHeight: 1.4,
                               textAlign: 'justify',
                             }}>
-                            {
-                              ThirdSectionDataEn.sections[currentPage]
-                                .description
-                            }
+                            {formatActivityContent(
+                              activities[currentPage].body.Content,
+                              320
+                            )}
                           </BodyDmsans>
                         ) : (
                           <Body
@@ -1065,7 +1131,10 @@ const AboutUs = () => {
                               height: 119,
                               lineHeight: 1.4,
                             }}>
-                            {ThirdSectionData.sections[currentPage].description}
+                            {formatActivityContent(
+                              activities[currentPage].body.ContentCN,
+                              160
+                            )}
                           </Body>
                         )}
                       </div>
@@ -1175,7 +1244,6 @@ const AboutUs = () => {
               {router.locale === 'en' ? (
                 <>
                   {announcements &&
-                    // @ts-ignore
                     announcements.map((item: any, index: number) => (
                       <>
                         {index === 0 && (
@@ -1220,7 +1288,6 @@ const AboutUs = () => {
               ) : (
                 <>
                   {announcements &&
-                    // @ts-ignore
                     announcements.map((item: any, index: number) => (
                       <>
                         {index === 0 && (
