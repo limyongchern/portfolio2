@@ -1331,7 +1331,7 @@ const AboutUs = () => {
                                 variant={1}
                                 color="#4178FA"
                                 style={{ cursor: 'pointer' }}>
-                                {item.body.Title}
+                                {item.body.TitleCN}
                               </BodyBold>
                             </div>
                           </div>

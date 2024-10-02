@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { Divider, Stack } from '@mantine/core';
 import { useRouter } from 'next/router';
 
@@ -6,6 +7,8 @@ import { Body, BodyBold, BodyDmsans, Heading } from 'components/typography';
 import { useEffect, useState } from 'react';
 import styles from './index.module.scss';
 import { isMobile } from 'react-device-detect';
+import { BACKEND_URL, API_KEY } from '../../utils/endpoints';
+import { formatDate, formatActivityContent } from 'utils/common';
 
 const FourthSectionData = {
   headline: '公司公告',
@@ -122,6 +125,32 @@ const FourthSectionDataEn = {
 
 const Announcement = () => {
   const router = useRouter();
+  const [announcements, setAnnouncements] = useState();
+
+  const getPageAnnouncementData = async () => {
+    try {
+      const res = await fetch(
+        `${BACKEND_URL}/api/cms/website/content/list?contentTemplateName=Announcement`,
+        {
+          method: 'GET',
+          // @ts-ignore
+          headers: {
+            'x-api-key': API_KEY,
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      const data = await res.json();
+      console.log('getPageAnnouncementData', data);
+      setAnnouncements(data.message);
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+
+  useEffect(() => {
+    getPageAnnouncementData();
+  }, []);
 
   return (
     <>
@@ -159,89 +188,91 @@ const Announcement = () => {
             <div style={{ width: '100%', maxWidth: '1064px' }}>
               {router.locale === 'en' ? (
                 <>
-                  {FourthSectionDataEn.sections.map((section, index) => (
-                    <>
-                      {index === 0 && (
+                  {announcements &&
+                    announcements.map((item: any, index: number) => (
+                      <>
+                        {index === 0 && (
+                          <Divider
+                            pb={'0px'}
+                            color="rgba(145, 152, 176, 0.50)"
+                            w={'100%'}
+                          />
+                        )}
+                        <Link
+                          href={`/announcement/${index}`}
+                          style={{ textDecoration: 'none' }}>
+                          <div
+                            style={{
+                              width: isMobile ? '' : '100%',
+                              maxWidth: '1064px',
+                              display: 'flex',
+                              padding: '24px 24px',
+                            }}>
+                            <div style={{ display: 'flex', gap: 25 }}>
+                              <BodyDmsans variant={2} color="#F2F3F7">
+                                {item.createdAt && formatDate(item.createdAt)}
+                              </BodyDmsans>
+                              <BodyDmsans
+                                variant={4}
+                                color="#4178FA"
+                                style={{ cursor: 'pointer' }}>
+                                {item.body.Title}
+                              </BodyDmsans>
+                            </div>
+                          </div>
+                        </Link>
+
                         <Divider
                           pb={'0px'}
                           color="rgba(145, 152, 176, 0.50)"
                           w={'100%'}
                         />
-                      )}
-                      <Link
-                        href={`/announcement/${index}`}
-                        style={{ textDecoration: 'none' }}>
-                        <div
-                          style={{
-                            width: isMobile ? '' : '100%',
-                            maxWidth: '1064px',
-                            display: 'flex',
-                            padding: '24px 24px',
-                          }}>
-                          <div style={{ display: 'flex', gap: 25 }}>
-                            <BodyDmsans variant={2} color="#F2F3F7">
-                              {section.date}
-                            </BodyDmsans>
-                            <BodyDmsans
-                              variant={4}
-                              color="#4178FA"
-                              style={{ cursor: 'pointer' }}>
-                              {section.title}
-                            </BodyDmsans>
-                          </div>
-                        </div>
-                      </Link>
-
-                      <Divider
-                        pb={'0px'}
-                        color="rgba(145, 152, 176, 0.50)"
-                        w={'100%'}
-                      />
-                    </>
-                  ))}
+                      </>
+                    ))}
                 </>
               ) : (
                 <>
-                  {FourthSectionData.sections.map((section, index) => (
-                    <>
-                      {index === 0 && (
+                  {announcements &&
+                    announcements.map((item: any, index: number) => (
+                      <>
+                        {index === 0 && (
+                          <Divider
+                            pb={'0px'}
+                            color="rgba(145, 152, 176, 0.50)"
+                            w={'100%'}
+                          />
+                        )}
+                        <Link
+                          href={`/announcement/${index}`}
+                          style={{ textDecoration: 'none' }}>
+                          <div
+                            style={{
+                              width: isMobile ? '' : '100%',
+                              maxWidth: '1064px',
+                              display: 'flex',
+                              padding: '24px 24px',
+                            }}>
+                            <div style={{ display: 'flex', gap: 25 }}>
+                              <Body variant={1} color="#F2F3F7">
+                                {item.createdAt && formatDate(item.createdAt)}
+                              </Body>
+                              <BodyBold
+                                variant={1}
+                                color="#4178FA"
+                                style={{ cursor: 'pointer' }}>
+                                {item.body.TitleCN}
+                              </BodyBold>
+                            </div>
+                          </div>
+                        </Link>
+
                         <Divider
                           pb={'0px'}
                           color="rgba(145, 152, 176, 0.50)"
                           w={'100%'}
                         />
-                      )}
-                      <Link
-                        href={`/announcement/${index}`}
-                        style={{ textDecoration: 'none' }}>
-                        <div
-                          style={{
-                            width: isMobile ? '' : '100%',
-                            maxWidth: '1064px',
-                            display: 'flex',
-                            padding: '24px 24px',
-                          }}>
-                          <div style={{ display: 'flex', gap: 25 }}>
-                            <Body variant={1} color="#F2F3F7">
-                              {section.date}
-                            </Body>
-                            <BodyBold
-                              variant={1}
-                              color="#4178FA"
-                              style={{ cursor: 'pointer' }}>
-                              {section.title}
-                            </BodyBold>
-                          </div>
-                        </div>
-                      </Link>
-
-                      <Divider
-                        pb={'0px'}
-                        color="rgba(145, 152, 176, 0.50)"
-                        w={'100%'}
-                      />
-                    </>
-                  ))}
+                      </>
+                    ))}
                 </>
               )}
             </div>
