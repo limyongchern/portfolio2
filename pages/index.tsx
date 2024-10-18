@@ -47,8 +47,8 @@ import IllustrationRevenue from 'public/Home/IllustrationRevenue.png';
 import iPhoneImage1 from 'public/Home/iPhoneImage1.png';
 import iPhoneImage2 from 'public/Home/iPhoneImage2.png';
 import iPhoneImage3 from 'public/Home/iPhoneImage3.png';
-import iPhoneImage4 from 'public/Home/iPhoneImage4.png';
-import iPhoneImage5 from 'public/Home/iPhoneImage5.png';
+import iPhoneImage4 from 'public/Home/iPhoneImage4.jpg';
+import iPhoneImage5 from 'public/Home/iPhoneImage5.jpg';
 
 import { BACKEND_URL, API_KEY } from '../utils/endpoints';
 import { isMobile } from 'react-device-detect';

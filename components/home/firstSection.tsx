@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { Body, BodyBold, BodyDmsans, Heading } from 'components/typography';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import HomeHeroImage from 'public/Home/Home-Hero-Image.png';
+import HomeHeroImage from 'public/Home/Home-Hero-Image2.png';
 import HomeHeroMascot from 'public/Home/Home-Hero-Mascot.png';
 
 const FirstSection = ({ data }: any) => {
