@@ -4,47 +4,34 @@ import {
   Flex,
   Header as HeaderMantine,
   HeaderProps,
-  Menu,
-  Modal,
-  Stack,
   UnstyledButton,
 } from '@mantine/core';
-import { TbMenu2 } from 'react-icons/tb';
+import { Footer } from 'components/navigation';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import styles from 'styles/components/header.module.scss';
-import { Body, BodyBold, Heading } from '../typography';
-import { sections } from './sidebar';
-import NavLink, { ILink } from './navLink';
-import Link from 'next/link';
-import Image from 'next/image';
-import LogoSVG from 'public/wolfplanet.svg';
-import { Translate } from '@phosphor-icons/react';
-import { useRouter } from 'next/router';
-import GlobeIcon from 'public/GlobeIcon.svg';
-import { Footer } from 'components/navigation';
+import { BodyBold, Heading } from '../typography';
 interface IProps {
   baseProps?: Partial<HeaderProps>;
 }
 
 const links = [
-  { name: '主页', nameEn: 'Home', link: '/' },
-  { name: '关于我们', nameEn: 'About Us', link: '/about' },
-  { name: '白皮书', nameEn: 'White Paper', link: '/whitepaper' },
-  { name: '社群', nameEn: 'Community', link: '/community' },
-  { name: 'NFT', nameEn: 'NFT', link: '/nft' },
-  { name: '下载', nameEn: 'Download', link: '/download' },
-];
-
-const languages = [
-  { name: 'English', language: 'en' },
-  { name: '简体中文', language: 'cn' },
+  { name: 'Home', nameEn: 'Home', link: 'first' },
+  { name: 'About Me', nameEn: 'About Me', link: 'about' },
+  { name: 'Timeline', nameEn: 'Timeline', link: 'timeline' },
+  {
+    name: 'Past Experience',
+    nameEn: 'Past Experience',
+    link: 'past_experience',
+  },
+  { name: 'Contact Me', nameEn: 'Contact Me', link: 'contact_me' },
 ];
 
 const Header = (props: IProps) => {
   const router = useRouter();
   const { pathname, asPath, query, locale } = router;
   const [menuOpen, setMenuOpen] = useState(false);
-  const [translateClicked, setTranslateClicked] = useState(false);
   const [isUnderMaintenance, setIsUnderMaintenance] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const [active, setActive] = useState(links[0].link);
@@ -88,11 +75,6 @@ const Header = (props: IProps) => {
     setActive(router.pathname);
   }, [router.pathname]);
 
-  const setLanguage = (language: string) => {
-    console.log('setting Language', language);
-    router.push({ pathname, query }, asPath, { locale: language });
-  };
-
   const isActivePath = (path: string) => {
     if (router.pathname === path) {
       return true;
@@ -111,7 +93,7 @@ const Header = (props: IProps) => {
 
   return (
     <>
-      {isUnderMaintenance ? null : (
+      {isUnderMaintenance ? (
         <HeaderMantine
           height={'9rem'}
           {...props.baseProps}
@@ -126,80 +108,35 @@ const Header = (props: IProps) => {
           <div className={styles.headerContainer}>
             <div className={styles.header}>
               <Flex gap="md">
-                <Link href="/">
-                  <Image
-                    src={LogoSVG}
-                    alt="Logo"
-                    className={styles.headerLogo}
-                  />
+                <Link href="/" style={{ textDecoration: 'none' }}>
+                  <BodyBold fw={700} color="#FFFFFF" variant={1}>
+                    Lim Yong Chern
+                  </BodyBold>
                 </Link>
               </Flex>
               <div className={styles.nav}>
                 {links.map((link, index) => (
                   <UnstyledButton
                     key={index}
-                    onClick={() => router.push(link.link)}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      const targetSection = document.getElementById(link.link);
+                      if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
                     className={`${styles.link} ${
                       isActivePath(link.link) ? styles.active : ''
                     }`}>
-                    {router.locale === 'en' ? (
-                      <Heading
-                        variant={4}
-                        className={`${
-                          isActivePath(link.link) ? styles.active : ''
-                        }`}>
-                        {link.nameEn}
-                      </Heading>
-                    ) : (
-                      <BodyBold
-                        variant={5}
-                        className={`${
-                          isActivePath(link.link) ? styles.active : ''
-                        }`}>
-                        {link.name}
-                      </BodyBold>
-                    )}
+                    <Heading
+                      variant={4}
+                      className={`${
+                        isActivePath(link.link) ? styles.active : ''
+                      }`}>
+                      {link.nameEn}
+                    </Heading>
                   </UnstyledButton>
                 ))}
-
-                <Menu onClose={() => setTranslateClicked(false)}>
-                  <Menu.Target>
-                    <Image
-                      src={GlobeIcon}
-                      alt="globe"
-                      color={translateClicked ? '#4178FA' : 'white'}
-                      height={32}
-                      width={32}
-                      onClick={() => setTranslateClicked(true)}
-                      style={{ cursor: 'pointer' }}
-                    />
-                  </Menu.Target>
-
-                  <Menu.Dropdown className={styles.menu}>
-                    <Menu.Item
-                      className={styles.menuItem}
-                      onClick={() => setLanguage('en')}>
-                      {
-                        <BodyBold
-                          variant={5}
-                          color={locale === 'en' ? '#4178FA' : 'white'}>
-                          English
-                        </BodyBold>
-                      }
-                    </Menu.Item>
-                    <Menu.Item
-                      className={styles.menuItem}
-                      onClick={() => setLanguage('cn')}>
-                      {
-                        <BodyBold
-                          variant={5}
-                          color={locale !== 'en' ? '#4178FA' : 'white'}>
-                          简体中文
-                        </BodyBold>
-                      }
-                    </Menu.Item>
-                  </Menu.Dropdown>
-                </Menu>
               </div>
               <Burger
                 color="#FFFFFF"
@@ -208,20 +145,10 @@ const Header = (props: IProps) => {
                 className={styles.hamburger}
                 size={40}
               />
-              {/* <UnstyledButton
-                className={styles.hamburger}
-                onClick={() => setMenuOpen((prev) => !prev)}>
-                <TbMenu2 size={24} />
-              </UnstyledButton> */}
             </div>
           </div>
           {menuOpen && (
-            <div
-              // mt={'42px'}
-              // align="center"
-              // justify="center"
-              // spacing={width > 400 ? '42px' : '30px'}
-              className={styles.linkMobile}>
+            <div className={styles.linkMobile}>
               {links.map((link) => (
                 <Link
                   key={link.name}
@@ -233,47 +160,28 @@ const Header = (props: IProps) => {
                   }
                   onClick={(event) => {
                     event.preventDefault();
-                    setActive(link.link);
-                    router.push(link.link);
+                    const targetSection = document.getElementById(link.link);
+                    if (targetSection) {
+                      targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
                     setMenuOpen(false);
                   }}>
-                  {router.locale === 'en' ? (
-                    <Heading
-                      variant={3}
-                      className={`${
-                        isActivePath(link.link) ? styles.active : ''
-                      }`}>
-                      {link.nameEn}
-                    </Heading>
-                  ) : (
-                    <BodyBold
-                      variant={2}
-                      className={`${
-                        isActivePath(link.link) ? styles.active : ''
-                      }`}>
-                      {link.name}
-                    </BodyBold>
-                  )}
+                  <Heading
+                    variant={3}
+                    className={`${
+                      isActivePath(link.link) ? styles.active : ''
+                    }`}>
+                    {link.nameEn}
+                  </Heading>
                 </Link>
               ))}
               <Divider color="#3E404E" w={'100%'} mb={'30px'} />
-              {languages.map((language, index) => (
-                <div
-                  key={index}
-                  className={
-                    locale === language.language
-                      ? styles.languageClicked
-                      : styles.languageUnclicked
-                  }
-                  onClick={() => setLanguage(language.language)}>
-                  <BodyBold variant={2}>{language.name}</BodyBold>
-                </div>
-              ))}
+
               <Footer />
             </div>
           )}
         </HeaderMantine>
-      )}
+      ) : null}
     </>
   );
 };

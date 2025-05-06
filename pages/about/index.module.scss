@@ -1,5 +1,5 @@
 .topContainer {
-  background-color: #3e404e;
+  background-color: #111111;
   width: 100vw;
   background-size: cover;
   background-position: center;
@@ -10,24 +10,41 @@
   margin-top: -1px;
   max-width: -webkit-fill-available;
 
-  background: url('/aboutHero.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  // background: url('/aboutHero.png');
+  // background-size: cover;
+  // background-position: center;
+  // background-repeat: no-repeat;
 
-  @media (max-width: 835px) {
-    padding-top: 0px;
-    padding-bottom: 10px;
-    // height: 1300px;
-  }
+  // @media (max-width: 835px) {
+  //   padding-top: 0px;
+  //   padding-bottom: 10px;
+  //   // height: 1300px;
+  // }
 }
 
-.planetImage {
-  width: 588px;
+.aboutMeImage {
+  width: 488px;
   height: 588px;
   border-radius: 12px;
-  margin-top: -130px;
-  margin-left: -110px;
+  margin-top: 100px;
+  margin-left: 50px;
+}
+
+.aboutMeTitle {
+  font-size: 4rem;
+  color: #fff;
+  text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+  animation: shadow-dance 2s infinite;
+}
+
+@keyframes shadow-dance {
+  0%,
+  100% {
+    text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+  }
+  50% {
+    text-shadow: -5px -5px 0 #00d4ff, -10px -10px 0 #ff005e;
+  }
 }
 
 .planetImageMobileContainer {
@@ -55,10 +72,10 @@
   position: relative;
   border-radius: 16px;
 
-  @media (max-width: 835px) {
-    margin-top: -200px;
-    width: 350px;
-  }
+  // @media (max-width: 835px) {
+  //   margin-top: -200px;
+  //   width: 350px;
+  // }
 }
 
 .planetTextCard {
@@ -76,16 +93,16 @@
   backdrop-filter: blur(10px);
   z-index: 1;
 
-  @media (min-width: 350px) and (max-width: 835px) {
-    width: 290px;
-    height: 413px;
-    padding: 30px;
-  }
-  @media (max-width: 349px) {
-    width: 230px;
-    height: 413px;
-    padding: 30px;
-  }
+  // @media (min-width: 350px) and (max-width: 835px) {
+  //   width: 290px;
+  //   height: 413px;
+  //   padding: 30px;
+  // }
+  // @media (max-width: 349px) {
+  //   width: 230px;
+  //   height: 413px;
+  //   padding: 30px;
+  // }
 }
 
 .textCard {
@@ -106,10 +123,10 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  @media (max-width: 835px) {
-    // padding: 0px 23px;
-    width: 350px;
-  }
+  // @media (max-width: 835px) {
+  //   // padding: 0px 23px;
+  //   width: 350px;
+  // }
 }
 
 .middleContainer {
@@ -127,13 +144,13 @@
   justify-content: center;
   // background-color: #3e404e;
   max-width: -webkit-fill-available;
-  @media (max-width: 835px) {
-    background-image: url('/About/AboutMobileBg2.png');
-    height: auto;
-    padding-top: 80px;
-    padding-bottom: 100px;
-    margin-top: -3px;
-  }
+  // @media (max-width: 835px) {
+  //   background-image: url('/About/AboutMobileBg2.png');
+  //   height: auto;
+  //   padding-top: 80px;
+  //   padding-bottom: 100px;
+  //   margin-top: -3px;
+  // }
 }
 
 .imgCardContainer {
@@ -145,19 +162,19 @@
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden; /* This will ensure the background image respects the border radius */
-  @media (max-width: 835px) {
-    height: 233px;
-    width: 300px;
-  }
+  // @media (max-width: 835px) {
+  //   height: 233px;
+  //   width: 300px;
+  // }
 }
 
 .twitter {
   position: absolute;
   bottom: 15px;
   left: 60px;
-  @media (max-width: 835px) {
-    left: 132px;
-  }
+  // @media (max-width: 835px) {
+  //   left: 132px;
+  // }
 }
 
 .imgCardContainer {
@@ -191,13 +208,13 @@
   display: flex;
   justify-content: center;
   max-width: -webkit-fill-available;
-  @media (max-width: 835px) {
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 80px;
-    background-image: url('/About/AboutMobileBg3.png');
-    margin-top: -3px;
-  }
+  // @media (max-width: 835px) {
+  //   padding-left: 30px;
+  //   padding-right: 30px;
+  //   padding-bottom: 80px;
+  //   background-image: url('/About/AboutMobileBg3.png');
+  //   margin-top: -3px;
+  // }
 }
 .botContainer2 {
   background-color: #272935;
@@ -213,22 +230,22 @@
   display: flex;
   justify-content: center;
   max-width: -webkit-fill-available;
-  @media (max-width: 835px) {
-    // margin-top: -350px;
-    margin-top: -50px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 80px;
-    background-color: #272935;
-  }
-  @media (max-width: 380px) {
-    // margin-top: -30px;
-    margin-top: -50px;
-    padding-left: 12px;
-    padding-right: 12px;
-    padding-bottom: 80px;
-    background-color: #272935;
-  }
+  // @media (max-width: 835px) {
+  //   // margin-top: -350px;
+  //   margin-top: -50px;
+  //   padding-left: 20px;
+  //   padding-right: 20px;
+  //   padding-bottom: 80px;
+  //   background-color: #272935;
+  // }
+  // @media (max-width: 380px) {
+  //   // margin-top: -30px;
+  //   margin-top: -50px;
+  //   padding-left: 12px;
+  //   padding-right: 12px;
+  //   padding-bottom: 80px;
+  //   background-color: #272935;
+  // }
 }
 
 .card {

@@ -52,10 +52,10 @@
   margin-bottom: 131px;
   text-align: center;
 
-  @media (max-width: 835px) {
-    max-width: 350px;
-    text-align: left;
-  }
+  // @media (max-width: 835px) {
+  //   max-width: 350px;
+  //   text-align: left;
+  // }
 }
 
 .subheading {
@@ -196,9 +196,9 @@
   // align-self: stretch;
   max-width: 836px;
 
-  @media (max-width: 835px) {
-    max-width: 350px;
-  }
+  // @media (max-width: 835px) {
+  //   max-width: 350px;
+  // }
 }
 
 .sec4Vid {
@@ -211,10 +211,10 @@
   max-height: 510px;
   border-radius: 16px;
 
-  @media (max-width: 835px) {
-    max-width: 350px;
-    max-height: 210px;
-  }
+  // @media (max-width: 835px) {
+  //   max-width: 350px;
+  //   max-height: 210px;
+  // }
 }
 
 .planetsSection {
@@ -228,12 +228,12 @@
   margin: auto;
   object-fit: fill;
 
-  @media (max-width: 835px) {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-  }
+  // @media (max-width: 835px) {
+  //   display: inline-flex;
+  //   flex-direction: column;
+  //   justify-content: flex-end;
+  //   align-items: center;
+  // }
 }
 
 .section2 {
@@ -261,11 +261,11 @@
   max-height: 400px;
   margin: auto;
   padding: 62px;
-  @media (max-width: 835px) {
-    max-width: 350px;
-    max-height: 370px;
-    padding: 62px 42px;
-  }
+  // @media (max-width: 835px) {
+  //   max-width: 350px;
+  //   max-height: 370px;
+  //   padding: 62px 42px;
+  // }
 }
 
 .cardWord {
@@ -503,18 +503,18 @@
   background-position: center;
   background-repeat: no-repeat;
 
-  @media (max-width: 835px) {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    background-image: none;
-    gap: 0px;
-    background-image: url('/Home/HomeMobileBg2.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+  // @media (max-width: 835px) {
+  //   display: inline-flex;
+  //   flex-direction: column;
+  //   justify-content: flex-end;
+  //   align-items: center;
+  //   background-image: none;
+  //   gap: 0px;
+  //   background-image: url('/Home/HomeMobileBg2.png');
+  //   background-size: cover;
+  //   background-position: center;
+  //   background-repeat: no-repeat;
+  // }
 }
 
 .fourthSection {
@@ -534,20 +534,20 @@
   object-fit: fill;
   margin-top: -1px;
 
-  @media (max-width: 835px) {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    background-image: url('/Home/HomeMobileBg4.png');
-    background-size: cover;
-    background-position: relative;
-    background-repeat: no-repeat;
-    margin-top: -1px;
-  }
-  @media (max-width: 380px) {
-    padding-right: 2px;
-  }
+  // @media (max-width: 835px) {
+  //   display: inline-flex;
+  //   flex-direction: column;
+  //   justify-content: flex-end;
+  //   align-items: center;
+  //   background-image: url('/Home/HomeMobileBg4.png');
+  //   background-size: cover;
+  //   background-position: relative;
+  //   background-repeat: no-repeat;
+  //   margin-top: -1px;
+  // }
+  // @media (max-width: 380px) {
+  //   padding-right: 2px;
+  // }
 }
 
 .buttonsContainer {
@@ -564,10 +564,10 @@
   border-radius: 16px;
   width: 400px;
   cursor: pointer;
-  @media (max-width: 835px) {
-    width: 350px;
-    padding: 20px 30px;
-  }
+  // @media (max-width: 835px) {
+  //   width: 350px;
+  //   padding: 20px 30px;
+  // }
 }
 
 .selectedImageContainer {
@@ -582,9 +582,9 @@
   width: 500px;
   // height: 100%;
   // background-color: var(--neutral-glass-1-add-blur, rgba(255, 255, 255, 0.12));
-  @media (max-width: 835px) {
-    width: 350px;
-  }
+  // @media (max-width: 835px) {
+  //   width: 350px;
+  // }
 }
 
 .selectedImage {
@@ -594,12 +594,12 @@
   border-radius: 16px;
   object-fit: fill;
   // background: var(--main-primary-varient-55, rgba(39, 41, 53, 0.5));
-  @media (max-width: 835px) {
-    width: 75%;
-    height: 75%;
-    margin-top: 0px;
-    margin-bottom: 10px;
-  }
+  // @media (max-width: 835px) {
+  //   width: 75%;
+  //   height: 75%;
+  //   margin-top: 0px;
+  //   margin-bottom: 10px;
+  // }
 }
 
 .carouselStyles {

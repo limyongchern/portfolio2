@@ -7,16 +7,6 @@ import { useRouter } from 'next/router';
 import 'styles/common/global.scss';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  // const { locale, push } = useRouter();
-  // const defaultLocale = 'cn';
-  // console.log('MyApp locale', locale);
-
-  // useEffect(() => {
-  //   if (locale !== defaultLocale) {
-  //     push('/', '/', { locale: defaultLocale });
-  //   }
-  // }, [locale]);
-
   return (
     <AppShell
       padding={0}

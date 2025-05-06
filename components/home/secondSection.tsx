@@ -15,7 +15,7 @@ const SecondSection = ({ data }: any) => {
   useEffect(() => {
     if (isTimerPaused) return;
     const timer = setTimeout(() => {
-      setCardOpen((cardOpen + 1) % 4);
+      setCardOpen((cardOpen + 1) % 5);
     }, timerLength);
 
     return () => clearTimeout(timer);
@@ -46,6 +46,13 @@ const SecondSection = ({ data }: any) => {
       if (cardOpen === 2) return 3;
       if (cardOpen === 3) return 4;
     }
+    if (index === 4) {
+      if (cardOpen === 0) return 0;
+      if (cardOpen === 1) return 1;
+      if (cardOpen === 2) return 2;
+      if (cardOpen === 3) return 3;
+      if (cardOpen === 4) return 4;
+    }
   };
 
   const Cards = ({ data, index }: any) => {
@@ -60,7 +67,7 @@ const SecondSection = ({ data }: any) => {
         }}
         key={index}
         style={{
-          width: cardOpen === index ? '680px' : '680px',
+          width: cardOpen === index ? '600px' : '600px',
           zIndex: getZIndex(index),
         }}>
         {cardOpen === index ? (
@@ -92,34 +99,23 @@ const SecondSection = ({ data }: any) => {
           <div
             style={{
               display: 'flex',
-              height: 25,
+              height: 10,
               padding: '0px 40px',
-
               width: '80%',
             }}>
-            {router.locale === 'en' ? (
-              <BodyDmsans
-                variant={4}
-                color="white"
-                style={{
-                  marginBottom: 60,
-                  display: 'inline-block',
-                  alignSelf: 'flex-end',
-                }}>
-                {data.description}
-              </BodyDmsans>
-            ) : (
-              <BodyBold
-                variant={4}
-                color="white"
-                style={{
-                  marginBottom: 60,
-                  display: 'inline-block',
-                  alignSelf: 'flex-end',
-                }}>
-                {data.description}
-              </BodyBold>
-            )}
+            <BodyDmsans
+              variant={4}
+              color="white"
+              style={{
+                marginBottom: 60,
+                display: 'inline-block',
+                alignSelf: 'flex-end',
+                backgroundColor: 'rgba(128, 128, 128, 0.8)', // Keep the grey background,
+                padding: '10px 20px',
+                textAlign: 'center',
+              }}>
+              {data.description}
+            </BodyDmsans>
           </div>
         )}
       </div>
@@ -129,15 +125,9 @@ const SecondSection = ({ data }: any) => {
     <div
       className={styles.collapsibleCardSection}
       style={{ backgroundColor: '#272935' }}>
-      {router.locale === 'en' ? (
-        <Heading variant={1} color="white" style={{ marginBottom: '-265px' }}>
-          {data.headline}
-        </Heading>
-      ) : (
-        <Body variant={9} color="white" style={{ marginBottom: '-265px' }}>
-          {data.headline}
-        </Body>
-      )}
+      <Heading variant={1} color="white" style={{ marginBottom: '-265px' }}>
+        {data.headline}
+      </Heading>
 
       <MagicMotion transition={{ type: 'ease' }}>
         <div className={styles.collapsibleCardsContainer}>

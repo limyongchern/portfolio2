@@ -1,0 +1,117 @@
+.containerDownloadSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 100px 150px 100px;
+  margin-top: -55px;
+  margin-bottom: -55px;
+  overflow: hidden;
+  background: var(--Main-Primary-Varient, #272935);
+  background-image: url('/Download/DownloadBg.png');
+  background-size: cover;
+  background-position: relative;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 835px) {
+    margin-bottom: -5px;
+    margin-top: 0px;
+    background-image: url('/Download/DownloadMobileBg.png');
+    background-size: cover;
+    background-position: relative;
+    background-repeat: no-repeat;
+  }
+  //   @media (max-width: 380px) {
+  //     padding-right: 2px;
+  //   }
+}
+
+.containerDownloadMobileSection {
+  background-color: #272935;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 0px 0px 0px;
+  margin-bottom: -5px;
+}
+
+.innerContainer {
+  max-width: 1064px;
+  text-align: center;
+  gap: 10px;
+  @media (max-width: 835px) {
+    max-width: 350px;
+    width: 330px;
+    padding: 0px 20px;
+  }
+}
+
+.bottomContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.bottomContainerMobile {
+  display: flex;
+  //   justify-content: center;
+  align-items: center;
+  gap: 20px;
+  //   justify-content: space-between;
+  margin-top: -10px;
+  margin-bottom: -20px;
+}
+
+.wolfAvatarImage {
+  width: 235px;
+  height: 235px;
+}
+
+.wolfAvatarImageMobile {
+  width: 205px;
+  height: 235px;
+}
+
+.buttonsContainer {
+  display: flex;
+}
+
+.downloadButtonContainer {
+  width: 159px;
+  height: 52px;
+}
+
+.downloadImage {
+  cursor: pointer;
+}
+
+.wolfTokensImage {
+  width: 360px;
+  height: 196px;
+  margin-top: 50px;
+  @media (max-width: 835px) {
+    width: 200px;
+    height: 110px;
+    margin-bottom: 20px;
+  }
+}
+
+.homeHeroMascot {
+  width: 550px;
+  height: 100%;
+  animation: bounceIn 2s infinite 2s;
+}
+
+@keyframes bounceIn {
+  0%,
+  50%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(-30px);
+  }
+}
