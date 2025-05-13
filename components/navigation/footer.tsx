@@ -91,7 +91,7 @@ const Footer = (props: IProps) => {
         <div className={styles.footerMobile}>
           <Stack align="center">
             <Group spacing={30}>
-              <File height={24} width={24} />
+              <File height={24} width={24} color="white" />
               <Image src={LinkedInIcon} height={24} width={24} alt="LinkedIn" />
             </Group>
             <Flex justify={'center'} style={{ paddingTop: '56px' }}>

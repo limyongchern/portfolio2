@@ -118,7 +118,7 @@
   opacity: 0.6;
   background: var(--Main-Primary-Varient, #272935);
   box-shadow: 5px 5px 20px 0px rgba(7, 12, 17, 0.9);
-  width: 335px;
+  max-width: 300px;
   height: auto;
 }
 
@@ -132,7 +132,7 @@
   border-radius: 24px;
   background: var(--Main-Primary, #3e404e);
   box-shadow: 5px 5px 20px 0px rgba(7, 12, 17, 0.9);
-  width: 20%;
+  max-width: 20%;
 }
 
 .illustrationActive {

@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import FirstSection from 'components/home/firstSection';
 import SecondSection from 'components/home/secondSection';
 import ThirdSection from 'components/home/thirdSection';
@@ -20,7 +18,6 @@ import ThirdSection2 from 'public/THC.svg';
 import ThirdSection3 from 'public/Vsys.svg';
 
 import ContactMe from 'components/common/ContactMe';
-import { isMobile } from 'react-device-detect';
 import AboutUs from './about';
 
 const FirstSectionData = {
@@ -108,25 +105,23 @@ const ThirdSectionData = {
 const Home = () => {
   return (
     <>
-      {!isMobile && (
-        <div>
-          <div id="first">
-            <FirstSection data={FirstSectionData} />
-          </div>
-          <div id="about">
-            <AboutUs />
-          </div>
-          <div id="timeline">
-            <SecondSection data={SecondSectionData} />
-          </div>
-          <div id="past_experience">
-            <ThirdSection data={ThirdSectionData} />
-          </div>
-          <div id="contact_me">
-            <ContactMe />
-          </div>
+      <div>
+        <div id="first">
+          <FirstSection data={FirstSectionData} />
         </div>
-      )}
+        <div id="about">
+          <AboutUs />
+        </div>
+        <div id="timeline">
+          <SecondSection data={SecondSectionData} />
+        </div>
+        <div id="past_experience">
+          <ThirdSection data={ThirdSectionData} />
+        </div>
+        <div id="contact_me">
+          <ContactMe />
+        </div>
+      </div>
     </>
   );
 };
