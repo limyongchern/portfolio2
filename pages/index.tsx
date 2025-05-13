@@ -15,7 +15,7 @@ import Timeline5 from 'public/Vsys.jpg';
 //images for ThirdSection
 import ThirdSection1 from 'public/JogetLogo.svg';
 import ThirdSection2 from 'public/THC.svg';
-import ThirdSection3 from 'public/Vsys.svg';
+import ThirdSection3 from 'public/vsys.svg';
 
 import ContactMe from 'components/common/ContactMe';
 import AboutUs from './about';
