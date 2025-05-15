@@ -50,7 +50,7 @@ const Footer = (props: IProps) => {
               <Group position="apart">
                 <Group spacing={24}>
                   <a
-                    href="/path-to-your-resume.pdf"
+                    href="/LimYongChern.pdf"
                     download="Lim_Yong_Chern_Resume.pdf">
                     <File height={24} width={24} color="white" />
                   </a>
