@@ -91,8 +91,17 @@ const Footer = (props: IProps) => {
         <div className={styles.footerMobile}>
           <Stack align="center">
             <Group spacing={30}>
-              <File height={24} width={24} color="white" />
-              <Image src={LinkedInIcon} height={24} width={24} alt="LinkedIn" />
+              <a href="/LimYongChern.pdf" download="Lim_Yong_Chern_Resume.pdf">
+                <File height={24} width={24} color="white" />
+              </a>
+              <a href={linkedInLink} target="_blank">
+                <Image
+                  src={LinkedInIcon}
+                  height={24}
+                  width={24}
+                  alt="LinkedIn"
+                />
+              </a>{' '}
             </Group>
             <Flex justify={'center'} style={{ paddingTop: '56px' }}>
               <span style={{ display: 'flex' }}>
