@@ -139,7 +139,7 @@ const SecondSection = ({ data }: any) => {
       <div
         style={{
           display: 'flex',
-          justifyContent: 'space-between',
+          justifyContent: 'center',
           marginTop: -270,
           width: 1054,
         }}>
@@ -155,21 +155,6 @@ const SecondSection = ({ data }: any) => {
                 backgroundColor: index === cardOpen ? '#9198B0' : '#3E404E',
               }}></div>
           ))}
-        </div>
-        <div style={{ cursor: 'pointer' }}>
-          {isTimerPaused ? (
-            <PlayCircle
-              size={40}
-              style={{ color: '#9198B0' }}
-              onClick={() => setIsTimerPaused(false)}
-            />
-          ) : (
-            <PauseCircle
-              size={40}
-              style={{ color: '#9198B0' }}
-              onClick={() => setIsTimerPaused(true)}
-            />
-          )}
         </div>
       </div>
     </div>

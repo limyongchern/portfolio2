@@ -18,7 +18,6 @@ import AboutUsTempImage from 'public/TempImages/AboutUsTempImage.png';
 import AboutMe from 'public/YC1.jpg';
 import PressImg1 from 'public/PressImg1.png';
 import PressImg2 from 'public/PressImg2.png';
-import { formatDate, formatActivityContent } from 'utils/common';
 import { isMobile } from 'react-device-detect';
 
 const AboutUsDataEn = {
